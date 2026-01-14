@@ -15,11 +15,15 @@ class Breakpoint {
   /// Spacing between columns
   final double gutters;
 
+  /// Spacing for the outer margin
+  final double margin;
+
   /// Following Material Design Guidlines [https://material.io/design/layout/responsive-layout-grid.html#grid-behavior]
   const Breakpoint({
     required this.columns,
     required this.device,
     required this.gutters,
+    required this.margin,
     required this.window,
   });
 
@@ -69,6 +73,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 12,
         gutters: 24,
+        margin: 24,
         device: LayoutClass.desktop,
         window: WindowSize.xlarge,
       );
@@ -77,6 +82,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 12,
         gutters: 24,
+        margin: 24,
         device: LayoutClass.desktop,
         window: WindowSize.large,
       );
@@ -85,6 +91,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 12,
         gutters: 24,
+        margin: 24,
         device: LayoutClass.desktop,
         window: WindowSize.large,
       );
@@ -93,6 +100,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 12,
         gutters: 24,
+        margin: 24,
         device: LayoutClass.desktop,
         window: WindowSize.medium,
       );
@@ -101,6 +109,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 12,
         gutters: 24,
+        margin: 24,
         device: LayoutClass.desktop,
         window: WindowSize.medium,
       );
@@ -109,6 +118,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 12,
         gutters: 24,
+        margin: 24,
         device: LayoutClass.largeTablet,
         window: WindowSize.small,
       );
@@ -117,6 +127,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 12,
         gutters: 24,
+        margin: 24,
         device: LayoutClass.largeTablet,
         window: WindowSize.small,
       );
@@ -125,6 +136,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 8,
         gutters: 24,
+        margin: 24,
         device: LayoutClass.largeTablet,
         window: WindowSize.small,
       );
@@ -133,6 +145,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 8,
         gutters: 16,
+        margin: 16,
         device: LayoutClass.smallTablet,
         window: WindowSize.small,
       );
@@ -141,6 +154,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 4,
         gutters: 16,
+        margin: 16,
         device: LayoutClass.largeHandset,
         window: WindowSize.xsmall,
       );
@@ -149,6 +163,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 4,
         gutters: 16,
+        margin: 16,
         device: LayoutClass.largeHandset,
         window: WindowSize.xsmall,
       );
@@ -157,6 +172,7 @@ class Breakpoint {
       return const Breakpoint(
         columns: 4,
         gutters: 16,
+        margin: 16,
         device: LayoutClass.mediumHandset,
         window: WindowSize.xsmall,
       );
@@ -164,6 +180,7 @@ class Breakpoint {
     return const Breakpoint(
       columns: 4,
       gutters: 16,
+      margin: 16,
       device: LayoutClass.smallHandset,
       window: WindowSize.xsmall,
     );
@@ -185,7 +202,6 @@ class BreakpointBuilder extends StatelessWidget {
   final BuildContext? context;
   @override
   Widget build(BuildContext root) {
-    final _context = context ?? root;
     return LayoutBuilder(
       builder: (_context, constraints) {
         return builder(_context, Breakpoint.fromConstraints(constraints));

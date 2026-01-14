@@ -1,124 +1,108 @@
-[![Flutter Community: breakpoint](https://fluttercommunity.dev/_github/header/breakpoint)](https://github.com/fluttercommunity/community)
+# Breakpoint
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg)](https://www.buymeacoffee.com/rodydavis)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WSH3GVC49GNNJ)
-![github pages](https://github.com/fluttercommunity/breakpoint/workflows/github%20pages/badge.svg)
-[![GitHub stars](https://img.shields.io/github/stars/fluttercommunity/breakpoint?color=blue)](https://github.com/fluttercommunity/breakpoint)
-[![breakpoint](https://img.shields.io/pub/v/breakpoint.svg)](https://pub.dev/packages/breakpoint)
+Calculates the responsive layout grid properties (columns, gutters, and margins) based on the current screen size, following [Material Design Guidelines](https://material.io/design/layout/responsive-layout-grid.html).
 
+---
 
-# breakpoint
+## Features
 
-View the online demo [here](https://fluttercommunity.github.io/breakpoint/#/)!
+*   **Standardized Breakpoints**: Implements the Material Design responsive layout grid system.
+*   **Adaptive Properties**: providing the correct `columns` count, `glutters` spacing, and `margin` width for any screen width.
+*   **Device Classification**: Identifies device types (Handset, Tablet, Desktop) and window sizes (xsmall to xlarge).
+*   **Flexible Usage**: Works with both `BoxConstraints` (via LayoutBuilder) and `MediaQuery`.
 
-## Overview
+## Installation
 
-Follows Material Design [Docs](https://material.io/design/layout/responsive-layout-grid.html#breakpoints).
-
-![breakpoint](https://github.com/fluttercommunity/breakpoint/blob/master/screenshots/breakpoint.png)
+```bash
+flutter pub add breakpoint
+```
 
 ## Usage
 
-When you are wanting to calculate the breakpoint of a widget that may not take up the full screen. This needs `BoxConstraints` but can be provided by the layout builder.
+### Using BreakpointBuilder
 
-``` dart
-final _breakpoint = Breakpoint.fromConstraints(constraints);
-```
+The easiest way to use this package is with `BreakpointBuilder`. It automatically handles the `LayoutBuilder` for you and provides the current `Breakpoint` data.
 
-When a widget always takes up thye full screen.
+```dart
+BreakpointBuilder(
+  builder: (context, breakpoint) {
+    // The breakpoint passed here provides the standardized margins,
+    // columns, and gutters for the current screen size.
 
-``` dart
-final _breakpoint = Breakpoint.fromMediaQuery(context);
-```
-
-Use `BreakpointBuilder` if you want the layout builder wrapped for you.
-
-``` dart
-return BreakpointBuilder(
-    builder: (context, breakpoint) {
-    print('Breakpoint: $breakpoint');
-    return Container();
+    return Container(
+      // Access the margin, commonly 16.0 or 24.0
+      padding: EdgeInsets.all(breakpoint.margin), 
+      child: GridView.builder(
+        gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          crossAxisCount: breakpoint.columns, // 4, 8, or 12 columns
+          crossAxisSpacing: breakpoint.gutters, // 16.0 or 24.0 spacing
+          mainAxisSpacing: breakpoint.gutters,
+        ),
+        // ...
+      ),
+    );
   },
-);
+)
 ```
+
+### Manual Calculation
+
+If you are already inside a `LayoutBuilder` or want to use `MediaQuery`:
+
+**From Constraints (Recommended for sub-views):**
+```dart
+LayoutBuilder(builder: (context, constraints) {
+  // Calculate the breakpoint based on the current widget's constraints
+  final breakpoint = Breakpoint.fromConstraints(constraints);
+  
+  return Padding(
+    padding: EdgeInsets.symmetric(horizontal: breakpoint.margin),
+    child: Row(
+      children: [
+        // Your adaptive layout here
+      ],
+    ),
+  );
+});
+```
+
+**From MediaQuery (App-wide layout):**
+```dart
+// Calculate based on the full screen size
+final breakpoint = Breakpoint.fromMediaQuery(context);
+
+// Example: accessing device type
+if (breakpoint.device == LayoutClass.desktop) {
+  return DesktopLayout();
+} else if (breakpoint.device == LayoutClass.tablet) {
+  return TabletLayout();
+} else {
+  return MobileLayout();
+}
+```
+
+## Breakpoint System
+
+This package maps screen widths to the standard Material Design responsive grid:
+
+| Screen Width | Device | Window | Columns | Gutters | Margins |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| **0 - 359** | Small Handset | xsmall | 4 | 16dp | 16dp |
+| **360 - 399** | Medium Handset | xsmall | 4 | 16dp | 16dp |
+| **400 - 479** | Large Handset | xsmall | 4 | 16dp | 16dp |
+| **480 - 599** | Large Handset | xsmall | 4 | 16dp | 16dp |
+| **600 - 719** | Small Tablet | small | 8 | 16dp | 16dp |
+| **720 - 839** | Large Tablet | small | 8 | 24dp | 24dp |
+| **840 - 959** | Large Tablet | small | 12 | 24dp | 24dp |
+| **960 - 1023** | Large Tablet | small | 12 | 24dp | 24dp |
+| **1024 - 1279** | Desktop | medium | 12 | 24dp | 24dp |
+| **1280 - 1439** | Desktop | medium | 12 | 24dp | 24dp |
+| **1440 - 1599** | Desktop | large | 12 | 24dp | 24dp |
+| **1600 - 1919** | Desktop | large | 12 | 24dp | 24dp |
+| **1920+** | Desktop | xlarge | 12 | 24dp | 24dp |
+
+*Note: In Landscape orientation, the effective width calculation includes a buffer (+120dp) to better align with landscape layout expectations.*
 
 ## Example
 
-``` dart
-import 'dart:io';
-
-import 'package:flutter/foundation.dart';
-import 'package:flutter/material.dart';
-import 'package:breakpoint/breakpoint.dart';
-
-/// main is entry point of Flutter application
-void main() {
-  // Desktop platforms aren't a valid platform.
-  _setTargetPlatformForDesktop();
-
-  return runApp(MyApp());
-}
-
-/// If the current platform is desktop, override the default platform to
-/// a supported platform (iOS for macOS, Android for Linux and Windows).
-/// Otherwise, do nothing.
-void _setTargetPlatformForDesktop() {
-  TargetPlatform targetPlatform;
-  if (Platform.isMacOS) {
-    targetPlatform = TargetPlatform.iOS;
-  } else if (Platform.isLinux || Platform.isWindows) {
-    targetPlatform = TargetPlatform.android;
-  }
-  if (targetPlatform != null) {
-    debugDefaultTargetPlatformOverride = targetPlatform;
-  }
-}
-
-class MyApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: MyHomePage(),
-    );
-  }
-}
-
-class MyHomePage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return LayoutBuilder(builder: (_, constraints) {
-      final _breakpoint = Breakpoint.fromConstraints(constraints);
-      return Scaffold(
-        appBar: AppBar(
-          title: Text('Breakpoint Example: ${_breakpoint.toString()}'),
-        ),
-        body: Container(
-          padding: EdgeInsets.all(_breakpoint.gutters),
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: _breakpoint.columns,
-              crossAxisSpacing: _breakpoint.gutters,
-              mainAxisSpacing: _breakpoint.gutters,
-            ),
-            itemCount: 200,
-            itemBuilder: (_, index) {
-              return Container(
-                child: Card(
-                  child: Text(
-                    index.toString(),
-                  ),
-                ),
-              );
-            },
-          ),
-        ),
-      );
-    });
-  }
-}
-
-```
+Check out the `example` directory for a full Material 3 adaptive dashboard application.
