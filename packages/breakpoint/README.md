@@ -2,6 +2,8 @@
 
 Calculates the responsive layout grid properties (columns, gutters, and margins) based on the current screen size, following [Material Design Guidelines](https://material.io/design/layout/responsive-layout-grid.html).
 
+![breakpoint](screenshots/breakpoint.png)
+
 ---
 
 ## Features
