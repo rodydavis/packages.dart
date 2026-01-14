@@ -65,7 +65,8 @@ class SmsViewModel extends ChangeNotifier {
     _setLoading(true);
     try {
       _canSendSms = await canSendSMS();
-    } catch (e) {
+    } catch (e, t) {
+      debugPrint('Error checking capability: $e\n$t');
       _status = 'Error checking capability: $e';
     } finally {
       _setLoading(false);
@@ -90,7 +91,7 @@ class SmsViewModel extends ChangeNotifier {
     notifyListeners();
   }
 
-  Future<void> send({bool sendDirect = false}) async {
+  Future<void> send() async {
     if (_recipients.isEmpty || _message.isEmpty) {
       _status = 'Please add at least one recipient and a message.';
       notifyListeners();
@@ -105,10 +106,10 @@ class SmsViewModel extends ChangeNotifier {
       final result = await sendSMS(
         message: _message,
         recipients: _recipients,
-        sendDirect: sendDirect,
       );
       _status = result;
-    } catch (e) {
+    } catch (e, t) {
+      debugPrint('Error sending SMS: $e\n$t');
       _status = e.toString();
     } finally {
       _setLoading(false);
@@ -270,20 +271,6 @@ class _SmsHomePageState extends State<SmsHomePage> {
                             padding: const EdgeInsets.symmetric(vertical: 16),
                           ),
                         ),
-                        if (Theme.of(context).platform ==
-                            TargetPlatform.android) ...[
-                          const SizedBox(height: 12),
-                          OutlinedButton.icon(
-                            onPressed: _viewModel.isLoading
-                                ? null
-                                : () => _viewModel.send(sendDirect: true),
-                            icon: const Icon(Icons.flash_on),
-                            label: const Text('Send Direct (Android)'),
-                            style: OutlinedButton.styleFrom(
-                              padding: const EdgeInsets.symmetric(vertical: 16),
-                            ),
-                          ),
-                        ],
                       ],
                     ),
                   ),

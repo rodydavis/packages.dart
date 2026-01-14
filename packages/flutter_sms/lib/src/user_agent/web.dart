@@ -16,5 +16,11 @@ bool isCupertino() {
       return true;
     }
   }
+  final userAgent = web.window.navigator.userAgent.toLowerCase();
+  if (userAgent.contains('iphone') ||
+      userAgent.contains('ipad') ||
+      userAgent.contains('ipod')) {
+    return true;
+  }
   return false;
 }

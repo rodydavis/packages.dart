@@ -1,3 +1,12 @@
+# 3.0.0
+
+* **Breaking Change**: Migrated to Pigeon for type-safe platform channels.
+* **Breaking Change**: Removed `plugin_platform_interface` dependency.
+* **Breaking Change**: Removed `sendDirect` functionality and `SEND_SMS` permission requirement.
+* Updated Dart SDK constraint to `^3.0.0`.
+* Refactored package to use conditional imports for Web and Native support.
+* Modernized example app with Material 3.
+
 # 2.3.3
 
 * Adding ability to send SMS directly on Android (#57).

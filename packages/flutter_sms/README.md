@@ -1,95 +1,73 @@
-[![Flutter Community: flutter_sms](https://fluttercommunity.dev/_github/header/flutter_sms)](https://github.com/fluttercommunity/community)
-
-[![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg)](https://www.buymeacoffee.com/rodydavis)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WSH3GVC49GNNJ)
-![github pages](https://github.com/fluttercommunity/flutter_sms/workflows/github%20pages/badge.svg)
-[![GitHub stars](https://img.shields.io/github/stars/fluttercommunity/flutter_sms?color=blue)](https://github.com/fluttercommunity/flutter_sms)
-[![flutter_sms](https://img.shields.io/pub/v/flutter_sms.svg)](https://pub.dev/packages/flutter_sms)
 
 # flutter_sms
 
-![alt-text-1](https://github.com/fluttercommunity/flutter_sms/blob/master/screenshots/ios_blank.PNG)
+[![pub package](https://img.shields.io/pub/v/flutter_sms.svg)](https://pub.dev/packages/flutter_sms)
 
-Online Demo: https://fluttercommunity.github.io/flutter_sms/
+Flutter Plugin for sending SMS and MMS on Android and iOS. If you send to more than one person, it will send as MMS. On iOS, if the number is an iPhone and iMessage is enabled, it will send as an iMessage.
 
-## Description
+## Features
 
-Flutter Plugin for sending SMS and MMS on Android and iOS. If you send to more than one person it will send as MMS. On the iOS if the number is an iPhone and iMessage is enabled it will send as an iMessage.
+- Send SMS/MMS to one or multiple recipients.
+- Check if the device is capable of sending SMS.
 
-## How To Use
+- Catch errors when sending fails.
 
-You can send multiple ways:
+## Usage
 
-1. Message and No People
-2. People and No Message
-3. Message and People
+### Install
 
-This will populate the correct fields.
+Add `flutter_sms` as a dependency in your `pubspec.yaml` file.
 
+```yaml
+dependencies:
+  flutter_sms: ^3.0.0
+```
 
-## Example
+### Import
 
-Make sure to Install and Import the Package.
-
-``` dart
+```dart
 import 'package:flutter_sms/flutter_sms.dart';
 ```
 
-Create a function for sending messages.
+### Example
 
-``` dart
-void _sendSMS(String message, List<String> recipents) async {
- String _result = await sendSMS(message: message, recipients: recipents)
-        .catchError((onError) {
-      print(onError);
-    });
-print(_result);
+```dart
+void _sendSMS() async {
+  List<String> recipients = ["1234567890", "5556787676"];
+  String message = "This is a test message!";
+  
+  try {
+     String result = await sendSMS(message: message, recipients: recipients);
+     print(result);
+  } catch (error) {
+     print(error);
+  }
 }
 ```
 
-You can quickly send the message with this function.
+### Check Capability
 
-``` dart
-String message = "This is a test message!";
-List<String> recipents = ["1234567890", "5556787676"];
+You can check if the current device is capable of sending SMS.
 
-_sendSMS(message, recipents);
+```dart
+bool canSend = await canSendSMS();
+if (!canSend) {
+  print("Device cannot send SMS.");
+}
 ```
 
+### Launch SMS URL
 
-## Sending Direct
+Launch the SMS URL scheme directly.
 
-**WARNING, there is a narrow category of apps that can get into the play store
-using this feature. Using it is only advisable if you fit into this category or
-you intent to distribute through a third party platform**
-
-On Android, you can skip the additional dialog with the sendDirect parameter.
-
-``` dart
-String message = "This is a test message!";
-List<String> recipents = ["1234567890", "5556787676"];
-
- String _result = await sendSMS(message: message, recipients: recipents, sendDirect: true)
-        .catchError((onError) {
-      print(onError);
-    });
-print(_result);
+```dart
+await launchSms(message: "This is a test message!", number: "1234567890");
 ```
 
-NOTE: This also requires the SEND_SMS permission to be added to the AndroidManifest.xml
+### Launch SMS URL (Multiple Recipients)
 
+Launch the SMS URL scheme with multiple recipients.
+
+```dart
+await launchSmsMulti(message: "This is a test message!", numbers: ["1234567890", "5556787676"]);
 ```
-    <uses-permission android:name="android.permission.SEND_SMS"/>
-    
-    <application
-      ...
-```
-
-
-## Screenshots
-
-iOS SMS             |  Android MMS
-:-------------------------:|:-------------------------:
-![alt-text-1](https://github.com/fluttercommunity/flutter_sms/blob/master/screenshots/ios_sms.PNG)  |  ![alt-text-2](https://github.com/fluttercommunity/flutter_sms/blob/master/screenshots/android_mms.png)
-
-You can find other [screenshots here](https://github.com/fluttercommunity/flutter_sms/tree/master/screenshots).

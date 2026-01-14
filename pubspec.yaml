@@ -6,4 +6,4 @@ environment:
 
 workspace:
   - packages/flutter_vibrate
-    
+  - packages/flutter_sms
