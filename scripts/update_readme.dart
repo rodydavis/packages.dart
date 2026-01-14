@@ -47,12 +47,12 @@ void main() async {
   sb.writeln();
   sb.writeln('## Packages');
   sb.writeln();
-  sb.writeln('| Package | Description | Version | Pub |');
-  sb.writeln('| :--- | :--- | :--- | :--- |');
+  sb.writeln('| Package | Description | Version |');
+  sb.writeln('| :--- | :--- | :--- |');
 
   for (final pkg in packages) {
     sb.writeln(
-        '| [${pkg.name}](${pkg.path}) | ${pkg.description} | [![Pub](https://img.shields.io/pub/v/${pkg.name}.svg?style=popout)] | [![pub package](https://img.shields.io/pub/v/${pkg.name}.svg)](https://pub.dev/packages/${pkg.name}) |');
+        '| [${pkg.name}](${pkg.path}) | ${pkg.description} | [![Pub](https://img.shields.io/pub/v/${pkg.name}.svg?style=popout)](https://pub.dartlang.org/packages/${pkg.name}) |');
   }
 
   await readmeFile.writeAsString(sb.toString());
