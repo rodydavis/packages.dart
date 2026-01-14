@@ -1,0 +1,9 @@
+name: packages_dart_rodydavis
+publish_to: none
+
+environment:
+  sdk: ^3.5.0
+
+workspace:
+  # - packages/flutter_vibrate
+    
