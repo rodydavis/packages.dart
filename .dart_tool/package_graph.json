@@ -1,0 +1,14 @@
+{
+  "roots": [
+    "packages_dart_rodydavis"
+  ],
+  "packages": [
+    {
+      "name": "packages_dart_rodydavis",
+      "version": "0.0.0",
+      "dependencies": [],
+      "devDependencies": []
+    }
+  ],
+  "configVersion": 1
+}

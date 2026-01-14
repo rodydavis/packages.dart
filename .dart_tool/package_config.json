@@ -1,0 +1,16 @@
+{
+  "configVersion": 2,
+  "packages": [
+    {
+      "name": "packages_dart_rodydavis",
+      "rootUri": "../",
+      "packageUri": "lib/",
+      "languageVersion": "3.5"
+    }
+  ],
+  "generator": "pub",
+  "generatorVersion": "3.10.4",
+  "flutterRoot": "file:///opt/homebrew/Caskroom/flutter/2.10.4/flutter",
+  "flutterVersion": "3.38.5",
+  "pubCache": "file:///Users/rodydavis/.pub-cache"
+}
