@@ -1,26 +1,22 @@
 name: flutter_whatsnew
 description: A new Flutter package to show updates to users.
-version: 1.0.5+2
-# author: Rody Davis <rody.davis.jr@gmail.com>
+version: 1.1.0
 homepage: https://github.com/fluttercommunity/flutter_whatsnew
 maintainer: Rody Davis (@rodydavis)
+resolution: workspace
 
 environment:
-  sdk: ">=2.19.0-168.0.dev <3.0.0"
-  flutter: ">=1.17.0"
+  sdk: ^3.5.0
+  flutter: ^3.38.5
 
 dependencies:
   flutter:
     sdk: flutter
-  flutter_markdown: ^0.6.12
-  shared_preferences: ^2.0.15
+  flutter_markdown: ^0.7.0
+  shared_preferences: ^2.2.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
-# For information on the generic Dart part of this file, see the
-# following page: https://www.dartlang.org/tools/pub/pubspec
-
-# The following section is specific to Flutter.
 flutter:

@@ -49,6 +49,7 @@ class _ScheduledWhatsNewPageState extends State<ScheduledWhatsNewPage> {
     if (widget.delay != null) {
       await Future<void>.delayed(widget.delay!);
     }
+    if (!mounted) return;
     show(context);
   }
 

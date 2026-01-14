@@ -7,5 +7,5 @@ environment:
 workspace:
   - packages/flutter_vibrate
   - packages/flutter_sms
-  # - packages/flutter_whatsnew
+  - packages/flutter_whatsnew
   - packages/breakpoint

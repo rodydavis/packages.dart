@@ -1,3 +1,9 @@
+## 1.1.0
+
+* Upgrade to Dart 3 and Flutter 3
+* Update dependencies
+* Modernize example app with Material 3
+
 ## 1.0.5
 
 * Adding adaptive option

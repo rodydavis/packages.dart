@@ -1,174 +1,109 @@
-[![Flutter Community: flutter_whatsnew](https://fluttercommunity.dev/_github/header/flutter_whatsnew)](https://github.com/fluttercommunity/community)
+# Flutter WhatsNew
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg)](https://www.buymeacoffee.com/rodydavis)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WSH3GVC49GNNJ)
-![github pages](https://github.com/fluttercommunity/flutter_whatsnew/workflows/github%20pages/badge.svg)
+A Flutter package to display a "What's New" or "Changelog" dialog to users. Perfect for informing users about new features, updates, or important announcements after an app update.
 
-# flutter_whatsnew
+## Features
 
-[![pub package](https://img.shields.io/pub/v/flutter_whatsnew.svg)](https://pub.dartlang.org/packages/flutter_whatsnew)
+*   **Changelog Parsing:** Automatically parse your `CHANGELOG.md` file and display the latest changes.
+*   **Customizable UI:** Fully customizable text, colors, buttons, and layout.
+*   **Scheduled Display:** Show the dialog after a delay or only when the app version changes.
+*   **Adaptive Design:** Works on Android, iOS, Web, and Desktop.
+*   **Material 3 Ready:** Modern design defaults.
 
-A Flutter Plugin to Show a Whats New page. 
+## Installation
 
-Online Demo: https://fluttercommunity.github.io/flutter_whatsnew/
+Add `flutter_whatsnew` to your `pubspec.yaml`:
+
+```yaml
+dependencies:
+  flutter_whatsnew: ^1.1.0
+```
 
 ## Usage
 
-To use this plugin, add `flutter_whatsnew` as a [dependency in your pubspec.yaml file](https://flutter.io/platform-plugins/).
+### 1. Show Changelog from File
 
-``` dart
-// Import package
-import 'package:flutter_whatsnew/flutter_whatsnew.dart';
-```
+Ensure your `CHANGELOG.md` is included in your `pubspec.yaml` assets:
 
-![changelog](https://github.com/fluttercommunity/flutter_whatsnew/blob/master/doc/screenshots/changes.png)
-
-If using `WhatsNewPage.changelog` and you want it to pickup the `CHANGELOG.md' add it to the Flutter asset directory, otherwise manually pass in the .md file with the changes. This uses the full markdown previewer.
-
-``` yaml
+```yaml
+flutter:
   assets:
     - CHANGELOG.md
 ```
 
-![changelog](https://github.com/fluttercommunity/flutter_whatsnew/blob/master/doc/screenshots/changelog.png)
+Then, navigate to the `WhatsNewPage.changelog`:
 
-## Example
-
-``` dart
-import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
+```dart
 import 'package:flutter_whatsnew/flutter_whatsnew.dart';
 
-void main() {
-  runApp(MaterialApp(home: ShowWhatsNew()));
-}
-
-class ShowWhatsNew extends StatelessWidget {
-  final double textScaleFactor = 1.0;
-
-  @override
-  Widget build(BuildContext context) {
-    return new Scaffold(
-      body: SafeArea(
-          child: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: <Widget>[
-            RaisedButton(
-              child: Text("Show Changelog"),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => WhatsNewPage.changelog(
-                          title: Text(
-                            "What's New",
-                            textScaleFactor: textScaleFactor,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              // Text Style Needed to Look like iOS 11
-                              fontSize: 22.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          buttonText: Text(
-                            'Continue',
-                            textScaleFactor: textScaleFactor,
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                        ),
-                    fullscreenDialog: true,
-                  ),
-                );
-              },
-            ),
-            Container(height: 50.0),
-            RaisedButton(
-              child: Text("Show Changes"),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => WhatsNewPage(
-                          title: Text(
-                            "What's New",
-                            textScaleFactor: textScaleFactor,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              // Text Style Needed to Look like iOS 11
-                              fontSize: 22.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          buttonText: Text(
-                            'Continue',
-                            textScaleFactor: textScaleFactor,
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                          // Create a List of WhatsNewItem for use in the Whats New Page
-                          // Create as many as you need, it will be scrollable
-                          items: <ListTile>[
-                            ListTile(
-                              leading: const Icon(Icons.color_lens),
-                              title: Text(
-                                'Dark Theme',
-                                textScaleFactor: textScaleFactor,
-                              ), //Title is the only Required Item
-                              subtitle: Text(
-                                'Black and grey theme (Tap to Change)',
-                                textScaleFactor: textScaleFactor,
-                              ),
-                              onTap: () {
-                                // You Can Navigate to Locations in the App
-                                Navigator.of(context).pushNamed("/settings");
-                              },
-                            ),
-                            ListTile(
-                              leading: const Icon(Icons.map),
-                              title: Text(
-                                'Google Maps',
-                                textScaleFactor: textScaleFactor,
-                              ),
-                              subtitle: Text(
-                                'Open Address Links in Google Maps instead of Apple Maps (Tap to Change)',
-                                textScaleFactor: textScaleFactor,
-                              ),
-                              onTap: () {
-                                // You Can Navigate to Locations in the App
-                                Navigator.of(context).pushNamed("/settings");
-                              },
-                            ),
-                            ListTile(
-                              leading: const Icon(Icons.notifications_active),
-                              title: Text(
-                                'Push Notifications',
-                                textScaleFactor: textScaleFactor,
-                              ),
-                              subtitle: Text(
-                                'Stay tuned for important information that can be pushed to you',
-                                textScaleFactor: textScaleFactor,
-                              ),
-                              onTap: () {
-                                WhatsNewPage.showDetailPopUp(
-                                  context,
-                                  'Info',
-                                  "You can turn off push notifications any time in your application settings.",
-                                );
-                              },
-                            ),
-                          ], //Required
-                        ),
-                    fullscreenDialog: true,
-                  ),
-                );
-              },
-            ),
-          ],
-        ),
-      )),
-    );
-  }
-}
-
+// Check documentation for method parameters
+WhatsNewPage.changelog(
+  title: Text("What's New"),
+  buttonText: Text("Continue"),
+  // path: 'assets/CHANGELOG.md', // Optional, defaults to CHANGELOG.md
+);
 ```
+
+### 2. Manual List of Items
+
+You can pass a list of widgets (e.g., `ListTile`) to display specific features:
+
+```dart
+WhatsNewPage(
+  title: Text("What's New"),
+  items: [
+    ListTile(
+      leading: Icon(Icons.star),
+      title: Text('New Feature'),
+      subtitle: Text('Description of the new feature.'),
+    ),
+    ListTile(
+      leading: Icon(Icons.bug_report),
+      title: Text('Bug Fixes'),
+      subtitle: Text('Fixed various issues.'),
+    ),
+  ],
+  buttonText: Text("Let's Go"),
+  onButtonPressed: () {
+    Navigator.pop(context);
+  },
+);
+```
+
+### 3. Scheduled / Delayed Display
+
+Use `ScheduledWhatsNewPage` to show the dialog only after a delay or based on version checks.
+
+```dart
+ScheduledWhatsNewPage(
+  details: WhatsNewPage.changelog(
+    title: Text("Update Available"),
+    buttonText: Text("Okay"),
+  ),
+  delay: Duration(seconds: 3), // Show after 3 seconds
+  // appVersion: '1.0.1', // Only show if the saved version differs
+  child: HomeScreen(),
+);
+```
+
+## detailed Documentation
+
+### WhatsNewPage
+
+| Parameter | Type | Description |
+|---|---|---|
+| `items` | `List<Widget>` | The list of widgets to display in the scrollable area. |
+| `title` | `Widget` | The title widget at the top of the dialog. |
+| `buttonText` | `Widget` | The text widget inside the bottom button. |
+| `onButtonPressed` | `VoidCallback?` | Callback when the button is pressed. Defaults to `Navigator.pop`. |
+| `backgroundColor` | `Color?` | Background color of the page. |
+| `buttonColor` | `Color?` | Color of the bottom button. |
+
+### WhatsNewPage.changelog
+
+| Parameter | Type | Description |
+|---|---|---|
+| `path` | `String` | Path to the markdown file. Defaults to `CHANGELOG.md`. |
+| `textScaler` | `TextScaler?` | Scaler for the markdown text. |
+| `title` | `Widget` | The title widget. |
+| ... | ... | See `WhatsNewPage` for other shared parameters. |

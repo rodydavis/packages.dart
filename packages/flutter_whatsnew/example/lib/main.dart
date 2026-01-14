@@ -1,180 +1,219 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter_whatsnew/flutter_whatsnew.dart';
 
-import 'dart:io' show Platform;
-import 'package:flutter/foundation.dart';
-
-// The existing imports
-// !! Keep your existing impots here !!
-
-/// main is entry point of Flutter application
 void main() {
-  // Desktop platforms aren't a valid platform.
-  if (!kIsWeb) _setTargetPlatformForDesktop();
-  return runApp(MyApp());
-}
-
-/// If the current platform is desktop, override the default platform to
-/// a supported platform (iOS for macOS, Android for Linux and Windows).
-/// Otherwise, do nothing.
-void _setTargetPlatformForDesktop() {
-  TargetPlatform targetPlatform;
-  if (Platform.isMacOS) {
-    targetPlatform = TargetPlatform.iOS;
-  } else if (Platform.isLinux || Platform.isWindows) {
-    targetPlatform = TargetPlatform.android;
-  }
-  if (targetPlatform != null) {
-    debugDefaultTargetPlatformOverride = targetPlatform;
-  }
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final double textScaleFactor = 1.0;
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: HomeScreen(textScaleFactor: textScaleFactor),
+      title: 'Flutter WhatsNew Demo',
+      theme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.light,
+        ),
+      ),
+      darkTheme: ThemeData(
+        useMaterial3: true,
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple,
+          brightness: Brightness.dark,
+        ),
+      ),
+      home: const HomePage(),
     );
   }
 }
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({
-    Key key,
-    @required this.textScaleFactor,
-  }) : super(key: key);
-
-  final double textScaleFactor;
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return ScheduledWhatsNewPage(
-      details: WhatsNewPage.changelog(),
-      delay: Duration(seconds: 7),
-      child: Scaffold(
-        body: SafeArea(
-          child: Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: <Widget>[
-                ElevatedButton(
-                  child: Text("Show Changelog"),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => WhatsNewPage.changelog(
-                          title: Text(
-                            "What's New",
-                            textScaleFactor: textScaleFactor,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              // Text Style Needed to Look like iOS 11
-                              fontSize: 22.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          buttonText: Text(
-                            'Continue',
-                            textScaleFactor: textScaleFactor,
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                        ),
-                        fullscreenDialog: true,
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Flutter WhatsNew'),
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16.0),
+        children: [
+          _buildSectionHeader(context, 'Changelogs'),
+          _buildListTile(
+            context,
+            icon: Icons.list_alt,
+            title: 'Standard Changelog',
+            subtitle: 'Parses CHANGELOG.md automatically',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => WhatsNewPage.changelog(
+                    title: const Text(
+                      "What's New",
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        fontWeight: FontWeight.bold,
                       ),
-                    );
-                  },
+                    ),
+                    buttonText: const Text(
+                      'Continue',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                  ),
+                  fullscreenDialog: true,
                 ),
-                Container(height: 50.0),
-                ElevatedButton(
-                  child: Text("Show Changes"),
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => WhatsNewPage(
-                          title: Text(
-                            "What's New",
-                            textScaleFactor: textScaleFactor,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              // Text Style Needed to Look like iOS 11
-                              fontSize: 22.0,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                          buttonText: Text(
-                            'Continue',
-                            textScaleFactor: textScaleFactor,
-                            style: const TextStyle(color: Colors.white),
-                          ),
-                          // Create a List of WhatsNewItem for use in the Whats New Page
-                          // Create as many as you need, it will be scrollable
-                          items: <ListTile>[
-                            ListTile(
-                              leading: const Icon(Icons.color_lens),
-                              title: Text(
-                                'Dark Theme',
-                                textScaleFactor: textScaleFactor,
-                              ), //Title is the only Required Item
-                              subtitle: Text(
-                                'Black and grey theme (Tap to Change)',
-                                textScaleFactor: textScaleFactor,
-                              ),
-                              onTap: () {
-                                // You Can Navigate to Locations in the App
-                                Navigator.of(context).pushNamed("/settings");
-                              },
-                            ),
-                            ListTile(
-                              leading: const Icon(Icons.map),
-                              title: Text(
-                                'Google Maps',
-                                textScaleFactor: textScaleFactor,
-                              ),
-                              subtitle: Text(
-                                'Open Address Links in Google Maps instead of Apple Maps (Tap to Change)',
-                                textScaleFactor: textScaleFactor,
-                              ),
-                              onTap: () {
-                                // You Can Navigate to Locations in the App
-                                Navigator.of(context).pushNamed("/settings");
-                              },
-                            ),
-                            ListTile(
-                              leading: const Icon(Icons.notifications_active),
-                              title: Text(
-                                'Push Notifications',
-                                textScaleFactor: textScaleFactor,
-                              ),
-                              subtitle: Text(
-                                'Stay tuned for important information that can be pushed to you',
-                                textScaleFactor: textScaleFactor,
-                              ),
-                              onTap: () {
-                                WhatsNewPage.showDetailPopUp(
-                                  context,
-                                  'Info',
-                                  "You can turn off push notifications any time in your application settings.",
-                                );
-                              },
-                            ),
-                          ], //Required
-                        ),
-                        fullscreenDialog: true,
-                      ),
-                    );
-                  },
-                ),
-              ],
-            ),
+              );
+            },
           ),
-        ),
+          _buildListTile(
+            context,
+            icon: Icons.timer,
+            title: 'Scheduled Changelog',
+            subtitle: 'Shows after a 3 second delay',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => ScheduledWhatsNewPage(
+                    details: WhatsNewPage.changelog(
+                      title: const Text(
+                        "What's New",
+                        style: TextStyle(
+                          fontSize: 22.0,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      buttonText: const Text(
+                        'Continue',
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                    delay: const Duration(seconds: 3),
+                    child: Scaffold(
+                      appBar: AppBar(title: const Text('Wait for it...')),
+                      body: const Center(child: Text('Loading changelog...')),
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+          const SizedBox(height: 24),
+          _buildSectionHeader(context, 'Custom Pages'),
+          _buildListTile(
+            context,
+            icon: Icons.stars,
+            title: 'Feature List',
+            subtitle: 'Custom items and styling',
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => WhatsNewPage(
+                    title: const Text(
+                      "What's New",
+                      style: TextStyle(
+                        fontSize: 22.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    buttonText: const Text(
+                      'Let\'s Go!',
+                      style: TextStyle(color: Colors.white),
+                    ),
+                    items: [
+                      const ListTile(
+                        leading: Icon(Icons.palette),
+                        title: Text('Material 3 Support'),
+                        subtitle: Text('Beautiful adaptive colors and shapes'),
+                      ),
+                      const ListTile(
+                        leading: Icon(Icons.dark_mode),
+                        title: Text('Dark Mode'),
+                        subtitle: Text('Easy on the eyes at night'),
+                      ),
+                      const ListTile(
+                        leading: Icon(Icons.speed),
+                        title: Text('Performance'),
+                        subtitle: Text('Faster and smoother than ever'),
+                      ),
+                      ListTile(
+                        leading: const Icon(Icons.thumb_up),
+                        title: const Text('Interactive'),
+                        subtitle: const Text('Tap to learn more'),
+                        onTap: () {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            const SnackBar(content: Text('Feature tapped!')),
+                          );
+                        },
+                      ),
+                    ],
+                  ),
+                  fullscreenDialog: true,
+                ),
+              );
+            },
+          ),
+          _buildListTile(
+            context,
+            icon: Icons.info_outline,
+            title: 'Detail Popup',
+            subtitle: 'Simple informational dialog',
+            onTap: () {
+              WhatsNewPage.showDetailPopUp(
+                context,
+                'Did you know?',
+                'You can use WhatsNewPage.showDetailPopUp to show quick information without a full page navigation.',
+              );
+            },
+          ),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildSectionHeader(BuildContext context, String title) {
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 8.0, left: 16.0),
+      child: Text(
+        title,
+        style: Theme.of(context).textTheme.titleMedium?.copyWith(
+              color: Theme.of(context).colorScheme.primary,
+              fontWeight: FontWeight.bold,
+            ),
+      ),
+    );
+  }
+
+  Widget _buildListTile(
+    BuildContext context, {
+    required IconData icon,
+    required String title,
+    required String subtitle,
+    required VoidCallback onTap,
+  }) {
+    return Card(
+      elevation: 0,
+      color: Theme.of(context)
+          .colorScheme
+          .surfaceContainerHighest
+          .withValues(alpha: 0.3),
+      margin: const EdgeInsets.only(bottom: 12.0),
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+      child: ListTile(
+        leading: Icon(icon, color: Theme.of(context).colorScheme.primary),
+        title: Text(title, style: const TextStyle(fontWeight: FontWeight.w600)),
+        subtitle: Text(subtitle),
+        trailing: const Icon(Icons.chevron_right),
+        onTap: onTap,
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
       ),
     );
   }
