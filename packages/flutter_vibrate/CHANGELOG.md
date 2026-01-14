@@ -1,3 +1,10 @@
+## 1.4.0
+
+* Migrated to Pigeon for type-safe platform channels.
+* Fixed Android permission issue (restored `VIBRATE` permission).
+* Refactored Android implementation to use `View.performHapticFeedback` for compatible feedback.
+* Modernized example app with Material 3 and better UI.
+
 ## 1.3.0
 
 * Fixing swift version

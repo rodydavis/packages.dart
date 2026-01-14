@@ -15,7 +15,6 @@ PlatformException _createConnectionError(String channelName) {
   );
 }
 
-
 class _PigeonCodec extends StandardMessageCodec {
   const _PigeonCodec();
   @override
@@ -41,9 +40,13 @@ class VibrateApi {
   /// Constructor for [VibrateApi].  The [binaryMessenger] named argument is
   /// available for dependency injection.  If it is left null, the default
   /// BinaryMessenger will be used which routes to the host platform.
-  VibrateApi({BinaryMessenger? binaryMessenger, String messageChannelSuffix = ''})
-      : pigeonVar_binaryMessenger = binaryMessenger,
-        pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty ? '.$messageChannelSuffix' : '';
+  VibrateApi({
+    BinaryMessenger? binaryMessenger,
+    String messageChannelSuffix = '',
+  }) : pigeonVar_binaryMessenger = binaryMessenger,
+       pigeonVar_messageChannelSuffix = messageChannelSuffix.isNotEmpty
+           ? '.$messageChannelSuffix'
+           : '';
   final BinaryMessenger? pigeonVar_binaryMessenger;
 
   static const MessageCodec<Object?> pigeonChannelCodec = _PigeonCodec();
@@ -51,7 +54,8 @@ class VibrateApi {
   final String pigeonVar_messageChannelSuffix;
 
   Future<bool> canVibrate() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.flutter_vibrate.VibrateApi.canVibrate$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.flutter_vibrate.VibrateApi.canVibrate$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -78,13 +82,16 @@ class VibrateApi {
   }
 
   Future<void> vibrate(int duration) async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.flutter_vibrate.VibrateApi.vibrate$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.flutter_vibrate.VibrateApi.vibrate$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
       binaryMessenger: pigeonVar_binaryMessenger,
     );
-    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(<Object?>[duration]);
+    final Future<Object?> pigeonVar_sendFuture = pigeonVar_channel.send(
+      <Object?>[duration],
+    );
     final pigeonVar_replyList = await pigeonVar_sendFuture as List<Object?>?;
     if (pigeonVar_replyList == null) {
       throw _createConnectionError(pigeonVar_channelName);
@@ -100,7 +107,8 @@ class VibrateApi {
   }
 
   Future<void> impact() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.flutter_vibrate.VibrateApi.impact$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.flutter_vibrate.VibrateApi.impact$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -122,7 +130,8 @@ class VibrateApi {
   }
 
   Future<void> selection() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.flutter_vibrate.VibrateApi.selection$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.flutter_vibrate.VibrateApi.selection$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -144,7 +153,8 @@ class VibrateApi {
   }
 
   Future<void> success() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.flutter_vibrate.VibrateApi.success$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.flutter_vibrate.VibrateApi.success$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -166,7 +176,8 @@ class VibrateApi {
   }
 
   Future<void> warning() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.flutter_vibrate.VibrateApi.warning$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.flutter_vibrate.VibrateApi.warning$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -188,7 +199,8 @@ class VibrateApi {
   }
 
   Future<void> error() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.flutter_vibrate.VibrateApi.error$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.flutter_vibrate.VibrateApi.error$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -210,7 +222,8 @@ class VibrateApi {
   }
 
   Future<void> heavy() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.flutter_vibrate.VibrateApi.heavy$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.flutter_vibrate.VibrateApi.heavy$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -232,7 +245,8 @@ class VibrateApi {
   }
 
   Future<void> medium() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.flutter_vibrate.VibrateApi.medium$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.flutter_vibrate.VibrateApi.medium$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
@@ -254,7 +268,8 @@ class VibrateApi {
   }
 
   Future<void> light() async {
-    final pigeonVar_channelName = 'dev.flutter.pigeon.flutter_vibrate.VibrateApi.light$pigeonVar_messageChannelSuffix';
+    final pigeonVar_channelName =
+        'dev.flutter.pigeon.flutter_vibrate.VibrateApi.light$pigeonVar_messageChannelSuffix';
     final pigeonVar_channel = BasicMessageChannel<Object?>(
       pigeonVar_channelName,
       pigeonChannelCodec,
