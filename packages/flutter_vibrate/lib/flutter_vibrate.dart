@@ -10,7 +10,7 @@ enum FeedbackType {
   impact,
   heavy,
   medium,
-  light
+  light,
 }
 
 class Vibrate {
@@ -18,10 +18,9 @@ class Vibrate {
   static const Duration defaultVibrationDuration = Duration(milliseconds: 500);
 
   /// Vibrate for 500ms on Android, and for the default time on iOS (about 500ms as well)
-  static Future vibrate() => _channel.invokeMethod(
-        'vibrate',
-        {'duration': defaultVibrationDuration.inMilliseconds},
-      );
+  static Future vibrate() => _channel.invokeMethod('vibrate', {
+    'duration': defaultVibrationDuration.inMilliseconds,
+  });
 
   /// Whether the device can actually vibrate or not
   static Future<bool> get canVibrate async {
@@ -55,7 +54,6 @@ class Vibrate {
       case FeedbackType.light:
         _channel.invokeMethod('light');
         break;
-      default:
     }
   }
 

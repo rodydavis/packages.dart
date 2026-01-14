@@ -5,5 +5,5 @@ environment:
   sdk: ^3.5.0
 
 workspace:
-  # - packages/flutter_vibrate
+  - packages/flutter_vibrate
     
