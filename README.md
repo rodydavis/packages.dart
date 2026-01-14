@@ -6,6 +6,7 @@ A collection of Flutter packages maintained by @rodydavis.
 
 | Package | Description | Version |
 | :--- | :--- | :--- |
+| [breakpoint](./packages/breakpoint) | A Flutter plugin to calculate the material design breakpoints. | [![Pub](https://img.shields.io/pub/v/breakpoint.svg?style=popout)](https://pub.dartlang.org/packages/breakpoint) |
 | [flutter_sms](./packages/flutter_sms) | A Flutter plugin to send SMS and MMS on iOS and Android. | [![Pub](https://img.shields.io/pub/v/flutter_sms.svg?style=popout)](https://pub.dartlang.org/packages/flutter_sms) |
 | [flutter_vibrate](./packages/flutter_vibrate) | A Haptic Feedback and Vibration plugin. | [![Pub](https://img.shields.io/pub/v/flutter_vibrate.svg?style=popout)](https://pub.dartlang.org/packages/flutter_vibrate) |
 | [preact_signals](./packages/signals/packages/preact_signals) | Dart port of Preact.js Signals | [![Pub](https://img.shields.io/pub/v/preact_signals.svg?style=popout)](https://pub.dartlang.org/packages/preact_signals) |
