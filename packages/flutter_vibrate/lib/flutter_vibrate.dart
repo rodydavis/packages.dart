@@ -1,6 +1,8 @@
 import 'dart:async';
 
-import 'package:flutter/services.dart';
+import 'src/messages.g.dart';
+
+export 'src/messages.g.dart' show VibrateApi;
 
 enum FeedbackType {
   success,
@@ -14,61 +16,60 @@ enum FeedbackType {
 }
 
 class Vibrate {
-  static const MethodChannel _channel = MethodChannel('vibrate');
-  static const Duration defaultVibrationDuration = Duration(milliseconds: 500);
+  static final VibrateApi _api = VibrateApi();
+  static const Duration _defaultVibrationDuration = Duration(milliseconds: 500);
 
   /// Vibrate for 500ms on Android, and for the default time on iOS (about 500ms as well)
-  static Future vibrate() => _channel.invokeMethod('vibrate', {
-    'duration': defaultVibrationDuration.inMilliseconds,
-  });
+  static Future<void> vibrate() async {
+    await _api.vibrate(500);
+  }
 
   /// Whether the device can actually vibrate or not
   static Future<bool> get canVibrate async {
-    final bool isOn = await _channel.invokeMethod('canVibrate');
-    return isOn;
-  }
-
-  static void feedback(FeedbackType type) {
-    switch (type) {
-      case FeedbackType.impact:
-        _channel.invokeMethod('impact');
-        break;
-      case FeedbackType.error:
-        _channel.invokeMethod('error');
-        break;
-      case FeedbackType.success:
-        _channel.invokeMethod('success');
-        break;
-      case FeedbackType.warning:
-        _channel.invokeMethod('warning');
-        break;
-      case FeedbackType.selection:
-        _channel.invokeMethod('selection');
-        break;
-      case FeedbackType.heavy:
-        _channel.invokeMethod('heavy');
-        break;
-      case FeedbackType.medium:
-        _channel.invokeMethod('medium');
-        break;
-      case FeedbackType.light:
-        _channel.invokeMethod('light');
-        break;
-    }
+    return _api.canVibrate();
   }
 
   /// Vibrates with [pauses] in between each vibration
   /// Will always vibrate once before the first pause
   /// and once after the last pause
-
-  static Future vibrateWithPauses(Iterable<Duration> pauses) async {
+  static Future<void> vibrateWithPauses(Iterable<Duration> pauses) async {
     for (final Duration d in pauses) {
       await vibrate();
-      //Because the native vibration is not awaited, we need to wait for
-      //the vibration to end before launching another one
-      await Future.delayed(defaultVibrationDuration);
+      // Because the native vibration is not awaited (fire-and-forget in some impls,
+      // though Pigeon calls are async, the vibration itself happens on hardware),
+      // we need to wait for the vibration to end before launching another one.
+      await Future.delayed(_defaultVibrationDuration);
       await Future.delayed(d);
     }
     await vibrate();
+  }
+
+  static Future<void> feedback(FeedbackType type) async {
+    switch (type) {
+      case FeedbackType.impact:
+        await _api.impact();
+        break;
+      case FeedbackType.selection:
+        await _api.selection();
+        break;
+      case FeedbackType.success:
+        await _api.success();
+        break;
+      case FeedbackType.warning:
+        await _api.warning();
+        break;
+      case FeedbackType.error:
+        await _api.error();
+        break;
+      case FeedbackType.heavy:
+        await _api.heavy();
+        break;
+      case FeedbackType.medium:
+        await _api.medium();
+        break;
+      case FeedbackType.light:
+        await _api.light();
+        break;
+    }
   }
 }

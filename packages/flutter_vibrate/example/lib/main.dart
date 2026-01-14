@@ -195,8 +195,8 @@ class _DeviceabilityHeader extends StatelessWidget {
                       : 'This device does not support vibration.',
                   style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                     color: canVibrate
-                        ? colorScheme.onPrimaryContainer.withOpacity(0.8)
-                        : colorScheme.onErrorContainer.withOpacity(0.8),
+                        ? colorScheme.onPrimaryContainer.withValues(alpha: 0.8)
+                        : colorScheme.onErrorContainer.withValues(alpha: 0.8),
                   ),
                 ),
               ],
@@ -352,8 +352,8 @@ class _FeedbackTileState extends State<_FeedbackTile>
           Transform.scale(scale: _scaleAnimation.value, child: child),
       child: Material(
         color:
-            widget.item.color?.withOpacity(0.15) ??
-            colorScheme.secondaryContainer.withOpacity(0.4),
+            widget.item.color?.withValues(alpha: 0.15) ??
+            colorScheme.secondaryContainer.withValues(alpha: 0.4),
         borderRadius: BorderRadius.circular(16),
         child: InkWell(
           borderRadius: BorderRadius.circular(16),

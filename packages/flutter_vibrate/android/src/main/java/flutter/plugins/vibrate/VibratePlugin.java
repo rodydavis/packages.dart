@@ -8,7 +8,6 @@ import io.flutter.plugin.common.BinaryMessenger;
 import io.flutter.plugin.common.MethodChannel;
 
 public class VibratePlugin implements FlutterPlugin, io.flutter.embedding.engine.plugins.activity.ActivityAware {
-    private MethodChannel methodChannel;
     private VibrateMethodCallHandler methodCallHandler;
 
     @Override
@@ -18,14 +17,12 @@ public class VibratePlugin implements FlutterPlugin, io.flutter.embedding.engine
         final Vibrator vibrator = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         methodCallHandler = new VibrateMethodCallHandler(vibrator);
 
-        this.methodChannel = new MethodChannel(messenger, "vibrate");
-        this.methodChannel.setMethodCallHandler(methodCallHandler);
+        Messages.VibrateApi.setUp(messenger, methodCallHandler);
     }
 
     @Override
     public void onDetachedFromEngine(FlutterPluginBinding binding) {
-        this.methodChannel.setMethodCallHandler(null);
-        this.methodChannel = null;
+        Messages.VibrateApi.setUp(binding.getBinaryMessenger(), null);
         this.methodCallHandler = null;
     }
 
