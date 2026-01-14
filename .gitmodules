@@ -1,0 +1,3 @@
+[submodule "packages/signals"]
+	path = packages/signals
+	url = https://github.com/rodydavis/signals.dart
