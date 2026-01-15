@@ -1,5 +1,5 @@
 name: app_review
-description: Request and Write Reviews and Open Store Listing for Android and iOS in Flutter.
+description: Request and Write Reviews and Open Store Listing for Android and iOS/MacOS in Flutter.
 version: 3.0.0
 environment:
   sdk: ^3.5.0
