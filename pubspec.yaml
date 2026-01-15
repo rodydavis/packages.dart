@@ -9,3 +9,4 @@ workspace:
   - packages/flutter_sms
   - packages/flutter_whatsnew
   - packages/breakpoint
+  - packages/app_review

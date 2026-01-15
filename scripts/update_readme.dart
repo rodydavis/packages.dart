@@ -5,6 +5,29 @@ void main() async {
   final packagesDir = Directory('${rootDir.path}/packages');
   final readmeFile = File('${rootDir.path}/README.md');
 
+  final gitmodulesFile = File('${rootDir.path}/.gitmodules');
+  final submodules = <String, String>{};
+
+  if (gitmodulesFile.existsSync()) {
+    final lines = await gitmodulesFile.readAsLines();
+    String? currentPath;
+    String? currentUrl;
+    for (final line in lines) {
+      final trimmed = line.trim();
+      if (trimmed.startsWith('path = ')) {
+        currentPath = trimmed.substring(7).trim();
+      } else if (trimmed.startsWith('url = ')) {
+        currentUrl = trimmed.substring(6).trim();
+      }
+
+      if (currentPath != null && currentUrl != null) {
+        submodules[currentPath] = currentUrl;
+        currentPath = null;
+        currentUrl = null;
+      }
+    }
+  }
+
   if (!packagesDir.existsSync()) {
     print('Error: packages directory not found at ${packagesDir.path}');
     return;
@@ -27,12 +50,49 @@ void main() async {
 
       if (name != null && version != null && publishTo != 'none') {
         // Calculate relative path from root
-        final relativePath = entity.parent.path.replaceFirst(rootDir.path, '.');
+        var relativePath = entity.parent.path.replaceFirst(rootDir.path, '.');
+        if (relativePath.startsWith('./')) {
+          relativePath = relativePath.substring(2);
+        }
+
+        // Check for submodule match
+        String? linkPath;
+        for (final entry in submodules.entries) {
+          final subPath = entry.key;
+          final subUrl = entry.value;
+          if (relativePath.startsWith(subPath)) {
+            // It is inside this submodule
+            // Verify if it is exact match or subdir
+            if (relativePath == subPath ||
+                relativePath.startsWith('$subPath/')) {
+              final remainder = relativePath.substring(subPath.length);
+              // Remove leading slash if present
+              final cleanRemainder = remainder.startsWith('/')
+                  ? remainder.substring(1)
+                  : remainder;
+
+              // Construct URL
+              // Assuming standard GitHub structure: url/tree/main/path
+              // If cleanRemainder is empty, we link to root
+              if (cleanRemainder.isEmpty) {
+                linkPath = subUrl;
+              } else {
+                linkPath = '$subUrl/tree/main/$cleanRemainder';
+              }
+              break;
+            }
+          }
+        }
+
+        // Fallback to local relative path if not in submodule (add ./ back for consistency if desired, or keep as relative path string)
+        if (linkPath == null) {
+          linkPath = './$relativePath';
+        }
 
         packages.add(_Package(
           name: name,
           description: description ?? '',
-          path: relativePath,
+          path: linkPath,
         ));
       }
     }

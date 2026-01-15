@@ -115,15 +115,17 @@ class AppReview {
   }) async {
     if (compose) {
       final id = appId ?? (await getIosAppId()) ?? '';
-      final reviewUrl = 'itunes.apple.com/app/id$id?mt=8&action=write-review';
-      final uri = Uri.parse('itms-apps://$reviewUrl');
+      // New format: https://apps.apple.com/app/idYOURAPPSTOREID?action=write-review
+      final reviewUrl = 'apps.apple.com/app/id$id';
+      final uri = Uri.parse('https://$reviewUrl?action=write-review');
+
       if (await canLaunchUrl(uri)) {
         debugPrint('launching store page');
-        await launchUrl(uri);
+        await launchUrl(uri, mode: LaunchMode.externalApplication);
         return 'Launched App Store Directly: $reviewUrl';
       }
 
-      await launchUrl(Uri.parse('https://$reviewUrl'));
+      await launchUrl(uri, mode: LaunchMode.externalApplication);
       return 'Launched App Store: $reviewUrl';
     }
 
@@ -146,7 +148,7 @@ class AppReview {
     final appId = await getIosAppId() ?? '';
 
     if (appId.isNotEmpty) {
-      launchUrl(Uri.parse('https://itunes.apple.com/app/id$appId'),
+      launchUrl(Uri.parse('https://apps.apple.com/app/id$appId'),
           mode: LaunchMode.externalApplication);
       return 'Launched App Store';
     }
@@ -226,7 +228,12 @@ class AppReview {
                 'https://itunes.apple.com/$country/lookup?bundleId=$id'))
             .timeout(const Duration(seconds: 5));
         final Map json = jsonDecode(result.body);
-        appId = json['results'][0]['trackId']?.toString();
+        final List results = json['results'] as List;
+        if (results.isNotEmpty) {
+          appId = results[0]['trackId']?.toString();
+        }
+      } catch (e) {
+        debugPrint('Error fetching app ID: $e');
       } finally {
         if (appId?.isNotEmpty == true) {
           debugPrint('Track ID: $appId');

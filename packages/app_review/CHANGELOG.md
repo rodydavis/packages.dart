@@ -1,3 +1,9 @@
+## 2.2.0
+* Update SDK constraints (Dart ^3.0.0, Flutter >=3.10.0)
+* Update dependencies (package_info_plus ^9.0.0, url_launcher ^6.3.0, http ^1.2.0)
+* Fix example app lint errors
+* Fix iOS Store Page and Write Review URLs (use apps.apple.com)
+
 ## 2.1.2
 
 * Upgrading dependencies

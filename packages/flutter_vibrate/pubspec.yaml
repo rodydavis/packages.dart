@@ -4,10 +4,10 @@ version: 1.4.0
 environment:
   sdk: ^3.5.0
   flutter: ^3.38.5
+resolution: workspace
 maintainer: Rody Davis (@rodydavis)
 homepage: https://github.com/rodydavis/packages.dart
 repository: https://github.com/rodydavis/packages.dart
-resolution: workspace
 
 dependencies:
   flutter:

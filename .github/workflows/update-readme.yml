@@ -1,0 +1,41 @@
+name: Update README
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'packages/**'
+      - '.gitmodules'
+      - 'scripts/update_readme.dart'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          submodules: true
+
+      - name: Setup Dart
+        uses: dart-lang/setup-dart@v1
+
+      - name: Run update script
+        run: dart scripts/update_readme.dart
+
+      - name: Commit and Push
+        run: |
+          if [ -n "$(git status --porcelain README.md)" ]; then
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            git add README.md
+            git commit -m "docs: update README [skip ci]"
+            git push
+          else
+            echo "No changes to README.md"
+          fi
