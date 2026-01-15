@@ -1,8 +1,24 @@
+## 3.0.0
+
+* **BREAKING**: `requestReview`, `writeReview`, and `storeListing` now return `Future<void>` instead of `Future<String?>`.
+* **BREAKING**: Errors are now thrown as `AppReviewException` instead of being returned as error strings.
+* **BREAKING**: Removed `url_launcher` dependency. Store opening logic is now native.
+* **BREAKING**: Removed `http` dependency. App ID lookup is now native.
+* **BREAKING**: Migrated all platform communication to **Pigeon** for type safety.
+* **FEAT**: Added `openStoreListing` and `openAppStoreReview` methods to API.
+* **FEAT**: Added `lookupAppId` method to API.
+* **FEAT**: (iOS/macOS) Added SwiftUI bridge for `requestReview` environment value (iOS 16+ / macOS 14+).
+* **FEAT**: (Android) Migrated to `com.google.android.play:review`.
+* **FEAT**: (Android) Added support for "Test Mode" (FakeReviewManager).
+* **CHORE**: Migrated iOS implementation to Swift.
+* **CHORE**: Removed `package_info_plus` dependency.
+
 ## 2.2.0
 * Update SDK constraints (Dart ^3.0.0, Flutter >=3.10.0)
 * Update dependencies (package_info_plus ^9.0.0, url_launcher ^6.3.0, http ^1.2.0)
 * Fix example app lint errors
 * Fix iOS Store Page and Write Review URLs (use apps.apple.com)
+* Fix Android build (add namespace, update SDK versions, migrate to v2 embedding)
 
 ## 2.1.2
 

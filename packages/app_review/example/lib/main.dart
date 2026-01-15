@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:app_review/app_review.dart';
 import 'package:flutter/material.dart';
 
@@ -38,7 +40,7 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    AppReview.getAppID.then((onValue) {
+    AppReview.getAppId().then((onValue) {
       setState(() {
         appID = onValue ?? '';
       });
@@ -48,13 +50,20 @@ class _HomePageState extends State<HomePage> {
 
   String appID = "";
   final List<String> _logs = [];
+  bool _useAndroidTestMode = true;
+
+  final testAppId = () {
+    if (Platform.isAndroid) return 'com.google.android.googlequicksearchbox';
+    if (Platform.isIOS || Platform.isMacOS) return '640199958';
+    return null;
+  }();
 
   void log(String? message) {
     if (message != null) {
+      debugPrint(message);
       setState(() {
         _logs.insert(0, message);
       });
-      debugPrint(message);
     }
   }
 
@@ -73,13 +82,24 @@ class _HomePageState extends State<HomePage> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
+                  if (Platform.isAndroid)
+                    SwitchListTile(
+                      title: const Text('Use Android Test Mode'),
+                      subtitle: const Text('Uses FakeReviewManager'),
+                      value: _useAndroidTestMode,
+                      onChanged: (value) {
+                        setState(() {
+                          _useAndroidTestMode = value;
+                        });
+                      },
+                    ),
                   _buildInfoCard(
                     context,
                     title: 'App ID',
                     subtitle: appID.isEmpty ? 'Loading...' : appID,
                     icon: Icons.info_outline,
                     onTap: () {
-                      AppReview.getAppID.then(log);
+                      AppReview.getAppId().then(log);
                     },
                   ),
                   const SizedBox(height: 16),
@@ -98,24 +118,16 @@ class _HomePageState extends State<HomePage> {
                     icon: Icons.storefront,
                     color: Colors.orange,
                     onTap: () async {
-                      final id = await AppReview.getIosAppId();
-                      if (id == null || id.isEmpty) {
-                        if (context.mounted) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text(
-                                  'App not found in store. Using Apple Developer App for testing.'),
-                            ),
-                          );
-                        }
-                        // Use Apple Developer App ID for testing
-                        // https://apps.apple.com/us/app/apple-developer/id640199958
-                        AppReview.openAppStore(
-                          fallbackUrl:
-                              'https://apps.apple.com/us/app/apple-developer/id640199958',
-                        ).then(log);
-                      } else {
-                        AppReview.storeListing.then(log);
+                      try {
+                        await AppReview.storeListing(
+                          appStoreId: (Platform.isIOS || Platform.isMacOS)
+                              ? testAppId
+                              : null,
+                          playStoreId: Platform.isAndroid ? testAppId : null,
+                        );
+                        log('Opened Store Listing');
+                      } catch (e) {
+                        log('Failed to open store listing: $e');
                       }
                     },
                   ),
@@ -126,8 +138,15 @@ class _HomePageState extends State<HomePage> {
                     subtitle: 'Ask the user to rate the app',
                     icon: Icons.star_rate_rounded,
                     color: Colors.amber,
-                    onTap: () {
-                      AppReview.requestReview.then(log);
+                    onTap: () async {
+                      try {
+                        await AppReview.requestReview(
+                          useAndroidTestMode: _useAndroidTestMode,
+                        );
+                        log('Requested Review');
+                      } catch (e) {
+                        log('Request Review failed: $e');
+                      }
                     },
                   ),
                   const SizedBox(height: 12),
@@ -138,23 +157,17 @@ class _HomePageState extends State<HomePage> {
                     icon: Icons.rate_review_outlined,
                     color: Colors.green,
                     onTap: () async {
-                      final id = await AppReview.getIosAppId();
-                      if (id == null || id.isEmpty) {
-                        if (context.mounted) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                              content: Text(
-                                  'App not found in store. Using Apple Developer App for testing.'),
-                            ),
-                          );
-                        }
-                        // Use Apple Developer App ID for testing
-                        AppReview.openIosReview(
-                          appId: '640199958',
-                          compose: true,
-                        ).then(log);
-                      } else {
-                        AppReview.writeReview.then(log);
+                      try {
+                        await AppReview.writeReview(
+                          appStoreId: (Platform.isIOS || Platform.isMacOS)
+                              ? testAppId
+                              : null,
+                          playStoreId: Platform.isAndroid ? testAppId : null,
+                          useAndroidTestMode: _useAndroidTestMode,
+                        );
+                        log('Opened Write Review');
+                      } catch (e) {
+                        log('Write Review failed: $e');
                       }
                     },
                   ),

@@ -1,55 +1,100 @@
-[![Flutter Community: app_review](https://fluttercommunity.dev/_github/header/app_review)](https://github.com/fluttercommunity/community)
+# App Review
 
-[![Buy Me A Coffee](https://img.shields.io/badge/Donate-Buy%20Me%20A%20Coffee-yellow.svg)](https://www.buymeacoffee.com/rodydavis)
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=WSH3GVC49GNNJ)
-![github pages](https://github.com/fluttercommunity/app_review/workflows/github%20pages/badge.svg)
-[![GitHub stars](https://img.shields.io/github/stars/fluttercommunity/app_review?color=blue)](https://github.com/fluttercommunity/app_review)
-[![app_review](https://img.shields.io/pub/v/app_review.svg)](https://pub.dev/packages/app_review)
+A Flutter plugin for Requesting and Writing Reviews and Opening Store Listings for Android, iOS, and macOS.
 
-# app_review
+This plugin allows you to prompt users to rate your app without leaving the application (In-App Review) or to deep-link users directly to your store listing or review page.
 
-![alt text](https://github.com/fluttercommunity/app_review/blob/master/screenshots/IMG_0024.PNG)
+---
 
-Online Demo: https://fluttercommunity.github.io/app_review/
+## Operations
 
-## Description
-Flutter Plugin for Requesting and Writing Reviews in Google Play and the App Store. Apps have to be published for the app to be found correctly.
+| Feature | Android | iOS | macOS | Windows | Linux | Web | Description |
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :--- |
+| **Request Review** | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | Native In-App Review prompt. |
+| **Open Store Listing** | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | Opens the app's page on Play Store / App Store. |
+| **Open Write Review** | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | Directs user to the "Write a Review" section. |
+| **Lookup App ID** | ✅ | ✅ | ✅ | ❌ | ❌ | ❌ | Fetches App ID/Track ID from iTunes Lookup API. |
 
-## How To Use
-It's important to note that the App ID must match the App ID in Google Play and iTunes Connect. This can be changed in the Info.plist on iOS and app/build.gradle on Android. You will use this App ID for other services like Firebase, Admob and publishing the app. 
+---
 
-#### Android
-Opens In App Review but only if Play Services are installed on the device and the App is downloaded through the Play Store. Check out the [official documentation](https://developer.android.com/guide/playcore/in-app-review).
-
-#### iOS
-iOS manages the pop-up requesting review within an app. You can call the code through `AppReview.requestReview` and if the user has "rate in apps" turned on, iOS will send "the request for the review" pop up. This is the required way for requesting reviews after iOS 10.3.
-
-In debug mode it will always display. In apps through TestFlight, the `AppReview.requestReview` does nothing.
-
-``` dart
-import 'dart:io';
-import 'package:app_review/app_review.dart';
-import 'package:flutter/material.dart';
-
-  @override
-  void initState() {
-    super.initState();
-    if (Platform.isIOS) {
-      AppReview.requestReview.then((onValue) {
-        print(onValue);
-      });
-    }
-  }
-```
-
-## What is onValue value?
-
-Just a sanity check to make sure there were no errors.
+## Setup
 
 ### Android
 
-You could store a timestamp to know when to call again.
+1.  **Requirement**: Uses the [Google Play In-App Review API](https://developer.android.com/guide/playcore/in-app-review).
+2.  **Usage**: Ensure your app is published on the Play Store for the real review flow to work.
+    *   **Test Mode**: You can enable `testMode: true` when calling `requestReview()` to use the `FakeReviewManager`, which simulates the review flow without requiring a published app.
 
 ### iOS
 
-It doesn't really matter.
+1.  **Requirement**: Uses `SKStoreReviewController`.
+2.  **Usage**: 
+    *   Development/TestFlight: The prompt may not always appear or may do nothing.
+    *   Production: Apple limits the prompt to display only **3 times per year**.
+    *   iOS 16+ Support: Uses `SwiftUI` environment value for requesting reviews if running in a SwiftUI context, otherwise falls back to `SKStoreReviewController`.
+
+### macOS
+
+1.  **Requirement**: Uses `SKStoreReviewController` (macOS 10.14+) or `SwiftUI` requestReview (macOS 14+).
+2.  **Sandboxing**: Ensure `com.apple.security.network.client` entitlement is active for API lookups if needed.
+
+---
+
+## Usage
+
+### 1. Request In-App Review
+
+Prompts the user to rate the app.
+
+```dart
+import 'package:app_review/app_review.dart';
+
+// ...
+
+try {
+  // Pass testMode: true to simulate review on Android (uses FakeReviewManager)
+  await AppReview.requestReview(testMode: kDebugMode);
+} catch (e) {
+  print('Request review failed: $e');
+}
+```
+
+### 2. Open Store Listing
+
+Opens the App Store or Google Play Store page for the app.
+
+```dart
+// Open for current app
+await AppReview.openStoreListing();
+
+// OR open for a specific app ID/package name
+await AppReview.openStoreListing(storeId: "com.example.otherapp");
+```
+
+### 3. Open Write Review Page
+
+Attempts to open the store directly to the "Write a Review" screen.
+
+```dart
+// For current app
+await AppReview.openAppStoreReview(); // iOS/macOS only
+// Android typically handles this via openStoreListing but we provide a unified API
+```
+
+### 4. Lookup App ID (iOS/macOS)
+
+Useful if you need to find your Apple App ID (Track ID) dynamically using your Bundle ID.
+
+```dart
+String? appID = await AppReview.getIosAppId(
+  bundleId: "com.example.app", 
+  countryCode: "US" // optional
+);
+print("App ID: $appID");
+```
+
+---
+
+## Example
+
+Check out the `example` directory for a complete sample application.

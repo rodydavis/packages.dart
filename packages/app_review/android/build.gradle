@@ -22,10 +22,11 @@ rootProject.allprojects {
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+    namespace 'com.appleeducate.appreview'
+    compileSdkVersion 34
 
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 21
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     lintOptions {
@@ -35,5 +36,5 @@ android {
 
 dependencies {
     api 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'com.google.android.play:core:1.10.3'
+    implementation 'com.google.android.play:review:2.0.1'
 }
