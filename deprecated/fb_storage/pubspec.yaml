@@ -1,0 +1,27 @@
+name: fb_storage
+description: Firebase Storage on Web and Mobile
+version: 1.0.0
+authors:
+ - Rody Davis <rody.davis.jr@gmail.com>
+repository: https://github.com/rodydavis/fb_storage
+homepage: https://github.com/rodydavis/plugins
+maintainer: Rody Davis (@rodydavis)
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  firebase: ^5.0.4
+  firebase_storage: ^3.0.6
+  path_provider: ^1.3.0
+  file_picker: ^1.4.2
+  image_picker: ^0.6.1+4
+  universal_html: ^1.1.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:

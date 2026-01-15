@@ -1,0 +1,29 @@
+name: easy_web_view
+description: A super simple webview for Flutter Web, Mobile and Desktop
+version: 2.1.0
+homepage: https://github.com/rodydavis/easy_web_view
+repository: https://github.com/rodydavis/easy_web_view
+maintainer: Rody Davis (@rodydavis)
+environment:
+  sdk: ">=3.5.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_markdown: ^0.7.3+1
+  flutter_widget_from_html: ^0.15.1
+  html2md: ^1.2.5
+  http: ^1.2.2
+  markdown: ^7.2.2
+  permission_handler: ^11.3.1
+  url_launcher: ^6.0.12
+  webview_flutter: ^4.9.0
+  webview_windows: ^0.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+
+flutter:
+  uses-material-design: true

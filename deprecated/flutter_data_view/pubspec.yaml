@@ -1,0 +1,19 @@
+name: flutter_data_view
+description: A Flutter package to simplify creating data views with the same backing data source.
+version: 0.0.1
+homepage: https://github.com/rodydavis/flutter_data_view
+repository: https://github.com/rodydavis/flutter_data_view
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:

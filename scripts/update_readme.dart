@@ -3,8 +3,47 @@ import 'dart:io';
 void main() async {
   final rootDir = Directory.current;
   final packagesDir = Directory('${rootDir.path}/packages');
+  final experimentalDir = Directory('${rootDir.path}/experimental');
+  final deprecatedDir = Directory('${rootDir.path}/deprecated');
   final readmeFile = File('${rootDir.path}/README.md');
 
+  final submodules = await _loadSubmodules(rootDir);
+
+  final packages = await _scanDirectory(packagesDir, submodules, rootDir);
+  final experimental =
+      await _scanDirectory(experimentalDir, submodules, rootDir);
+  final deprecated = await _scanDirectory(deprecatedDir, submodules, rootDir);
+
+  final sb = StringBuffer();
+  sb.writeln('# packages.dart');
+  sb.writeln();
+  sb.writeln('A collection of Flutter packages maintained by @rodydavis.');
+  sb.writeln();
+
+  _writeSection(sb, 'Packages', packages);
+  _writeSection(sb, 'Experimental', experimental);
+  _writeSection(sb, 'Deprecated', deprecated);
+
+  await readmeFile.writeAsString(sb.toString());
+  print('README.md updated.');
+}
+
+void _writeSection(StringBuffer sb, String title, List<_Package> packages) {
+  if (packages.isEmpty) return;
+  sb.writeln('## $title');
+  sb.writeln();
+  sb.writeln('| Package | Description | Version |');
+  sb.writeln('| :--- | :--- | :--- |');
+  for (final pkg in packages) {
+    final badge = pkg.isPublished
+        ? '[![Pub](https://img.shields.io/pub/v/${pkg.name}.svg?style=popout)](https://pub.dartlang.org/packages/${pkg.name})'
+        : '![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive)';
+    sb.writeln('| [${pkg.name}](${pkg.path}) | ${pkg.description} | $badge |');
+  }
+  sb.writeln();
+}
+
+Future<Map<String, String>> _loadSubmodules(Directory rootDir) async {
   final gitmodulesFile = File('${rootDir.path}/.gitmodules');
   final submodules = <String, String>{};
 
@@ -27,15 +66,18 @@ void main() async {
       }
     }
   }
+  return submodules;
+}
 
-  if (!packagesDir.existsSync()) {
-    print('Error: packages directory not found at ${packagesDir.path}');
-    return;
+Future<List<_Package>> _scanDirectory(
+    Directory dir, Map<String, String> submodules, Directory rootDir) async {
+  if (!dir.existsSync()) {
+    return [];
   }
 
   final packages = <_Package>[];
 
-  await for (final entity in packagesDir.list(recursive: true)) {
+  await for (final entity in dir.list(recursive: true)) {
     if (entity is File && entity.path.endsWith('pubspec.yaml')) {
       // Skip if likely in a build or hidden folder (simple heuristic)
       if (entity.path.contains('/.') || entity.path.contains('/build/')) {
@@ -48,7 +90,7 @@ void main() async {
       final version = _getValue(pubspecContent, 'version');
       final publishTo = _getValue(pubspecContent, 'publish_to');
 
-      if (name != null && version != null && publishTo != 'none') {
+      if (name != null && version != null) {
         // Calculate relative path from root
         var relativePath = entity.parent.path.replaceFirst(rootDir.path, '.');
         if (relativePath.startsWith('./')) {
@@ -93,30 +135,14 @@ void main() async {
           name: name,
           description: description ?? '',
           path: linkPath,
+          isPublished: publishTo != 'none',
         ));
       }
     }
   }
 
   packages.sort((a, b) => a.name.compareTo(b.name));
-
-  final sb = StringBuffer();
-  sb.writeln('# packages.dart');
-  sb.writeln();
-  sb.writeln('A collection of Flutter packages maintained by @rodydavis.');
-  sb.writeln();
-  sb.writeln('## Packages');
-  sb.writeln();
-  sb.writeln('| Package | Description | Version |');
-  sb.writeln('| :--- | :--- | :--- |');
-
-  for (final pkg in packages) {
-    sb.writeln(
-        '| [${pkg.name}](${pkg.path}) | ${pkg.description} | [![Pub](https://img.shields.io/pub/v/${pkg.name}.svg?style=popout)](https://pub.dartlang.org/packages/${pkg.name}) |');
-  }
-
-  await readmeFile.writeAsString(sb.toString());
-  print('README.md updated with ${packages.length} packages.');
+  return packages;
 }
 
 String? _getValue(String content, String key) {
@@ -137,6 +163,12 @@ class _Package {
   final String name;
   final String description;
   final String path;
+  final bool isPublished;
 
-  _Package({required this.name, required this.description, required this.path});
+  _Package({
+    required this.name,
+    required this.description,
+    required this.path,
+    required this.isPublished,
+  });
 }

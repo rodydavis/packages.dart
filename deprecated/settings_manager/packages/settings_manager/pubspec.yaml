@@ -1,0 +1,17 @@
+name: settings_manager
+description: A settings manager built on top of SharedPreferences.
+version: 1.0.4
+homepage: https://github.com/rodydavis/settings_manager
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:

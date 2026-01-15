@@ -1,0 +1,20 @@
+name: golden_layout
+description: A internal window library for Flutter based on http://golden-layout.com/
+version: 0.0.2
+author: Rody Davis <rody.davis.jr@gmail.com>
+maintainer: Rody Davis (@rodydavis)
+homepage: https://github.com/rodydavis/golden_layout
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  pedantic: ^1.9.0
+
+flutter:

@@ -1,0 +1,20 @@
+name: flutter_multi_window
+description: A Flutter package to create new windows on supported platforms.
+version: 0.1.0+2
+maintainer: Rody Davis (@rodydavis)
+homepage: https://github.com/rodydavis/flutter_multi_window
+authors:
+  - Rody Davis Jr <rody.davis.jr@gmail.com>
+
+environment:
+  sdk: ">=2.1.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:

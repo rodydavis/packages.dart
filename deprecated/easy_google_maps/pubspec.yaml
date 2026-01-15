@@ -1,0 +1,22 @@
+name: easy_google_maps
+description: Easy google maps plugin
+version: 1.0.1-nullsafety
+author: Rody Davis <rody.davis.jr@gmail.com>
+repository: https://github.com/rodydavis/easy_google_maps
+homepage: https://github.com/rodydavis/plugins
+maintainer: Rody Davis (@rodydavis)
+environment:
+  sdk: ">=2.2.0 <3.0.0"
+
+dependencies:
+  easy_web_view: any
+  flutter:
+    sdk: flutter
+  geolocator: any
+  google_maps_flutter: ^2.0.10
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter: null

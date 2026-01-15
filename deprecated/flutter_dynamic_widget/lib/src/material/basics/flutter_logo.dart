@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_dynamic_widget/src/material/enums.dart';
+import 'package:widget_gen/widget_gen_annotations.dart';
+
+import '../../../flutter_dynamic_widget.dart';
+import '../library.dart';
+
+part 'flutter_logo.g.dart';
+
+@WidgetClass('FlutterLogo')
+class FlutterLogoBase extends _$FlutterLogoBase {
+  FlutterLogoBase(this.widgetData, this.widgetContext, this.widgetRender);
+
+  @enumFlutterLogoStyle
+  FlutterLogoStyle style = FlutterLogoStyle.markOnly;
+
+  // @EnumKey(
+  //   defaultValue: 'Curves.fastOutSlowIn',
+  //   values: [
+  //     'Curves.fastOutSlowIn',
+  //   ],
+  // )
+  // Curve curve = Curves.fastOutSlowIn;
+
+  MaterialColor colors;
+
+  // Duration duration = const Duration(milliseconds: 750);
+  Key key;
+
+  double size;
+
+  @override
+  final Map<String, dynamic> widgetData;
+
+  @override
+  final WidgetContext widgetContext;
+
+  @override
+  final GenerateWidget widgetRender;
+     
+
+  @override
+  get onAction => (context, val) => MaterialBase.onAction(context, val);
+
+  @ColorKey(defaultValue: 0xFF616161)
+  Color textColor;
+}
+

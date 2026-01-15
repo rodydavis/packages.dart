@@ -1,0 +1,19 @@
+name: navigation_rail
+description: A Navigation Rail for Flutter
+version: 1.6.0-dev.1
+author: Rody Davis <rody.davis.jr@gmail.com>
+maintainer: Rody Davis (@rodydavis)
+homepage: https://github.com/rodydavis/navigation_rail
+
+environment:
+  sdk: ">=2.2.2 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
