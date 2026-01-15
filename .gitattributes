@@ -11,3 +11,4 @@ packages/**/example/web/** linguist-vendored
 **/linux/** linguist-vendored
 **/windows/** linguist-vendored
 **/web/** linguist-vendored
+**/pb_migrations/** linguist-vendored
