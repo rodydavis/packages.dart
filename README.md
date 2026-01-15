@@ -6,7 +6,7 @@ A collection of Flutter packages maintained by @rodydavis.
 
 | Package | Description | Version |
 | :--- | :--- | :--- |
-| [app_review](./packages/app_review) | Request and Write Reviews and Open Store Listing for Android and iOS in Flutter. | [![Pub](https://img.shields.io/pub/v/app_review.svg?style=popout)](https://pub.dartlang.org/packages/app_review) |
+| [app_review](./packages/app_review) | Request and Write Reviews and Open Store Listing for Android and iOS/MacOS in Flutter. | [![Pub](https://img.shields.io/pub/v/app_review.svg?style=popout)](https://pub.dartlang.org/packages/app_review) |
 | [breakpoint](./packages/breakpoint) | A Flutter plugin to calculate the material design breakpoints. | [![Pub](https://img.shields.io/pub/v/breakpoint.svg?style=popout)](https://pub.dartlang.org/packages/breakpoint) |
 | [flutter_sms](./packages/flutter_sms) | A Flutter plugin to send SMS and MMS on iOS and Android. | [![Pub](https://img.shields.io/pub/v/flutter_sms.svg?style=popout)](https://pub.dartlang.org/packages/flutter_sms) |
 | [flutter_vibrate](./packages/flutter_vibrate) | A Haptic Feedback and Vibration plugin. | [![Pub](https://img.shields.io/pub/v/flutter_vibrate.svg?style=popout)](https://pub.dartlang.org/packages/flutter_vibrate) |
