@@ -12,10 +12,13 @@ Future<void> _processDirectory(Directory dir) async {
   if (!dir.existsSync()) return;
 
   await for (final entity in dir.list(recursive: true)) {
-    if (entity is Directory && entity.path.split(Platform.pathSeparator).last == 'example') {
-      final pubspecFile = File('${entity.path}/pubspec.yaml');
-      if (pubspecFile.existsSync()) {
-        await _enforcePublishToNone(pubspecFile);
+    if (entity is Directory) {
+      final segments = entity.path.split(Platform.pathSeparator);
+      if (segments.last == 'example' || segments.last == 'examples') {
+        final pubspecFile = File('${entity.path}/pubspec.yaml');
+        if (pubspecFile.existsSync()) {
+          await _enforcePublishToNone(pubspecFile);
+        }
       }
     }
   }

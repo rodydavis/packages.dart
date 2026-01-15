@@ -6,38 +6,19 @@ A collection of Flutter packages maintained by @rodydavis.
 
 | Package | Description | Version |
 | :--- | :--- | :--- |
-| [animations_example](https://github.com/rodydavis/signals.dart/tree/main/examples/animations_example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [app_review](./packages/app_review) | Request and Write Reviews and Open Store Listing for Android and iOS/MacOS in Flutter. | [![Pub](https://img.shields.io/pub/v/app_review.svg?style=popout)](https://pub.dartlang.org/packages/app_review) |
-| [auth_flow](https://github.com/rodydavis/signals.dart/tree/main/examples/auth_flow) | Example with a user signal and authenticated flow | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [breakpoint](./packages/breakpoint) | A Flutter plugin to calculate the material design breakpoints. | [![Pub](https://img.shields.io/pub/v/breakpoint.svg?style=popout)](https://pub.dartlang.org/packages/breakpoint) |
-| [clean_architecture](https://github.com/rodydavis/signals.dart/tree/main/examples/clean_architecture) | Todo example using domain driven architecture | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [crud_dio](https://github.com/rodydavis/signals.dart/tree/main/examples/crud_dio) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [dart_mappable_example](https://github.com/rodydavis/signals.dart/tree/main/examples/dart_mappable_example) | A new Flutter package project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [drift_example](https://github.com/rodydavis/signals.dart/tree/main/examples/drift_example) | SQLite via drift and signals | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [eval_calculator](https://github.com/rodydavis/signals.dart/tree/main/examples/eval_calculator) | Calculator that is driven by dynamic signals at runtime | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [flutter_async](https://github.com/rodydavis/signals.dart/tree/main/examples/flutter_async) | Examples that rely on Async/Future/Stream signals | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [flutter_colorband](https://github.com/rodydavis/signals.dart/tree/main/examples/flutter_colorband) | Generative color examples | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [flutter_sms](./packages/flutter_sms) | A Flutter plugin to send SMS and MMS on iOS and Android. | [![Pub](https://img.shields.io/pub/v/flutter_sms.svg?style=popout)](https://pub.dartlang.org/packages/flutter_sms) |
 | [flutter_vibrate](./packages/flutter_vibrate) | A Haptic Feedback and Vibration plugin. | [![Pub](https://img.shields.io/pub/v/flutter_vibrate.svg?style=popout)](https://pub.dartlang.org/packages/flutter_vibrate) |
 | [flutter_whatsnew](./packages/flutter_whatsnew) | A new Flutter package to show updates to users. | [![Pub](https://img.shields.io/pub/v/flutter_whatsnew.svg?style=popout)](https://pub.dartlang.org/packages/flutter_whatsnew) |
-| [get_it_signals_example](https://github.com/rodydavis/signals.dart/tree/main/examples/get_it_signals) | get_it + signals | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [html_canvas](https://github.com/rodydavis/signals.dart/tree/main/examples/html_canvas) | Signals and the canvas | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [html_todo_app](https://github.com/rodydavis/signals.dart/tree/main/examples/html_todo_app) | Todo HTML web app with signals | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [infinite_scroll](https://github.com/rodydavis/signals.dart/tree/main/examples/infinite_scroll) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [node_based_editor](https://github.com/rodydavis/signals.dart/tree/main/examples/node_based_editor) | Node based editor built with signals | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [open_xml](https://github.com/rodydavis/open_xml) | Open XML (OOXML) formatted documents. | [![Pub](https://img.shields.io/pub/v/open_xml.svg?style=popout)](https://pub.dartlang.org/packages/open_xml) |
-| [persist_shared_preferences](https://github.com/rodydavis/signals.dart/tree/main/examples/persist_shared_preferences) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [preact_signals](https://github.com/rodydavis/signals.dart/tree/main/packages/preact_signals) | Dart port of Preact.js Signals | [![Pub](https://img.shields.io/pub/v/preact_signals.svg?style=popout)](https://pub.dartlang.org/packages/preact_signals) |
-| [rxdart_example](https://github.com/rodydavis/signals.dart/tree/main/examples/rxdart) | RxDart + signals | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [shopping_cart](https://github.com/rodydavis/signals.dart/tree/main/examples/shopping_cart) | Shopping cart example | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [signals](https://github.com/rodydavis/signals.dart/tree/main/packages/signals) | Reactivity made simple. Do more by doing less. Supports Flutter and any Dart project including HTML/JS, CLI, Shelf Server, VM and more. | [![Pub](https://img.shields.io/pub/v/signals.svg?style=popout)](https://pub.dartlang.org/packages/signals) |
 | [signals_core](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_core) | The signals library exposes four core functions which are the building blocks to model any business logic you can think of. | [![Pub](https://img.shields.io/pub/v/signals_core.svg?style=popout)](https://pub.dartlang.org/packages/signals_core) |
-| [signals_dart_examples](https://github.com/rodydavis/signals.dart/tree/main/examples/dart_examples) | Pure dart examples using signals | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [signals_devtools_extension](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_devtools_extension) | Signals DevTools extension. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [signals_flutter](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_flutter) | The signals library exposes four core functions which are the building blocks to model any business logic you can think of. | [![Pub](https://img.shields.io/pub/v/signals_flutter.svg?style=popout)](https://pub.dartlang.org/packages/signals_flutter) |
 | [signals_hooks](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_hooks) | flutter_hooks bindings for signals | [![Pub](https://img.shields.io/pub/v/signals_hooks.svg?style=popout)](https://pub.dartlang.org/packages/signals_hooks) |
 | [signals_lint](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_lint) | linter and developer tool for signals | [![Pub](https://img.shields.io/pub/v/signals_lint.svg?style=popout)](https://pub.dartlang.org/packages/signals_lint) |
-| [signals_mvi_example](https://github.com/rodydavis/signals.dart/tree/main/examples/mvi_example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 
 ## Experimental
 
