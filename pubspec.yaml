@@ -10,3 +10,7 @@ workspace:
   - packages/flutter_whatsnew
   - packages/breakpoint
   - packages/app_review
+  - packages/pocketbase_auth
+  - packages/pocketbase_sync
+  - packages/web_file_system
+  - packages/diff_algorithims

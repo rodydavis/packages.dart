@@ -1,0 +1,13 @@
+packages/**/example/android/** linguist-vendored
+packages/**/example/ios/** linguist-vendored
+packages/**/example/macos/** linguist-vendored
+packages/**/example/linux/** linguist-vendored
+packages/**/example/windows/** linguist-vendored
+packages/**/example/web/** linguist-vendored
+
+**/android/** linguist-vendored
+**/ios/** linguist-vendored
+**/macos/** linguist-vendored
+**/linux/** linguist-vendored
+**/windows/** linguist-vendored
+**/web/** linguist-vendored
