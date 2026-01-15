@@ -84,6 +84,11 @@ Future<List<_Package>> _scanDirectory(
         continue;
       }
 
+      // Skip example directories
+      if (entity.parent.path.split(Platform.pathSeparator).contains('example')) {
+        continue;
+      }
+
       final pubspecContent = await entity.readAsString();
       final name = _getValue(pubspecContent, 'name');
       final description = _getValue(pubspecContent, 'description');

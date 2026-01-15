@@ -1,5 +1,6 @@
 name: get_version_example
 description: Demonstrates how to use the get_version plugin.
+publish_to: 'none'
 
 dependencies:
   flutter:

@@ -8,7 +8,6 @@ A collection of Flutter packages maintained by @rodydavis.
 | :--- | :--- | :--- |
 | [animations_example](https://github.com/rodydavis/signals.dart/tree/main/examples/animations_example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [app_review](./packages/app_review) | Request and Write Reviews and Open Store Listing for Android and iOS/MacOS in Flutter. | [![Pub](https://img.shields.io/pub/v/app_review.svg?style=popout)](https://pub.dartlang.org/packages/app_review) |
-| [app_review_example](./packages/app_review/example) | Demonstrates how to use the app_review plugin. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [auth_flow](https://github.com/rodydavis/signals.dart/tree/main/examples/auth_flow) | Example with a user signal and authenticated flow | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [breakpoint](./packages/breakpoint) | A Flutter plugin to calculate the material design breakpoints. | [![Pub](https://img.shields.io/pub/v/breakpoint.svg?style=popout)](https://pub.dartlang.org/packages/breakpoint) |
 | [clean_architecture](https://github.com/rodydavis/signals.dart/tree/main/examples/clean_architecture) | Todo example using domain driven architecture | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
@@ -16,11 +15,14 @@ A collection of Flutter packages maintained by @rodydavis.
 | [dart_mappable_example](https://github.com/rodydavis/signals.dart/tree/main/examples/dart_mappable_example) | A new Flutter package project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [drift_example](https://github.com/rodydavis/signals.dart/tree/main/examples/drift_example) | SQLite via drift and signals | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [eval_calculator](https://github.com/rodydavis/signals.dart/tree/main/examples/eval_calculator) | Calculator that is driven by dynamic signals at runtime | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
+<<<<<<< Updated upstream
 | [example](./packages/breakpoint/example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [example](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_lint/example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [example](https://github.com/rodydavis/signals.dart/tree/main/packages/signals/example) | Example signals project | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [example](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_hooks/example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [example](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_flutter/example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
+=======
+>>>>>>> Stashed changes
 | [flutter_async](https://github.com/rodydavis/signals.dart/tree/main/examples/flutter_async) | Examples that rely on Async/Future/Stream signals | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [flutter_colorband](https://github.com/rodydavis/signals.dart/tree/main/examples/flutter_colorband) | Generative color examples | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [flutter_sms](./packages/flutter_sms) | A Flutter plugin to send SMS and MMS on iOS and Android. | [![Pub](https://img.shields.io/pub/v/flutter_sms.svg?style=popout)](https://pub.dartlang.org/packages/flutter_sms) |
@@ -44,16 +46,18 @@ A collection of Flutter packages maintained by @rodydavis.
 | [signals_hooks](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_hooks) | flutter_hooks bindings for signals | [![Pub](https://img.shields.io/pub/v/signals_hooks.svg?style=popout)](https://pub.dartlang.org/packages/signals_hooks) |
 | [signals_lint](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_lint) | linter and developer tool for signals | [![Pub](https://img.shields.io/pub/v/signals_lint.svg?style=popout)](https://pub.dartlang.org/packages/signals_lint) |
 | [signals_mvi_example](https://github.com/rodydavis/signals.dart/tree/main/examples/mvi_example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [vibrate_example](./packages/flutter_vibrate/example) | Demonstrates how to use the vibrate plugin. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 
 ## Experimental
 
 | Package | Description | Version |
 | :--- | :--- | :--- |
 | [diff_algorithims](./experimental/diff_algorithims) | A set of diffing algorithims for Dart | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
+<<<<<<< Updated upstream
 | [example](./experimental/pocketbase_auth/example) | A new Flutter project. | [![Pub](https://img.shields.io/pub/v/example.svg?style=popout)](https://pub.dartlang.org/packages/example) |
 | [example](./experimental/pocketbase_sync/example) | A new Flutter project. | [![Pub](https://img.shields.io/pub/v/example.svg?style=popout)](https://pub.dartlang.org/packages/example) |
 | [example](./experimental/web_file_system/example) | Demo for web_file_system | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
+=======
+>>>>>>> Stashed changes
 | [pocketbase_auth](./experimental/pocketbase_auth) | Pocketbase auth client with built in UI screens and token refresh | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [pocketbase_sync](./experimental/pocketbase_sync) | A Flutter package for offline-first syncing with PocketBase. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [web_file_system](./experimental/web_file_system) | A high-performance, asynchronous file system for the web using IDB and OPFS. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
@@ -68,6 +72,7 @@ A collection of Flutter packages maintained by @rodydavis.
 | [dynamic_tabs](./deprecated/dynamic_tabs) | A Flutter plugin for letting the user edit the bottom tabs like the | [![Pub](https://img.shields.io/pub/v/dynamic_tabs.svg?style=popout)](https://pub.dartlang.org/packages/dynamic_tabs) |
 | [easy_google_maps](./deprecated/easy_google_maps) | Easy google maps plugin | [![Pub](https://img.shields.io/pub/v/easy_google_maps.svg?style=popout)](https://pub.dartlang.org/packages/easy_google_maps) |
 | [easy_web_view](./deprecated/easy_web_view) | A super simple webview for Flutter Web, Mobile and Desktop | [![Pub](https://img.shields.io/pub/v/easy_web_view.svg?style=popout)](https://pub.dartlang.org/packages/easy_web_view) |
+<<<<<<< Updated upstream
 | [example](./deprecated/flutter_wasm_interop/example) | A new Flutter project. | [![Pub](https://img.shields.io/pub/v/example.svg?style=popout)](https://pub.dartlang.org/packages/example) |
 | [example](./deprecated/dart_firebase/example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [example](./deprecated/features/example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
@@ -81,8 +86,9 @@ A collection of Flutter packages maintained by @rodydavis.
 | [example](./deprecated/settings_manager/example) | An example of using the Settings Manager | [![Pub](https://img.shields.io/pub/v/example.svg?style=popout)](https://pub.dartlang.org/packages/example) |
 | [example](./deprecated/native_color_picker/example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [example](./deprecated/easy_web_view/example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
+=======
+>>>>>>> Stashed changes
 | [fb_auth](./deprecated/fb_auth) | A Web, Mobile Firebase Auth Plugin | [![Pub](https://img.shields.io/pub/v/fb_auth.svg?style=popout)](https://pub.dartlang.org/packages/fb_auth) |
-| [fb_auth_example](./deprecated/fb_auth/example) | Demonstrates how to use the fb_auth plugin. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [fb_firestore](./deprecated/fb_firestore) | A Flutter project to use Firebase Cloud Firestore on Mobile and Web | [![Pub](https://img.shields.io/pub/v/fb_firestore.svg?style=popout)](https://pub.dartlang.org/packages/fb_firestore) |
 | [fb_storage](./deprecated/fb_storage) | Firebase Storage on Web and Mobile | [![Pub](https://img.shields.io/pub/v/fb_storage.svg?style=popout)](https://pub.dartlang.org/packages/fb_storage) |
 | [features](./deprecated/features) | A Flutter package to help manage features enabled/disabled for a user | [![Pub](https://img.shields.io/pub/v/features.svg?style=popout)](https://pub.dartlang.org/packages/features) |
@@ -106,12 +112,13 @@ A collection of Flutter packages maintained by @rodydavis.
 | [ngflutter](./deprecated/flutter_cli) | Scaffolding tool for Flutter | [![Pub](https://img.shields.io/pub/v/ngflutter.svg?style=popout)](https://pub.dartlang.org/packages/ngflutter) |
 | [responsive_scaffold](./deprecated/responsive_scaffold) | On mobile it shows a list and pushes to details and on tablet it shows the List and the selected item. | [![Pub](https://img.shields.io/pub/v/responsive_scaffold.svg?style=popout)](https://pub.dartlang.org/packages/responsive_scaffold) |
 | [scaffold_tab_bar](./deprecated/scaffold_tab_bar) | A package to make it really easy to have optional nested navigation per tab. | [![Pub](https://img.shields.io/pub/v/scaffold_tab_bar.svg?style=popout)](https://pub.dartlang.org/packages/scaffold_tab_bar) |
-| [scaffold_tab_bar_example](./deprecated/scaffold_tab_bar/example) | Demonstrates how to use the scaffold_tab_bar plugin. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [settings_gen](./deprecated/settings_manager/packages/settings_gen) | Code generator for MobX that adds support for annotating your code with @observable, @computed, @action and also creating SettingsStore classes. | [![Pub](https://img.shields.io/pub/v/settings_gen.svg?style=popout)](https://pub.dartlang.org/packages/settings_gen) |
 | [settings_manager](./deprecated/settings_manager/packages/settings_manager) | A settings manager built on top of SharedPreferences. | [![Pub](https://img.shields.io/pub/v/settings_manager.svg?style=popout)](https://pub.dartlang.org/packages/settings_manager) |
 | [sheet_music](./deprecated/sheet_music) | A Flutter Widget for Sheet Music (All Major Flat and Sharp Scales, Notes from 5 below and 5 above the bar, Treble and Bass Clef). | [![Pub](https://img.shields.io/pub/v/sheet_music.svg?style=popout)](https://pub.dartlang.org/packages/sheet_music) |
-| [storyboards](./deprecated/storyboard/example) | A new Flutter project. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [undo](./deprecated/undo) | A Undo/Redo Library for Flutter | [![Pub](https://img.shields.io/pub/v/undo.svg?style=popout)](https://pub.dartlang.org/packages/undo) |
+<<<<<<< Updated upstream
 | [undo_example](./deprecated/undo/example) | Demonstrates how to use the undo plugin. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
+=======
+>>>>>>> Stashed changes
 | [widget_gen](./deprecated/widget_gen) | A Flutter Code Gen Package Used to Generate Widgets for WidgetStudio | [![Pub](https://img.shields.io/pub/v/widget_gen.svg?style=popout)](https://pub.dartlang.org/packages/widget_gen) |
 
