@@ -1,7 +1,8 @@
 name: flutter_whatsnew
 description: A new Flutter package to show updates to users.
-version: 1.1.0
-homepage: https://github.com/fluttercommunity/flutter_whatsnew
+version: 1.1.0+1
+homepage: https://github.com/rodydavis/packages.dart
+repository: https://github.com/rodydavis/packages.dart
 maintainer: Rody Davis (@rodydavis)
 resolution: workspace
 

@@ -10,3 +10,4 @@ workspace:
   - packages/flutter_whatsnew
   - packages/breakpoint
   - packages/app_review
+  - packages/undo
