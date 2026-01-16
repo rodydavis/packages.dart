@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CardThemeBase extends BaseWidget {
-    CardThemeBase();
+  CardThemeBase();
 
-    factory CardThemeBase.fromJson(Map<String, dynamic> data) {
-        return CardThemeBase();
-    }
+  factory CardThemeBase.fromJson(Map<String, dynamic> data) {
+    return CardThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines default property values for descendant [Card] widgets.
 
 Descendant widgets obtain the current [CardTheme] object using
@@ -28,13 +28,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

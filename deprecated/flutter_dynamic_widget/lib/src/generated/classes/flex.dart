@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FlexBase extends BaseWidget {
-    FlexBase();
+  FlexBase();
 
-    factory FlexBase.fromJson(Map<String, dynamic> data) {
-        return FlexBase();
-    }
+  factory FlexBase.fromJson(Map<String, dynamic> data) {
+    return FlexBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that displays its children in a one-dimensional array.
 
 The [Flex] widget allows you to control the axis along which the children are
@@ -77,13 +77,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

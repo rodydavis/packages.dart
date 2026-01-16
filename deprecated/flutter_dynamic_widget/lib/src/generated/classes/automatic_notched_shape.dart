@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AutomaticNotchedShapeBase extends BaseWidget {
-    AutomaticNotchedShapeBase();
+  AutomaticNotchedShapeBase();
 
-    factory AutomaticNotchedShapeBase.fromJson(Map<String, dynamic> data) {
-        return AutomaticNotchedShapeBase();
-    }
+  factory AutomaticNotchedShapeBase.fromJson(Map<String, dynamic> data) {
+    return AutomaticNotchedShapeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [NotchedShape] created from [ShapeBorder]s.
 
 Two shapes can be provided. The [host] is the shape of the widget that
@@ -17,13 +17,13 @@ subtracted from the [host] to create the notch (typically to make room
 for a [FloatingActionButton]).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SwitchListTileBase extends BaseWidget {
-    SwitchListTileBase();
+  SwitchListTileBase();
 
-    factory SwitchListTileBase.fromJson(Map<String, dynamic> data) {
-        return SwitchListTileBase();
-    }
+  factory SwitchListTileBase.fromJson(Map<String, dynamic> data) {
+    return SwitchListTileBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [ListTile] with a [Switch]. In other words, a switch with a label.
 
 The entire list tile is interactive: tapping anywhere in the tile toggles
@@ -237,13 +237,13 @@ See also:
  * [ListTile] and [Switch], the widgets from which this widget is made.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

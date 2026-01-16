@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DefaultMaterialLocalizationsBase extends BaseWidget {
-    DefaultMaterialLocalizationsBase();
+  DefaultMaterialLocalizationsBase();
 
-    factory DefaultMaterialLocalizationsBase.fromJson(Map<String, dynamic> data) {
-        return DefaultMaterialLocalizationsBase();
-    }
+  factory DefaultMaterialLocalizationsBase.fromJson(Map<String, dynamic> data) {
+    return DefaultMaterialLocalizationsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 US English strings for the material widgets.
 
 See also:
@@ -19,13 +19,13 @@ See also:
    [DefaultMaterialLocalizations.delegate] by default.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

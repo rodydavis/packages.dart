@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextSpanBase extends BaseWidget {
-    TextSpanBase();
+  TextSpanBase();
 
-    factory TextSpanBase.fromJson(Map<String, dynamic> data) {
-        return TextSpanBase();
-    }
+  factory TextSpanBase.fromJson(Map<String, dynamic> data) {
+    return TextSpanBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An immutable span of text.
 
 A [TextSpan] object can be styled using its [style] property. The style will
@@ -57,13 +57,13 @@ See also:
  * [TextPainter], a class for painting [TextSpan] objects on a [Canvas].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

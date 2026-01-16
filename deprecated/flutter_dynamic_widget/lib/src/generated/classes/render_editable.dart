@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderEditableBase extends BaseWidget {
-    RenderEditableBase();
+  RenderEditableBase();
 
-    factory RenderEditableBase.fromJson(Map<String, dynamic> data) {
-        return RenderEditableBase();
-    }
+  factory RenderEditableBase.fromJson(Map<String, dynamic> data) {
+    return RenderEditableBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Displays some text in a scrollable container with a potentially blinking
 cursor and with gesture recognizers.
 
@@ -35,13 +35,13 @@ to actually blink the cursor, and other features not mentioned above are the
 responsibility of higher layers and not handled by this object.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ColorsBase extends BaseWidget {
-    ColorsBase();
+  ColorsBase();
 
-    factory ColorsBase.fromJson(Map<String, dynamic> data) {
-        return ColorsBase();
-    }
+  factory ColorsBase.fromJson(Map<String, dynamic> data) {
+    return ColorsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 [Color] and [ColorSwatch] constants which represent Material design's
 [color palette](https://material.io/design/color/).
 
@@ -118,13 +118,13 @@ See also:
  * Cookbook: [Use themes to share colors and font styles](https://flutter.dev/docs/cookbook/design/themes)
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

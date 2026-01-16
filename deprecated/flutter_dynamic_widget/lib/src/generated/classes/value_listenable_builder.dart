@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ValueListenableBuilderBase extends BaseWidget {
-    ValueListenableBuilderBase();
+  ValueListenableBuilderBase();
 
-    factory ValueListenableBuilderBase.fromJson(Map<String, dynamic> data) {
-        return ValueListenableBuilderBase();
-    }
+  factory ValueListenableBuilderBase.fromJson(Map<String, dynamic> data) {
+    return ValueListenableBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget whose content stays synced with a [ValueListenable].
 
 Given a [ValueListenable<T>] and a [builder] which builds widgets from
@@ -101,13 +101,13 @@ See also:
    a [ValueListenable] for more advanced use cases.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

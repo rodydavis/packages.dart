@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class UnicodeBase extends BaseWidget {
-    UnicodeBase();
+  UnicodeBase();
 
-    factory UnicodeBase.fromJson(Map<String, dynamic> data) {
-        return UnicodeBase();
-    }
+  factory UnicodeBase.fromJson(Map<String, dynamic> data) {
+    return UnicodeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Constants for useful Unicode characters.
 
 Currently, these characters are all related to bidirectional text.
@@ -19,13 +19,13 @@ See also:
    bidirectional text algorithm.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

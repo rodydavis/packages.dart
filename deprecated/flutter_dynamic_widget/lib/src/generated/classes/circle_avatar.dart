@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CircleAvatarBase extends BaseWidget {
-    CircleAvatarBase();
+  CircleAvatarBase();
 
-    factory CircleAvatarBase.fromJson(Map<String, dynamic> data) {
-        return CircleAvatarBase();
-    }
+  factory CircleAvatarBase.fromJson(Map<String, dynamic> data) {
+    return CircleAvatarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A circle that represents a user.
 
 Typically used with a user's profile image, or, in the absence of
@@ -53,13 +53,13 @@ See also:
  * <https://material.io/design/components/chips.html#input-chips>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

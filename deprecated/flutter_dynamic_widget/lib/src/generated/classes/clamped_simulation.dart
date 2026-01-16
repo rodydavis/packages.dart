@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ClampedSimulationBase extends BaseWidget {
-    ClampedSimulationBase();
+  ClampedSimulationBase();
 
-    factory ClampedSimulationBase.fromJson(Map<String, dynamic> data) {
-        return ClampedSimulationBase();
-    }
+  factory ClampedSimulationBase.fromJson(Map<String, dynamic> data) {
+    return ClampedSimulationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A simulation that applies limits to another simulation.
 
 The limits are only applied to the other simulation's outputs. For example,
@@ -22,13 +22,13 @@ the maximum value for the times that it would otherwise have been reported
 as higher.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

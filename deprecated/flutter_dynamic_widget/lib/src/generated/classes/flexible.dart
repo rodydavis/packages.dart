@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FlexibleBase extends BaseWidget {
-    FlexibleBase();
+  FlexibleBase();
 
-    factory FlexibleBase.fromJson(Map<String, dynamic> data) {
-        return FlexibleBase();
-    }
+  factory FlexibleBase.fromJson(Map<String, dynamic> data) {
+    return FlexibleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that controls how a child of a [Row], [Column], or [Flex] flexes.
 
 Using a [Flexible] widget gives a child of a [Row], [Column], or [Flex]
@@ -31,13 +31,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

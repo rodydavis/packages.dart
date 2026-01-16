@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InkResponseBase extends BaseWidget {
-    InkResponseBase();
+  InkResponseBase();
 
-    factory InkResponseBase.fromJson(Map<String, dynamic> data) {
-        return InkResponseBase();
-    }
+  factory InkResponseBase.fromJson(Map<String, dynamic> data) {
+    return InkResponseBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An area of a [Material] that responds to touch. Has a configurable shape and
 can be configured to clip splashes that extend outside its bounds or not.
 
@@ -92,13 +92,13 @@ See also:
  * [IconButton], which combines [InkResponse] with an [Icon].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

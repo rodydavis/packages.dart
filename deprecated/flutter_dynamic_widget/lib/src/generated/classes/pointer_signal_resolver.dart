@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PointerSignalResolverBase extends BaseWidget {
-    PointerSignalResolverBase();
+  PointerSignalResolverBase();
 
-    factory PointerSignalResolverBase.fromJson(Map<String, dynamic> data) {
-        return PointerSignalResolverBase();
-    }
+  factory PointerSignalResolverBase.fromJson(Map<String, dynamic> data) {
+    return PointerSignalResolverBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An resolver for pointer signal events.
 
 Objects interested in a [PointerSignalEvent] should register a callback to
@@ -21,13 +21,13 @@ at the end of event dispatch. The first callback registered will be the one
 that is called.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

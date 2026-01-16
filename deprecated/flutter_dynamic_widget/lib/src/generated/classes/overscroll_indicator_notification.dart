@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class OverscrollIndicatorNotificationBase extends BaseWidget {
-    OverscrollIndicatorNotificationBase();
+  OverscrollIndicatorNotificationBase();
 
-    factory OverscrollIndicatorNotificationBase.fromJson(Map<String, dynamic> data) {
-        return OverscrollIndicatorNotificationBase();
-    }
+  factory OverscrollIndicatorNotificationBase.fromJson(
+      Map<String, dynamic> data) {
+    return OverscrollIndicatorNotificationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A notification that an [GlowingOverscrollIndicator] will start showing an
 overscroll indication.
 
@@ -20,13 +21,13 @@ See also:
  * [GlowingOverscrollIndicator], which generates this type of notification.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

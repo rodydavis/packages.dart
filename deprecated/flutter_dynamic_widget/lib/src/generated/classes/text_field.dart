@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextFieldBase extends BaseWidget {
-    TextFieldBase();
+  TextFieldBase();
 
-    factory TextFieldBase.fromJson(Map<String, dynamic> data) {
-        return TextFieldBase();
-    }
+  factory TextFieldBase.fromJson(Map<String, dynamic> data) {
+    return TextFieldBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design text field.
 
 A text field lets the user enter text, either with hardware keyboard or with
@@ -140,13 +140,13 @@ See also:
  * Cookbook: [Focus and text fields](https://flutter.dev/docs/cookbook/forms/focus)
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

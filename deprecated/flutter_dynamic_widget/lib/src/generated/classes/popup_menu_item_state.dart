@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PopupMenuItemStateBase extends BaseWidget {
-    PopupMenuItemStateBase();
+  PopupMenuItemStateBase();
 
-    factory PopupMenuItemStateBase.fromJson(Map<String, dynamic> data) {
-        return PopupMenuItemStateBase();
-    }
+  factory PopupMenuItemStateBase.fromJson(Map<String, dynamic> data) {
+    return PopupMenuItemStateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The [State] for [PopupMenuItem] subclasses.
 
 By default this implements the basic styling and layout of Material Design
@@ -27,13 +27,13 @@ the [Widget] that is using this [State]. It must be a subclass of
 class, and is the type of values returned from this menu.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MergeableMaterialBase extends BaseWidget {
-    MergeableMaterialBase();
+  MergeableMaterialBase();
 
-    factory MergeableMaterialBase.fromJson(Map<String, dynamic> data) {
-        return MergeableMaterialBase();
-    }
+  factory MergeableMaterialBase.fromJson(Map<String, dynamic> data) {
+    return MergeableMaterialBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Displays a list of [MergeableMaterialItem] children. The list contains
 [MaterialSlice] items whose boundaries are either "merged" with adjacent
 items or separated by a [MaterialGap]. The [children] are distributed along
@@ -32,13 +32,13 @@ See also:
    but otherwise looks the same.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

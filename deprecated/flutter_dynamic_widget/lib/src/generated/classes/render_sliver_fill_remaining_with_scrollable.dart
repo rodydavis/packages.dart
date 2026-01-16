@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class RenderSliverFillRemainingWithScrollableBase extends BaseWidget {
-    RenderSliverFillRemainingWithScrollableBase();
+  RenderSliverFillRemainingWithScrollableBase();
 
-    factory RenderSliverFillRemainingWithScrollableBase.fromJson(Map<String, dynamic> data) {
-        return RenderSliverFillRemainingWithScrollableBase();
-    }
+  factory RenderSliverFillRemainingWithScrollableBase.fromJson(
+      Map<String, dynamic> data) {
+    return RenderSliverFillRemainingWithScrollableBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver that contains a single box child that contains a scrollable and
 fills the viewport.
 
@@ -32,13 +33,13 @@ See also:
    viewport.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

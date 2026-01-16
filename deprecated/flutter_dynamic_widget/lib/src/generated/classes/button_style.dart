@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ButtonStyleBase extends BaseWidget {
-    ButtonStyleBase();
+  ButtonStyleBase();
 
-    factory ButtonStyleBase.fromJson(Map<String, dynamic> data) {
-        return ButtonStyleBase();
-    }
+  factory ButtonStyleBase.fromJson(Map<String, dynamic> data) {
+    return ButtonStyleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The visual properties that most buttons have in common.
 
 Buttons and their themes have a ButtonStyle property which defines the visual
@@ -95,13 +95,13 @@ See also:
  * [OutlinedButtonTheme], the theme for [OutlinedButton]s.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

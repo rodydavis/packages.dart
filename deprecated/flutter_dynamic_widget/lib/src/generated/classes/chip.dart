@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ChipBase extends BaseWidget {
-    ChipBase();
+  ChipBase();
 
-    factory ChipBase.fromJson(Map<String, dynamic> data) {
-        return ChipBase();
-    }
+  factory ChipBase.fromJson(Map<String, dynamic> data) {
+    return ChipBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design chip.
 
 Chips are compact elements that represent an attribute, text, entity, or
@@ -50,13 +50,13 @@ See also:
  * <https://material.io/design/components/chips.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

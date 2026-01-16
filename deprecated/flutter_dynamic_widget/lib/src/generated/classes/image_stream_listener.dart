@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ImageStreamListenerBase extends BaseWidget {
-    ImageStreamListenerBase();
+  ImageStreamListenerBase();
 
-    factory ImageStreamListenerBase.fromJson(Map<String, dynamic> data) {
-        return ImageStreamListenerBase();
-    }
+  factory ImageStreamListenerBase.fromJson(Map<String, dynamic> data) {
+    return ImageStreamListenerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Interface for receiving notifications about the loading of an image.
 
 This class overrides [operator ==] and [hashCode] to compare the individual
@@ -21,13 +21,13 @@ equal.
 Used by [ImageStream] and [ImageStreamCompleter].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

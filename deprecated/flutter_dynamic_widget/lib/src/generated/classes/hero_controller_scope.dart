@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class HeroControllerScopeBase extends BaseWidget {
-    HeroControllerScopeBase();
+  HeroControllerScopeBase();
 
-    factory HeroControllerScopeBase.fromJson(Map<String, dynamic> data) {
-        return HeroControllerScopeBase();
-    }
+  factory HeroControllerScopeBase.fromJson(Map<String, dynamic> data) {
+    return HeroControllerScopeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An inherited widget to host a hero controller.
 
 The hosted hero controller will be picked up by the navigator in the
@@ -21,13 +21,13 @@ subscribes to more than one navigators. This can happen when there are
 multiple navigators under the same [HeroControllerScope] in parallel.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

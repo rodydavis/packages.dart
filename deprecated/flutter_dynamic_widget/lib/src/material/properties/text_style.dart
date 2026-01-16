@@ -43,7 +43,6 @@ class TextStyleBase extends _$TextStyleBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

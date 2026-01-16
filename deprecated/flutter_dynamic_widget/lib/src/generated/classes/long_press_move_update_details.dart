@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LongPressMoveUpdateDetailsBase extends BaseWidget {
-    LongPressMoveUpdateDetailsBase();
+  LongPressMoveUpdateDetailsBase();
 
-    factory LongPressMoveUpdateDetailsBase.fromJson(Map<String, dynamic> data) {
-        return LongPressMoveUpdateDetailsBase();
-    }
+  factory LongPressMoveUpdateDetailsBase.fromJson(Map<String, dynamic> data) {
+    return LongPressMoveUpdateDetailsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Details for callbacks that use [GestureLongPressMoveUpdateCallback].
 
 See also:
@@ -18,13 +18,13 @@ See also:
  * [LongPressStartDetails], the details for [GestureLongPressStartCallback].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

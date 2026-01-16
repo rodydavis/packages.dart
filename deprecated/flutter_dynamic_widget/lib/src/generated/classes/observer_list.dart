@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ObserverListBase extends BaseWidget {
-    ObserverListBase();
+  ObserverListBase();
 
-    factory ObserverListBase.fromJson(Map<String, dynamic> data) {
-        return ObserverListBase();
-    }
+  factory ObserverListBase.fromJson(Map<String, dynamic> data) {
+    return ObserverListBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A list optimized for the observer pattern when there are small numbers of
 observers.
 
@@ -29,13 +29,13 @@ See also:
    observers.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

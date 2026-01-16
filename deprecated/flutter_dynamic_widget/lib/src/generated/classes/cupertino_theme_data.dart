@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoThemeDataBase extends BaseWidget {
-    CupertinoThemeDataBase();
+  CupertinoThemeDataBase();
 
-    factory CupertinoThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoThemeDataBase();
-    }
+  factory CupertinoThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Styling specifications for a [CupertinoTheme].
 
 All constructor parameters can be null, in which case a
@@ -27,13 +27,13 @@ See also:
    styling via a [CupertinoThemeData] subclass [MaterialBasedCupertinoThemeData].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class GlobalObjectKeyBase extends BaseWidget {
-    GlobalObjectKeyBase();
+  GlobalObjectKeyBase();
 
-    factory GlobalObjectKeyBase.fromJson(Map<String, dynamic> data) {
-        return GlobalObjectKeyBase();
-    }
+  factory GlobalObjectKeyBase.fromJson(Map<String, dynamic> data) {
+    return GlobalObjectKeyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A global key that takes its identity from the object used as its value.
 
 Used to tie the identity of a widget to the identity of an object used to
@@ -33,13 +33,13 @@ value.
 Any [GlobalObjectKey] created for the same value will match.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

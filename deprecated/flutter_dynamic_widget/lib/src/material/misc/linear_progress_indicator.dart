@@ -9,7 +9,8 @@ part 'linear_progress_indicator.g.dart';
 
 @WidgetClass('LinearProgressIndicator')
 class LinearProgressIndicatorBase extends _$LinearProgressIndicatorBase {
-  LinearProgressIndicatorBase(this.widgetData, this.widgetContext, this.widgetRender);
+  LinearProgressIndicatorBase(
+      this.widgetData, this.widgetContext, this.widgetRender);
 
   Key key;
   double value;
@@ -27,7 +28,6 @@ class LinearProgressIndicatorBase extends _$LinearProgressIndicatorBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

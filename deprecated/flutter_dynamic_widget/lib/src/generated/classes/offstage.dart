@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OffstageBase extends BaseWidget {
-    OffstageBase();
+  OffstageBase();
 
-    factory OffstageBase.fromJson(Map<String, dynamic> data) {
-        return OffstageBase();
-    }
+  factory OffstageBase.fromJson(Map<String, dynamic> data) {
+    return OffstageBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that lays the child out as if it was in the tree, but without
 painting anything, without making the child available for hit testing, and
 without taking any room in the parent.
@@ -32,13 +32,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

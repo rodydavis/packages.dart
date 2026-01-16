@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LayoutIdBase extends BaseWidget {
-    LayoutIdBase();
+  LayoutIdBase();
 
-    factory LayoutIdBase.fromJson(Map<String, dynamic> data) {
-        return LayoutIdBase();
-    }
+  factory LayoutIdBase.fromJson(Map<String, dynamic> data) {
+    return LayoutIdBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Metadata for identifying children in a [CustomMultiChildLayout].
 
 The [MultiChildLayoutDelegate.hasChild],
@@ -16,13 +16,13 @@ The [MultiChildLayoutDelegate.hasChild],
 [MultiChildLayoutDelegate.positionChild] methods use these identifiers.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ChipThemeDataBase extends BaseWidget {
-    ChipThemeDataBase();
+  ChipThemeDataBase();
 
-    factory ChipThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return ChipThemeDataBase();
-    }
+  factory ChipThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return ChipThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Holds the color, shape, and text styles for a material design chip theme.
 
 Use this class to configure a [ChipTheme] widget, or to set the
@@ -80,13 +80,13 @@ See also:
  * [ThemeData], which has a default [ChipThemeData].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ElevatedButtonThemeDataBase extends BaseWidget {
-    ElevatedButtonThemeDataBase();
+  ElevatedButtonThemeDataBase();
 
-    factory ElevatedButtonThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return ElevatedButtonThemeDataBase();
-    }
+  factory ElevatedButtonThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return ElevatedButtonThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [ButtonStyle] that overrides the default appearance of
 [ElevatedButton]s when it's used with [ElevatedButtonTheme] or with the
 overall [Theme]'s [ThemeData.elevatedButtonTheme].
@@ -31,13 +31,13 @@ See also:
    [ButtonStyle] for [ElevatedButton]s below the overall [Theme].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

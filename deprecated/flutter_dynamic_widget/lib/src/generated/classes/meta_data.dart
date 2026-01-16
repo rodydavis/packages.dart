@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MetaDataBase extends BaseWidget {
-    MetaDataBase();
+  MetaDataBase();
 
-    factory MetaDataBase.fromJson(Map<String, dynamic> data) {
-        return MetaDataBase();
-    }
+  factory MetaDataBase.fromJson(Map<String, dynamic> data) {
+    return MetaDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Holds opaque meta data in the render tree.
 
 Useful for decorating the render tree with information that will be consumed
@@ -17,13 +17,13 @@ be used when the user interacts with the render tree but has no visual
 impact prior to the interaction.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

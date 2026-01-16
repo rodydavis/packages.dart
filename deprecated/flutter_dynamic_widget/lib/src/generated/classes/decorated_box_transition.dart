@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DecoratedBoxTransitionBase extends BaseWidget {
-    DecoratedBoxTransitionBase();
+  DecoratedBoxTransitionBase();
 
-    factory DecoratedBoxTransitionBase.fromJson(Map<String, dynamic> data) {
-        return DecoratedBoxTransitionBase();
-    }
+  factory DecoratedBoxTransitionBase.fromJson(Map<String, dynamic> data) {
+    return DecoratedBoxTransitionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of a [DecoratedBox] that animates the different properties
 of its [Decoration].
 
@@ -91,13 +91,13 @@ See also:
    decoration using an internal animation.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BackButtonBase extends BaseWidget {
-    BackButtonBase();
+  BackButtonBase();
 
-    factory BackButtonBase.fromJson(Map<String, dynamic> data) {
-        return BackButtonBase();
-    }
+  factory BackButtonBase.fromJson(Map<String, dynamic> data) {
+    return BackButtonBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design back button.
 
 A [BackButton] is an [IconButton] with a "back" icon appropriate for the
@@ -37,13 +37,13 @@ See also:
    node pages in the navigation tree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

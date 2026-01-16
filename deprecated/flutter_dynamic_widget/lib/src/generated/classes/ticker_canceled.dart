@@ -1,25 +1,25 @@
 import '../base.dart';
 
 class TickerCanceledBase extends BaseWidget {
-    TickerCanceledBase();
+  TickerCanceledBase();
 
-    factory TickerCanceledBase.fromJson(Map<String, dynamic> data) {
-        return TickerCanceledBase();
-    }
+  factory TickerCanceledBase.fromJson(Map<String, dynamic> data) {
+    return TickerCanceledBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Exception thrown by [Ticker] objects on the [TickerFuture.orCancel] future
 when the ticker is canceled.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

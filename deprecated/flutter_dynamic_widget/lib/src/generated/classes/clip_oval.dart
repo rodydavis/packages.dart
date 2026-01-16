@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ClipOvalBase extends BaseWidget {
-    ClipOvalBase();
+  ClipOvalBase();
 
-    factory ClipOvalBase.fromJson(Map<String, dynamic> data) {
-        return ClipOvalBase();
-    }
+  factory ClipOvalBase.fromJson(Map<String, dynamic> data) {
+    return ClipOvalBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that clips its child using an oval.
 
 {@youtube 560 315 https://www.youtube.com/watch?v=vzWWDO6whIM}
@@ -25,13 +25,13 @@ See also:
  * [ClipPath], for an arbitrarily shaped clip.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

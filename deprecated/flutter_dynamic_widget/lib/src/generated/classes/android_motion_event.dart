@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class AndroidMotionEventBase extends BaseWidget {
-    AndroidMotionEventBase();
+  AndroidMotionEventBase();
 
-    factory AndroidMotionEventBase.fromJson(Map<String, dynamic> data) {
-        return AndroidMotionEventBase();
-    }
+  factory AndroidMotionEventBase.fromJson(Map<String, dynamic> data) {
+    return AndroidMotionEventBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A Dart version of Android's [MotionEvent](https://developer.android.com/reference/android/view/MotionEvent).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

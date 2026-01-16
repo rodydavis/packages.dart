@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ThemeDataBase extends BaseWidget {
-    ThemeDataBase();
+  ThemeDataBase();
 
-    factory ThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return ThemeDataBase();
-    }
+  factory ThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return ThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the configuration of the overall visual [Theme] for a [MaterialApp]
 or a widget subtree within the app.
 
@@ -94,13 +94,13 @@ See <https://material.io/design/color/> for
 more discussion on how to pick the right colors.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

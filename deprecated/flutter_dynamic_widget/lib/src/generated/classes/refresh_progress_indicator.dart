@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RefreshProgressIndicatorBase extends BaseWidget {
-    RefreshProgressIndicatorBase();
+  RefreshProgressIndicatorBase();
 
-    factory RefreshProgressIndicatorBase.fromJson(Map<String, dynamic> data) {
-        return RefreshProgressIndicatorBase();
-    }
+  factory RefreshProgressIndicatorBase.fromJson(Map<String, dynamic> data) {
+    return RefreshProgressIndicatorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An indicator for the progress of refreshing the contents of a widget.
 
 Typically used for swipe-to-refresh interactions. See [RefreshIndicator] for
@@ -24,13 +24,13 @@ See also:
    when the underlying vertical scrollable is overscrolled.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

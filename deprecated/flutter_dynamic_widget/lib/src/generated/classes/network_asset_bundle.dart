@@ -1,27 +1,27 @@
 import '../base.dart';
 
 class NetworkAssetBundleBase extends BaseWidget {
-    NetworkAssetBundleBase();
+  NetworkAssetBundleBase();
 
-    factory NetworkAssetBundleBase.fromJson(Map<String, dynamic> data) {
-        return NetworkAssetBundleBase();
-    }
+  factory NetworkAssetBundleBase.fromJson(Map<String, dynamic> data) {
+    return NetworkAssetBundleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [AssetBundle] that loads resources over the network.
 
 This asset bundle does not cache any resources, though the underlying
 network stack may implement some level of caching itself.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

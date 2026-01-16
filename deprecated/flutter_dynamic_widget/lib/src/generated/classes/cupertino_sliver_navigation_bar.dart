@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoSliverNavigationBarBase extends BaseWidget {
-    CupertinoSliverNavigationBarBase();
+  CupertinoSliverNavigationBarBase();
 
-    factory CupertinoSliverNavigationBarBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoSliverNavigationBarBase();
-    }
+  factory CupertinoSliverNavigationBarBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoSliverNavigationBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS-styled navigation bar with iOS-11-style large titles using slivers.
 
 The [CupertinoSliverNavigationBar] must be placed in a sliver group such
@@ -65,13 +65,13 @@ See also:
    pages.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

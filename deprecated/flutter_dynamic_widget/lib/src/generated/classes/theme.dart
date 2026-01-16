@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ThemeBase extends BaseWidget {
-    ThemeBase();
+  ThemeBase();
 
-    factory ThemeBase.fromJson(Map<String, dynamic> data) {
-        return ThemeBase();
-    }
+  factory ThemeBase.fromJson(Map<String, dynamic> data) {
+    return ThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Applies a theme to descendant widgets.
 
 A theme describes the colors and typographic choices of an application.
@@ -29,13 +29,13 @@ See also:
    the [MaterialApp.theme] argument.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

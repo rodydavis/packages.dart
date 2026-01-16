@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CachingIterableBase extends BaseWidget {
-    CachingIterableBase();
+  CachingIterableBase();
 
-    factory CachingIterableBase.fromJson(Map<String, dynamic> data) {
-        return CachingIterableBase();
-    }
+  factory CachingIterableBase.fromJson(Map<String, dynamic> data) {
+    return CachingIterableBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A lazy caching version of [Iterable].
 
 This iterable is efficient in the following ways:
@@ -45,13 +45,13 @@ also applies to any iterables derived from this one, e.g. as
 returned by `where`.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

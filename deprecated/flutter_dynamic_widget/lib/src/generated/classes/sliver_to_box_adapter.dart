@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverToBoxAdapterBase extends BaseWidget {
-    SliverToBoxAdapterBase();
+  SliverToBoxAdapterBase();
 
-    factory SliverToBoxAdapterBase.fromJson(Map<String, dynamic> data) {
-        return SliverToBoxAdapterBase();
-    }
+  factory SliverToBoxAdapterBase.fromJson(Map<String, dynamic> data) {
+    return SliverToBoxAdapterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver that contains a single box widget.
 
 Slivers are special-purpose widgets that can be combined using a
@@ -33,13 +33,13 @@ See also:
  * [SliverGrid], which displays multiple box widgets in arbitrary positions.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

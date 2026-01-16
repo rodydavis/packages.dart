@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LexicalFocusOrderBase extends BaseWidget {
-    LexicalFocusOrderBase();
+  LexicalFocusOrderBase();
 
-    factory LexicalFocusOrderBase.fromJson(Map<String, dynamic> data) {
-        return LexicalFocusOrderBase();
-    }
+  factory LexicalFocusOrderBase.fromJson(Map<String, dynamic> data) {
+    return LexicalFocusOrderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Can be given to a [FocusTraversalOrder] widget to use a String to assign a
 lexical order to a widget subtree that is using a
 [OrderedTraversalPolicy] to define the order in which widgets should be
@@ -25,13 +25,13 @@ See also:
    for the [OrderedTraversalPolicy] to use.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

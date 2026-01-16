@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PerformanceOverlayBase extends BaseWidget {
-    PerformanceOverlayBase();
+  PerformanceOverlayBase();
 
-    factory PerformanceOverlayBase.fromJson(Map<String, dynamic> data) {
-        return PerformanceOverlayBase();
-    }
+  factory PerformanceOverlayBase.fromJson(Map<String, dynamic> data) {
+    return PerformanceOverlayBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Displays performance statistics.
 
 The overlay shows two time series. The first shows how much time was
@@ -26,13 +26,13 @@ The simplest way to show the performance overlay is to set
 to true.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

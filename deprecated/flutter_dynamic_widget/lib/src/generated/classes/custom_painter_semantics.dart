@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CustomPainterSemanticsBase extends BaseWidget {
-    CustomPainterSemanticsBase();
+  CustomPainterSemanticsBase();
 
-    factory CustomPainterSemanticsBase.fromJson(Map<String, dynamic> data) {
-        return CustomPainterSemanticsBase();
-    }
+  factory CustomPainterSemanticsBase.fromJson(Map<String, dynamic> data) {
+    return CustomPainterSemanticsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Contains properties describing information drawn in a rectangle contained by
 the [Canvas] used by a [CustomPaint].
 
@@ -25,13 +25,13 @@ See also:
  * [CustomPainter], which creates instances of this class.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

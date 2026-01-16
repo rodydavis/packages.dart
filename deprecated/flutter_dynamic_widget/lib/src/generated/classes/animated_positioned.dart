@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedPositionedBase extends BaseWidget {
-    AnimatedPositionedBase();
+  AnimatedPositionedBase();
 
-    factory AnimatedPositionedBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedPositionedBase();
-    }
+  factory AnimatedPositionedBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedPositionedBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of [Positioned] which automatically transitions the child's
 position over a given duration whenever the given position changes.
 
@@ -42,13 +42,13 @@ See also:
    [PositionedDirectional]).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

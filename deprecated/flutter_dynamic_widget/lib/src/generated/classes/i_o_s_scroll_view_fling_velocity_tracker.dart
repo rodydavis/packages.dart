@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class IOSScrollViewFlingVelocityTrackerBase extends BaseWidget {
-    IOSScrollViewFlingVelocityTrackerBase();
+  IOSScrollViewFlingVelocityTrackerBase();
 
-    factory IOSScrollViewFlingVelocityTrackerBase.fromJson(Map<String, dynamic> data) {
-        return IOSScrollViewFlingVelocityTrackerBase();
-    }
+  factory IOSScrollViewFlingVelocityTrackerBase.fromJson(
+      Map<String, dynamic> data) {
+    return IOSScrollViewFlingVelocityTrackerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [VelocityTracker] subclass that provides a close approximation of iOS
 scroll view's velocity estimation strategy.
 
@@ -32,13 +33,13 @@ See also:
   the iOS method that reports the fling velocity when the touch is released.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

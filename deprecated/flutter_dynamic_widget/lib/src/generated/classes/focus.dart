@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FocusBase extends BaseWidget {
-    FocusBase();
+  FocusBase();
 
-    factory FocusBase.fromJson(Map<String, dynamic> data) {
-        return FocusBase();
-    }
+  factory FocusBase.fromJson(Map<String, dynamic> data) {
+    return FocusBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that manages a [FocusNode] to allow keyboard focus to be given
 to this widget and its descendants.
 
@@ -267,13 +267,13 @@ See also:
    traversal policy on the [Focus] nodes below it in the widget hierarchy.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

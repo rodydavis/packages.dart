@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class WidgetSpanBase extends BaseWidget {
-    WidgetSpanBase();
+  WidgetSpanBase();
 
-    factory WidgetSpanBase.fromJson(Map<String, dynamic> data) {
-        return WidgetSpanBase();
-    }
+  factory WidgetSpanBase.fromJson(Map<String, dynamic> data) {
+    return WidgetSpanBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An immutable widget that is embedded inline within text.
 
 The [child] property is the widget that will be embedded. Children are
@@ -61,13 +61,13 @@ See also:
  * [TextPainter], a class for painting [InlineSpan] objects on a [Canvas].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

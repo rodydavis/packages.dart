@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TrainHoppingAnimationBase extends BaseWidget {
-    TrainHoppingAnimationBase();
+  TrainHoppingAnimationBase();
 
-    factory TrainHoppingAnimationBase.fromJson(Map<String, dynamic> data) {
-        return TrainHoppingAnimationBase();
-    }
+  factory TrainHoppingAnimationBase.fromJson(Map<String, dynamic> data) {
+    return TrainHoppingAnimationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 This animation starts by proxying one animation, but when the value of that
 animation crosses the value of the second (either because the second is
 going in the opposite direction, or because the one overtakes the other),
@@ -29,13 +29,13 @@ removed, it exposes a [dispose()] method. Call this method to shut this
 object down.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

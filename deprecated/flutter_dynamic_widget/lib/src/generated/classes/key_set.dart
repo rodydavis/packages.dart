@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class KeySetBase extends BaseWidget {
-    KeySetBase();
+  KeySetBase();
 
-    factory KeySetBase.fromJson(Map<String, dynamic> data) {
-        return KeySetBase();
-    }
+  factory KeySetBase.fromJson(Map<String, dynamic> data) {
+    return KeySetBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A set of [KeyboardKey]s that can be used as the keys in a [Map].
 
 A key set contains the keys that are down simultaneously to represent a
@@ -24,13 +24,13 @@ See also:
    define its key map.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderErrorBoxBase extends BaseWidget {
-    RenderErrorBoxBase();
+  RenderErrorBoxBase();
 
-    factory RenderErrorBoxBase.fromJson(Map<String, dynamic> data) {
-        return RenderErrorBoxBase();
-    }
+  factory RenderErrorBoxBase.fromJson(Map<String, dynamic> data) {
+    return RenderErrorBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A render object used as a placeholder when an error occurs.
 
 The box will be painted in the color given by the
@@ -26,13 +26,13 @@ unbounded, this box tries to be 100000.0 pixels wide and high, to
 approximate being infinitely high but without using infinities.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

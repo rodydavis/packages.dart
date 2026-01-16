@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class ListWheelChildBuilderDelegateBase extends BaseWidget {
-    ListWheelChildBuilderDelegateBase();
+  ListWheelChildBuilderDelegateBase();
 
-    factory ListWheelChildBuilderDelegateBase.fromJson(Map<String, dynamic> data) {
-        return ListWheelChildBuilderDelegateBase();
-    }
+  factory ListWheelChildBuilderDelegateBase.fromJson(
+      Map<String, dynamic> data) {
+    return ListWheelChildBuilderDelegateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A delegate that supplies children for [ListWheelScrollView] using a builder
 callback.
 
@@ -18,13 +19,13 @@ children using an [IndexedWidgetBuilder] callback, so that the children do
 not have to be built until they are displayed.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

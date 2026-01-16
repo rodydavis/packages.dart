@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ExactAssetImageBase extends BaseWidget {
-    ExactAssetImageBase();
+  ExactAssetImageBase();
 
-    factory ExactAssetImageBase.fromJson(Map<String, dynamic> data) {
-        return ExactAssetImageBase();
-    }
+  factory ExactAssetImageBase.fromJson(Map<String, dynamic> data) {
+    return ExactAssetImageBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Fetches an image from an [AssetBundle], associating it with the given scale.
 
 This implementation requires an explicit final [assetName] and [scale] on
@@ -80,13 +80,13 @@ See also:
    [ExactAssetImage] when using a scale.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

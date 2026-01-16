@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextTreeRendererBase extends BaseWidget {
-    TextTreeRendererBase();
+  TextTreeRendererBase();
 
-    factory TextTreeRendererBase.fromJson(Map<String, dynamic> data) {
-        return TextTreeRendererBase();
-    }
+  factory TextTreeRendererBase.fromJson(Map<String, dynamic> data) {
+    return TextTreeRendererBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Renderer that creates ASCII art representations of trees of
 [DiagnosticsNode] objects.
 
@@ -18,13 +18,13 @@ See also:
    string representation of this node and its descendants.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

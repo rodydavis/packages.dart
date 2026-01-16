@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderBaselineBase extends BaseWidget {
-    RenderBaselineBase();
+  RenderBaselineBase();
 
-    factory RenderBaselineBase.fromJson(Map<String, dynamic> data) {
-        return RenderBaselineBase();
-    }
+  factory RenderBaselineBase.fromJson(Map<String, dynamic> data) {
+    return RenderBaselineBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Shifts the child down such that the child's baseline (or the
 bottom of the child, if the child has no baseline) is [baseline]
 logical pixels below the top of this box, then sizes this box to
@@ -27,13 +27,13 @@ child, but there is never space between the bottom of the child
 and the bottom of the box.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

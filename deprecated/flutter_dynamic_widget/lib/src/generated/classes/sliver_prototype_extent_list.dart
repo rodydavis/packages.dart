@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverPrototypeExtentListBase extends BaseWidget {
-    SliverPrototypeExtentListBase();
+  SliverPrototypeExtentListBase();
 
-    factory SliverPrototypeExtentListBase.fromJson(Map<String, dynamic> data) {
-        return SliverPrototypeExtentListBase();
-    }
+  factory SliverPrototypeExtentListBase.fromJson(Map<String, dynamic> data) {
+    return SliverPrototypeExtentListBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver that places its box children in a linear array and constrains them
 to have the same extent as a prototype item along the main axis.
 
@@ -34,13 +34,13 @@ See also:
    viewport.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

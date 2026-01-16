@@ -162,7 +162,8 @@ Map<String, BaseWidget> widgetLibrary = {
   'FractionalOffset': FractionalOffsetBase(),
   'FrictionSimulation': FrictionSimulationBase(),
   'GestureDetector': GestureDetectorBase(),
-  'GestureRecognizerFactoryWithHandlers': GestureRecognizerFactoryWithHandlersBase(),
+  'GestureRecognizerFactoryWithHandlers':
+      GestureRecognizerFactoryWithHandlersBase(),
   'GravitySimulation': GravitySimulationBase(),
   'GridPaper': GridPaperBase(),
   'GridTile': GridTileBase(),
@@ -261,7 +262,8 @@ Map<String, BaseWidget> widgetLibrary = {
   'Overlay': OverlayBase(),
   'OverlayEntry': OverlayEntryBase(),
   'OverlayState': OverlayStateBase(),
-  'PaddleRangeSliderValueIndicatorShape': PaddleRangeSliderValueIndicatorShapeBase(),
+  'PaddleRangeSliderValueIndicatorShape':
+      PaddleRangeSliderValueIndicatorShapeBase(),
   'PaddleSliderValueIndicatorShape': PaddleSliderValueIndicatorShapeBase(),
   'PageController': PageControllerBase(),
   'PageMetrics': PageMetricsBase(),
@@ -302,9 +304,11 @@ Map<String, BaseWidget> widgetLibrary = {
   'RawKeyboardListener': RawKeyboardListenerBase(),
   'RectTween': RectTweenBase(),
   'RectangularRangeSliderTrackShape': RectangularRangeSliderTrackShapeBase(),
-  'RectangularRangeSliderValueIndicatorShape': RectangularRangeSliderValueIndicatorShapeBase(),
+  'RectangularRangeSliderValueIndicatorShape':
+      RectangularRangeSliderValueIndicatorShapeBase(),
   'RectangularSliderTrackShape': RectangularSliderTrackShapeBase(),
-  'RectangularSliderValueIndicatorShape': RectangularSliderValueIndicatorShapeBase(),
+  'RectangularSliderValueIndicatorShape':
+      RectangularSliderValueIndicatorShapeBase(),
   'RefreshIndicator': RefreshIndicatorBase(),
   'RefreshIndicatorState': RefreshIndicatorStateBase(),
   'RelativeRect': RelativeRectBase(),
@@ -385,8 +389,10 @@ Map<String, BaseWidget> widgetLibrary = {
   'SliverAnimatedList': SliverAnimatedListBase(),
   'SliverAnimatedListState': SliverAnimatedListStateBase(),
   'SliverAppBar': SliverAppBarBase(),
-  'SliverGridDelegateWithFixedCrossAxisCount': SliverGridDelegateWithFixedCrossAxisCountBase(),
-  'SliverGridDelegateWithMaxCrossAxisExtent': SliverGridDelegateWithMaxCrossAxisExtentBase(),
+  'SliverGridDelegateWithFixedCrossAxisCount':
+      SliverGridDelegateWithFixedCrossAxisCountBase(),
+  'SliverGridDelegateWithMaxCrossAxisExtent':
+      SliverGridDelegateWithMaxCrossAxisExtentBase(),
   'SliverGridGeometry': SliverGridGeometryBase(),
   'SliverGridParentData': SliverGridParentDataBase(),
   'SliverGridRegularTileLayout': SliverGridRegularTileLayoutBase(),
@@ -440,7 +446,8 @@ Map<String, BaseWidget> widgetLibrary = {
   'TextInputType': TextInputTypeBase(),
   'TextPainter': TextPainterBase(),
   'TextSelectionGestureDetector': TextSelectionGestureDetectorBase(),
-  'TextSelectionGestureDetectorBuilder': TextSelectionGestureDetectorBuilderBase(),
+  'TextSelectionGestureDetectorBuilder':
+      TextSelectionGestureDetectorBuilderBase(),
   'TextSelectionOverlay': TextSelectionOverlayBase(),
   'TextSelectionTheme': TextSelectionThemeBase(),
   'TextSelectionThemeData': TextSelectionThemeDataBase(),

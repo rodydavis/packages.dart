@@ -19,6 +19,7 @@ A collection of Flutter packages maintained by @rodydavis.
 | [signals_flutter](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_flutter) | The signals library exposes four core functions which are the building blocks to model any business logic you can think of. | [![Pub](https://img.shields.io/pub/v/signals_flutter.svg?style=popout)](https://pub.dartlang.org/packages/signals_flutter) |
 | [signals_hooks](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_hooks) | flutter_hooks bindings for signals | [![Pub](https://img.shields.io/pub/v/signals_hooks.svg?style=popout)](https://pub.dartlang.org/packages/signals_hooks) |
 | [signals_lint](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_lint) | linter and developer tool for signals | [![Pub](https://img.shields.io/pub/v/signals_lint.svg?style=popout)](https://pub.dartlang.org/packages/signals_lint) |
+| [undo](./packages/undo) | A Undo/Redo Library for Flutter | [![Pub](https://img.shields.io/pub/v/undo.svg?style=popout)](https://pub.dartlang.org/packages/undo) |
 
 ## Experimental
 
@@ -66,6 +67,5 @@ A collection of Flutter packages maintained by @rodydavis.
 | [settings_gen](./deprecated/settings_manager/packages/settings_gen) | Code generator for MobX that adds support for annotating your code with @observable, @computed, @action and also creating SettingsStore classes. | [![Pub](https://img.shields.io/pub/v/settings_gen.svg?style=popout)](https://pub.dartlang.org/packages/settings_gen) |
 | [settings_manager](./deprecated/settings_manager/packages/settings_manager) | A settings manager built on top of SharedPreferences. | [![Pub](https://img.shields.io/pub/v/settings_manager.svg?style=popout)](https://pub.dartlang.org/packages/settings_manager) |
 | [sheet_music](./deprecated/sheet_music) | A Flutter Widget for Sheet Music (All Major Flat and Sharp Scales, Notes from 5 below and 5 above the bar, Treble and Bass Clef). | [![Pub](https://img.shields.io/pub/v/sheet_music.svg?style=popout)](https://pub.dartlang.org/packages/sheet_music) |
-| [undo](./deprecated/undo) | A Undo/Redo Library for Flutter | [![Pub](https://img.shields.io/pub/v/undo.svg?style=popout)](https://pub.dartlang.org/packages/undo) |
 | [widget_gen](./deprecated/widget_gen) | A Flutter Code Gen Package Used to Generate Widgets for WidgetStudio | [![Pub](https://img.shields.io/pub/v/widget_gen.svg?style=popout)](https://pub.dartlang.org/packages/widget_gen) |
 

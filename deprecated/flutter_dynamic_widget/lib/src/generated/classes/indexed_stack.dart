@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IndexedStackBase extends BaseWidget {
-    IndexedStackBase();
+  IndexedStackBase();
 
-    factory IndexedStackBase.fromJson(Map<String, dynamic> data) {
-        return IndexedStackBase();
-    }
+  factory IndexedStackBase.fromJson(Map<String, dynamic> data) {
+    return IndexedStackBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [Stack] that shows a single child from a list of children.
 
 The displayed child is the one with the given [index]. The stack is
@@ -24,13 +24,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

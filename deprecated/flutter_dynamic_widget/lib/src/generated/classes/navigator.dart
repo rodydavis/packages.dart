@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class NavigatorBase extends BaseWidget {
-    NavigatorBase();
+  NavigatorBase();
 
-    factory NavigatorBase.fromJson(Map<String, dynamic> data) {
-        return NavigatorBase();
-    }
+  factory NavigatorBase.fromJson(Map<String, dynamic> data) {
+    return NavigatorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that manages a set of child widgets with a stack discipline.
 
 Many apps have a navigator near the top of their widget hierarchy in order
@@ -392,13 +392,13 @@ are created. The [Builder] widget can be used to access a [BuildContext] at
 a desired location in the widget subtree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

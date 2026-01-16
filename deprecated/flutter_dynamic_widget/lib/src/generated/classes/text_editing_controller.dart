@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextEditingControllerBase extends BaseWidget {
-    TextEditingControllerBase();
+  TextEditingControllerBase();
 
-    factory TextEditingControllerBase.fromJson(Map<String, dynamic> data) {
-        return TextEditingControllerBase();
-    }
+  factory TextEditingControllerBase.fromJson(Map<String, dynamic> data) {
+    return TextEditingControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A controller for an editable text field.
 
 Whenever the user modifies a text field with an associated
@@ -79,13 +79,13 @@ See also:
  * Learn how to use a [TextEditingController] in one of our [cookbook recipes](https://flutter.dev/docs/cookbook/forms/text-field-changes#2-use-a-texteditingcontroller).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

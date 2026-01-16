@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverLayoutBuilderBase extends BaseWidget {
-    SliverLayoutBuilderBase();
+  SliverLayoutBuilderBase();
 
-    factory SliverLayoutBuilderBase.fromJson(Map<String, dynamic> data) {
-        return SliverLayoutBuilderBase();
-    }
+  factory SliverLayoutBuilderBase.fromJson(Map<String, dynamic> data) {
+    return SliverLayoutBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Builds a sliver widget tree that can depend on its own [SliverConstraints].
 
 Similar to the [LayoutBuilder] widget except its builder should return a sliver
@@ -24,13 +24,13 @@ See also:
  * [LayoutBuilder], the non-sliver version of this widget.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

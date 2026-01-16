@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TimePickerThemeDataBase extends BaseWidget {
-    TimePickerThemeDataBase();
+  TimePickerThemeDataBase();
 
-    factory TimePickerThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return TimePickerThemeDataBase();
-    }
+  factory TimePickerThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return TimePickerThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the visual properties of the widget displayed with [showTimePicker].
 
 Descendant widgets obtain the current [TimePickerThemeData] object using
@@ -29,13 +29,13 @@ See also:
    picker theme.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

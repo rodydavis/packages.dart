@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FlexibleSpaceBarSettingsBase extends BaseWidget {
-    FlexibleSpaceBarSettingsBase();
+  FlexibleSpaceBarSettingsBase();
 
-    factory FlexibleSpaceBarSettingsBase.fromJson(Map<String, dynamic> data) {
-        return FlexibleSpaceBarSettingsBase();
-    }
+  factory FlexibleSpaceBarSettingsBase.fromJson(Map<String, dynamic> data) {
+    return FlexibleSpaceBarSettingsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Provides sizing and opacity information to a [FlexibleSpaceBar].
 
 See also:
@@ -16,13 +16,13 @@ See also:
  * [FlexibleSpaceBar] which creates a flexible space bar.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

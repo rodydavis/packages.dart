@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ExcludeFocusBase extends BaseWidget {
-    ExcludeFocusBase();
+  ExcludeFocusBase();
 
-    factory ExcludeFocusBase.fromJson(Map<String, dynamic> data) {
-        return ExcludeFocusBase();
-    }
+  factory ExcludeFocusBase.fromJson(Map<String, dynamic> data) {
+    return ExcludeFocusBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that controls whether or not the descendants of this widget are
 focusable.
 
@@ -22,13 +22,13 @@ See also:
    `descendantsAreFocusable` attribute.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

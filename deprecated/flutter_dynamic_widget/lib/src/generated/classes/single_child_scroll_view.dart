@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SingleChildScrollViewBase extends BaseWidget {
-    SingleChildScrollViewBase();
+  SingleChildScrollViewBase();
 
-    factory SingleChildScrollViewBase.fromJson(Map<String, dynamic> data) {
-        return SingleChildScrollViewBase();
-    }
+  factory SingleChildScrollViewBase.fromJson(Map<String, dynamic> data) {
+    return SingleChildScrollViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A box in which a single widget can be scrolled.
 
 This widget is useful when you have a single box that will normally be
@@ -204,13 +204,13 @@ See also:
  * [Scrollable], which handles arbitrary scrolling effects.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BouncingScrollPhysicsBase extends BaseWidget {
-    BouncingScrollPhysicsBase();
+  BouncingScrollPhysicsBase();
 
-    factory BouncingScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
-        return BouncingScrollPhysicsBase();
-    }
+  factory BouncingScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
+    return BouncingScrollPhysicsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Scroll physics for environments that allow the scroll offset to go beyond
 the bounds of the content, but then bounce the content back to the edge of
 those bounds.
@@ -36,13 +36,13 @@ See also:
    of different types to get the desired scroll physics.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoButtonBase extends BaseWidget {
-    CupertinoButtonBase();
+  CupertinoButtonBase();
 
-    factory CupertinoButtonBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoButtonBase();
-    }
+  factory CupertinoButtonBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoButtonBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS-style button.
 
 Takes in a text or an icon that fades out and in on touch. May optionally have a
@@ -24,13 +24,13 @@ See also:
  * <https://developer.apple.com/ios/human-interface-guidelines/controls/buttons/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

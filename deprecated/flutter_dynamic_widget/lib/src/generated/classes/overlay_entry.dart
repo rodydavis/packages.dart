@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OverlayEntryBase extends BaseWidget {
-    OverlayEntryBase();
+  OverlayEntryBase();
 
-    factory OverlayEntryBase.fromJson(Map<String, dynamic> data) {
-        return OverlayEntryBase();
-    }
+  factory OverlayEntryBase.fromJson(Map<String, dynamic> data) {
+    return OverlayEntryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A place in an [Overlay] that can contain a widget.
 
 Overlay entries are inserted into an [Overlay] using the
@@ -49,13 +49,13 @@ See also:
  * [MaterialApp]
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

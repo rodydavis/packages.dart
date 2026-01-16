@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ChipThemeBase extends BaseWidget {
-    ChipThemeBase();
+  ChipThemeBase();
 
-    factory ChipThemeBase.fromJson(Map<String, dynamic> data) {
-        return ChipThemeBase();
-    }
+  factory ChipThemeBase.fromJson(Map<String, dynamic> data) {
+    return ChipThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Applies a chip theme to descendant [RawChip]-based widgets, like [Chip],
 [InputChip], [ChoiceChip], [FilterChip], and [ActionChip].
 
@@ -39,13 +39,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

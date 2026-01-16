@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoNavigationBarBase extends BaseWidget {
-    CupertinoNavigationBarBase();
+  CupertinoNavigationBarBase();
 
-    factory CupertinoNavigationBarBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoNavigationBarBase();
-    }
+  factory CupertinoNavigationBarBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoNavigationBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS-styled navigation bar.
 
 The navigation bar is a toolbar that minimally consists of a widget, normally
@@ -59,13 +59,13 @@ See also:
    scrolling list and that supports iOS-11-style large titles.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

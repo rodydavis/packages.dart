@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AbstractNodeBase extends BaseWidget {
-    AbstractNodeBase();
+  AbstractNodeBase();
 
-    factory AbstractNodeBase.fromJson(Map<String, dynamic> data) {
-        return AbstractNodeBase();
-    }
+  factory AbstractNodeBase.fromJson(Map<String, dynamic> data) {
+    return AbstractNodeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An abstract node in a tree.
 
 AbstractNode has as notion of depth, attachment, and parent, but does not
@@ -42,13 +42,13 @@ moved to be a child of A, sibling of B, then the numbers won't change. C's
 [adoptChild] and [dropChild] methods.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

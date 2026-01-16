@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollUpdateNotificationBase extends BaseWidget {
-    ScrollUpdateNotificationBase();
+  ScrollUpdateNotificationBase();
 
-    factory ScrollUpdateNotificationBase.fromJson(Map<String, dynamic> data) {
-        return ScrollUpdateNotificationBase();
-    }
+  factory ScrollUpdateNotificationBase.fromJson(Map<String, dynamic> data) {
+    return ScrollUpdateNotificationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A notification that a [Scrollable] widget has changed its scroll position.
 
 See also:
@@ -19,13 +19,13 @@ See also:
  * [ScrollNotification], which describes the notification lifecycle.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RouteInformationBase extends BaseWidget {
-    RouteInformationBase();
+  RouteInformationBase();
 
-    factory RouteInformationBase.fromJson(Map<String, dynamic> data) {
-        return RouteInformationBase();
-    }
+  factory RouteInformationBase.fromJson(Map<String, dynamic> data) {
+    return RouteInformationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A piece of routing information.
 
 The route information consists of a location string of the application and
@@ -25,13 +25,13 @@ The latter case should only happen in a web application where the [Router]
 reports route change back to web engine.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

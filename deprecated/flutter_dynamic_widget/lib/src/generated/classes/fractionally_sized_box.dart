@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FractionallySizedBoxBase extends BaseWidget {
-    FractionallySizedBoxBase();
+  FractionallySizedBoxBase();
 
-    factory FractionallySizedBoxBase.fromJson(Map<String, dynamic> data) {
-        return FractionallySizedBoxBase();
-    }
+  factory FractionallySizedBoxBase.fromJson(Map<String, dynamic> data) {
+    return FractionallySizedBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that sizes its child to a fraction of the total available space.
 For more details about the layout algorithm, see
 [RenderFractionallySizedOverflowBox].
@@ -25,13 +25,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

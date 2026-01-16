@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PageStorageKeyBase extends BaseWidget {
-    PageStorageKeyBase();
+  PageStorageKeyBase();
 
-    factory PageStorageKeyBase.fromJson(Map<String, dynamic> data) {
-        return PageStorageKeyBase();
-    }
+  factory PageStorageKeyBase.fromJson(Map<String, dynamic> data) {
+    return PageStorageKeyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A key can be used to persist the widget state in storage after
 the destruction and will be restored when recreated.
 
@@ -22,13 +22,13 @@ See also:
  * [PageStorage], which is the closet ancestor for [PageStorageKey].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

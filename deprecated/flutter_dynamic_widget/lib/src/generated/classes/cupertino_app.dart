@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoAppBase extends BaseWidget {
-    CupertinoAppBase();
+  CupertinoAppBase();
 
-    factory CupertinoAppBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoAppBase();
-    }
+  factory CupertinoAppBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoAppBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An application that uses Cupertino design.
 
 A convenience widget that wraps a number of widgets that are commonly
@@ -53,13 +53,13 @@ See also:
    on the Cupertino library.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

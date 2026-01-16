@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextBase extends BaseWidget {
-    TextBase();
+  TextBase();
 
-    factory TextBase.fromJson(Map<String, dynamic> data) {
-        return TextBase();
-    }
+  factory TextBase.fromJson(Map<String, dynamic> data) {
+    return TextBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A run of text with a single style.
 
 The [Text] widget displays a string of text with single style. The string
@@ -82,13 +82,13 @@ See also:
  * [DefaultTextStyle], which sets default styles for [Text] widgets.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

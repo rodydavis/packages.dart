@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class VerticalDragGestureRecognizerBase extends BaseWidget {
-    VerticalDragGestureRecognizerBase();
+  VerticalDragGestureRecognizerBase();
 
-    factory VerticalDragGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
-        return VerticalDragGestureRecognizerBase();
-    }
+  factory VerticalDragGestureRecognizerBase.fromJson(
+      Map<String, dynamic> data) {
+    return VerticalDragGestureRecognizerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Recognizes movement in the vertical direction.
 
 Used for vertical scrolling.
@@ -21,13 +22,13 @@ See also:
    track each touch point independently.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

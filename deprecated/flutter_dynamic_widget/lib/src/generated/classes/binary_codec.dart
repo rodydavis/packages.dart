@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BinaryCodecBase extends BaseWidget {
-    BinaryCodecBase();
+  BinaryCodecBase();
 
-    factory BinaryCodecBase.fromJson(Map<String, dynamic> data) {
-        return BinaryCodecBase();
-    }
+  factory BinaryCodecBase.fromJson(Map<String, dynamic> data) {
+    return BinaryCodecBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 [MessageCodec] with unencoded binary messages represented using [ByteData].
 
 On Android, messages will be represented using `java.nio.ByteBuffer`.
@@ -19,13 +19,13 @@ as opposed to indirect. The `wrap()` API provides indirect buffers by default
 and you will get empty `ByteData` objects in Dart.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ErrorHintBase extends BaseWidget {
-    ErrorHintBase();
+  ErrorHintBase();
 
-    factory ErrorHintBase.fromJson(Map<String, dynamic> data) {
-        return ErrorHintBase();
-    }
+  factory ErrorHintBase.fromJson(Map<String, dynamic> data) {
+    return ErrorHintBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [ErrorHint] provides specific, non-obvious advice that may be applicable.
 
 If your message provides obvious advice that is always applicable, it is an
@@ -28,13 +28,13 @@ See also:
  * [FlutterError], which is the most common place to use an [ErrorHint].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

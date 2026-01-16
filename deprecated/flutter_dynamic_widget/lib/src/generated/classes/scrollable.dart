@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollableBase extends BaseWidget {
-    ScrollableBase();
+  ScrollableBase();
 
-    factory ScrollableBase.fromJson(Map<String, dynamic> data) {
-        return ScrollableBase();
-    }
+  factory ScrollableBase.fromJson(Map<String, dynamic> data) {
+    return ScrollableBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that scrolls.
 
 [Scrollable] implements the interaction model for a scrollable widget,
@@ -52,13 +52,13 @@ See also:
    the scroll position without using a [ScrollController].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

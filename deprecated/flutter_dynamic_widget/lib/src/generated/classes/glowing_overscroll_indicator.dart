@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class GlowingOverscrollIndicatorBase extends BaseWidget {
-    GlowingOverscrollIndicatorBase();
+  GlowingOverscrollIndicatorBase();
 
-    factory GlowingOverscrollIndicatorBase.fromJson(Map<String, dynamic> data) {
-        return GlowingOverscrollIndicatorBase();
-    }
+  factory GlowingOverscrollIndicatorBase.fromJson(Map<String, dynamic> data) {
+    return GlowingOverscrollIndicatorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A visual indication that a scroll view has overscrolled.
 
 A [GlowingOverscrollIndicator] listens for [ScrollNotification]s in order
@@ -113,13 +113,13 @@ See also:
    [OverscrollIndicatorNotification]
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

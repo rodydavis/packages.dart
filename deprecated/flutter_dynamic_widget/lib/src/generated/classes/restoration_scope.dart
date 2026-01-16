@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RestorationScopeBase extends BaseWidget {
-    RestorationScopeBase();
+  RestorationScopeBase();
 
-    factory RestorationScopeBase.fromJson(Map<String, dynamic> data) {
-        return RestorationScopeBase();
-    }
+  factory RestorationScopeBase.fromJson(Map<String, dynamic> data) {
+    return RestorationScopeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Creates a new scope for restoration IDs used by descendant widgets to claim
 [RestorationBucket]s.
 
@@ -49,13 +49,13 @@ See also:
    restoration in Flutter.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

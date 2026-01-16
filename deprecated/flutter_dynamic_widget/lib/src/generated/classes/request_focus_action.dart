@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RequestFocusActionBase extends BaseWidget {
-    RequestFocusActionBase();
+  RequestFocusActionBase();
 
-    factory RequestFocusActionBase.fromJson(Map<String, dynamic> data) {
-        return RequestFocusActionBase();
-    }
+  factory RequestFocusActionBase.fromJson(Map<String, dynamic> data) {
+    return RequestFocusActionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [Action] that requests the focus on the node it is given in its
 [RequestFocusIntent].
 
@@ -35,13 +35,13 @@ can redefine the associated action with your own [Actions] widget.
 See [FocusTraversalPolicy] for more information about focus traversal.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

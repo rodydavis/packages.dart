@@ -23,7 +23,6 @@ class DrawerBase extends _$DrawerBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

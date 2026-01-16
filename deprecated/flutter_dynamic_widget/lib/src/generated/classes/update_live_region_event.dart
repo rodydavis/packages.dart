@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class UpdateLiveRegionEventBase extends BaseWidget {
-    UpdateLiveRegionEventBase();
+  UpdateLiveRegionEventBase();
 
-    factory UpdateLiveRegionEventBase.fromJson(Map<String, dynamic> data) {
-        return UpdateLiveRegionEventBase();
-    }
+  factory UpdateLiveRegionEventBase.fromJson(Map<String, dynamic> data) {
+    return UpdateLiveRegionEventBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An event which triggers a polite announcement of a live region.
 
 This requires that the semantics node has already been marked as a live
@@ -25,13 +25,13 @@ See also:
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

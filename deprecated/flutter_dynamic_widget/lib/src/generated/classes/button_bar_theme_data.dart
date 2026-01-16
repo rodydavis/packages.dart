@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ButtonBarThemeDataBase extends BaseWidget {
-    ButtonBarThemeDataBase();
+  ButtonBarThemeDataBase();
 
-    factory ButtonBarThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return ButtonBarThemeDataBase();
-    }
+  factory ButtonBarThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return ButtonBarThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the visual properties of [ButtonBar] widgets.
 
 Used by [ButtonBarTheme] to control the visual properties of [ButtonBar]
@@ -25,13 +25,13 @@ See also:
    button widgets.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class SingleChildRenderObjectElementBase extends BaseWidget {
-    SingleChildRenderObjectElementBase();
+  SingleChildRenderObjectElementBase();
 
-    factory SingleChildRenderObjectElementBase.fromJson(Map<String, dynamic> data) {
-        return SingleChildRenderObjectElementBase();
-    }
+  factory SingleChildRenderObjectElementBase.fromJson(
+      Map<String, dynamic> data) {
+    return SingleChildRenderObjectElementBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [Element] that uses a [SingleChildRenderObjectWidget] as its configuration.
 
 The child is optional.
@@ -18,13 +19,13 @@ RenderObjects use the [RenderObjectWithChildMixin] mixin. Such widgets are
 expected to inherit from [SingleChildRenderObjectWidget].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

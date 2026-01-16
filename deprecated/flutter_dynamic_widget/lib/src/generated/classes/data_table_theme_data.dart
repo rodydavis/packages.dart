@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DataTableThemeDataBase extends BaseWidget {
-    DataTableThemeDataBase();
+  DataTableThemeDataBase();
 
-    factory DataTableThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return DataTableThemeDataBase();
-    }
+  factory DataTableThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return DataTableThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines default property values for descendant [DataTable]
 widgets.
 
@@ -32,13 +32,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollableStateBase extends BaseWidget {
-    ScrollableStateBase();
+  ScrollableStateBase();
 
-    factory ScrollableStateBase.fromJson(Map<String, dynamic> data) {
-        return ScrollableStateBase();
-    }
+  factory ScrollableStateBase.fromJson(Map<String, dynamic> data) {
+    return ScrollableStateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 State object for a [Scrollable] widget.
 
 To manipulate a [Scrollable] widget's scroll position, use the object
@@ -21,13 +21,13 @@ This class is not intended to be subclassed. To specialize the behavior of a
 [Scrollable], provide it with a [ScrollPhysics].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

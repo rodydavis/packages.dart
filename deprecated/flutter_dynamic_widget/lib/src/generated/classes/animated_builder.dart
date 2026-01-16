@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedBuilderBase extends BaseWidget {
-    AnimatedBuilderBase();
+  AnimatedBuilderBase();
 
-    factory AnimatedBuilderBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedBuilderBase();
-    }
+  factory AnimatedBuilderBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A general-purpose widget for building animations.
 
 AnimatedBuilder is useful for more complex widgets that wish to include
@@ -90,13 +90,13 @@ See also:
    without requiring manual management of an [AnimationController].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

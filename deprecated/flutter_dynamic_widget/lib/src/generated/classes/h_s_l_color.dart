@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class HSLColorBase extends BaseWidget {
-    HSLColorBase();
+  HSLColorBase();
 
-    factory HSLColorBase.fromJson(Map<String, dynamic> data) {
-        return HSLColorBase();
-    }
+  factory HSLColorBase.fromJson(Map<String, dynamic> data) {
+    return HSLColorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A color represented using [alpha], [hue], [saturation], and [lightness].
 
 An [HSLColor] is represented in a parameter space that's based up human
@@ -31,13 +31,13 @@ See also:
    article, which this implementation is based upon.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

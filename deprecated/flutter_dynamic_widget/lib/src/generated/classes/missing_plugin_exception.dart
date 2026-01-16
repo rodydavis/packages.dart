@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MissingPluginExceptionBase extends BaseWidget {
-    MissingPluginExceptionBase();
+  MissingPluginExceptionBase();
 
-    factory MissingPluginExceptionBase.fromJson(Map<String, dynamic> data) {
-        return MissingPluginExceptionBase();
-    }
+  factory MissingPluginExceptionBase.fromJson(Map<String, dynamic> data) {
+    return MissingPluginExceptionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Thrown to indicate that a platform interaction failed to find a handling
 plugin.
 
@@ -21,13 +21,13 @@ See also:
    with null, if no plugin handler for the method call was found.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

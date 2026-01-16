@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class EventChannelBase extends BaseWidget {
-    EventChannelBase();
+  EventChannelBase();
 
-    factory EventChannelBase.fromJson(Map<String, dynamic> data) {
-        return EventChannelBase();
-    }
+  factory EventChannelBase.fromJson(Map<String, dynamic> data) {
+    return EventChannelBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A named channel for communicating with platform plugins using event streams.
 
 Stream setup requests are encoded into binary before being sent,
@@ -25,13 +25,13 @@ channels will interfere with each other's communication.
 See: <https://flutter.dev/platform-channels/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

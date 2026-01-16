@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoSliderBase extends BaseWidget {
-    CupertinoSliderBase();
+  CupertinoSliderBase();
 
-    factory CupertinoSliderBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoSliderBase();
-    }
+  factory CupertinoSliderBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoSliderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS-style slider.
 
 {@youtube 560 315 https://www.youtube.com/watch?v=ufb4gIPDmEs}
@@ -32,13 +32,13 @@ See also:
  * <https://developer.apple.com/ios/human-interface-guidelines/controls/sliders/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

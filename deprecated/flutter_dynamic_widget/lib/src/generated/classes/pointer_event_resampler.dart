@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PointerEventResamplerBase extends BaseWidget {
-    PointerEventResamplerBase();
+  PointerEventResamplerBase();
 
-    factory PointerEventResamplerBase.fromJson(Map<String, dynamic> data) {
-        return PointerEventResamplerBase();
-    }
+  factory PointerEventResamplerBase.fromJson(Map<String, dynamic> data) {
+    return PointerEventResamplerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Class for pointer event resampling.
 
 An instance of this class can be used to resample one sequence
@@ -32,13 +32,13 @@ pointer event types except [PointerAddedEvent] will be resampled.
 when the position has changed.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

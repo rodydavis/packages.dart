@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ListenerBase extends BaseWidget {
-    ListenerBase();
+  ListenerBase();
 
-    factory ListenerBase.fromJson(Map<String, dynamic> data) {
-        return ListenerBase();
-    }
+  factory ListenerBase.fromJson(Map<String, dynamic> data) {
+    return ListenerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that calls callbacks in response to common pointer events.
 
 It listens to events that can construct gestures, such as when the
@@ -92,13 +92,13 @@ Widget build(BuildContext context) {
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

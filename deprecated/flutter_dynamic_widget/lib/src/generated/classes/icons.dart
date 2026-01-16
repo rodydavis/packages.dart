@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IconsBase extends BaseWidget {
-    IconsBase();
+  IconsBase();
 
-    factory IconsBase.fromJson(Map<String, dynamic> data) {
-        return IconsBase();
-    }
+  factory IconsBase.fromJson(Map<String, dynamic> data) {
+    return IconsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Identifiers for the supported material design icons.
 
 Use with the [Icon] class to show specific icons.
@@ -65,13 +65,13 @@ See also:
  * <https://design.google.com/icons/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ImageCacheBase extends BaseWidget {
-    ImageCacheBase();
+  ImageCacheBase();
 
-    factory ImageCacheBase.fromJson(Map<String, dynamic> data) {
-        return ImageCacheBase();
-    }
+  factory ImageCacheBase.fromJson(Map<String, dynamic> data) {
+    return ImageCacheBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Class for caching images.
 
 Implements a least-recently-used cache of up to 1000 images, and up to 100
@@ -74,13 +74,13 @@ class MyApp extends StatelessWidget {
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

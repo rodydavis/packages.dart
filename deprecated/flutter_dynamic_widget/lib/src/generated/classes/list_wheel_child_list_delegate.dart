@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ListWheelChildListDelegateBase extends BaseWidget {
-    ListWheelChildListDelegateBase();
+  ListWheelChildListDelegateBase();
 
-    factory ListWheelChildListDelegateBase.fromJson(Map<String, dynamic> data) {
-        return ListWheelChildListDelegateBase();
-    }
+  factory ListWheelChildListDelegateBase.fromJson(Map<String, dynamic> data) {
+    return ListWheelChildListDelegateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A delegate that supplies children for [ListWheelScrollView] using an
 explicit list.
 
@@ -31,13 +31,13 @@ demand). For example, the body of a dialog box might fit both of these
 conditions.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

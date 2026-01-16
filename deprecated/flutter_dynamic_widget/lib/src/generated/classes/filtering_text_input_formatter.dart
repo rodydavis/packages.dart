@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FilteringTextInputFormatterBase extends BaseWidget {
-    FilteringTextInputFormatterBase();
+  FilteringTextInputFormatterBase();
 
-    factory FilteringTextInputFormatterBase.fromJson(Map<String, dynamic> data) {
-        return FilteringTextInputFormatterBase();
-    }
+  factory FilteringTextInputFormatterBase.fromJson(Map<String, dynamic> data) {
+    return FilteringTextInputFormatterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [TextInputFormatter] that prevents the insertion of characters
 matching (or not matching) a particular pattern.
 
@@ -21,13 +21,13 @@ preserve the existing [TextEditingValue.selection] to values it would now
 fall at with the removed characters.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

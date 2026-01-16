@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PhysicalKeyboardKeyBase extends BaseWidget {
-    PhysicalKeyboardKeyBase();
+  PhysicalKeyboardKeyBase();
 
-    factory PhysicalKeyboardKeyBase.fromJson(Map<String, dynamic> data) {
-        return PhysicalKeyboardKeyBase();
-    }
+  factory PhysicalKeyboardKeyBase.fromJson(Map<String, dynamic> data) {
+    return PhysicalKeyboardKeyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A class with static values that describe the keys that are returned from
 [RawKeyEvent.physicalKey].
 
@@ -102,13 +102,13 @@ See also:
    keyboard events.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

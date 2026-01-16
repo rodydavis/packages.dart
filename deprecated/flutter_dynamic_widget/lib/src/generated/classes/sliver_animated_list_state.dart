@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverAnimatedListStateBase extends BaseWidget {
-    SliverAnimatedListStateBase();
+  SliverAnimatedListStateBase();
 
-    factory SliverAnimatedListStateBase.fromJson(Map<String, dynamic> data) {
-        return SliverAnimatedListStateBase();
-    }
+  factory SliverAnimatedListStateBase.fromJson(Map<String, dynamic> data) {
+    return SliverAnimatedListStateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The state for a sliver that animates items when they are
 inserted or removed.
 
@@ -35,13 +35,13 @@ listKey.currentState.insert(123);
 [SliverAnimatedListState] with the static [SliverAnimatedList.of] method.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

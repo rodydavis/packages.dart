@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SemanticsBase extends BaseWidget {
-    SemanticsBase();
+  SemanticsBase();
 
-    factory SemanticsBase.fromJson(Map<String, dynamic> data) {
-        return SemanticsBase();
-    }
+  factory SemanticsBase.fromJson(Map<String, dynamic> data) {
+    return SemanticsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that annotates the widget tree with a description of the meaning of
 the widgets.
 
@@ -33,13 +33,13 @@ See also:
    [MaterialApp.showSemanticsDebugger].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

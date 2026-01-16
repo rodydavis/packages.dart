@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ChangeNotifierBase extends BaseWidget {
-    ChangeNotifierBase();
+  ChangeNotifierBase();
 
-    factory ChangeNotifierBase.fromJson(Map<String, dynamic> data) {
-        return ChangeNotifierBase();
-    }
+  factory ChangeNotifierBase.fromJson(Map<String, dynamic> data) {
+    return ChangeNotifierBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A class that can be extended or mixed in that provides a change notification
 API using [VoidCallback] for notifications.
 
@@ -20,13 +20,13 @@ See also:
  * [ValueNotifier], which is a [ChangeNotifier] that wraps a single value.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

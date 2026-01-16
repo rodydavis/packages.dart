@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BottomNavigationBarThemeDataBase extends BaseWidget {
-    BottomNavigationBarThemeDataBase();
+  BottomNavigationBarThemeDataBase();
 
-    factory BottomNavigationBarThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return BottomNavigationBarThemeDataBase();
-    }
+  factory BottomNavigationBarThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return BottomNavigationBarThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines default property values for descendant [BottomNavigationBar]
 widgets.
 
@@ -29,13 +29,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

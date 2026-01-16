@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class HtmlElementViewBase extends BaseWidget {
-    HtmlElementViewBase();
+  HtmlElementViewBase();
 
-    factory HtmlElementViewBase.fromJson(Map<String, dynamic> data) {
-        return HtmlElementViewBase();
-    }
+  factory HtmlElementViewBase.fromJson(Map<String, dynamic> data) {
+    return HtmlElementViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Embeds an HTML element in the Widget hierarchy in Flutter Web.
 
 *NOTE*: This only works in Flutter Web. To embed web content on other
@@ -44,13 +44,13 @@ may cause difficulty for users trying to enable accessibility.
 {@macro flutter.widgets.platformViews.lifetime}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

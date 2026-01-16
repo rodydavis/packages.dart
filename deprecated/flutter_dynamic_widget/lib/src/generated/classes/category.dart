@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CategoryBase extends BaseWidget {
-    CategoryBase();
+  CategoryBase();
 
-    factory CategoryBase.fromJson(Map<String, dynamic> data) {
-        return CategoryBase();
-    }
+  factory CategoryBase.fromJson(Map<String, dynamic> data) {
+    return CategoryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A category with which to annotate a class, for documentation
 purposes.
 
@@ -43,13 +43,13 @@ See also:
    class that overrides the inline documentations' own description.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

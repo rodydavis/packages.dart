@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PreferredSizeBase extends BaseWidget {
-    PreferredSizeBase();
+  PreferredSizeBase();
 
-    factory PreferredSizeBase.fromJson(Map<String, dynamic> data) {
-        return PreferredSizeBase();
-    }
+  factory PreferredSizeBase.fromJson(Map<String, dynamic> data) {
+    return PreferredSizeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget with a preferred size.
 
 This widget does not impose any constraints on its child, and it doesn't
@@ -23,13 +23,13 @@ See also:
  * [AppBar] and [TabBar], which implement PreferredSizeWidget.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

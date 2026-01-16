@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SemanticsTagBase extends BaseWidget {
-    SemanticsTagBase();
+  SemanticsTagBase();
 
-    factory SemanticsTagBase.fromJson(Map<String, dynamic> data) {
-        return SemanticsTagBase();
-    }
+  factory SemanticsTagBase.fromJson(Map<String, dynamic> data) {
+    return SemanticsTagBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A tag for a [SemanticsNode].
 
 Tags can be interpreted by the parent of a [SemanticsNode]
@@ -25,13 +25,13 @@ two tags created with the same [name] and the `const` operator are always
 identical.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

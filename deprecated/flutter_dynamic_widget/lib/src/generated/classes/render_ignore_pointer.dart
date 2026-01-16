@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderIgnorePointerBase extends BaseWidget {
-    RenderIgnorePointerBase();
+  RenderIgnorePointerBase();
 
-    factory RenderIgnorePointerBase.fromJson(Map<String, dynamic> data) {
-        return RenderIgnorePointerBase();
-    }
+  factory RenderIgnorePointerBase.fromJson(Map<String, dynamic> data) {
+    return RenderIgnorePointerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A render object that is invisible during hit testing.
 
 When [ignoring] is true, this render object (and its subtree) is invisible
@@ -26,13 +26,13 @@ See also:
    nodes in the subtree from seeing them.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

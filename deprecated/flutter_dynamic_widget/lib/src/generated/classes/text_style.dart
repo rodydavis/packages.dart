@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextStyleBase extends BaseWidget {
-    TextStyleBase();
+  TextStyleBase();
 
-    factory TextStyleBase.fromJson(Map<String, dynamic> data) {
-        return TextStyleBase();
-    }
+  factory TextStyleBase.fromJson(Map<String, dynamic> data) {
+    return TextStyleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An immutable style describing how to format and paint text.
 
 ### Bold
@@ -381,13 +381,13 @@ See also:
  * Cookbook: [Use themes to share colors and font styles](https://flutter.dev/docs/cookbook/design/themes)
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

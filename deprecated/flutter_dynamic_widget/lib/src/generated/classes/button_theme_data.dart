@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ButtonThemeDataBase extends BaseWidget {
-    ButtonThemeDataBase();
+  ButtonThemeDataBase();
 
-    factory ButtonThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return ButtonThemeDataBase();
-    }
+  factory ButtonThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return ButtonThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Used with [ButtonTheme] to configure the color and geometry of buttons.
 
 ### This class is obsolete.
@@ -33,13 +33,13 @@ using [ThemeData.buttonTheme]. The Material theme's button theme data
 can be overridden with [ButtonTheme].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

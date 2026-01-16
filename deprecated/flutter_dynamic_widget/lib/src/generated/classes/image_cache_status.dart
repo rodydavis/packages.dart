@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ImageCacheStatusBase extends BaseWidget {
-    ImageCacheStatusBase();
+  ImageCacheStatusBase();
 
-    factory ImageCacheStatusBase.fromJson(Map<String, dynamic> data) {
-        return ImageCacheStatusBase();
-    }
+  factory ImageCacheStatusBase.fromJson(Map<String, dynamic> data) {
+    return ImageCacheStatusBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Information about how the [ImageCache] is tracking an image.
 
 A [pending] image is one that has not completed yet. It may also be tracked
@@ -28,13 +28,13 @@ To obtain an [ImageCacheStatus], use [ImageCache.statusForKey] or
 [ImageProvider.obtainCacheStatus].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

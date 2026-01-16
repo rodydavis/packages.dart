@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class TextSelectionGestureDetectorBuilderBase extends BaseWidget {
-    TextSelectionGestureDetectorBuilderBase();
+  TextSelectionGestureDetectorBuilderBase();
 
-    factory TextSelectionGestureDetectorBuilderBase.fromJson(Map<String, dynamic> data) {
-        return TextSelectionGestureDetectorBuilderBase();
-    }
+  factory TextSelectionGestureDetectorBuilderBase.fromJson(
+      Map<String, dynamic> data) {
+    return TextSelectionGestureDetectorBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Builds a [TextSelectionGestureDetector] to wrap an [EditableText].
 
 The class implements sensible defaults for many user interactions
@@ -29,13 +30,13 @@ See also:
    Cupertino-specific gesture logic of an [EditableText].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

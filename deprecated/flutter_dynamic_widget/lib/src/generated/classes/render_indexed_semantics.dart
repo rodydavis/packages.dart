@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderIndexedSemanticsBase extends BaseWidget {
-    RenderIndexedSemanticsBase();
+  RenderIndexedSemanticsBase();
 
-    factory RenderIndexedSemanticsBase.fromJson(Map<String, dynamic> data) {
-        return RenderIndexedSemanticsBase();
-    }
+  factory RenderIndexedSemanticsBase.fromJson(Map<String, dynamic> data) {
+    return RenderIndexedSemanticsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A render objects that annotates semantics with an index.
 
 Certain widgets will automatically provide a child index for building
@@ -21,13 +21,13 @@ See also:
  * [CustomScrollView], for an explanation of scroll semantics.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

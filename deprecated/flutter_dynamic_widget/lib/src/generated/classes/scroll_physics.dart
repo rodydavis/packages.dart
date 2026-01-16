@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollPhysicsBase extends BaseWidget {
-    ScrollPhysicsBase();
+  ScrollPhysicsBase();
 
-    factory ScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
-        return ScrollPhysicsBase();
-    }
+  factory ScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
+    return ScrollPhysicsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Determines the physics of a [Scrollable] widget.
 
 For example, determines how the [Scrollable] will behave when the user
@@ -37,13 +37,13 @@ physics.applyTo(const AlwaysScrollableScrollPhysics())
 ```
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

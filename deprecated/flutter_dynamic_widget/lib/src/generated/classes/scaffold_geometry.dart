@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScaffoldGeometryBase extends BaseWidget {
-    ScaffoldGeometryBase();
+  ScaffoldGeometryBase();
 
-    factory ScaffoldGeometryBase.fromJson(Map<String, dynamic> data) {
-        return ScaffoldGeometryBase();
-    }
+  factory ScaffoldGeometryBase.fromJson(Map<String, dynamic> data) {
+    return ScaffoldGeometryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Geometry information for [Scaffold] components after layout is finished.
 
 To get a [ValueNotifier] for the scaffold geometry of a given
@@ -25,13 +25,13 @@ For information about the [Scaffold]'s geometry that is used while laying
 out the [FloatingActionButton], see [ScaffoldPrelayoutGeometry].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

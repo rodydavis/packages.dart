@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CheckboxBase extends BaseWidget {
-    CheckboxBase();
+  CheckboxBase();
 
-    factory CheckboxBase.fromJson(Map<String, dynamic> data) {
-        return CheckboxBase();
-    }
+  factory CheckboxBase.fromJson(Map<String, dynamic> data) {
+    return CheckboxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design checkbox.
 
 The checkbox itself does not maintain any state. Instead, when the state of
@@ -34,13 +34,13 @@ See also:
  * <https://material.io/design/components/lists.html#types>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

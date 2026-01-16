@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DragTargetBase extends BaseWidget {
-    DragTargetBase();
+  DragTargetBase();
 
-    factory DragTargetBase.fromJson(Map<String, dynamic> data) {
-        return DragTargetBase();
-    }
+  factory DragTargetBase.fromJson(Map<String, dynamic> data) {
+    return DragTargetBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that receives data when a [Draggable] widget is dropped.
 
 When a draggable is dragged on top of a drag target, the drag target is
@@ -23,13 +23,13 @@ See also:
  * [LongPressDraggable]
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

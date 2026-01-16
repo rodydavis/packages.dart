@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class YearPickerBase extends BaseWidget {
-    YearPickerBase();
+  YearPickerBase();
 
-    factory YearPickerBase.fromJson(Map<String, dynamic> data) {
-        return YearPickerBase();
-    }
+  factory YearPickerBase.fromJson(Map<String, dynamic> data) {
+    return YearPickerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A scrollable list of years to allow picking a year.
 
 The year picker widget is rarely used directly. Instead, consider using
@@ -25,13 +25,13 @@ See also:
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

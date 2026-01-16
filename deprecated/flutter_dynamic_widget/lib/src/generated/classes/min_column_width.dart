@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MinColumnWidthBase extends BaseWidget {
-    MinColumnWidthBase();
+  MinColumnWidthBase();
 
-    factory MinColumnWidthBase.fromJson(Map<String, dynamic> data) {
-        return MinColumnWidthBase();
-    }
+  factory MinColumnWidthBase.fromJson(Map<String, dynamic> data) {
+    return MinColumnWidthBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Sizes the column such that it is the size that is the minimum of
 two column width specifications.
 
@@ -21,13 +21,13 @@ Both specifications are evaluated, so if either specification is
 expensive, so is this.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

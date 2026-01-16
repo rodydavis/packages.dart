@@ -41,7 +41,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Center(
         child: _loading
             ? CircularProgressIndicator()
-            : _file == null ? Text('No File Selected') : _buildFile(_file),
+            : _file == null
+                ? Text('No File Selected')
+                : _buildFile(_file),
       ),
       persistentFooterButtons: <Widget>[
         IconButton(

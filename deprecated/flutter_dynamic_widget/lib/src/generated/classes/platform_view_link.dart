@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PlatformViewLinkBase extends BaseWidget {
-    PlatformViewLinkBase();
+  PlatformViewLinkBase();
 
-    factory PlatformViewLinkBase.fromJson(Map<String, dynamic> data) {
-        return PlatformViewLinkBase();
-    }
+  factory PlatformViewLinkBase.fromJson(Map<String, dynamic> data) {
+    return PlatformViewLinkBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Links a platform view with the Flutter framework.
 
 Provides common functionality for embedding a platform view (e.g an android.view.View on Android)
@@ -41,13 +41,13 @@ The `surfaceFactory` and the `onCreatePlatformView` are only called when the
 state of this widget is initialized, or when the `viewType` changes.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

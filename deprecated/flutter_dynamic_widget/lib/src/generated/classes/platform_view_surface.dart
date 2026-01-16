@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PlatformViewSurfaceBase extends BaseWidget {
-    PlatformViewSurfaceBase();
+  PlatformViewSurfaceBase();
 
-    factory PlatformViewSurfaceBase.fromJson(Map<String, dynamic> data) {
-        return PlatformViewSurfaceBase();
-    }
+  factory PlatformViewSurfaceBase.fromJson(Map<String, dynamic> data) {
+    return PlatformViewSurfaceBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Integrates a platform view with Flutter's compositor, touch, and semantics subsystems.
 
 The compositor integration is done by adding a [PlatformViewLayer] to the layer tree. [PlatformViewSurface]
@@ -27,13 +27,13 @@ See also:
  * [UiKitView] which embeds an iOS platform view in the widget hierarchy.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

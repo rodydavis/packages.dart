@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DividerBase extends BaseWidget {
-    DividerBase();
+  DividerBase();
 
-    factory DividerBase.fromJson(Map<String, dynamic> data) {
-        return DividerBase();
-    }
+  factory DividerBase.fromJson(Map<String, dynamic> data) {
+    return DividerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A thin horizontal line, with padding on either side.
 
 In the material design language, this represents a divider. Dividers can be
@@ -72,13 +72,13 @@ See also:
  * <https://material.io/design/components/dividers.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

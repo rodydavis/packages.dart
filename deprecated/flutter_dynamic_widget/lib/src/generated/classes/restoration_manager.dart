@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RestorationManagerBase extends BaseWidget {
-    RestorationManagerBase();
+  RestorationManagerBase();
 
-    factory RestorationManagerBase.fromJson(Map<String, dynamic> data) {
-        return RestorationManagerBase();
-    }
+  factory RestorationManagerBase.fromJson(Map<String, dynamic> data) {
+    return RestorationManagerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Manages the restoration data in the framework and synchronizes it with the
 engine.
 
@@ -93,13 +93,13 @@ See also:
    to make [State] objects of [StatefulWidget]s restorable.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

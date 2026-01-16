@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverPhysicalParentDataBase extends BaseWidget {
-    SliverPhysicalParentDataBase();
+  SliverPhysicalParentDataBase();
 
-    factory SliverPhysicalParentDataBase.fromJson(Map<String, dynamic> data) {
-        return SliverPhysicalParentDataBase();
-    }
+  factory SliverPhysicalParentDataBase.fromJson(Map<String, dynamic> data) {
+    return SliverPhysicalParentDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Parent data structure used by parents of slivers that position their
 children using absolute coordinates.
 
@@ -20,13 +20,13 @@ best used by parents that expect to have few children, especially if those
 children will themselves be very tall relative to the parent.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

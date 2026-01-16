@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TableRowInkWellBase extends BaseWidget {
-    TableRowInkWellBase();
+  TableRowInkWellBase();
 
-    factory TableRowInkWellBase.fromJson(Map<String, dynamic> data) {
-        return TableRowInkWellBase();
-    }
+  factory TableRowInkWellBase.fromJson(Map<String, dynamic> data) {
+    return TableRowInkWellBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A rectangular area of a Material that responds to touch but clips
 its ink splashes to the current table row of the nearest table.
 
@@ -24,13 +24,13 @@ achieve: just put the [TableRowInkWell] as the direct child of the
 [Table], and put the other contents of the cell inside it.)
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

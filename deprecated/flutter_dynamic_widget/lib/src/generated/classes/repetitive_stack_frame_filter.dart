@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RepetitiveStackFrameFilterBase extends BaseWidget {
-    RepetitiveStackFrameFilterBase();
+  RepetitiveStackFrameFilterBase();
 
-    factory RepetitiveStackFrameFilterBase.fromJson(Map<String, dynamic> data) {
-        return RepetitiveStackFrameFilterBase();
-    }
+  factory RepetitiveStackFrameFilterBase.fromJson(Map<String, dynamic> data) {
+    return RepetitiveStackFrameFilterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [StackFilter] that filters based on repeating lists of
 [PartialStackFrame]s.
 
@@ -21,13 +21,13 @@ See also:
     to a stack frame.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

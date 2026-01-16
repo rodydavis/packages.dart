@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InteractiveViewerBase extends BaseWidget {
-    InteractiveViewerBase();
+  InteractiveViewerBase();
 
-    factory InteractiveViewerBase.fromJson(Map<String, dynamic> data) {
-        return InteractiveViewerBase();
-    }
+  factory InteractiveViewerBase.fromJson(Map<String, dynamic> data) {
+    return InteractiveViewerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that enables pan and zoom interactions with its child.
 
 The user can transform the child by dragging to pan or pinching to zoom.
@@ -57,13 +57,13 @@ Widget build(BuildContext context) {
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

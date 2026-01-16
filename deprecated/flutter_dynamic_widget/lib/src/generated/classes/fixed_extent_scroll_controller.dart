@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FixedExtentScrollControllerBase extends BaseWidget {
-    FixedExtentScrollControllerBase();
+  FixedExtentScrollControllerBase();
 
-    factory FixedExtentScrollControllerBase.fromJson(Map<String, dynamic> data) {
-        return FixedExtentScrollControllerBase();
-    }
+  factory FixedExtentScrollControllerBase.fromJson(Map<String, dynamic> data) {
+    return FixedExtentScrollControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A controller for scroll views whose items have the same size.
 
 Similar to a standard [ScrollController] but with the added convenience
@@ -25,13 +25,13 @@ See also:
    the [FixedExtentScrollController].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

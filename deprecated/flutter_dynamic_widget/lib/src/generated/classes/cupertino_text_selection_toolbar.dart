@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class CupertinoTextSelectionToolbarBase extends BaseWidget {
-    CupertinoTextSelectionToolbarBase();
+  CupertinoTextSelectionToolbarBase();
 
-    factory CupertinoTextSelectionToolbarBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoTextSelectionToolbarBase();
-    }
+  factory CupertinoTextSelectionToolbarBase.fromJson(
+      Map<String, dynamic> data) {
+    return CupertinoTextSelectionToolbarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS-style toolbar that appears in response to text selection.
 
 Typically displays buttons for text manipulation, e.g. copying and pasting text.
@@ -19,13 +20,13 @@ See also:
    will be used to build an iOS-style toolbar.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

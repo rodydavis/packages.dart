@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextSelectionThemeDataBase extends BaseWidget {
-    TextSelectionThemeDataBase();
+  TextSelectionThemeDataBase();
 
-    factory TextSelectionThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return TextSelectionThemeDataBase();
-    }
+  factory TextSelectionThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return TextSelectionThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the visual properties needed for text selection in [TextField] and
 [SelectableText] widgets.
 
@@ -26,13 +26,13 @@ See also:
    text fields.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

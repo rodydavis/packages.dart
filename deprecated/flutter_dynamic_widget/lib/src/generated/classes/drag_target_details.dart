@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class DragTargetDetailsBase extends BaseWidget {
-    DragTargetDetailsBase();
+  DragTargetDetailsBase();
 
-    factory DragTargetDetailsBase.fromJson(Map<String, dynamic> data) {
-        return DragTargetDetailsBase();
-    }
+  factory DragTargetDetailsBase.fromJson(Map<String, dynamic> data) {
+    return DragTargetDetailsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Represents the details when a pointer event occurred on the [DragTarget].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

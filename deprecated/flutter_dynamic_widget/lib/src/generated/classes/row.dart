@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RowBase extends BaseWidget {
-    RowBase();
+  RowBase();
 
-    factory RowBase.fromJson(Map<String, dynamic> data) {
-        return RowBase();
-    }
+  factory RowBase.fromJson(Map<String, dynamic> data) {
+    return RowBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that displays its children in a horizontal array.
 
 To cause a child to expand to fill the available horizontal space, wrap the
@@ -187,13 +187,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

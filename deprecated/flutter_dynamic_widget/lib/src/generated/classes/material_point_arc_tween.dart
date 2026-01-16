@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MaterialPointArcTweenBase extends BaseWidget {
-    MaterialPointArcTweenBase();
+  MaterialPointArcTweenBase();
 
-    factory MaterialPointArcTweenBase.fromJson(Map<String, dynamic> data) {
-        return MaterialPointArcTweenBase();
-    }
+  factory MaterialPointArcTweenBase.fromJson(Map<String, dynamic> data) {
+    return MaterialPointArcTweenBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [Tween] that interpolates an [Offset] along a circular arc.
 
 This class specializes the interpolation of [Tween<Offset>] so that instead
@@ -27,13 +27,13 @@ See also:
  * [MaterialRectArcTween], which extends this concept to interpolating [Rect]s.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

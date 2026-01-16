@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class StepperBase extends BaseWidget {
-    StepperBase();
+  StepperBase();
 
-    factory StepperBase.fromJson(Map<String, dynamic> data) {
-        return StepperBase();
-    }
+  factory StepperBase.fromJson(Map<String, dynamic> data) {
+    return StepperBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material stepper widget that displays progress through a sequence of
 steps. Steppers are particularly useful in the case of forms where one step
 requires the completion of another one, or where multiple steps need to be
@@ -24,13 +24,13 @@ See also:
  * <https://material.io/archive/guidelines/components/steppers.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

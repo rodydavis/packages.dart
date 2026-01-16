@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class NumericFocusOrderBase extends BaseWidget {
-    NumericFocusOrderBase();
+  NumericFocusOrderBase();
 
-    factory NumericFocusOrderBase.fromJson(Map<String, dynamic> data) {
-        return NumericFocusOrderBase();
-    }
+  factory NumericFocusOrderBase.fromJson(Map<String, dynamic> data) {
+    return NumericFocusOrderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Can be given to a [FocusTraversalOrder] widget to assign a numerical order
 to a widget subtree that is using a [OrderedTraversalPolicy] to define the
 order in which widgets should be traversed with the keyboard.
@@ -21,13 +21,13 @@ See also:
    for the [OrderedTraversalPolicy] to use.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

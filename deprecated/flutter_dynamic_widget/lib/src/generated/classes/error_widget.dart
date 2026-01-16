@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ErrorWidgetBase extends BaseWidget {
-    ErrorWidgetBase();
+  ErrorWidgetBase();
 
-    factory ErrorWidgetBase.fromJson(Map<String, dynamic> data) {
-        return ErrorWidgetBase();
-    }
+  factory ErrorWidgetBase.fromJson(Map<String, dynamic> data) {
+    return ErrorWidgetBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that renders an exception's message.
 
 This widget is used when a build method fails, to help with determining
@@ -59,13 +59,13 @@ See also:
    handling in Flutter.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

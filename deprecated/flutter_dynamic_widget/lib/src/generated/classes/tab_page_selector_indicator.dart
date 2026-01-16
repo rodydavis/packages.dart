@@ -1,26 +1,26 @@
 import '../base.dart';
 
 class TabPageSelectorIndicatorBase extends BaseWidget {
-    TabPageSelectorIndicatorBase();
+  TabPageSelectorIndicatorBase();
 
-    factory TabPageSelectorIndicatorBase.fromJson(Map<String, dynamic> data) {
-        return TabPageSelectorIndicatorBase();
-    }
+  factory TabPageSelectorIndicatorBase.fromJson(Map<String, dynamic> data) {
+    return TabPageSelectorIndicatorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Displays a single circle with the specified border and background colors.
 
 Used by [TabPageSelector] to indicate the selected page.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

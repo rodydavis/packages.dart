@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoAlertDialogBase extends BaseWidget {
-    CupertinoAlertDialogBase();
+  CupertinoAlertDialogBase();
 
-    factory CupertinoAlertDialogBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoAlertDialogBase();
-    }
+  factory CupertinoAlertDialogBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoAlertDialogBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS-style alert dialog.
 
 An alert dialog informs the user about situations that require
@@ -36,13 +36,13 @@ See also:
  * <https://developer.apple.com/ios/human-interface-guidelines/views/alerts/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

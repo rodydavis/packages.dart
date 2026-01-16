@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class FloatingHeaderSnapConfigurationBase extends BaseWidget {
-    FloatingHeaderSnapConfigurationBase();
+  FloatingHeaderSnapConfigurationBase();
 
-    factory FloatingHeaderSnapConfigurationBase.fromJson(Map<String, dynamic> data) {
-        return FloatingHeaderSnapConfigurationBase();
-    }
+  factory FloatingHeaderSnapConfigurationBase.fromJson(
+      Map<String, dynamic> data) {
+    return FloatingHeaderSnapConfigurationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Specifies how a floating header is to be "snapped" (animated) into or out
 of view.
 
@@ -21,13 +22,13 @@ See also:
    and snapped into view via the corresponding parameters.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

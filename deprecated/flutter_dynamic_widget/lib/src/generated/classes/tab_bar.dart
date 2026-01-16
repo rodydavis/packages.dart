@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TabBarBase extends BaseWidget {
-    TabBarBase();
+  TabBarBase();
 
-    factory TabBarBase.fromJson(Map<String, dynamic> data) {
-        return TabBarBase();
-    }
+  factory TabBarBase.fromJson(Map<String, dynamic> data) {
+    return TabBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design widget that displays a horizontal row of tabs.
 
 Typically created as the [AppBar.bottom] part of an [AppBar] and in
@@ -32,13 +32,13 @@ See also:
  * [TabBarView], which displays page views that correspond to each tab.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

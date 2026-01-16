@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ModalBarrierBase extends BaseWidget {
-    ModalBarrierBase();
+  ModalBarrierBase();
 
-    factory ModalBarrierBase.fromJson(Map<String, dynamic> data) {
-        return ModalBarrierBase();
-    }
+  factory ModalBarrierBase.fromJson(Map<String, dynamic> data) {
+    return ModalBarrierBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that prevents the user from interacting with widgets behind itself.
 
 The modal barrier is the scrim that is rendered behind each route, which
@@ -25,13 +25,13 @@ See also:
    instead of a single color value.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

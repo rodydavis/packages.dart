@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextButtonBase extends BaseWidget {
-    TextButtonBase();
+  TextButtonBase();
 
-    factory TextButtonBase.fromJson(Map<String, dynamic> data) {
-        return TextButtonBase();
-    }
+  factory TextButtonBase.fromJson(Map<String, dynamic> data) {
+    return TextButtonBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A Material Design "Text Button".
 
 Use text buttons on toolbars, in dialogs, or inline with other
@@ -46,13 +46,13 @@ See also:
  * <https://material.io/design/components/buttons.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

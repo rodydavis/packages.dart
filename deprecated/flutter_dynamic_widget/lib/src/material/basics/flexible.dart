@@ -24,7 +24,7 @@ class FlexibleBase extends _$FlexibleBase {
   @override
   final WidgetContext widgetContext;
 
-   @override
+  @override
   final GenerateWidget widgetRender;
 
   @override

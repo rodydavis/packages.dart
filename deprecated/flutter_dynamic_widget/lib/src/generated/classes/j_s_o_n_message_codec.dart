@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class JSONMessageCodecBase extends BaseWidget {
-    JSONMessageCodecBase();
+  JSONMessageCodecBase();
 
-    factory JSONMessageCodecBase.fromJson(Map<String, dynamic> data) {
-        return JSONMessageCodecBase();
-    }
+  factory JSONMessageCodecBase.fromJson(Map<String, dynamic> data) {
+    return JSONMessageCodecBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 [MessageCodec] with UTF-8 encoded JSON messages.
 
 Supported messages are acyclic values of these forms:
@@ -29,13 +29,13 @@ singleton JSON array with a Boolean, number, or string value, and then
 extracting its single element.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

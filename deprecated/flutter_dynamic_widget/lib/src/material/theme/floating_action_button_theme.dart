@@ -9,7 +9,8 @@ part 'floating_action_button_theme.g.dart';
 @PropertyClass('FloatingActionButtonThemeData')
 class FloatingActionButtonThemeDataBase
     extends _$FloatingActionButtonThemeDataBase {
-  FloatingActionButtonThemeDataBase(this.widgetData, this.widgetContext, this.widgetRender);
+  FloatingActionButtonThemeDataBase(
+      this.widgetData, this.widgetContext, this.widgetRender);
 
   @override
   final Map<String, dynamic> widgetData;
@@ -19,7 +20,6 @@ class FloatingActionButtonThemeDataBase
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

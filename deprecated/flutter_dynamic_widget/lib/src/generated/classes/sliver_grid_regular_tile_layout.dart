@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverGridRegularTileLayoutBase extends BaseWidget {
-    SliverGridRegularTileLayoutBase();
+  SliverGridRegularTileLayoutBase();
 
-    factory SliverGridRegularTileLayoutBase.fromJson(Map<String, dynamic> data) {
-        return SliverGridRegularTileLayoutBase();
-    }
+  factory SliverGridRegularTileLayoutBase.fromJson(Map<String, dynamic> data) {
+    return SliverGridRegularTileLayoutBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [SliverGridLayout] that uses equally sized and spaced tiles.
 
 Rather that providing a grid with a [SliverGridLayout] directly, you instead
@@ -31,13 +31,13 @@ See also:
    [RenderSliverGrid.performLayout] method.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

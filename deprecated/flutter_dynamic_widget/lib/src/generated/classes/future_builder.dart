@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FutureBuilderBase extends BaseWidget {
-    FutureBuilderBase();
+  FutureBuilderBase();
 
-    factory FutureBuilderBase.fromJson(Map<String, dynamic> data) {
-        return FutureBuilderBase();
-    }
+  factory FutureBuilderBase.fromJson(Map<String, dynamic> data) {
+    return FutureBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Widget that builds itself based on the latest snapshot of interaction with
 a [Future].
 
@@ -147,13 +147,13 @@ Widget build(BuildContext context) {
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SemanticsDataBase extends BaseWidget {
-    SemanticsDataBase();
+  SemanticsDataBase();
 
-    factory SemanticsDataBase.fromJson(Map<String, dynamic> data) {
-        return SemanticsDataBase();
-    }
+  factory SemanticsDataBase.fromJson(Map<String, dynamic> data) {
+    return SemanticsDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Summary information about a [SemanticsNode] object.
 
 A semantics node might [SemanticsNode.mergeAllDescendantsIntoThisNode],
@@ -19,13 +19,13 @@ for the node.
 Typically obtained from [SemanticsNode.getSemanticsData].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

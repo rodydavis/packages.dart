@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ChoiceChipBase extends BaseWidget {
-    ChoiceChipBase();
+  ChoiceChipBase();
 
-    factory ChoiceChipBase.fromJson(Map<String, dynamic> data) {
-        return ChoiceChipBase();
-    }
+  factory ChoiceChipBase.fromJson(Map<String, dynamic> data) {
+    return ChoiceChipBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design choice chip.
 
 [ChoiceChip]s represent a single choice from a set. Choice chips contain
@@ -65,13 +65,13 @@ See also:
  * <https://material.io/design/components/chips.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ShrinkWrappingViewportBase extends BaseWidget {
-    ShrinkWrappingViewportBase();
+  ShrinkWrappingViewportBase();
 
-    factory ShrinkWrappingViewportBase.fromJson(Map<String, dynamic> data) {
-        return ShrinkWrappingViewportBase();
-    }
+  factory ShrinkWrappingViewportBase.fromJson(Map<String, dynamic> data) {
+    return ShrinkWrappingViewportBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that is bigger on the inside and shrink wraps its children in the
 main axis.
 
@@ -36,13 +36,13 @@ See also:
  * [Viewport], a viewport that does not shrink-wrap its contents.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

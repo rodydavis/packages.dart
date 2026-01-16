@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MonthPickerBase extends BaseWidget {
-    MonthPickerBase();
+  MonthPickerBase();
 
-    factory MonthPickerBase.fromJson(Map<String, dynamic> data) {
-        return MonthPickerBase();
-    }
+  factory MonthPickerBase.fromJson(Map<String, dynamic> data) {
+    return MonthPickerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A scrollable list of months to allow picking a month.
 
 Shows the days of each month in a rectangular grid with one column for each
@@ -26,13 +26,13 @@ See also:
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

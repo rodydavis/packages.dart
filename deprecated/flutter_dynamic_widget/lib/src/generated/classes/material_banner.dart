@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MaterialBannerBase extends BaseWidget {
-    MaterialBannerBase();
+  MaterialBannerBase();
 
-    factory MaterialBannerBase.fromJson(Map<String, dynamic> data) {
-        return MaterialBannerBase();
-    }
+  factory MaterialBannerBase.fromJson(Map<String, dynamic> data) {
+    return MaterialBannerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A Material Design banner.
 
 A banner displays an important, succinct message, and provides actions for
@@ -30,13 +30,13 @@ The [actions] and [content] must be provided. An optional leading widget
 This widget is unrelated to the widgets library [Banner] widget.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

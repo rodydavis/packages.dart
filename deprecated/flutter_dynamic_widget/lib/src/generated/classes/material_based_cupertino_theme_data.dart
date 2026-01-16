@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class MaterialBasedCupertinoThemeDataBase extends BaseWidget {
-    MaterialBasedCupertinoThemeDataBase();
+  MaterialBasedCupertinoThemeDataBase();
 
-    factory MaterialBasedCupertinoThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return MaterialBasedCupertinoThemeDataBase();
-    }
+  factory MaterialBasedCupertinoThemeDataBase.fromJson(
+      Map<String, dynamic> data) {
+    return MaterialBasedCupertinoThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [CupertinoThemeData] that defers unspecified theme attributes to an
 upstream Material [ThemeData].
 
@@ -36,13 +37,13 @@ See also:
    [MaterialBasedCupertinoThemeData].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

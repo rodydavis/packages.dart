@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DefaultTabControllerBase extends BaseWidget {
-    DefaultTabControllerBase();
+  DefaultTabControllerBase();
 
-    factory DefaultTabControllerBase.fromJson(Map<String, dynamic> data) {
-        return DefaultTabControllerBase();
-    }
+  factory DefaultTabControllerBase.fromJson(Map<String, dynamic> data) {
+    return DefaultTabControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The [TabController] for descendant widgets that don't specify one
 explicitly.
 
@@ -57,13 +57,13 @@ class MyDemo extends StatelessWidget {
 ```
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

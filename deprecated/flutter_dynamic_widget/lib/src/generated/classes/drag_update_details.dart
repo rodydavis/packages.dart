@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DragUpdateDetailsBase extends BaseWidget {
-    DragUpdateDetailsBase();
+  DragUpdateDetailsBase();
 
-    factory DragUpdateDetailsBase.fromJson(Map<String, dynamic> data) {
-        return DragUpdateDetailsBase();
-    }
+  factory DragUpdateDetailsBase.fromJson(Map<String, dynamic> data) {
+    return DragUpdateDetailsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Details object for callbacks that use [GestureDragUpdateCallback].
 
 See also:
@@ -19,13 +19,13 @@ See also:
  * [DragEndDetails], the details for [GestureDragEndCallback].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

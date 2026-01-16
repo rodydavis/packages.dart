@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TooltipThemeBase extends BaseWidget {
-    TooltipThemeBase();
+  TooltipThemeBase();
 
-    factory TooltipThemeBase.fromJson(Map<String, dynamic> data) {
-        return TooltipThemeBase();
-    }
+  factory TooltipThemeBase.fromJson(Map<String, dynamic> data) {
+    return TooltipThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An inherited widget that defines the configuration for
 [Tooltip]s in this widget's subtree.
 
@@ -41,13 +41,13 @@ TooltipTheme(
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

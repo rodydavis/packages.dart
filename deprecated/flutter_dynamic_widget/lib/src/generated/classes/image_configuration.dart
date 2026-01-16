@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ImageConfigurationBase extends BaseWidget {
-    ImageConfigurationBase();
+  ImageConfigurationBase();
 
-    factory ImageConfigurationBase.fromJson(Map<String, dynamic> data) {
-        return ImageConfigurationBase();
-    }
+  factory ImageConfigurationBase.fromJson(Map<String, dynamic> data) {
+    return ImageConfigurationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Configuration information passed to the [ImageProvider.resolve] method to
 select a specific image.
 
@@ -20,13 +20,13 @@ See also:
    which image to obtain.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

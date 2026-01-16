@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RawKeyboardListenerBase extends BaseWidget {
-    RawKeyboardListenerBase();
+  RawKeyboardListenerBase();
 
-    factory RawKeyboardListenerBase.fromJson(Map<String, dynamic> data) {
-        return RawKeyboardListenerBase();
-    }
+  factory RawKeyboardListenerBase.fromJson(Map<String, dynamic> data) {
+    return RawKeyboardListenerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that calls a callback whenever the user presses or releases a key
 on a keyboard.
 
@@ -25,13 +25,13 @@ See also:
    entry.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedSwitcherBase extends BaseWidget {
-    AnimatedSwitcherBase();
+  AnimatedSwitcherBase();
 
-    factory AnimatedSwitcherBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedSwitcherBase();
-    }
+  factory AnimatedSwitcherBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedSwitcherBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that by default does a cross-fade between a new widget and the
 widget previously set on the [AnimatedSwitcher] as a child.
 
@@ -88,13 +88,13 @@ See also:
  * [FadeTransition], which [AnimatedSwitcher] uses to perform the transition.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

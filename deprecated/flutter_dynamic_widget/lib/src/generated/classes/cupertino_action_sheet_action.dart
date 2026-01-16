@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoActionSheetActionBase extends BaseWidget {
-    CupertinoActionSheetActionBase();
+  CupertinoActionSheetActionBase();
 
-    factory CupertinoActionSheetActionBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoActionSheetActionBase();
-    }
+  factory CupertinoActionSheetActionBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoActionSheetActionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A button typically used in a [CupertinoActionSheet].
 
 See also:
@@ -17,13 +17,13 @@ See also:
    more choices related to the current context.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

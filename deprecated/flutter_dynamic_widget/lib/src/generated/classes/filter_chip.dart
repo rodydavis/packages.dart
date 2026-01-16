@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FilterChipBase extends BaseWidget {
-    FilterChipBase();
+  FilterChipBase();
 
-    factory FilterChipBase.fromJson(Map<String, dynamic> data) {
-        return FilterChipBase();
-    }
+  factory FilterChipBase.fromJson(Map<String, dynamic> data) {
+    return FilterChipBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design filter chip.
 
 Filter chips use tags or descriptive words as a way to filter content.
@@ -97,13 +97,13 @@ See also:
  * <https://material.io/design/components/chips.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

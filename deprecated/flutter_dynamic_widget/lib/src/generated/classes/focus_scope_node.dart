@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FocusScopeNodeBase extends BaseWidget {
-    FocusScopeNodeBase();
+  FocusScopeNodeBase();
 
-    factory FocusScopeNodeBase.fromJson(Map<String, dynamic> data) {
-        return FocusScopeNodeBase();
-    }
+  factory FocusScopeNodeBase.fromJson(Map<String, dynamic> data) {
+    return FocusScopeNodeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A subclass of [FocusNode] that acts as a scope for its descendants,
 maintaining information about which descendant is currently or was last
 focused.
@@ -37,13 +37,13 @@ See also:
    distributes key events to focused nodes.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class OpenUpwardsPageTransitionsBuilderBase extends BaseWidget {
-    OpenUpwardsPageTransitionsBuilderBase();
+  OpenUpwardsPageTransitionsBuilderBase();
 
-    factory OpenUpwardsPageTransitionsBuilderBase.fromJson(Map<String, dynamic> data) {
-        return OpenUpwardsPageTransitionsBuilderBase();
-    }
+  factory OpenUpwardsPageTransitionsBuilderBase.fromJson(
+      Map<String, dynamic> data) {
+    return OpenUpwardsPageTransitionsBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Used by [PageTransitionsTheme] to define a vertical [MaterialPageRoute] page
 transition animation that looks like the default page transition
 used on Android P.
@@ -22,13 +23,13 @@ See also:
    transition that matches native iOS page transitions.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

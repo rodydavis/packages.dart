@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IconButtonBase extends BaseWidget {
-    IconButtonBase();
+  IconButtonBase();
 
-    factory IconButtonBase.fromJson(Map<String, dynamic> data) {
-        return IconButtonBase();
-    }
+  factory IconButtonBase.fromJson(Map<String, dynamic> data) {
+    return IconButtonBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design icon button.
 
 An icon button is a picture printed on a [Material] widget that reacts to
@@ -114,13 +114,13 @@ See also:
  * [InkResponse] and [InkWell], for the ink splash effect itself.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

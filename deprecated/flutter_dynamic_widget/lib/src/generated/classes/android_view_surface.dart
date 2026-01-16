@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AndroidViewSurfaceBase extends BaseWidget {
-    AndroidViewSurfaceBase();
+  AndroidViewSurfaceBase();
 
-    factory AndroidViewSurfaceBase.fromJson(Map<String, dynamic> data) {
-        return AndroidViewSurfaceBase();
-    }
+  factory AndroidViewSurfaceBase.fromJson(Map<String, dynamic> data) {
+    return AndroidViewSurfaceBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Integrates an Android view with Flutter's compositor, touch, and semantics subsystems.
 
 The compositor integration is done by adding a [PlatformViewLayer] to the layer tree. [PlatformViewLayer]
@@ -26,13 +26,13 @@ See also:
  * [UiKitView] which embeds an iOS platform view in the widget hierarchy.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

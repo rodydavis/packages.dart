@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BoxConstraintsBase extends BaseWidget {
-    BoxConstraintsBase();
+  BoxConstraintsBase();
 
-    factory BoxConstraintsBase.fromJson(Map<String, dynamic> data) {
-        return BoxConstraintsBase();
-    }
+  factory BoxConstraintsBase.fromJson(Map<String, dynamic> data) {
+    return BoxConstraintsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Immutable layout constraints for [RenderBox] layout.
 
 A [Size] respects a [BoxConstraints] if, and only if, all of the following
@@ -74,13 +74,13 @@ See: [constrain], [constrainWidth], [constrainHeight],
 [isSatisfiedBy].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverListBase extends BaseWidget {
-    SliverListBase();
+  SliverListBase();
 
-    factory SliverListBase.fromJson(Map<String, dynamic> data) {
-        return SliverListBase();
-    }
+  factory SliverListBase.fromJson(Map<String, dynamic> data) {
+    return SliverListBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver that places multiple box children in a linear array along the main
 axis.
 
@@ -41,13 +41,13 @@ See also:
  * [SliverGrid], which places its children in arbitrary positions.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

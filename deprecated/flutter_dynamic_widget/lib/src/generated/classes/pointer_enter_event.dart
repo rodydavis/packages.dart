@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PointerEnterEventBase extends BaseWidget {
-    PointerEnterEventBase();
+  PointerEnterEventBase();
 
-    factory PointerEnterEventBase.fromJson(Map<String, dynamic> data) {
-        return PointerEnterEventBase();
-    }
+  factory PointerEnterEventBase.fromJson(Map<String, dynamic> data) {
+    return PointerEnterEventBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The pointer has moved with respect to the device while the pointer is or is
 not in contact with the device, and it has entered a target object.
 
@@ -23,13 +23,13 @@ See also:
    events in a widget tree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

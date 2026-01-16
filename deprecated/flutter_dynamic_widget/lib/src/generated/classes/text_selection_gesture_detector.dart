@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextSelectionGestureDetectorBase extends BaseWidget {
-    TextSelectionGestureDetectorBase();
+  TextSelectionGestureDetectorBase();
 
-    factory TextSelectionGestureDetectorBase.fromJson(Map<String, dynamic> data) {
-        return TextSelectionGestureDetectorBase();
-    }
+  factory TextSelectionGestureDetectorBase.fromJson(Map<String, dynamic> data) {
+    return TextSelectionGestureDetectorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A gesture detector to respond to non-exclusive event chains for a text field.
 
 An ordinary [GestureDetector] configured to handle events like tap and
@@ -23,13 +23,13 @@ See also:
    detector.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

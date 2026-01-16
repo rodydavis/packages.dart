@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CenterBase extends BaseWidget {
-    CenterBase();
+  CenterBase();
 
-    factory CenterBase.fromJson(Map<String, dynamic> data) {
-        return CenterBase();
-    }
+  factory CenterBase.fromJson(Map<String, dynamic> data) {
+    return CenterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that centers its child within itself.
 
 This widget will be as big as possible if its dimensions are constrained and
@@ -30,13 +30,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

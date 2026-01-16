@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class VerticalDividerBase extends BaseWidget {
-    VerticalDividerBase();
+  VerticalDividerBase();
 
-    factory VerticalDividerBase.fromJson(Map<String, dynamic> data) {
-        return VerticalDividerBase();
-    }
+  factory VerticalDividerBase.fromJson(Map<String, dynamic> data) {
+    return VerticalDividerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A thin vertical line, with padding on either side.
 
 In the material design language, this represents a divider. Vertical
@@ -24,13 +24,13 @@ See also:
  * <https://material.io/design/components/dividers.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class EditableTextStateBase extends BaseWidget {
-    EditableTextStateBase();
+  EditableTextStateBase();
 
-    factory EditableTextStateBase.fromJson(Map<String, dynamic> data) {
-        return EditableTextStateBase();
-    }
+  factory EditableTextStateBase.fromJson(Map<String, dynamic> data) {
+    return EditableTextStateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 State for a [EditableText].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

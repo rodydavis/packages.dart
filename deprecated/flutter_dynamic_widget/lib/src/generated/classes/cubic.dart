@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CubicBase extends BaseWidget {
-    CubicBase();
+  CubicBase();
 
-    factory CubicBase.fromJson(Map<String, dynamic> data) {
-        return CubicBase();
-    }
+  factory CubicBase.fromJson(Map<String, dynamic> data) {
+    return CubicBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A cubic polynomial mapping of the unit interval.
 
 The [Curves] class contains some commonly used cubic curves:
@@ -31,13 +31,13 @@ See also:
  * [CatmullRomCurve], a curve which passes through specific values.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

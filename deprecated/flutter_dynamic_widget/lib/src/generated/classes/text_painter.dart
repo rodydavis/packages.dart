@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextPainterBase extends BaseWidget {
-    TextPainterBase();
+  TextPainterBase();
 
-    factory TextPainterBase.fromJson(Map<String, dynamic> data) {
-        return TextPainterBase();
-    }
+  factory TextPainterBase.fromJson(Map<String, dynamic> data) {
+    return TextPainterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An object that paints a [TextSpan] tree into a [Canvas].
 
 To use a [TextPainter], follow these steps:
@@ -28,13 +28,13 @@ The default text style is white. To change the color of the text,
 pass a [TextStyle] object to the [TextSpan] in `text`.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

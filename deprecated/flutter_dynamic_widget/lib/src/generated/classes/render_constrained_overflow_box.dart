@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderConstrainedOverflowBoxBase extends BaseWidget {
-    RenderConstrainedOverflowBoxBase();
+  RenderConstrainedOverflowBoxBase();
 
-    factory RenderConstrainedOverflowBoxBase.fromJson(Map<String, dynamic> data) {
-        return RenderConstrainedOverflowBoxBase();
-    }
+  factory RenderConstrainedOverflowBoxBase.fromJson(Map<String, dynamic> data) {
+    return RenderConstrainedOverflowBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A render object that imposes different constraints on its child than it gets
 from its parent, possibly allowing the child to overflow the parent.
 
@@ -41,13 +41,13 @@ See also:
    overflow.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PhysicalModelBase extends BaseWidget {
-    PhysicalModelBase();
+  PhysicalModelBase();
 
-    factory PhysicalModelBase.fromJson(Map<String, dynamic> data) {
-        return PhysicalModelBase();
-    }
+  factory PhysicalModelBase.fromJson(Map<String, dynamic> data) {
+    return PhysicalModelBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget representing a physical layer that clips its children to a shape.
 
 Physical layers cast shadows based on an [elevation] which is nominally in
@@ -25,13 +25,13 @@ See also:
  * [ClipRect], which applies a clip to its child.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

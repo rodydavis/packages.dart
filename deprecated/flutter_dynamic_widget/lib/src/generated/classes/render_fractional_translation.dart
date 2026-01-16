@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderFractionalTranslationBase extends BaseWidget {
-    RenderFractionalTranslationBase();
+  RenderFractionalTranslationBase();
 
-    factory RenderFractionalTranslationBase.fromJson(Map<String, dynamic> data) {
-        return RenderFractionalTranslationBase();
-    }
+  factory RenderFractionalTranslationBase.fromJson(Map<String, dynamic> data) {
+    return RenderFractionalTranslationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Applies a translation transformation before painting its child.
 
 The translation is expressed as an [Offset] scaled to the child's size. For
@@ -20,13 +20,13 @@ Hit tests will only be detected inside the bounds of the
 they overflow.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PositionedTransitionBase extends BaseWidget {
-    PositionedTransitionBase();
+  PositionedTransitionBase();
 
-    factory PositionedTransitionBase.fromJson(Map<String, dynamic> data) {
-        return PositionedTransitionBase();
-    }
+  factory PositionedTransitionBase.fromJson(Map<String, dynamic> data) {
+    return PositionedTransitionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of [Positioned] which takes a specific
 [Animation<RelativeRect>] to transition the child's position from a start
 position to an end position over the lifetime of the animation.
@@ -89,13 +89,13 @@ See also:
    aligns its child.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

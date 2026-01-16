@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AboutListTileBase extends BaseWidget {
-    AboutListTileBase();
+  AboutListTileBase();
 
-    factory AboutListTileBase.fromJson(Map<String, dynamic> data) {
-        return AboutListTileBase();
-    }
+  factory AboutListTileBase.fromJson(Map<String, dynamic> data) {
+    return AboutListTileBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [ListTile] that shows an about box.
 
 This widget is often added to an app's [Drawer]. When tapped it shows
@@ -93,13 +93,13 @@ uses an [AboutListTile], and the second uses the [showAboutDialog] function.
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

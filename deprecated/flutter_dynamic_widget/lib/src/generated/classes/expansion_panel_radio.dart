@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ExpansionPanelRadioBase extends BaseWidget {
-    ExpansionPanelRadioBase();
+  ExpansionPanelRadioBase();
 
-    factory ExpansionPanelRadioBase.fromJson(Map<String, dynamic> data) {
-        return ExpansionPanelRadioBase();
-    }
+  factory ExpansionPanelRadioBase.fromJson(Map<String, dynamic> data) {
+    return ExpansionPanelRadioBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An expansion panel that allows for radio-like functionality.
 This means that at any given time, at most, one [ExpansionPanelRadio]
 can remain expanded.
@@ -20,13 +20,13 @@ which [ExpansionPanelRadio] instance should be expanded.
 See [ExpansionPanelList.radio] for a sample implementation.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RoundedRectangleBorderBase extends BaseWidget {
-    RoundedRectangleBorderBase();
+  RoundedRectangleBorderBase();
 
-    factory RoundedRectangleBorderBase.fromJson(Map<String, dynamic> data) {
-        return RoundedRectangleBorderBase();
-    }
+  factory RoundedRectangleBorderBase.fromJson(Map<String, dynamic> data) {
+    return RoundedRectangleBorderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A rectangular border with rounded corners.
 
 Typically used with [ShapeDecoration] to draw a box with a rounded
@@ -23,13 +23,13 @@ See also:
    describe a rounded rectangle.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

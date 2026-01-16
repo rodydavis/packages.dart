@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CatmullRomCurveBase extends BaseWidget {
-    CatmullRomCurveBase();
+  CatmullRomCurveBase();
 
-    factory CatmullRomCurveBase.fromJson(Map<String, dynamic> data) {
-        return CatmullRomCurveBase();
-    }
+  factory CatmullRomCurveBase.fromJson(Map<String, dynamic> data) {
+    return CatmullRomCurveBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An animation easing curve that passes smoothly through the given control
 points using a centripetal Catmull-Rom spline.
 
@@ -32,13 +32,13 @@ See also:
  * This [paper on using Catmull-Rom splines](http://faculty.cs.tamu.edu/schaefer/research/cr_cad.pdf).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

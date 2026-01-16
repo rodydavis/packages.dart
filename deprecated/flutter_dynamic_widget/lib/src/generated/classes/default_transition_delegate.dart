@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DefaultTransitionDelegateBase extends BaseWidget {
-    DefaultTransitionDelegateBase();
+  DefaultTransitionDelegateBase();
 
-    factory DefaultTransitionDelegateBase.fromJson(Map<String, dynamic> data) {
-        return DefaultTransitionDelegateBase();
-    }
+  factory DefaultTransitionDelegateBase.fromJson(Map<String, dynamic> data) {
+    return DefaultTransitionDelegateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The default implementation of [TransitionDelegate] that the [Navigator] will
 use if its [Navigator.transitionDelegate] is not specified.
 
@@ -19,13 +19,13 @@ All the other routes below will either be completed with
 [Route.currentResult] or added without an animated transition.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

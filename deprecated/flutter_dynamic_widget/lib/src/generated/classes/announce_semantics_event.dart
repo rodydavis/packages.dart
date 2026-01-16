@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnnounceSemanticsEventBase extends BaseWidget {
-    AnnounceSemanticsEventBase();
+  AnnounceSemanticsEventBase();
 
-    factory AnnounceSemanticsEventBase.fromJson(Map<String, dynamic> data) {
-        return AnnounceSemanticsEventBase();
-    }
+  factory AnnounceSemanticsEventBase.fromJson(Map<String, dynamic> data) {
+    return AnnounceSemanticsEventBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An event for a semantic announcement.
 
 This should be used for announcement that are not seamlessly announced by
@@ -21,13 +21,13 @@ When possible, prefer using mechanisms like [Semantics] to implicitly
 trigger announcements over using this event.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

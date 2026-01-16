@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MaterialRectArcTweenBase extends BaseWidget {
-    MaterialRectArcTweenBase();
+  MaterialRectArcTweenBase();
 
-    factory MaterialRectArcTweenBase.fromJson(Map<String, dynamic> data) {
-        return MaterialRectArcTweenBase();
-    }
+  factory MaterialRectArcTweenBase.fromJson(Map<String, dynamic> data) {
+    return MaterialRectArcTweenBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [Tween] that interpolates a [Rect] by having its opposite corners follow
 circular arcs.
 
@@ -30,13 +30,13 @@ See also:
    a hero's path.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderStackBase extends BaseWidget {
-    RenderStackBase();
+  RenderStackBase();
 
-    factory RenderStackBase.fromJson(Map<String, dynamic> data) {
-        return RenderStackBase();
-    }
+  factory RenderStackBase.fromJson(Map<String, dynamic> data) {
+    return RenderStackBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Implements the stack layout algorithm.
 
 In a stack layout, the children are positioned on top of each other in the
@@ -47,13 +47,13 @@ See also:
  * [RenderFlow]
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

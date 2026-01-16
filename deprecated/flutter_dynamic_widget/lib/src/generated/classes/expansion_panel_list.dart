@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ExpansionPanelListBase extends BaseWidget {
-    ExpansionPanelListBase();
+  ExpansionPanelListBase();
 
-    factory ExpansionPanelListBase.fromJson(Map<String, dynamic> data) {
-        return ExpansionPanelListBase();
-    }
+  factory ExpansionPanelListBase.fromJson(Map<String, dynamic> data) {
+    return ExpansionPanelListBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material expansion panel list that lays out its children and animates
 expansions.
 
@@ -94,13 +94,13 @@ See also:
  * <https://material.io/design/components/lists.html#types>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

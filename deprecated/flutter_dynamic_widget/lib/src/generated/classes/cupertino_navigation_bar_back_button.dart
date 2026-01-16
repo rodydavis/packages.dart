@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class CupertinoNavigationBarBackButtonBase extends BaseWidget {
-    CupertinoNavigationBarBackButtonBase();
+  CupertinoNavigationBarBackButtonBase();
 
-    factory CupertinoNavigationBarBackButtonBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoNavigationBarBackButtonBase();
-    }
+  factory CupertinoNavigationBarBackButtonBase.fromJson(
+      Map<String, dynamic> data) {
+    return CupertinoNavigationBarBackButtonBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A nav bar back button typically used in [CupertinoNavigationBar].
 
 This is automatically inserted into [CupertinoNavigationBar] and
@@ -24,13 +25,13 @@ the previous [CupertinoPageRoute.title]. If [previousPageTitle] is specified,
 it will be shown instead.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

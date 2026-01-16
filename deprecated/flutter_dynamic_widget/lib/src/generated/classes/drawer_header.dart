@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DrawerHeaderBase extends BaseWidget {
-    DrawerHeaderBase();
+  DrawerHeaderBase();
 
-    factory DrawerHeaderBase.fromJson(Map<String, dynamic> data) {
-        return DrawerHeaderBase();
-    }
+  factory DrawerHeaderBase.fromJson(Map<String, dynamic> data) {
+    return DrawerHeaderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The top-most region of a material design drawer. The header's [child]
 widget, if any, is placed inside a [Container] whose [decoration] can be
 passed as an argument, inset by the given [padding].
@@ -25,13 +25,13 @@ See also:
  * <https://material.io/design/components/navigation-drawer.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

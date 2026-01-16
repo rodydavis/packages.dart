@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoPageScaffoldBase extends BaseWidget {
-    CupertinoPageScaffoldBase();
+  CupertinoPageScaffoldBase();
 
-    factory CupertinoPageScaffoldBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoPageScaffoldBase();
-    }
+  factory CupertinoPageScaffoldBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoPageScaffoldBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Implements a single iOS application page's layout.
 
 The scaffold lays out the navigation bar on top and the content between or
@@ -21,13 +21,13 @@ See also:
    [CupertinoPageScaffold] with support for iOS-style page transitions.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

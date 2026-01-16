@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PlaceholderBase extends BaseWidget {
-    PlaceholderBase();
+  PlaceholderBase();
 
-    factory PlaceholderBase.fromJson(Map<String, dynamic> data) {
-        return PlaceholderBase();
-    }
+  factory PlaceholderBase.fromJson(Map<String, dynamic> data) {
+    return PlaceholderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that draws a box that represents where other widgets will one day
 be added.
 
@@ -22,13 +22,13 @@ given [fallbackWidth] and [fallbackHeight].
 {@youtube 560 315 https://www.youtube.com/watch?v=LPe56fezmoo}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

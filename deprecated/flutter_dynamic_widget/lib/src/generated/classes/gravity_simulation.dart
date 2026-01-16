@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class GravitySimulationBase extends BaseWidget {
-    GravitySimulationBase();
+  GravitySimulationBase();
 
-    factory GravitySimulationBase.fromJson(Map<String, dynamic> data) {
-        return GravitySimulationBase();
-    }
+  factory GravitySimulationBase.fromJson(Map<String, dynamic> data) {
+    return GravitySimulationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A simulation that applies a constant accelerating force.
 
 Models a particle that follows Newton's second law of motion. The simulation
@@ -40,13 +40,13 @@ See also:
    a bouncing effect.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

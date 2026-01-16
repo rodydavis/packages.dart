@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PreviousFocusActionBase extends BaseWidget {
-    PreviousFocusActionBase();
+  PreviousFocusActionBase();
 
-    factory PreviousFocusActionBase.fromJson(Map<String, dynamic> data) {
-        return PreviousFocusActionBase();
-    }
+  factory PreviousFocusActionBase.fromJson(Map<String, dynamic> data) {
+    return PreviousFocusActionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [Action] that moves the focus to the previous focusable node in the focus
 order.
 
@@ -19,13 +19,13 @@ and the [LogicalKeyboardKey.shift] key in the [WidgetsApp].
 See [FocusTraversalPolicy] for more information about focus traversal.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

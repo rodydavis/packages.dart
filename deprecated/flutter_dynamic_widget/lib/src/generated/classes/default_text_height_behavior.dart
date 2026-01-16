@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DefaultTextHeightBehaviorBase extends BaseWidget {
-    DefaultTextHeightBehaviorBase();
+  DefaultTextHeightBehaviorBase();
 
-    factory DefaultTextHeightBehaviorBase.fromJson(Map<String, dynamic> data) {
-        return DefaultTextHeightBehaviorBase();
-    }
+  factory DefaultTextHeightBehaviorBase.fromJson(Map<String, dynamic> data) {
+    return DefaultTextHeightBehaviorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The [TextHeightBehavior] that will apply to descendant [Text] and [EditableText]
 widgets which have not explicitly set [Text.textHeightBehavior].
 
@@ -22,13 +22,13 @@ See also:
    [Text] widgets.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

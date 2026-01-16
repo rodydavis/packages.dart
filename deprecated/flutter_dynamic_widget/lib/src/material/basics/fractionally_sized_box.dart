@@ -9,7 +9,8 @@ part 'fractionally_sized_box.g.dart';
 
 @WidgetClass('FractionallySizedBox')
 class FractionallySizedBoxBase extends _$FractionallySizedBoxBase {
-  FractionallySizedBoxBase(this.widgetData, this.widgetContext, this.widgetRender);
+  FractionallySizedBoxBase(
+      this.widgetData, this.widgetContext, this.widgetRender);
 
   @WidgetKey.widget(
     acceptWidth: 100,
@@ -34,5 +35,4 @@ class FractionallySizedBoxBase extends _$FractionallySizedBoxBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 }

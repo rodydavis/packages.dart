@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ExpansionTileBase extends BaseWidget {
-    ExpansionTileBase();
+  ExpansionTileBase();
 
-    factory ExpansionTileBase.fromJson(Map<String, dynamic> data) {
-        return ExpansionTileBase();
-    }
+  factory ExpansionTileBase.fromJson(Map<String, dynamic> data) {
+    return ExpansionTileBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A single-line [ListTile] with a trailing button that expands or collapses
 the tile to reveal or hide the [children].
 
@@ -26,13 +26,13 @@ See also:
    <https://material.io/guidelines/components/lists-controls.html>.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

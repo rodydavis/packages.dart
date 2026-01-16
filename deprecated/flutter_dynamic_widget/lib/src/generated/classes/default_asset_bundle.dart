@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DefaultAssetBundleBase extends BaseWidget {
-    DefaultAssetBundleBase();
+  DefaultAssetBundleBase();
 
-    factory DefaultAssetBundleBase.fromJson(Map<String, dynamic> data) {
-        return DefaultAssetBundleBase();
-    }
+  factory DefaultAssetBundleBase.fromJson(Map<String, dynamic> data) {
+    return DefaultAssetBundleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that determines the default asset bundle for its descendants.
 
 For example, used by [Image] to determine which bundle to use for
@@ -59,13 +59,13 @@ See also:
  * [rootBundle], the default default asset bundle.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

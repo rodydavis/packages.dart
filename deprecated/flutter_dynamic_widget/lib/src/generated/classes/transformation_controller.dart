@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TransformationControllerBase extends BaseWidget {
-    TransformationControllerBase();
+  TransformationControllerBase();
 
-    factory TransformationControllerBase.fromJson(Map<String, dynamic> data) {
-        return TransformationControllerBase();
-    }
+  factory TransformationControllerBase.fromJson(Map<String, dynamic> data) {
+    return TransformationControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A thin wrapper on [ValueNotifier] whose value is a [Matrix4] representing a
 transformation.
 
@@ -21,13 +21,13 @@ See also:
    on how to use TransformationController with [InteractiveViewer].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

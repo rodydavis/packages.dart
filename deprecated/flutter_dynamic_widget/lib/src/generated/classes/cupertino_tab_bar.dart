@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoTabBarBase extends BaseWidget {
-    CupertinoTabBarBase();
+  CupertinoTabBarBase();
 
-    factory CupertinoTabBarBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoTabBarBase();
-    }
+  factory CupertinoTabBarBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoTabBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS-styled bottom navigation tab bar.
 
 Displays multiple tabs using [BottomNavigationBarItem] with one tab being
@@ -40,13 +40,13 @@ See also:
  * [BottomNavigationBarItem], an item in a [CupertinoTabBar].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PlatformExceptionBase extends BaseWidget {
-    PlatformExceptionBase();
+  PlatformExceptionBase();
 
-    factory PlatformExceptionBase.fromJson(Map<String, dynamic> data) {
-        return PlatformExceptionBase();
-    }
+  factory PlatformExceptionBase.fromJson(Map<String, dynamic> data) {
+    return PlatformExceptionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Thrown to indicate that a platform interaction failed in the platform
 plugin.
 
@@ -24,13 +24,13 @@ See also:
    platform plugin is wrapped in an error envelope.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

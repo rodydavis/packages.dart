@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class WidgetOrderTraversalPolicyBase extends BaseWidget {
-    WidgetOrderTraversalPolicyBase();
+  WidgetOrderTraversalPolicyBase();
 
-    factory WidgetOrderTraversalPolicyBase.fromJson(Map<String, dynamic> data) {
-        return WidgetOrderTraversalPolicyBase();
-    }
+  factory WidgetOrderTraversalPolicyBase.fromJson(Map<String, dynamic> data) {
+    return WidgetOrderTraversalPolicyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [FocusTraversalPolicy] that traverses the focus order in widget hierarchy
 order.
 
@@ -28,13 +28,13 @@ See also:
    explicitly using [FocusTraversalOrder] widgets.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

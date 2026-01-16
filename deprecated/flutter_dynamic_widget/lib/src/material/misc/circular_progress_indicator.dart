@@ -9,7 +9,8 @@ part 'circular_progress_indicator.g.dart';
 
 @WidgetClass('CircularProgressIndicator')
 class CircularProgressIndicatorBase extends _$CircularProgressIndicatorBase {
-  CircularProgressIndicatorBase(this.widgetData, this.widgetContext, this.widgetRender);
+  CircularProgressIndicatorBase(
+      this.widgetData, this.widgetContext, this.widgetRender);
 
   Color backgroundColor;
   Key key;
@@ -27,7 +28,6 @@ class CircularProgressIndicatorBase extends _$CircularProgressIndicatorBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

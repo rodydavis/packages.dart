@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LinearProgressIndicatorBase extends BaseWidget {
-    LinearProgressIndicatorBase();
+  LinearProgressIndicatorBase();
 
-    factory LinearProgressIndicatorBase.fromJson(Map<String, dynamic> data) {
-        return LinearProgressIndicatorBase();
-    }
+  factory LinearProgressIndicatorBase.fromJson(Map<String, dynamic> data) {
+    return LinearProgressIndicatorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design linear progress indicator, also known as a progress bar.
 
 {@youtube 560 315 https://www.youtube.com/watch?v=O-rhXZLtpv0}
@@ -39,13 +39,13 @@ See also:
  * <https://material.io/design/components/progress-indicators.html#linear-progress-indicators>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

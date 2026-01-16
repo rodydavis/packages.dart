@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DividerThemeDataBase extends BaseWidget {
-    DividerThemeDataBase();
+  DividerThemeDataBase();
 
-    factory DividerThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return DividerThemeDataBase();
-    }
+  factory DividerThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return DividerThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the visual properties of [Divider], [VerticalDivider], dividers
 between [ListTile]s, and dividers between rows in [DataTable]s.
 
@@ -28,13 +28,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

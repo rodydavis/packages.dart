@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class InheritedModelElementBase extends BaseWidget {
-    InheritedModelElementBase();
+  InheritedModelElementBase();
 
-    factory InheritedModelElementBase.fromJson(Map<String, dynamic> data) {
-        return InheritedModelElementBase();
-    }
+  factory InheritedModelElementBase.fromJson(Map<String, dynamic> data) {
+    return InheritedModelElementBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [Element] that uses a [InheritedModel] as its configuration.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

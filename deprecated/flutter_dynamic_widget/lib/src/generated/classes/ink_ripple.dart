@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InkRippleBase extends BaseWidget {
-    InkRippleBase();
+  InkRippleBase();
 
-    factory InkRippleBase.fromJson(Map<String, dynamic> data) {
-        return InkRippleBase();
-    }
+  factory InkRippleBase.fromJson(Map<String, dynamic> data) {
+    return InkRippleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A visual reaction on a piece of [Material] to user input.
 
 A circular ink feature whose origin starts at the input touch point and
@@ -33,13 +33,13 @@ See also:
    [Material].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

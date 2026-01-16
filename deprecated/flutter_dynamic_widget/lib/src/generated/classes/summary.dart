@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SummaryBase extends BaseWidget {
-    SummaryBase();
+  SummaryBase();
 
-    factory SummaryBase.fromJson(Map<String, dynamic> data) {
-        return SummaryBase();
-    }
+  factory SummaryBase.fromJson(Map<String, dynamic> data) {
+    return SummaryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An annotation that provides a short description of a class for use
 in an index.
 
@@ -40,13 +40,13 @@ See also:
    represents the class.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class WidgetsAppBase extends BaseWidget {
-    WidgetsAppBase();
+  WidgetsAppBase();
 
-    factory WidgetsAppBase.fromJson(Map<String, dynamic> data) {
-        return WidgetsAppBase();
-    }
+  factory WidgetsAppBase.fromJson(Map<String, dynamic> data) {
+    return WidgetsAppBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A convenience widget that wraps a number of widgets that are commonly
 required for an application.
 
@@ -38,13 +38,13 @@ See also:
  * [SemanticsDebugger], a widget that visualizes the semantics for the child.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

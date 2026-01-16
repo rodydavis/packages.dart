@@ -1,25 +1,25 @@
 import '../base.dart';
 
 class ShortcutMapPropertyBase extends BaseWidget {
-    ShortcutMapPropertyBase();
+  ShortcutMapPropertyBase();
 
-    factory ShortcutMapPropertyBase.fromJson(Map<String, dynamic> data) {
-        return ShortcutMapPropertyBase();
-    }
+  factory ShortcutMapPropertyBase.fromJson(Map<String, dynamic> data) {
+    return ShortcutMapPropertyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Diagnostics property which handles formatting a `Map<LogicalKeySet, Intent>`
 (the same type as the [Shortcuts.shortcuts] property) so that it is human-readable.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

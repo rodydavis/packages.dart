@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CheckboxListTileBase extends BaseWidget {
-    CheckboxListTileBase();
+  CheckboxListTileBase();
 
-    factory CheckboxListTileBase.fromJson(Map<String, dynamic> data) {
-        return CheckboxListTileBase();
-    }
+  factory CheckboxListTileBase.fromJson(Map<String, dynamic> data) {
+    return CheckboxListTileBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [ListTile] with a [Checkbox]. In other words, a checkbox with a label.
 
 The entire list tile is interactive: tapping anywhere in the tile toggles
@@ -238,13 +238,13 @@ See also:
  * [ListTile] and [Checkbox], the widgets from which this widget is made.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

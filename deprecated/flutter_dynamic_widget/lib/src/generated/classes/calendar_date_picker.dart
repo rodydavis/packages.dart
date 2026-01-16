@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CalendarDatePickerBase extends BaseWidget {
-    CalendarDatePickerBase();
+  CalendarDatePickerBase();
 
-    factory CalendarDatePickerBase.fromJson(Map<String, dynamic> data) {
-        return CalendarDatePickerBase();
-    }
+  factory CalendarDatePickerBase.fromJson(Map<String, dynamic> data) {
+    return CalendarDatePickerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Displays a grid of days for a given month and allows the user to select a date.
 
 Days are arranged in a rectangular grid with one column for each day of the
@@ -29,13 +29,13 @@ See also:
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

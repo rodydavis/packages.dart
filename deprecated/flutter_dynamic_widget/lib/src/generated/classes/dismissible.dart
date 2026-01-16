@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DismissibleBase extends BaseWidget {
-    DismissibleBase();
+  DismissibleBase();
 
-    factory DismissibleBase.fromJson(Map<String, dynamic> data) {
-        return DismissibleBase();
-    }
+  factory DismissibleBase.fromJson(Map<String, dynamic> data) {
+    return DismissibleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that can be dismissed by dragging in the indicated [direction].
 
 Dragging or flinging this widget in the [DismissDirection] causes the child
@@ -29,13 +29,13 @@ list item, it must have a key that distinguishes it from the other items and
 its [onDismissed] callback must remove the item from the list.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

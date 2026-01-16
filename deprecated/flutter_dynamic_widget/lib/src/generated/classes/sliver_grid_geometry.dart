@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverGridGeometryBase extends BaseWidget {
-    SliverGridGeometryBase();
+  SliverGridGeometryBase();
 
-    factory SliverGridGeometryBase.fromJson(Map<String, dynamic> data) {
-        return SliverGridGeometryBase();
-    }
+  factory SliverGridGeometryBase.fromJson(Map<String, dynamic> data) {
+    return SliverGridGeometryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Describes the placement of a child in a [RenderSliverGrid].
 
 See also:
@@ -21,13 +21,13 @@ See also:
    [RenderSliverGrid.performLayout] method.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

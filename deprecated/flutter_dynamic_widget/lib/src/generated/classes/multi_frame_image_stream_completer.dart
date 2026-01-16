@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class MultiFrameImageStreamCompleterBase extends BaseWidget {
-    MultiFrameImageStreamCompleterBase();
+  MultiFrameImageStreamCompleterBase();
 
-    factory MultiFrameImageStreamCompleterBase.fromJson(Map<String, dynamic> data) {
-        return MultiFrameImageStreamCompleterBase();
-    }
+  factory MultiFrameImageStreamCompleterBase.fromJson(
+      Map<String, dynamic> data) {
+    return MultiFrameImageStreamCompleterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Manages the decoding and scheduling of image frames.
 
 New frames will only be emitted while there are registered listeners to the
@@ -43,13 +44,13 @@ See the following timeline example:
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

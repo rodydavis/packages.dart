@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RouterBase extends BaseWidget {
-    RouterBase();
+  RouterBase();
 
-    factory RouterBase.fromJson(Map<String, dynamic> data) {
-        return RouterBase();
-    }
+  factory RouterBase.fromJson(Map<String, dynamic> data) {
+    return RouterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The dispatcher for opening and closing pages of an application.
 
 This widget listens for routing information from the operating system (e.g.
@@ -183,13 +183,13 @@ Otherwise, we strongly recommend implementing the
 user experience in the web application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

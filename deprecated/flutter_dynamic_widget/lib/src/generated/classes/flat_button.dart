@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FlatButtonBase extends BaseWidget {
-    FlatButtonBase();
+  FlatButtonBase();
 
-    factory FlatButtonBase.fromJson(Map<String, dynamic> data) {
-        return FlatButtonBase();
-    }
+  factory FlatButtonBase.fromJson(Map<String, dynamic> data) {
+    return FlatButtonBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design "flat button".
 
 ### This class is obsolete, please use [TextButton] instead.
@@ -107,13 +107,13 @@ See also:
  * Cookbook: [Build a form with validation](https://flutter.dev/docs/cookbook/forms/validation)
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

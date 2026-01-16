@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PointerScrollEventBase extends BaseWidget {
-    PointerScrollEventBase();
+  PointerScrollEventBase();
 
-    factory PointerScrollEventBase.fromJson(Map<String, dynamic> data) {
-        return PointerScrollEventBase();
-    }
+  factory PointerScrollEventBase.fromJson(Map<String, dynamic> data) {
+    return PointerScrollEventBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The pointer issued a scroll event.
 
 Scrolling the scroll wheel on a mouse is an example of an event that
@@ -20,13 +20,13 @@ See also:
    events in a widget tree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

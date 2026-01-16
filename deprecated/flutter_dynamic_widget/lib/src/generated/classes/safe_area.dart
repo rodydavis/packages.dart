@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SafeAreaBase extends BaseWidget {
-    SafeAreaBase();
+  SafeAreaBase();
 
-    factory SafeAreaBase.fromJson(Map<String, dynamic> data) {
-        return SafeAreaBase();
-    }
+  factory SafeAreaBase.fromJson(Map<String, dynamic> data) {
+    return SafeAreaBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that insets its child by sufficient padding to avoid intrusions by
 the operating system.
 
@@ -33,13 +33,13 @@ See also:
    system.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

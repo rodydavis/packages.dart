@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IntervalBase extends BaseWidget {
-    IntervalBase();
+  IntervalBase();
 
-    factory IntervalBase.fromJson(Map<String, dynamic> data) {
-        return IntervalBase();
-    }
+  factory IntervalBase.fromJson(Map<String, dynamic> data) {
+    return IntervalBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A curve that is 0.0 until [begin], then curved (according to [curve]) from
 0.0 at [begin] to 1.0 at [end], then remains 1.0 past [end].
 
@@ -20,13 +20,13 @@ three seconds later.
 {@animation 464 192 https://flutter.github.io/assets-for-api-docs/assets/animation/curve_interval.mp4}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

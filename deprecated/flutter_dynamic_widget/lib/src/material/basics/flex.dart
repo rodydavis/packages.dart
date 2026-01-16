@@ -20,7 +20,7 @@ class FlexBase extends _$FlexBase {
   @override
   final WidgetContext widgetContext;
 
-   @override
+  @override
   final GenerateWidget widgetRender;
 
   @override

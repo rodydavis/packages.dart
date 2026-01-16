@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SystemMouseCursorBase extends BaseWidget {
-    SystemMouseCursorBase();
+  SystemMouseCursorBase();
 
-    factory SystemMouseCursorBase.fromJson(Map<String, dynamic> data) {
-        return SystemMouseCursorBase();
-    }
+  factory SystemMouseCursorBase.fromJson(Map<String, dynamic> data) {
+    return SystemMouseCursorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A mouse cursor that is natively supported on the platform that the
 application is running on.
 
@@ -39,13 +39,13 @@ by Flutter, which are hard-coded in the engine. Therefore, manually
 instantiating this class is not supported.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

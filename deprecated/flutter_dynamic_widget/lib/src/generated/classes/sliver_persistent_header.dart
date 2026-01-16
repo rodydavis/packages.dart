@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverPersistentHeaderBase extends BaseWidget {
-    SliverPersistentHeaderBase();
+  SliverPersistentHeaderBase();
 
-    factory SliverPersistentHeaderBase.fromJson(Map<String, dynamic> data) {
-        return SliverPersistentHeaderBase();
-    }
+  factory SliverPersistentHeaderBase.fromJson(Map<String, dynamic> data) {
+    return SliverPersistentHeaderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver whose size varies when the sliver is scrolled to the edge
 of the viewport opposite the sliver's [GrowthDirection].
 
@@ -19,13 +19,13 @@ This is the layout primitive that [SliverAppBar] uses for its
 shrinking/growing effect.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BlockSemanticsBase extends BaseWidget {
-    BlockSemanticsBase();
+  BlockSemanticsBase();
 
-    factory BlockSemanticsBase.fromJson(Map<String, dynamic> data) {
-        return BlockSemanticsBase();
-    }
+  factory BlockSemanticsBase.fromJson(Map<String, dynamic> data) {
+    return BlockSemanticsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that drops the semantics of all widget that were painted before it
 in the same semantic container.
 
@@ -23,13 +23,13 @@ See also:
  * [ExcludeSemantics] which drops all semantics of its descendants.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

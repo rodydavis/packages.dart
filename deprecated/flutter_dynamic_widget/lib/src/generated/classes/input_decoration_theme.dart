@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InputDecorationThemeBase extends BaseWidget {
-    InputDecorationThemeBase();
+  InputDecorationThemeBase();
 
-    factory InputDecorationThemeBase.fromJson(Map<String, dynamic> data) {
-        return InputDecorationThemeBase();
-    }
+  factory InputDecorationThemeBase.fromJson(Map<String, dynamic> data) {
+    return InputDecorationThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the default appearance of [InputDecorator]s.
 
 This class is used to define the value of [ThemeData.inputDecorationTheme].
@@ -20,13 +20,13 @@ The [InputDecoration.applyDefaults] method is used to combine a input
 decoration theme with an [InputDecoration] object.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

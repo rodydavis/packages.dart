@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RepaintBoundaryBase extends BaseWidget {
-    RepaintBoundaryBase();
+  RepaintBoundaryBase();
 
-    factory RepaintBoundaryBase.fromJson(Map<String, dynamic> data) {
-        return RepaintBoundaryBase();
-    }
+  factory RepaintBoundaryBase.fromJson(Map<String, dynamic> data) {
+    return RepaintBoundaryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that creates a separate display list for its child.
 
 This widget creates a separate display list for its child, which
@@ -62,13 +62,13 @@ See also:
    repaints in the observatory's timeline view.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

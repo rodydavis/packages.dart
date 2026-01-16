@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SizedOverflowBoxBase extends BaseWidget {
-    SizedOverflowBoxBase();
+  SizedOverflowBoxBase();
 
-    factory SizedOverflowBoxBase.fromJson(Map<String, dynamic> data) {
-        return SizedOverflowBoxBase();
-    }
+  factory SizedOverflowBoxBase.fromJson(Map<String, dynamic> data) {
+    return SizedOverflowBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that is a specific size but passes its original constraints
 through to its child, which may then overflow.
 
@@ -24,13 +24,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

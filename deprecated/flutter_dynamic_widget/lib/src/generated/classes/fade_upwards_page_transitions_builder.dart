@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class FadeUpwardsPageTransitionsBuilderBase extends BaseWidget {
-    FadeUpwardsPageTransitionsBuilderBase();
+  FadeUpwardsPageTransitionsBuilderBase();
 
-    factory FadeUpwardsPageTransitionsBuilderBase.fromJson(Map<String, dynamic> data) {
-        return FadeUpwardsPageTransitionsBuilderBase();
-    }
+  factory FadeUpwardsPageTransitionsBuilderBase.fromJson(
+      Map<String, dynamic> data) {
+    return FadeUpwardsPageTransitionsBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Used by [PageTransitionsTheme] to define a default [MaterialPageRoute] page
 transition animation.
 
@@ -25,13 +26,13 @@ See also:
    transition that matches native iOS page transitions.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

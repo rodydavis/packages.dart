@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InkDecorationBase extends BaseWidget {
-    InkDecorationBase();
+  InkDecorationBase();
 
-    factory InkDecorationBase.fromJson(Map<String, dynamic> data) {
-        return InkDecorationBase();
-    }
+  factory InkDecorationBase.fromJson(Map<String, dynamic> data) {
+    return InkDecorationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A decoration on a part of a [Material].
 
 This object is rarely created directly. Instead of creating an ink
@@ -26,13 +26,13 @@ See also:
  * [Material], which is the widget on which the ink is painted.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

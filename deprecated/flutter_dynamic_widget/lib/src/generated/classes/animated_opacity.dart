@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedOpacityBase extends BaseWidget {
-    AnimatedOpacityBase();
+  AnimatedOpacityBase();
 
-    factory AnimatedOpacityBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedOpacityBase();
-    }
+  factory AnimatedOpacityBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedOpacityBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of [Opacity] which automatically transitions the child's
 opacity over a given duration whenever the given opacity changes.
 
@@ -67,13 +67,13 @@ See also:
    opacity over a given duration whenever the given opacity changes.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

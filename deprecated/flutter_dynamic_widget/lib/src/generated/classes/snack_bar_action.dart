@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SnackBarActionBase extends BaseWidget {
-    SnackBarActionBase();
+  SnackBarActionBase();
 
-    factory SnackBarActionBase.fromJson(Map<String, dynamic> data) {
-        return SnackBarActionBase();
-    }
+  factory SnackBarActionBase.fromJson(Map<String, dynamic> data) {
+    return SnackBarActionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A button for a [SnackBar], known as an "action".
 
 Snack bar actions are always enabled. If you want to disable a snack bar
@@ -22,13 +22,13 @@ See also:
  * <https://material.io/design/components/snackbars.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

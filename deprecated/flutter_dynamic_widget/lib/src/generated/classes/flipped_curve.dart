@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FlippedCurveBase extends BaseWidget {
-    FlippedCurveBase();
+  FlippedCurveBase();
 
-    factory FlippedCurveBase.fromJson(Map<String, dynamic> data) {
-        return FlippedCurveBase();
-    }
+  factory FlippedCurveBase.fromJson(Map<String, dynamic> data) {
+    return FlippedCurveBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A curve that is the reversed inversion of its given curve.
 
 This curve evaluates the given curve in reverse (i.e., from 1.0 to 0.0 as t
@@ -29,13 +29,13 @@ See also:
  * [CurvedAnimation], which can take a separate curve and reverse curve.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

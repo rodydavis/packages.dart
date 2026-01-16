@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliderThemeDataBase extends BaseWidget {
-    SliderThemeDataBase();
+  SliderThemeDataBase();
 
-    factory SliderThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return SliderThemeDataBase();
-    }
+  factory SliderThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return SliderThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Holds the color, shape, and typography values for a material design slider
 theme.
 
@@ -78,13 +78,13 @@ See also:
 {@macro flutter.material.slider.seeAlso.rangeSliderTickMarkShape}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

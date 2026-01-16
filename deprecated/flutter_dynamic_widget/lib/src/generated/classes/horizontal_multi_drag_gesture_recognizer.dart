@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class HorizontalMultiDragGestureRecognizerBase extends BaseWidget {
-    HorizontalMultiDragGestureRecognizerBase();
+  HorizontalMultiDragGestureRecognizerBase();
 
-    factory HorizontalMultiDragGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
-        return HorizontalMultiDragGestureRecognizerBase();
-    }
+  factory HorizontalMultiDragGestureRecognizerBase.fromJson(
+      Map<String, dynamic> data) {
+    return HorizontalMultiDragGestureRecognizerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Recognizes movement in the horizontal direction on a per-pointer basis.
 
 In contrast to [HorizontalDragGestureRecognizer],
@@ -26,13 +27,13 @@ See also:
    start vertically.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

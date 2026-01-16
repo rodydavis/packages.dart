@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ActionDispatcherBase extends BaseWidget {
-    ActionDispatcherBase();
+  ActionDispatcherBase();
 
-    factory ActionDispatcherBase.fromJson(Map<String, dynamic> data) {
-        return ActionDispatcherBase();
-    }
+  factory ActionDispatcherBase.fromJson(Map<String, dynamic> data) {
+    return ActionDispatcherBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An action dispatcher that simply invokes the actions given to it.
 
 See also:
@@ -19,13 +19,13 @@ See also:
    an [Action].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

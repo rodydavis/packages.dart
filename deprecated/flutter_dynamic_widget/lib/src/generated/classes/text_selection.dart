@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class TextSelectionBase extends BaseWidget {
-    TextSelectionBase();
+  TextSelectionBase();
 
-    factory TextSelectionBase.fromJson(Map<String, dynamic> data) {
-        return TextSelectionBase();
-    }
+  factory TextSelectionBase.fromJson(Map<String, dynamic> data) {
+    return TextSelectionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A range of text that represents a selection.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

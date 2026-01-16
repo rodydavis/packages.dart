@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OffsetLayerBase extends BaseWidget {
-    OffsetLayerBase();
+  OffsetLayerBase();
 
-    factory OffsetLayerBase.fromJson(Map<String, dynamic> data) {
-        return OffsetLayerBase();
-    }
+  factory OffsetLayerBase.fromJson(Map<String, dynamic> data) {
+    return OffsetLayerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A layer that is displayed at an offset from its parent layer.
 
 Offset layers are key to efficient repainting because they are created by
@@ -20,13 +20,13 @@ reuses its existing [OffsetLayer] (and its entire subtree) by mutating its
 [offset] property, cutting off the paint walk.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

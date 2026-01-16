@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ReverseAnimationBase extends BaseWidget {
-    ReverseAnimationBase();
+  ReverseAnimationBase();
 
-    factory ReverseAnimationBase.fromJson(Map<String, dynamic> data) {
-        return ReverseAnimationBase();
-    }
+  factory ReverseAnimationBase.fromJson(Map<String, dynamic> data) {
+    return ReverseAnimationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An animation that is the reverse of another animation.
 
 If the parent animation is running forward from 0.0 to 1.0, this animation
@@ -26,13 +26,13 @@ See also:
    is going forward than for when it is going in reverse.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

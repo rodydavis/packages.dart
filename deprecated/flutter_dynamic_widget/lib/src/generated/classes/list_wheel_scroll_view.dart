@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ListWheelScrollViewBase extends BaseWidget {
-    ListWheelScrollViewBase();
+  ListWheelScrollViewBase();
 
-    factory ListWheelScrollViewBase.fromJson(Map<String, dynamic> data) {
-        return ListWheelScrollViewBase();
-    }
+  factory ListWheelScrollViewBase.fromJson(Map<String, dynamic> data) {
+    return ListWheelScrollViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A box in which children on a wheel can be scrolled.
 
 This widget is similar to a [ListView] but with the restriction that all
@@ -24,13 +24,13 @@ The children are rendered as if rotating on a wheel instead of scrolling on
 a plane.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

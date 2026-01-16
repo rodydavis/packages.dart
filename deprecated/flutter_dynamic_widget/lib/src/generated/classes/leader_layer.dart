@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LeaderLayerBase extends BaseWidget {
-    LeaderLayerBase();
+  LeaderLayerBase();
 
-    factory LeaderLayerBase.fromJson(Map<String, dynamic> data) {
-        return LeaderLayerBase();
-    }
+  factory LeaderLayerBase.fromJson(Map<String, dynamic> data) {
+    return LeaderLayerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A composited layer that can be followed by a [FollowerLayer].
 
 This layer collapses the accumulated offset into a transform and passes
@@ -16,13 +16,13 @@ This layer collapses the accumulated offset into a transform and passes
 methods, so that [applyTransform] will work reliably.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

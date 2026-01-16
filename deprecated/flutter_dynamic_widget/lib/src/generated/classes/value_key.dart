@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ValueKeyBase extends BaseWidget {
-    ValueKeyBase();
+  ValueKeyBase();
 
-    factory ValueKeyBase.fromJson(Map<String, dynamic> data) {
-        return ValueKeyBase();
-    }
+  factory ValueKeyBase.fromJson(Map<String, dynamic> data) {
+    return ValueKeyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A key that uses a value of a particular type to identify itself.
 
 A [ValueKey<T>] is equal to another [ValueKey<T>] if, and only if, their
@@ -25,13 +25,13 @@ See also:
  * [Widget.key], which discusses how widgets use keys.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

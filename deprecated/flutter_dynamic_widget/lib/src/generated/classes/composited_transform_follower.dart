@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CompositedTransformFollowerBase extends BaseWidget {
-    CompositedTransformFollowerBase();
+  CompositedTransformFollowerBase();
 
-    factory CompositedTransformFollowerBase.fromJson(Map<String, dynamic> data) {
-        return CompositedTransformFollowerBase();
-    }
+  factory CompositedTransformFollowerBase.fromJson(Map<String, dynamic> data) {
+    return CompositedTransformFollowerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that follows a [CompositedTransformTarget].
 
 When this widget is composited during the compositing phase (which comes
@@ -36,13 +36,13 @@ See also:
  * [Transform], which applies an arbitrary transform to a child.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

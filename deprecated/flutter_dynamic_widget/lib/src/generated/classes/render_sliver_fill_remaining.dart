@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderSliverFillRemainingBase extends BaseWidget {
-    RenderSliverFillRemainingBase();
+  RenderSliverFillRemainingBase();
 
-    factory RenderSliverFillRemainingBase.fromJson(Map<String, dynamic> data) {
-        return RenderSliverFillRemainingBase();
-    }
+  factory RenderSliverFillRemainingBase.fromJson(Map<String, dynamic> data) {
+    return RenderSliverFillRemainingBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver that contains a single box child that is non-scrollable and fills
 the remaining space in the viewport.
 
@@ -31,13 +31,13 @@ See also:
    viewport.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

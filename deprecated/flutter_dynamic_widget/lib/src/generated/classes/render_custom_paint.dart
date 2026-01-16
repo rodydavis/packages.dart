@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderCustomPaintBase extends BaseWidget {
-    RenderCustomPaintBase();
+  RenderCustomPaintBase();
 
-    factory RenderCustomPaintBase.fromJson(Map<String, dynamic> data) {
-        return RenderCustomPaintBase();
-    }
+  factory RenderCustomPaintBase.fromJson(Map<String, dynamic> data) {
+    return RenderCustomPaintBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Provides a canvas on which to draw during the paint phase.
 
 When asked to paint, [RenderCustomPaint] first asks its [painter] to paint
@@ -36,13 +36,13 @@ See also:
  * [Canvas], the API provided to custom painter delegates.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

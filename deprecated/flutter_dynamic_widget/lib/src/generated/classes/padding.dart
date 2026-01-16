@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PaddingBase extends BaseWidget {
-    PaddingBase();
+  PaddingBase();
 
-    factory PaddingBase.fromJson(Map<String, dynamic> data) {
-        return PaddingBase();
-    }
+  factory PaddingBase.fromJson(Map<String, dynamic> data) {
+    return PaddingBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that insets its child by the given padding.
 
 {@youtube 560 315 https://www.youtube.com/watch?v=oD5RtLhhubg}
@@ -63,13 +63,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DataTableThemeBase extends BaseWidget {
-    DataTableThemeBase();
+  DataTableThemeBase();
 
-    factory DataTableThemeBase.fromJson(Map<String, dynamic> data) {
-        return DataTableThemeBase();
-    }
+  factory DataTableThemeBase.fromJson(Map<String, dynamic> data) {
+    return DataTableThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Applies a data table theme to descendant [DataTable] widgets.
 
 Descendant widgets obtain the current theme's [DataTableTheme] object using
@@ -24,13 +24,13 @@ See also:
    of a data table theme.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

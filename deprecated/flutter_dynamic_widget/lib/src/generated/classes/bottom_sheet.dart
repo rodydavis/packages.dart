@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BottomSheetBase extends BaseWidget {
-    BottomSheetBase();
+  BottomSheetBase();
 
-    factory BottomSheetBase.fromJson(Map<String, dynamic> data) {
-        return BottomSheetBase();
-    }
+  factory BottomSheetBase.fromJson(Map<String, dynamic> data) {
+    return BottomSheetBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design bottom sheet.
 
 There are two kinds of bottom sheets in material design:
@@ -38,13 +38,13 @@ See also:
  * <https://material.io/design/components/sheets-bottom.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

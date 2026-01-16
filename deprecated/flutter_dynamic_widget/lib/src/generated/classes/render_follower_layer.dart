@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderFollowerLayerBase extends BaseWidget {
-    RenderFollowerLayerBase();
+  RenderFollowerLayerBase();
 
-    factory RenderFollowerLayerBase.fromJson(Map<String, dynamic> data) {
-        return RenderFollowerLayerBase();
-    }
+  factory RenderFollowerLayerBase.fromJson(Map<String, dynamic> data) {
+    return RenderFollowerLayerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Transform the child so that its origin is [offset] from the origin of the
 [RenderLeaderLayer] with the same [LayerLink].
 
@@ -24,13 +24,13 @@ See also:
  * [FollowerLayer], the layer that this render object creates.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

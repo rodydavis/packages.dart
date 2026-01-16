@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class WidgetInspectorBase extends BaseWidget {
-    WidgetInspectorBase();
+  WidgetInspectorBase();
 
-    factory WidgetInspectorBase.fromJson(Map<String, dynamic> data) {
-        return WidgetInspectorBase();
-    }
+  factory WidgetInspectorBase.fromJson(Map<String, dynamic> data) {
+    return WidgetInspectorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that enables inspecting the child widget's structure.
 
 Select a location on your device or emulator and view what widgets and
@@ -33,13 +33,13 @@ the selected widget changes position. Clicking on the select icon in the
 bottom left corner of the application switches back to select mode.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

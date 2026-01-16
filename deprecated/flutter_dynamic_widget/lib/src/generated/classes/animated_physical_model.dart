@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedPhysicalModelBase extends BaseWidget {
-    AnimatedPhysicalModelBase();
+  AnimatedPhysicalModelBase();
 
-    factory AnimatedPhysicalModelBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedPhysicalModelBase();
-    }
+  factory AnimatedPhysicalModelBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedPhysicalModelBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of [PhysicalModel].
 
 The [borderRadius] and [elevation] are animated.
@@ -25,13 +25,13 @@ of [Curves.fastOutSlowIn].
 {@animation 250 266 https://flutter.github.io/assets-for-api-docs/assets/widgets/animated_physical_model.mp4}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

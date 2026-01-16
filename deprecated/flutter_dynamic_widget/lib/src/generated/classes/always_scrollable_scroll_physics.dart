@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class AlwaysScrollableScrollPhysicsBase extends BaseWidget {
-    AlwaysScrollableScrollPhysicsBase();
+  AlwaysScrollableScrollPhysicsBase();
 
-    factory AlwaysScrollableScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
-        return AlwaysScrollableScrollPhysicsBase();
-    }
+  factory AlwaysScrollableScrollPhysicsBase.fromJson(
+      Map<String, dynamic> data) {
+    return AlwaysScrollableScrollPhysicsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Scroll physics that always lets the user scroll.
 
 This overrides the default behavior which is to disable scrolling
@@ -29,13 +30,13 @@ See also:
    found on Android.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

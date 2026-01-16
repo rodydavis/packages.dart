@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InputDatePickerFormFieldBase extends BaseWidget {
-    InputDatePickerFormFieldBase();
+  InputDatePickerFormFieldBase();
 
-    factory InputDatePickerFormFieldBase.fromJson(Map<String, dynamic> data) {
-        return InputDatePickerFormFieldBase();
-    }
+  factory InputDatePickerFormFieldBase.fromJson(Map<String, dynamic> data) {
+    return InputDatePickerFormFieldBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [TextFormField] configured to accept and validate a date entered by a user.
 
 When the field is saved or submitted, the text will be parsed into a
@@ -30,13 +30,13 @@ See also:
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

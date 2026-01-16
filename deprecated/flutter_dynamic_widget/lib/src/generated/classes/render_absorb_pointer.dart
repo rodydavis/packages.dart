@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderAbsorbPointerBase extends BaseWidget {
-    RenderAbsorbPointerBase();
+  RenderAbsorbPointerBase();
 
-    factory RenderAbsorbPointerBase.fromJson(Map<String, dynamic> data) {
-        return RenderAbsorbPointerBase();
-    }
+  factory RenderAbsorbPointerBase.fromJson(Map<String, dynamic> data) {
+    return RenderAbsorbPointerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A render object that absorbs pointers during hit testing.
 
 When [absorbing] is true, this render object prevents its subtree from
@@ -23,13 +23,13 @@ See also:
    subtree from considering entirely for the purposes of hit testing.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

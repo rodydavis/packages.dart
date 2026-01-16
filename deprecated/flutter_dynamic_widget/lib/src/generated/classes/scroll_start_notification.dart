@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollStartNotificationBase extends BaseWidget {
-    ScrollStartNotificationBase();
+  ScrollStartNotificationBase();
 
-    factory ScrollStartNotificationBase.fromJson(Map<String, dynamic> data) {
-        return ScrollStartNotificationBase();
-    }
+  factory ScrollStartNotificationBase.fromJson(Map<String, dynamic> data) {
+    return ScrollStartNotificationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A notification that a [Scrollable] widget has started scrolling.
 
 See also:
@@ -17,13 +17,13 @@ See also:
  * [ScrollNotification], which describes the notification lifecycle.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

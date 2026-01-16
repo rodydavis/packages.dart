@@ -30,9 +30,7 @@ class NewProjectCommand extends NgDartCommand {
             'a new folder will be created unde this path for the project.',
         defaultsTo: '.');
     argParser.addOption(_rootComponentOption,
-        abbr: 'r',
-        help: 'Class name of root component.',
-        defaultsTo: 'Screen');
+        abbr: 'r', help: 'Class name of root component.', defaultsTo: 'Screen');
   }
 
   Future run() async {

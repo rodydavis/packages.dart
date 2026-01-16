@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class ApplicationSwitcherDescriptionBase extends BaseWidget {
-    ApplicationSwitcherDescriptionBase();
+  ApplicationSwitcherDescriptionBase();
 
-    factory ApplicationSwitcherDescriptionBase.fromJson(Map<String, dynamic> data) {
-        return ApplicationSwitcherDescriptionBase();
-    }
+  factory ApplicationSwitcherDescriptionBase.fromJson(
+      Map<String, dynamic> data) {
+    return ApplicationSwitcherDescriptionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Specifies a description of the application that is pertinent to the
 embedder's application switcher (also known as "recent tasks") user
 interface.
@@ -16,13 +17,13 @@ interface.
 Used by [SystemChrome.setApplicationSwitcherDescription].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

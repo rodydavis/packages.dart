@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextureLayerBase extends BaseWidget {
-    TextureLayerBase();
+  TextureLayerBase();
 
-    factory TextureLayerBase.fromJson(Map<String, dynamic> data) {
-        return TextureLayerBase();
-    }
+  factory TextureLayerBase.fromJson(Map<String, dynamic> data) {
+    return TextureLayerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A composited layer that maps a backend texture to a rectangle.
 
 Backend textures are images that can be applied (mapped) to an area of the
@@ -37,13 +37,13 @@ See also:
    for how to create and manage backend textures on iOS.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

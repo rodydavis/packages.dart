@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IconBase extends BaseWidget {
-    IconBase();
+  IconBase();
 
-    factory IconBase.fromJson(Map<String, dynamic> data) {
-        return IconBase();
-    }
+  factory IconBase.fromJson(Map<String, dynamic> data) {
+    return IconBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A graphical icon widget drawn with a glyph from a font described in
 an [IconData] such as material's predefined [IconData]s in [Icons].
 
@@ -63,13 +63,13 @@ See also:
  * [ImageIcon], for showing icons from [AssetImage]s or other [ImageProvider]s.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

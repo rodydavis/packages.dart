@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class GestureArenaTeamBase extends BaseWidget {
-    GestureArenaTeamBase();
+  GestureArenaTeamBase();
 
-    factory GestureArenaTeamBase.fromJson(Map<String, dynamic> data) {
-        return GestureArenaTeamBase();
-    }
+  factory GestureArenaTeamBase.fromJson(Map<String, dynamic> data) {
+    return GestureArenaTeamBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A group of [GestureArenaMember] objects that are competing as a unit in the
 [GestureArenaManager].
 
@@ -52,13 +52,13 @@ To assign a gesture recognizer to a team, set
 [OneSequenceGestureRecognizer.team] to an instance of [GestureArenaTeam].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -29,7 +29,6 @@ class TextBase extends _$TextBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

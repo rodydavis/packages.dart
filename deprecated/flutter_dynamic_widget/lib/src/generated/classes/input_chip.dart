@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InputChipBase extends BaseWidget {
-    InputChipBase();
+  InputChipBase();
 
-    factory InputChipBase.fromJson(Map<String, dynamic> data) {
-        return InputChipBase();
-    }
+  factory InputChipBase.fromJson(Map<String, dynamic> data) {
+    return InputChipBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design input chip.
 
 Input chips represent a complex piece of information, such as an entity
@@ -56,13 +56,13 @@ See also:
  * <https://material.io/design/components/chips.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

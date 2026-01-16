@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BottomSheetThemeDataBase extends BaseWidget {
-    BottomSheetThemeDataBase();
+  BottomSheetThemeDataBase();
 
-    factory BottomSheetThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return BottomSheetThemeDataBase();
-    }
+  factory BottomSheetThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return BottomSheetThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines default property values for [BottomSheet]'s [Material].
 
 Descendant widgets obtain the current [BottomSheetThemeData] object
@@ -28,13 +28,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InkHighlightBase extends BaseWidget {
-    InkHighlightBase();
+  InkHighlightBase();
 
-    factory InkHighlightBase.fromJson(Map<String, dynamic> data) {
-        return InkHighlightBase();
-    }
+  factory InkHighlightBase.fromJson(Map<String, dynamic> data) {
+    return InkHighlightBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A visual emphasis on a part of a [Material] receiving user interaction.
 
 This object is rarely created directly. Instead of creating an ink highlight
@@ -28,13 +28,13 @@ See also:
    Material widgets.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

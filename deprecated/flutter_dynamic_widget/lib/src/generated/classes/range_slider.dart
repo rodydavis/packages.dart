@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RangeSliderBase extends BaseWidget {
-    RangeSliderBase();
+  RangeSliderBase();
 
-    factory RangeSliderBase.fromJson(Map<String, dynamic> data) {
-        return RangeSliderBase();
-    }
+  factory RangeSliderBase.fromJson(Map<String, dynamic> data) {
+    return RangeSliderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A Material Design range slider.
 
 Used to select a range from a range of values.
@@ -110,13 +110,13 @@ See also:
  * [MediaQuery], from which the text scale factor is obtained.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

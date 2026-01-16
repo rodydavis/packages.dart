@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BuildOwnerBase extends BaseWidget {
-    BuildOwnerBase();
+  BuildOwnerBase();
 
-    factory BuildOwnerBase.fromJson(Map<String, dynamic> data) {
-        return BuildOwnerBase();
-    }
+  factory BuildOwnerBase.fromJson(Map<String, dynamic> data) {
+    return BuildOwnerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Manager class for the widgets framework.
 
 This class tracks which widgets need rebuilding, and handles other tasks
@@ -27,13 +27,13 @@ To assign a build owner to a tree, use the
 widget tree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

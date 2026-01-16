@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ConstrainedBoxBase extends BaseWidget {
-    ConstrainedBoxBase();
+  ConstrainedBoxBase();
 
-    factory ConstrainedBoxBase.fromJson(Map<String, dynamic> data) {
-        return ConstrainedBoxBase();
-    }
+  factory ConstrainedBoxBase.fromJson(Map<String, dynamic> data) {
+    return ConstrainedBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that imposes additional constraints on its child.
 
 For example, if you wanted [child] to have a minimum height of 50.0 logical
@@ -46,13 +46,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

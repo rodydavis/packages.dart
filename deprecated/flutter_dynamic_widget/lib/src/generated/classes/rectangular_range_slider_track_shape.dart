@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class RectangularRangeSliderTrackShapeBase extends BaseWidget {
-    RectangularRangeSliderTrackShapeBase();
+  RectangularRangeSliderTrackShapeBase();
 
-    factory RectangularRangeSliderTrackShapeBase.fromJson(Map<String, dynamic> data) {
-        return RectangularRangeSliderTrackShapeBase();
-    }
+  factory RectangularRangeSliderTrackShapeBase.fromJson(
+      Map<String, dynamic> data) {
+    return RectangularRangeSliderTrackShapeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [RangeSlider] track that's a simple rectangle.
 
 It paints a solid colored rectangle, vertically centered in the
@@ -37,13 +38,13 @@ See also:
    edges.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

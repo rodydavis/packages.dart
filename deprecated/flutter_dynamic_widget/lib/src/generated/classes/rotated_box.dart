@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RotatedBoxBase extends BaseWidget {
-    RotatedBoxBase();
+  RotatedBoxBase();
 
-    factory RotatedBoxBase.fromJson(Map<String, dynamic> data) {
-        return RotatedBoxBase();
-    }
+  factory RotatedBoxBase.fromJson(Map<String, dynamic> data) {
+    return RotatedBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that rotates its child by a integral number of quarter turns.
 
 Unlike [Transform], which applies a transform just prior to painting,
@@ -36,13 +36,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class ImmediateMultiDragGestureRecognizerBase extends BaseWidget {
-    ImmediateMultiDragGestureRecognizerBase();
+  ImmediateMultiDragGestureRecognizerBase();
 
-    factory ImmediateMultiDragGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
-        return ImmediateMultiDragGestureRecognizerBase();
-    }
+  factory ImmediateMultiDragGestureRecognizerBase.fromJson(
+      Map<String, dynamic> data) {
+    return ImmediateMultiDragGestureRecognizerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Recognizes movement both horizontally and vertically on a per-pointer basis.
 
 In contrast to [PanGestureRecognizer], [ImmediateMultiDragGestureRecognizer]
@@ -27,13 +28,13 @@ See also:
    start after a long-press gesture.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

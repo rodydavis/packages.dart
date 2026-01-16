@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ProxyAnimationBase extends BaseWidget {
-    ProxyAnimationBase();
+  ProxyAnimationBase();
 
-    factory ProxyAnimationBase.fromJson(Map<String, dynamic> data) {
-        return ProxyAnimationBase();
-    }
+  factory ProxyAnimationBase.fromJson(Map<String, dynamic> data) {
+    return ProxyAnimationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An animation that is a proxy for another animation.
 
 A proxy animation is useful because the parent animation can be mutated. For
@@ -17,13 +17,13 @@ object, and then later change the animation from which the proxy receives
 its value.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

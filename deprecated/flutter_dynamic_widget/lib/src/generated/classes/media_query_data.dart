@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MediaQueryDataBase extends BaseWidget {
-    MediaQueryDataBase();
+  MediaQueryDataBase();
 
-    factory MediaQueryDataBase.fromJson(Map<String, dynamic> data) {
-        return MediaQueryDataBase();
-    }
+  factory MediaQueryDataBase.fromJson(Map<String, dynamic> data) {
+    return MediaQueryDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Information about a piece of media (e.g., a window).
 
 For example, the [MediaQueryData.size] property contains the width and
@@ -71,13 +71,13 @@ See also:
    [viewPadding], and [viewInsets].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ToggleButtonsBase extends BaseWidget {
-    ToggleButtonsBase();
+  ToggleButtonsBase();
 
-    factory ToggleButtonsBase.fromJson(Map<String, dynamic> data) {
-        return ToggleButtonsBase();
-    }
+  factory ToggleButtonsBase.fromJson(Map<String, dynamic> data) {
+    return ToggleButtonsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A horizontal set of toggle buttons.
 
 The list of [children] are laid out in a row. The state of each button
@@ -145,13 +145,13 @@ See also:
  * <https://material.io/design/components/buttons.html#toggle-button>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

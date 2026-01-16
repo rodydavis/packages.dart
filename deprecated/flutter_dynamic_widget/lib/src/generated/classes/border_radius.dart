@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BorderRadiusBase extends BaseWidget {
-    BorderRadiusBase();
+  BorderRadiusBase();
 
-    factory BorderRadiusBase.fromJson(Map<String, dynamic> data) {
-        return BorderRadiusBase();
-    }
+  factory BorderRadiusBase.fromJson(Map<String, dynamic> data) {
+    return BorderRadiusBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An immutable set of radii for each corner of a rectangle.
 
 Used by [BoxDecoration] when the shape is a [BoxShape.rectangle].
@@ -20,13 +20,13 @@ both left-to-right and right-to-left layouts, consider using
 a [TextDirection] (typically obtained from the ambient [Directionality]).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

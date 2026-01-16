@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SelectableTextBase extends BaseWidget {
-    SelectableTextBase();
+  SelectableTextBase();
 
-    factory SelectableTextBase.fromJson(Map<String, dynamic> data) {
-        return SelectableTextBase();
-    }
+  factory SelectableTextBase.fromJson(Map<String, dynamic> data) {
+    return SelectableTextBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A run of selectable text with a single style.
 
 The [SelectableText] widget displays a string of text with a single style.
@@ -66,13 +66,13 @@ See also:
  * [TextField], which is the editable version of this widget.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

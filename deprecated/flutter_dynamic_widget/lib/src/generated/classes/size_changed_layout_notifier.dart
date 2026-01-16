@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SizeChangedLayoutNotifierBase extends BaseWidget {
-    SizeChangedLayoutNotifierBase();
+  SizeChangedLayoutNotifierBase();
 
-    factory SizeChangedLayoutNotifierBase.fromJson(Map<String, dynamic> data) {
-        return SizeChangedLayoutNotifierBase();
-    }
+  factory SizeChangedLayoutNotifierBase.fromJson(Map<String, dynamic> data) {
+    return SizeChangedLayoutNotifierBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that automatically dispatches a [SizeChangedLayoutNotification]
 when the layout dimensions of its child change.
 
@@ -30,13 +30,13 @@ See also:
    widget tree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

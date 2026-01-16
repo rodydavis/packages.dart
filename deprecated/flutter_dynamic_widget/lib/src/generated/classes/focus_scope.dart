@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FocusScopeBase extends BaseWidget {
-    FocusScopeBase();
+  FocusScopeBase();
 
-    factory FocusScopeBase.fromJson(Map<String, dynamic> data) {
-        return FocusScopeBase();
-    }
+  factory FocusScopeBase.fromJson(Map<String, dynamic> data) {
+    return FocusScopeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [FocusScope] is similar to a [Focus], but also serves as a scope for its
 descendants, restricting focus traversal to the scoped controls.
 
@@ -205,13 +205,13 @@ See also:
    policy for a widget subtree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

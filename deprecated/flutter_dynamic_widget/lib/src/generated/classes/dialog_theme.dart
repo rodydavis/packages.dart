@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DialogThemeBase extends BaseWidget {
-    DialogThemeBase();
+  DialogThemeBase();
 
-    factory DialogThemeBase.fromJson(Map<String, dynamic> data) {
-        return DialogThemeBase();
-    }
+  factory DialogThemeBase.fromJson(Map<String, dynamic> data) {
+    return DialogThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines a theme for [Dialog] widgets.
 
 Descendant widgets obtain the current [DialogTheme] object using
@@ -29,13 +29,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

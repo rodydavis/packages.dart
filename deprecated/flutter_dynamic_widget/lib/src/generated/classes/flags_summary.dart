@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FlagsSummaryBase extends BaseWidget {
-    FlagsSummaryBase();
+  FlagsSummaryBase();
 
-    factory FlagsSummaryBase.fromJson(Map<String, dynamic> data) {
-        return FlagsSummaryBase();
-    }
+  factory FlagsSummaryBase.fromJson(Map<String, dynamic> data) {
+    return FlagsSummaryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A summary of multiple properties, indicating whether each of them is present
 (non-null) or absent (null).
 
@@ -32,13 +32,13 @@ See also:
    the values a collection of objects.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TypographyBase extends BaseWidget {
-    TypographyBase();
+  TypographyBase();
 
-    factory TypographyBase.fromJson(Map<String, dynamic> data) {
-        return TypographyBase();
-    }
+  factory TypographyBase.fromJson(Map<String, dynamic> data) {
+    return TypographyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The color and geometry [TextTheme]s for Material apps.
 
 The text themes provided by the overall [Theme], like
@@ -53,13 +53,13 @@ See also:
  * <https://material.io/design/typography/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

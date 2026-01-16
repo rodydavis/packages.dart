@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverFixedExtentListBase extends BaseWidget {
-    SliverFixedExtentListBase();
+  SliverFixedExtentListBase();
 
-    factory SliverFixedExtentListBase.fromJson(Map<String, dynamic> data) {
-        return SliverFixedExtentListBase();
-    }
+  factory SliverFixedExtentListBase.fromJson(Map<String, dynamic> data) {
+    return SliverFixedExtentListBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver that places multiple box children with the same main axis extent in
 a linear array.
 
@@ -55,13 +55,13 @@ See also:
    extent in the main axis.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ExpandIconBase extends BaseWidget {
-    ExpandIconBase();
+  ExpandIconBase();
 
-    factory ExpandIconBase.fromJson(Map<String, dynamic> data) {
-        return ExpandIconBase();
-    }
+  factory ExpandIconBase.fromJson(Map<String, dynamic> data) {
+    return ExpandIconBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget representing a rotating expand/collapse button. The icon rotates
 180 degrees when pressed, then reverts the animation on a second press.
 The underlying icon is [Icons.expand_more].
@@ -25,13 +25,13 @@ See also:
  * https://material.io/design/iconography/system-icons.html
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

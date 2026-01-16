@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollEndNotificationBase extends BaseWidget {
-    ScrollEndNotificationBase();
+  ScrollEndNotificationBase();
 
-    factory ScrollEndNotificationBase.fromJson(Map<String, dynamic> data) {
-        return ScrollEndNotificationBase();
-    }
+  factory ScrollEndNotificationBase.fromJson(Map<String, dynamic> data) {
+    return ScrollEndNotificationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A notification that a [Scrollable] widget has stopped scrolling.
 
 See also:
@@ -17,13 +17,13 @@ See also:
  * [ScrollNotification], which describes the notification lifecycle.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

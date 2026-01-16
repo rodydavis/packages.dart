@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RawKeyEventDataWebBase extends BaseWidget {
-    RawKeyEventDataWebBase();
+  RawKeyEventDataWebBase();
 
-    factory RawKeyEventDataWebBase.fromJson(Map<String, dynamic> data) {
-        return RawKeyEventDataWebBase();
-    }
+  factory RawKeyEventDataWebBase.fromJson(Map<String, dynamic> data) {
+    return RawKeyEventDataWebBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Platform-specific key event data for Web.
 
 See also:
@@ -16,13 +16,13 @@ See also:
  * [RawKeyboard], which uses this interface to expose key data.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

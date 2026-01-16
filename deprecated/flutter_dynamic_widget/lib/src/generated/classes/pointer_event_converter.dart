@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PointerEventConverterBase extends BaseWidget {
-    PointerEventConverterBase();
+  PointerEventConverterBase();
 
-    factory PointerEventConverterBase.fromJson(Map<String, dynamic> data) {
-        return PointerEventConverterBase();
-    }
+  factory PointerEventConverterBase.fromJson(Map<String, dynamic> data) {
+    return PointerEventConverterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Converts from engine pointer data to framework pointer events.
 
 This takes [PointerDataPacket] objects, as received from the engine via
@@ -16,13 +16,13 @@ This takes [PointerDataPacket] objects, as received from the engine via
 objects.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

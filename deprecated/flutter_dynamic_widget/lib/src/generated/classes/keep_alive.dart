@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class KeepAliveBase extends BaseWidget {
-    KeepAliveBase();
+  KeepAliveBase();
 
-    factory KeepAliveBase.fromJson(Map<String, dynamic> data) {
-        return KeepAliveBase();
-    }
+  factory KeepAliveBase.fromJson(Map<String, dynamic> data) {
+    return KeepAliveBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Mark a child as needing to stay alive even when it's in a lazy list that
 would otherwise remove it.
 
@@ -31,13 +31,13 @@ In practice, the simplest way to deal with these notifications is to mix
 for that mixin class for details.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

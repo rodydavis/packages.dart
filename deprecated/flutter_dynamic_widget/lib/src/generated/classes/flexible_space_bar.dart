@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FlexibleSpaceBarBase extends BaseWidget {
-    FlexibleSpaceBarBase();
+  FlexibleSpaceBarBase();
 
-    factory FlexibleSpaceBarBase.fromJson(Map<String, dynamic> data) {
-        return FlexibleSpaceBarBase();
-    }
+  factory FlexibleSpaceBarBase.fromJson(Map<String, dynamic> data) {
+    return FlexibleSpaceBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The part of a material design [AppBar] that expands, collapses, and
 stretches.
 
@@ -116,13 +116,13 @@ See also:
  * <https://material.io/design/components/app-bars-top.html#behavior>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

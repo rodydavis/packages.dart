@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CustomSingleChildLayoutBase extends BaseWidget {
-    CustomSingleChildLayoutBase();
+  CustomSingleChildLayoutBase();
 
-    factory CustomSingleChildLayoutBase.fromJson(Map<String, dynamic> data) {
-        return CustomSingleChildLayoutBase();
-    }
+  factory CustomSingleChildLayoutBase.fromJson(Map<String, dynamic> data) {
+    return CustomSingleChildLayoutBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that defers the layout of its single child to a delegate.
 
 The delegate can determine the layout constraints for the child and can
@@ -28,13 +28,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

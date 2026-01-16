@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InkBase extends BaseWidget {
-    InkBase();
+  InkBase();
 
-    factory InkBase.fromJson(Map<String, dynamic> data) {
-        return InkBase();
-    }
+  factory InkBase.fromJson(Map<String, dynamic> data) {
+    return InkBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A convenience widget for drawing images and other decorations on [Material]
 widgets, so that [InkWell] and [InkResponse] splashes will render over them.
 
@@ -108,13 +108,13 @@ See also:
  * [InkWell] and [InkResponse], which also draw on [Material] widgets.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

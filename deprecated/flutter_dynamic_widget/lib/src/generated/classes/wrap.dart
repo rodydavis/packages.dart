@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class WrapBase extends BaseWidget {
-    WrapBase();
+  WrapBase();
 
-    factory WrapBase.fromJson(Map<String, dynamic> data) {
-        return WrapBase();
-    }
+  factory WrapBase.fromJson(Map<String, dynamic> data) {
+    return WrapBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that displays its children in multiple horizontal or vertical runs.
 
 A [Wrap] lays out each child and attempts to place the child adjacent to the
@@ -63,13 +63,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

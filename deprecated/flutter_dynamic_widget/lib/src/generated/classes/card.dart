@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CardBase extends BaseWidget {
-    CardBase();
+  CardBase();
 
-    factory CardBase.fromJson(Map<String, dynamic> data) {
-        return CardBase();
-    }
+  factory CardBase.fromJson(Map<String, dynamic> data) {
+    return CardBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design card: a panel with slightly rounded corners and an
 elevation shadow.
 
@@ -99,13 +99,13 @@ See also:
  * <https://material.io/design/components/cards.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

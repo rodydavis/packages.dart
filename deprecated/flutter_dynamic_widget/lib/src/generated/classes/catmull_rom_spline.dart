@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CatmullRomSplineBase extends BaseWidget {
-    CatmullRomSplineBase();
+  CatmullRomSplineBase();
 
-    factory CatmullRomSplineBase.fromJson(Map<String, dynamic> data) {
-        return CatmullRomSplineBase();
-    }
+  factory CatmullRomSplineBase.fromJson(Map<String, dynamic> data) {
+    return CatmullRomSplineBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A 2D spline that passes smoothly through the given control points using a
 centripetal Catmull-Rom spline.
 
@@ -34,13 +34,13 @@ See also:
    internal representation.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

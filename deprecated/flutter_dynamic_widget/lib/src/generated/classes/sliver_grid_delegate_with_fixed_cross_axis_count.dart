@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class SliverGridDelegateWithFixedCrossAxisCountBase extends BaseWidget {
-    SliverGridDelegateWithFixedCrossAxisCountBase();
+  SliverGridDelegateWithFixedCrossAxisCountBase();
 
-    factory SliverGridDelegateWithFixedCrossAxisCountBase.fromJson(Map<String, dynamic> data) {
-        return SliverGridDelegateWithFixedCrossAxisCountBase();
-    }
+  factory SliverGridDelegateWithFixedCrossAxisCountBase.fromJson(
+      Map<String, dynamic> data) {
+    return SliverGridDelegateWithFixedCrossAxisCountBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Creates grid layouts with a fixed number of tiles in the cross axis.
 
 For example, if the grid is vertical, this delegate will create a layout
@@ -30,13 +31,13 @@ See also:
    its tiles.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

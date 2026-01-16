@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ClampingScrollPhysicsBase extends BaseWidget {
-    ClampingScrollPhysicsBase();
+  ClampingScrollPhysicsBase();
 
-    factory ClampingScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
-        return ClampingScrollPhysicsBase();
-    }
+  factory ClampingScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
+    return ClampingScrollPhysicsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Scroll physics for environments that prevent the scroll offset from reaching
 beyond the bounds of the content.
 
@@ -26,13 +26,13 @@ See also:
    glow color is specified to use [ThemeData.accentColor].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

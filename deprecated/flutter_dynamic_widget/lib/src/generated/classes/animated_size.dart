@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedSizeBase extends BaseWidget {
-    AnimatedSizeBase();
+  AnimatedSizeBase();
 
-    factory AnimatedSizeBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedSizeBase();
-    }
+  factory AnimatedSizeBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedSizeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated widget that automatically transitions its size over a given
 duration whenever the given child's size changes.
 
@@ -52,13 +52,13 @@ See also:
  * [SizeTransition], which changes its size based on an [Animation].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -48,7 +48,7 @@ class FlatButtonIconBase extends _$FlatButtonIconBase {
   @override
   final WidgetContext widgetContext;
 
-   @override
+  @override
   final GenerateWidget widgetRender;
 
   @override

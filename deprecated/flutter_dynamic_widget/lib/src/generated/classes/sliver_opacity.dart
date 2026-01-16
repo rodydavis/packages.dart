@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverOpacityBase extends BaseWidget {
-    SliverOpacityBase();
+  SliverOpacityBase();
 
-    factory SliverOpacityBase.fromJson(Map<String, dynamic> data) {
-        return SliverOpacityBase();
-    }
+  factory SliverOpacityBase.fromJson(Map<String, dynamic> data) {
+    return SliverOpacityBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver widget that makes its sliver child partially transparent.
 
 This class paints its sliver child into an intermediate buffer and then
@@ -52,13 +52,13 @@ See also:
    animate [Opacity].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BoxShadowBase extends BaseWidget {
-    BoxShadowBase();
+  BoxShadowBase();
 
-    factory BoxShadowBase.fromJson(Map<String, dynamic> data) {
-        return BoxShadowBase();
-    }
+  factory BoxShadowBase.fromJson(Map<String, dynamic> data) {
+    return BoxShadowBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A shadow cast by a box.
 
 [BoxShadow] can cast non-rectangular shadows if the box is non-rectangular
@@ -25,13 +25,13 @@ See also:
  * [Shadow], which is the parent class that lacks [spreadRadius].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

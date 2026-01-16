@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RelativePositionedTransitionBase extends BaseWidget {
-    RelativePositionedTransitionBase();
+  RelativePositionedTransitionBase();
 
-    factory RelativePositionedTransitionBase.fromJson(Map<String, dynamic> data) {
-        return RelativePositionedTransitionBase();
-    }
+  factory RelativePositionedTransitionBase.fromJson(Map<String, dynamic> data) {
+    return RelativePositionedTransitionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of [Positioned] which transitions the child's position
 based on the value of [rect] relative to a bounding box with the
 specified [size].
@@ -88,13 +88,13 @@ See also:
    relative to its normal position.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

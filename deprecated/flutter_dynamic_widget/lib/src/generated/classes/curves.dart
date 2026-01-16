@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CurvesBase extends BaseWidget {
-    CurvesBase();
+  CurvesBase();
 
-    factory CurvesBase.fromJson(Map<String, dynamic> data) {
-        return CurvesBase();
-    }
+  factory CurvesBase.fromJson(Map<String, dynamic> data) {
+    return CurvesBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A collection of common animation curves.
 
 {@animation 464 192 https://flutter.github.io/assets-for-api-docs/assets/animation/curve_bounce_in.mp4}
@@ -56,13 +56,13 @@ See also:
    [Curves] class.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

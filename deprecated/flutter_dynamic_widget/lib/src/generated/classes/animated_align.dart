@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedAlignBase extends BaseWidget {
-    AnimatedAlignBase();
+  AnimatedAlignBase();
 
-    factory AnimatedAlignBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedAlignBase();
-    }
+  factory AnimatedAlignBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedAlignBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of [Align] which automatically transitions the child's
 position over a given duration whenever the given [alignment] changes.
 
@@ -68,13 +68,13 @@ See also:
    position changes.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class SizeChangedLayoutNotificationBase extends BaseWidget {
-    SizeChangedLayoutNotificationBase();
+  SizeChangedLayoutNotificationBase();
 
-    factory SizeChangedLayoutNotificationBase.fromJson(Map<String, dynamic> data) {
-        return SizeChangedLayoutNotificationBase();
-    }
+  factory SizeChangedLayoutNotificationBase.fromJson(
+      Map<String, dynamic> data) {
+    return SizeChangedLayoutNotificationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Indicates that the size of one of the descendants of the object receiving
 this notification has changed, and that therefore any assumptions about that
 layout are no longer valid.
@@ -32,13 +33,13 @@ See also:
  * [LayoutChangedNotification], of which this is a subclass.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

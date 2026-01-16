@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AsyncSnapshotBase extends BaseWidget {
-    AsyncSnapshotBase();
+  AsyncSnapshotBase();
 
-    factory AsyncSnapshotBase.fromJson(Map<String, dynamic> data) {
-        return AsyncSnapshotBase();
-    }
+  factory AsyncSnapshotBase.fromJson(Map<String, dynamic> data) {
+    return AsyncSnapshotBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Immutable representation of the most recent interaction with an asynchronous
 computation.
 
@@ -20,13 +20,13 @@ See also:
    with a [Future].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

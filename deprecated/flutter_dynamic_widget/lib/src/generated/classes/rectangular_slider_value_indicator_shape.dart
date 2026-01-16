@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class RectangularSliderValueIndicatorShapeBase extends BaseWidget {
-    RectangularSliderValueIndicatorShapeBase();
+  RectangularSliderValueIndicatorShapeBase();
 
-    factory RectangularSliderValueIndicatorShapeBase.fromJson(Map<String, dynamic> data) {
-        return RectangularSliderValueIndicatorShapeBase();
-    }
+  factory RectangularSliderValueIndicatorShapeBase.fromJson(
+      Map<String, dynamic> data) {
+    return RectangularSliderValueIndicatorShapeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The default shape of a [Slider]'s value indicator.
 
 ![A slider widget, consisting of 5 divisions and showing the rectangular slider value indicator shape.]
@@ -21,13 +22,13 @@ See also:
    of all sliders in a widget subtree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

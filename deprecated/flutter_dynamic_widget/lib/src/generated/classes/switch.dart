@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SwitchBase extends BaseWidget {
-    SwitchBase();
+  SwitchBase();
 
-    factory SwitchBase.fromJson(Map<String, dynamic> data) {
-        return SwitchBase();
-    }
+  factory SwitchBase.fromJson(Map<String, dynamic> data) {
+    return SwitchBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design switch.
 
 Used to toggle the on/off state of a single setting.
@@ -35,13 +35,13 @@ See also:
  * <https://material.io/design/components/selection-controls.html#switches>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

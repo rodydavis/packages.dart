@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ExpansionPanelBase extends BaseWidget {
-    ExpansionPanelBase();
+  ExpansionPanelBase();
 
-    factory ExpansionPanelBase.fromJson(Map<String, dynamic> data) {
-        return ExpansionPanelBase();
-    }
+  factory ExpansionPanelBase.fromJson(Map<String, dynamic> data) {
+    return ExpansionPanelBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material expansion panel. It has a header and a body and can be either
 expanded or collapsed. The body of the panel is only visible when it is
 expanded.
@@ -24,13 +24,13 @@ See also:
  * <https://material.io/design/components/lists.html#types>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BinaryMessagesBase extends BaseWidget {
-    BinaryMessagesBase();
+  BinaryMessagesBase();
 
-    factory BinaryMessagesBase.fromJson(Map<String, dynamic> data) {
-        return BinaryMessagesBase();
-    }
+  factory BinaryMessagesBase.fromJson(Map<String, dynamic> data) {
+    return BinaryMessagesBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Sends binary messages to and receives binary messages from platform plugins.
 
 This class has been deprecated in favor of [defaultBinaryMessenger]. New
@@ -26,13 +26,13 @@ See also:
  * <https://flutter.dev/platform-channels/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

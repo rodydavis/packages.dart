@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MaterialColorBase extends BaseWidget {
-    MaterialColorBase();
+  MaterialColorBase();
 
-    factory MaterialColorBase.fromJson(Map<String, dynamic> data) {
-        return MaterialColorBase();
-    }
+  factory MaterialColorBase.fromJson(Map<String, dynamic> data) {
+    return MaterialColorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines a single color as well a color swatch with ten shades of the color.
 
 The color's shades are referred to by index. The greater the index, the
@@ -20,13 +20,13 @@ See also:
  * [Colors], which defines all of the standard material colors.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

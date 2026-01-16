@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class HoldScrollActivityBase extends BaseWidget {
-    HoldScrollActivityBase();
+  HoldScrollActivityBase();
 
-    factory HoldScrollActivityBase.fromJson(Map<String, dynamic> data) {
-        return HoldScrollActivityBase();
-    }
+  factory HoldScrollActivityBase.fromJson(Map<String, dynamic> data) {
+    return HoldScrollActivityBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A scroll activity that does nothing but can be released to resume
 normal idle behavior.
 
@@ -21,13 +21,13 @@ of the [Scrollable] (unlike when a drag has begun or there is a scroll
 animation underway).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

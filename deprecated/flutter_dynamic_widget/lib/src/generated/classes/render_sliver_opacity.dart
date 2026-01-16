@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderSliverOpacityBase extends BaseWidget {
-    RenderSliverOpacityBase();
+  RenderSliverOpacityBase();
 
-    factory RenderSliverOpacityBase.fromJson(Map<String, dynamic> data) {
-        return RenderSliverOpacityBase();
-    }
+  factory RenderSliverOpacityBase.fromJson(Map<String, dynamic> data) {
+    return RenderSliverOpacityBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Makes its sliver child partially transparent.
 
 This class paints its sliver child into an intermediate buffer and then
@@ -21,13 +21,13 @@ For the value 1.0, the sliver child is painted immediately without an
 intermediate buffer.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

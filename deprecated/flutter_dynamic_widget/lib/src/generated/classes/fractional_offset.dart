@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FractionalOffsetBase extends BaseWidget {
-    FractionalOffsetBase();
+  FractionalOffsetBase();
 
-    factory FractionalOffsetBase.fromJson(Map<String, dynamic> data) {
-        return FractionalOffsetBase();
-    }
+  factory FractionalOffsetBase.fromJson(Map<String, dynamic> data) {
+    return FractionalOffsetBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An offset that's expressed as a fraction of a [Size].
 
 `FractionalOffset(1.0, 0.0)` represents the top right of the [Size].
@@ -52,13 +52,13 @@ See also:
    rectangle instead of the top left corner of the rectangle.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

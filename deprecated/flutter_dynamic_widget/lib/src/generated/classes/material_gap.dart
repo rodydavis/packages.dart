@@ -1,26 +1,26 @@
 import '../base.dart';
 
 class MaterialGapBase extends BaseWidget {
-    MaterialGapBase();
+  MaterialGapBase();
 
-    factory MaterialGapBase.fromJson(Map<String, dynamic> data) {
-        return MaterialGapBase();
-    }
+  factory MaterialGapBase.fromJson(Map<String, dynamic> data) {
+    return MaterialGapBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A class that represents a gap within [MergeableMaterial].
 
 All [MaterialGap] objects need a [LocalKey].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

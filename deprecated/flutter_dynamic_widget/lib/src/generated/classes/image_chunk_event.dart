@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ImageChunkEventBase extends BaseWidget {
-    ImageChunkEventBase();
+  ImageChunkEventBase();
 
-    factory ImageChunkEventBase.fromJson(Map<String, dynamic> data) {
-        return ImageChunkEventBase();
-    }
+  factory ImageChunkEventBase.fromJson(Map<String, dynamic> data) {
+    return ImageChunkEventBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An immutable notification of image bytes that have been incrementally loaded.
 
 Chunk events represent progress notifications while an image is being
@@ -20,13 +20,13 @@ See also:
    these events.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

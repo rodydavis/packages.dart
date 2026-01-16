@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TapGestureRecognizerBase extends BaseWidget {
-    TapGestureRecognizerBase();
+  TapGestureRecognizerBase();
 
-    factory TapGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
-        return TapGestureRecognizerBase();
-    }
+  factory TapGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
+    return TapGestureRecognizerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Recognizes taps.
 
 Gesture recognizers take part in gesture arenas to enable potential gestures
@@ -33,13 +33,13 @@ See also:
  * [MultiTapGestureRecognizer]
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoIconsBase extends BaseWidget {
-    CupertinoIconsBase();
+  CupertinoIconsBase();
 
-    factory CupertinoIconsBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoIconsBase();
-    }
+  factory CupertinoIconsBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoIconsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Identifiers for the supported Cupertino icons.
 
 Use with the [Icon] class to show specific icons.
@@ -37,13 +37,13 @@ See also:
  * [Icon], used to show these icons.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

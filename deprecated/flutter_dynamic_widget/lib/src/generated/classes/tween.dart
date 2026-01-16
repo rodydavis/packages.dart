@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TweenBase extends BaseWidget {
-    TweenBase();
+  TweenBase();
 
-    factory TweenBase.fromJson(Map<String, dynamic> data) {
-        return TweenBase();
-    }
+  factory TweenBase.fromJson(Map<String, dynamic> data) {
+    return TweenBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A linear interpolation between a beginning and ending value.
 
 [Tween] is useful if you want to interpolate across a range.
@@ -118,13 +118,13 @@ non-null values before using [lerp] or [transform], otherwise they
 will throw.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

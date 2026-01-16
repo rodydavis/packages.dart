@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextFormFieldBase extends BaseWidget {
-    TextFormFieldBase();
+  TextFormFieldBase();
 
-    factory TextFormFieldBase.fromJson(Map<String, dynamic> data) {
-        return TextFormFieldBase();
-    }
+  factory TextFormFieldBase.fromJson(Map<String, dynamic> data) {
+    return TextFormFieldBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [FormField] that contains a [TextField].
 
 This is a convenience widget that wraps a [TextField] widget in a
@@ -122,13 +122,13 @@ See also:
  * Learn how to use a [TextEditingController] in one of our [cookbook recipes](https://flutter.dev/docs/cookbook/forms/text-field-changes#2-use-a-texteditingcontroller).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

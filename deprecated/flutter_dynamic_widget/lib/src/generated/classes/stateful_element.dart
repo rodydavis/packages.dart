@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class StatefulElementBase extends BaseWidget {
-    StatefulElementBase();
+  StatefulElementBase();
 
-    factory StatefulElementBase.fromJson(Map<String, dynamic> data) {
-        return StatefulElementBase();
-    }
+  factory StatefulElementBase.fromJson(Map<String, dynamic> data) {
+    return StatefulElementBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [Element] that uses a [StatefulWidget] as its configuration.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

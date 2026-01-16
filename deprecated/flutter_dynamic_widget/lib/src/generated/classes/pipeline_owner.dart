@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PipelineOwnerBase extends BaseWidget {
-    PipelineOwnerBase();
+  PipelineOwnerBase();
 
-    factory PipelineOwnerBase.fromJson(Map<String, dynamic> data) {
-        return PipelineOwnerBase();
-    }
+  factory PipelineOwnerBase.fromJson(Map<String, dynamic> data) {
+    return PipelineOwnerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The pipeline owner manages the rendering pipeline.
 
 The pipeline owner provides an interface for driving the rendering pipeline
@@ -40,13 +40,13 @@ off-screen objects, which can flush their pipelines independently of the
 on-screen render objects.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

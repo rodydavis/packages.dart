@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class UnderlineInputBorderBase extends BaseWidget {
-    UnderlineInputBorderBase();
+  UnderlineInputBorderBase();
 
-    factory UnderlineInputBorderBase.fromJson(Map<String, dynamic> data) {
-        return UnderlineInputBorderBase();
-    }
+  factory UnderlineInputBorderBase.fromJson(Map<String, dynamic> data) {
+    return UnderlineInputBorderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Draws a horizontal line at the bottom of an [InputDecorator]'s container and
 defines the container's shape.
 
@@ -22,13 +22,13 @@ See also:
  * [InputDecoration], which is used to configure an [InputDecorator].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

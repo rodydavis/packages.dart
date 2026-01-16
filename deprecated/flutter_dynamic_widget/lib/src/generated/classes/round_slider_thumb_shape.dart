@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RoundSliderThumbShapeBase extends BaseWidget {
-    RoundSliderThumbShapeBase();
+  RoundSliderThumbShapeBase();
 
-    factory RoundSliderThumbShapeBase.fromJson(Map<String, dynamic> data) {
-        return RoundSliderThumbShapeBase();
-    }
+  factory RoundSliderThumbShapeBase.fromJson(Map<String, dynamic> data) {
+    return RoundSliderThumbShapeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The default shape of a [Slider]'s thumb.
 
 There is a shadow for the resting, pressed, hovered, and focused state.
@@ -23,13 +23,13 @@ See also:
    sliders in a widget subtree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

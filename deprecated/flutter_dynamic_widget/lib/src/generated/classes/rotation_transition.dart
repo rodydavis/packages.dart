@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RotationTransitionBase extends BaseWidget {
-    RotationTransitionBase();
+  RotationTransitionBase();
 
-    factory RotationTransitionBase.fromJson(Map<String, dynamic> data) {
-        return RotationTransitionBase();
-    }
+  factory RotationTransitionBase.fromJson(Map<String, dynamic> data) {
+    return RotationTransitionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animates the rotation of a widget.
 
 Here's an illustration of the [RotationTransition] widget, with it's [turns]
@@ -68,13 +68,13 @@ See also:
    aligns its child.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

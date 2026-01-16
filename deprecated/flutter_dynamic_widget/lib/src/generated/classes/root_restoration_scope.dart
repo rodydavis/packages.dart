@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RootRestorationScopeBase extends BaseWidget {
-    RootRestorationScopeBase();
+  RootRestorationScopeBase();
 
-    factory RootRestorationScopeBase.fromJson(Map<String, dynamic> data) {
-        return RootRestorationScopeBase();
-    }
+  factory RootRestorationScopeBase.fromJson(Map<String, dynamic> data) {
+    return RootRestorationScopeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Inserts a child bucket of [RestorationManager.rootBucket] into the widget
 tree and makes it available to descendants via [RestorationScope.of].
 
@@ -61,13 +61,13 @@ See also:
    restoration in Flutter.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DefaultTextStyleTransitionBase extends BaseWidget {
-    DefaultTextStyleTransitionBase();
+  DefaultTextStyleTransitionBase();
 
-    factory DefaultTextStyleTransitionBase.fromJson(Map<String, dynamic> data) {
-        return DefaultTextStyleTransitionBase();
-    }
+  factory DefaultTextStyleTransitionBase.fromJson(Map<String, dynamic> data) {
+    return DefaultTextStyleTransitionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of a [DefaultTextStyle] that animates the different properties
 of its [TextStyle].
 
@@ -65,13 +65,13 @@ See also:
    but is not animated.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

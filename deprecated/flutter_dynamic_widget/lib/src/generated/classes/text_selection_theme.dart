@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextSelectionThemeBase extends BaseWidget {
-    TextSelectionThemeBase();
+  TextSelectionThemeBase();
 
-    factory TextSelectionThemeBase.fromJson(Map<String, dynamic> data) {
-        return TextSelectionThemeBase();
-    }
+  factory TextSelectionThemeBase.fromJson(Map<String, dynamic> data) {
+    return TextSelectionThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An inherited widget that defines the appearance of text selection in
 this widget's subtree.
 
@@ -32,13 +32,13 @@ TextSelectionTheme(
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

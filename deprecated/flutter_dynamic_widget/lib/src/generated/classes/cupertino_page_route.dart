@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoPageRouteBase extends BaseWidget {
-    CupertinoPageRouteBase();
+  CupertinoPageRouteBase();
 
-    factory CupertinoPageRouteBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoPageRouteBase();
-    }
+  factory CupertinoPageRouteBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoPageRouteBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A modal route that replaces the entire screen with an iOS transition.
 
 {@macro flutter.cupertino.cupertinoRouteTransitionMixin}
@@ -34,13 +34,13 @@ See also:
  * [CupertinoPage], for a [Page] version of this class.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

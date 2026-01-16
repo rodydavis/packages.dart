@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoContextMenuBase extends BaseWidget {
-    CupertinoContextMenuBase();
+  CupertinoContextMenuBase();
 
-    factory CupertinoContextMenuBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoContextMenuBase();
-    }
+  factory CupertinoContextMenuBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoContextMenuBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A full-screen modal route that opens when the [child] is long-pressed.
 
 When open, the [CupertinoContextMenu] shows the child, or the widget returned
@@ -75,13 +75,13 @@ See also:
  * [Apple's HIG for Context Menus](https://developer.apple.com/design/human-interface-guidelines/ios/controls/context-menus/)
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

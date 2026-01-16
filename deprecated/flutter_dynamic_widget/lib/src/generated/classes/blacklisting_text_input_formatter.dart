@@ -1,24 +1,25 @@
 import '../base.dart';
 
 class BlacklistingTextInputFormatterBase extends BaseWidget {
-    BlacklistingTextInputFormatterBase();
+  BlacklistingTextInputFormatterBase();
 
-    factory BlacklistingTextInputFormatterBase.fromJson(Map<String, dynamic> data) {
-        return BlacklistingTextInputFormatterBase();
-    }
+  factory BlacklistingTextInputFormatterBase.fromJson(
+      Map<String, dynamic> data) {
+    return BlacklistingTextInputFormatterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Old name for [FilteringTextInputFormatter.deny].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

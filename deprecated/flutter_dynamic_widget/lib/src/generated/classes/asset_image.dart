@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AssetImageBase extends BaseWidget {
-    AssetImageBase();
+  AssetImageBase();
 
-    factory AssetImageBase.fromJson(Map<String, dynamic> data) {
-        return AssetImageBase();
-    }
+  factory AssetImageBase.fromJson(Map<String, dynamic> data) {
+    return AssetImageBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Fetches an image from an [AssetBundle], having determined the exact image to
 use based on the context.
 
@@ -117,13 +117,13 @@ See also:
    when used without a scale.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

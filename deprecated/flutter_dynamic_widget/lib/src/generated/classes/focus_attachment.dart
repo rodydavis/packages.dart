@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FocusAttachmentBase extends BaseWidget {
-    FocusAttachmentBase();
+  FocusAttachmentBase();
 
-    factory FocusAttachmentBase.fromJson(Map<String, dynamic> data) {
-        return FocusAttachmentBase();
-    }
+  factory FocusAttachmentBase.fromJson(Map<String, dynamic> data) {
+    return FocusAttachmentBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An attachment point for a [FocusNode].
 
 Using a [FocusAttachment] is rarely needed, unless you are building
@@ -33,13 +33,13 @@ simultaneously be attached to more than one part of the widget tree during
 the build stage.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

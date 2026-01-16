@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class VelocityTrackerBase extends BaseWidget {
-    VelocityTrackerBase();
+  VelocityTrackerBase();
 
-    factory VelocityTrackerBase.fromJson(Map<String, dynamic> data) {
-        return VelocityTrackerBase();
-    }
+  factory VelocityTrackerBase.fromJson(Map<String, dynamic> data) {
+    return VelocityTrackerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Computes a pointer's velocity based on data from [PointerMoveEvent]s.
 
 The input data is provided by calling [addPosition]. Adding data is cheap.
@@ -21,13 +21,13 @@ The quality of the velocity estimation will be better if more data points
 have been received.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

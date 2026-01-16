@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AppBarBase extends BaseWidget {
-    AppBarBase();
+  AppBarBase();
 
-    factory AppBarBase.fromJson(Map<String, dynamic> data) {
-        return AppBarBase();
-    }
+  factory AppBarBase.fromJson(Map<String, dynamic> data) {
+    return AppBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design app bar.
 
 An app bar consists of a toolbar and potentially other widgets, such as a
@@ -129,13 +129,13 @@ See also:
    [custom bottom widgets](https://flutter.dev/docs/catalog/samples/app-bar-bottom).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

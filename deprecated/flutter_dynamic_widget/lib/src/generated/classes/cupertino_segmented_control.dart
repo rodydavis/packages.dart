@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoSegmentedControlBase extends BaseWidget {
-    CupertinoSegmentedControlBase();
+  CupertinoSegmentedControlBase();
 
-    factory CupertinoSegmentedControlBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoSegmentedControlBase();
-    }
+  factory CupertinoSegmentedControlBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoSegmentedControlBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS-style segmented control.
 
 Displays the widgets provided in the [Map] of [children] in a
@@ -53,13 +53,13 @@ See also:
  * <https://developer.apple.com/design/human-interface-guidelines/ios/controls/segmented-controls/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

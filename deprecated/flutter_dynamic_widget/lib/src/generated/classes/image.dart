@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ImageBase extends BaseWidget {
-    ImageBase();
+  ImageBase();
 
-    factory ImageBase.fromJson(Map<String, dynamic> data) {
-        return ImageBase();
-    }
+  factory ImageBase.fromJson(Map<String, dynamic> data) {
+    return ImageBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that displays an image.
 
 {@youtube 560 315 https://www.youtube.com/watch?v=7oIAs-0G4mw}
@@ -80,13 +80,13 @@ See also:
  * Cookbook: [Fade in images with a placeholder](https://flutter.dev/docs/cookbook/images/fading-in-images)
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

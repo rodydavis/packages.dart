@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FocusManagerBase extends BaseWidget {
-    FocusManagerBase();
+  FocusManagerBase();
 
-    factory FocusManagerBase.fromJson(Map<String, dynamic> data) {
-        return FocusManagerBase();
-    }
+  factory FocusManagerBase.fromJson(Map<String, dynamic> data) {
+    return FocusManagerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Manages the focus tree.
 
 The focus tree is a separate, sparser, tree from the widget tree that
@@ -58,13 +58,13 @@ See also:
    to the current focus manager state.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

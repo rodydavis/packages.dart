@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PlaceholderDimensionsBase extends BaseWidget {
-    PlaceholderDimensionsBase();
+  PlaceholderDimensionsBase();
 
-    factory PlaceholderDimensionsBase.fromJson(Map<String, dynamic> data) {
-        return PlaceholderDimensionsBase();
-    }
+  factory PlaceholderDimensionsBase.fromJson(Map<String, dynamic> data) {
+    return PlaceholderDimensionsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Holds the [Size] and baseline required to represent the dimensions of
 a placeholder in text.
 
@@ -25,13 +25,13 @@ See also:
  * [RichText], a text widget that supports text inline widgets.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

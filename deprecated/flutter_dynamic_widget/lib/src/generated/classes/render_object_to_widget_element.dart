@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderObjectToWidgetElementBase extends BaseWidget {
-    RenderObjectToWidgetElementBase();
+  RenderObjectToWidgetElementBase();
 
-    factory RenderObjectToWidgetElementBase.fromJson(Map<String, dynamic> data) {
-        return RenderObjectToWidgetElementBase();
-    }
+  factory RenderObjectToWidgetElementBase.fromJson(Map<String, dynamic> data) {
+    return RenderObjectToWidgetElementBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [RootRenderObjectElement] that is hosted by a [RenderObject].
 
 This element class is the instantiation of a [RenderObjectToWidgetAdapter]
@@ -21,13 +21,13 @@ this usage, it is normally instantiated by the bootstrapping logic in the
 [WidgetsFlutterBinding] singleton created by [runApp].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

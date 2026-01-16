@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BallisticScrollActivityBase extends BaseWidget {
-    BallisticScrollActivityBase();
+  BallisticScrollActivityBase();
 
-    factory BallisticScrollActivityBase.fromJson(Map<String, dynamic> data) {
-        return BallisticScrollActivityBase();
-    }
+  factory BallisticScrollActivityBase.fromJson(Map<String, dynamic> data) {
+    return BallisticScrollActivityBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An activity that animates a scroll view based on a physics [Simulation].
 
 A [BallisticScrollActivity] is typically used when the user lifts their
@@ -24,13 +24,13 @@ See also:
    animation parameters.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SnackBarBase extends BaseWidget {
-    SnackBarBase();
+  SnackBarBase();
 
-    factory SnackBarBase.fromJson(Map<String, dynamic> data) {
-        return SnackBarBase();
-    }
+  factory SnackBarBase.fromJson(Map<String, dynamic> data) {
+    return SnackBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A lightweight message with an optional action which briefly displays at the
 bottom of the screen.
 
@@ -36,13 +36,13 @@ See also:
  * <https://material.io/design/components/snackbars.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

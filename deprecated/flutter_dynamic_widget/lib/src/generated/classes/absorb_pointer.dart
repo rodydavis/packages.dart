@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AbsorbPointerBase extends BaseWidget {
-    AbsorbPointerBase();
+  AbsorbPointerBase();
 
-    factory AbsorbPointerBase.fromJson(Map<String, dynamic> data) {
-        return AbsorbPointerBase();
-    }
+  factory AbsorbPointerBase.fromJson(Map<String, dynamic> data) {
+    return AbsorbPointerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that absorbs pointers during hit testing.
 
 When [absorbing] is true, this widget prevents its subtree from receiving
@@ -25,13 +25,13 @@ See also:
    events but is itself invisible to hit testing.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

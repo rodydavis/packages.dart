@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class DraggableScrollableNotificationBase extends BaseWidget {
-    DraggableScrollableNotificationBase();
+  DraggableScrollableNotificationBase();
 
-    factory DraggableScrollableNotificationBase.fromJson(Map<String, dynamic> data) {
-        return DraggableScrollableNotificationBase();
-    }
+  factory DraggableScrollableNotificationBase.fromJson(
+      Map<String, dynamic> data) {
+    return DraggableScrollableNotificationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [Notification] related to the extent, which is the size, and scroll
 offset, which is the position of the child list, of the
 [DraggableScrollableSheet].
@@ -31,13 +32,13 @@ listens for extent notifications and responds by driving animations for the
 [FloatingActionButton] as the bottom sheet scrolls up.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

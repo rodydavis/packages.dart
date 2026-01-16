@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RawChipBase extends BaseWidget {
-    RawChipBase();
+  RawChipBase();
 
-    factory RawChipBase.fromJson(Map<String, dynamic> data) {
-        return RawChipBase();
-    }
+  factory RawChipBase.fromJson(Map<String, dynamic> data) {
+    return RawChipBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A raw material design chip.
 
 This serves as the basis for all of the chip widget types to aggregate.
@@ -41,13 +41,13 @@ See also:
  * <https://material.io/design/components/chips.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

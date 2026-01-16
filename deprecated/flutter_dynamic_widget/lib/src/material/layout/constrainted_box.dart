@@ -23,7 +23,6 @@ class ConstrainedBoxBase extends _$ConstrainedBoxBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

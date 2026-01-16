@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class MultiChildRenderObjectElementBase extends BaseWidget {
-    MultiChildRenderObjectElementBase();
+  MultiChildRenderObjectElementBase();
 
-    factory MultiChildRenderObjectElementBase.fromJson(Map<String, dynamic> data) {
-        return MultiChildRenderObjectElementBase();
-    }
+  factory MultiChildRenderObjectElementBase.fromJson(
+      Map<String, dynamic> data) {
+    return MultiChildRenderObjectElementBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [Element] that uses a [MultiChildRenderObjectWidget] as its configuration.
 
 This element subclass can be used for RenderObjectWidgets whose
@@ -24,13 +25,13 @@ See also:
   is used for the slots of the children.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

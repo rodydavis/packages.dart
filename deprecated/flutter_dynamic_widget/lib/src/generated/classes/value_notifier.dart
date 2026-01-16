@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ValueNotifierBase extends BaseWidget {
-    ValueNotifierBase();
+  ValueNotifierBase();
 
-    factory ValueNotifierBase.fromJson(Map<String, dynamic> data) {
-        return ValueNotifierBase();
-    }
+  factory ValueNotifierBase.fromJson(Map<String, dynamic> data) {
+    return ValueNotifierBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [ChangeNotifier] that holds a single value.
 
 When [value] is replaced with something that is not equal to the old
@@ -16,13 +16,13 @@ value as evaluated by the equality operator ==, this class notifies its
 listeners.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

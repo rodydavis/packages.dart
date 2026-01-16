@@ -29,7 +29,7 @@ class PageObjectData {
         .map((element) => new _Variable.fromElement(element))
         .where((variable) => variable != null)
         .toList(growable: false)
-          ..sort();
+      ..sort();
 
     return new PageObjectData._internal(document, variables);
   }

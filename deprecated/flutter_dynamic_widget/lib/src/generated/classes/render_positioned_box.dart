@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderPositionedBoxBase extends BaseWidget {
-    RenderPositionedBoxBase();
+  RenderPositionedBoxBase();
 
-    factory RenderPositionedBoxBase.fromJson(Map<String, dynamic> data) {
-        return RenderPositionedBoxBase();
-    }
+  factory RenderPositionedBoxBase.fromJson(Map<String, dynamic> data) {
+    return RenderPositionedBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Positions its child using an [AlignmentGeometry].
 
 For example, to align a box at the bottom right, you would pass this box a
@@ -21,13 +21,13 @@ dimensions. Using widthFactor and heightFactor you can force this latter
 behavior in all cases.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

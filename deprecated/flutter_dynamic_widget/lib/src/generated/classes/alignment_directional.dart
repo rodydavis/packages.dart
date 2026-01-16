@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AlignmentDirectionalBase extends BaseWidget {
-    AlignmentDirectionalBase();
+  AlignmentDirectionalBase();
 
-    factory AlignmentDirectionalBase.fromJson(Map<String, dynamic> data) {
-        return AlignmentDirectionalBase();
-    }
+  factory AlignmentDirectionalBase.fromJson(Map<String, dynamic> data) {
+    return AlignmentDirectionalBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An offset that's expressed as a fraction of a [Size], but whose horizontal
 component is dependent on the writing direction.
 
@@ -22,13 +22,13 @@ See also:
    whose horizontal component does not depend on the text direction).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

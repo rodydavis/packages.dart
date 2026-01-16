@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ButtonBarBase extends BaseWidget {
-    ButtonBarBase();
+  ButtonBarBase();
 
-    factory ButtonBarBase.fromJson(Map<String, dynamic> data) {
-        return ButtonBarBase();
-    }
+  factory ButtonBarBase.fromJson(Map<String, dynamic> data) {
+    return ButtonBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An end-aligned row of buttons, laying out into a column if there is not
 enough horizontal space.
 
@@ -50,13 +50,13 @@ See also:
  * [ButtonBarTheme], which configures the [ButtonBar].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

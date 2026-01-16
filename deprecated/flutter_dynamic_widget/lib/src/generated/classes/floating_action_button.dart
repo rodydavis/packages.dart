@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FloatingActionButtonBase extends BaseWidget {
-    FloatingActionButtonBase();
+  FloatingActionButtonBase();
 
-    factory FloatingActionButtonBase.fromJson(Map<String, dynamic> data) {
-        return FloatingActionButtonBase();
-    }
+  factory FloatingActionButtonBase.fromJson(Map<String, dynamic> data) {
+    return FloatingActionButtonBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design floating action button.
 
 A floating action button is a circular icon button that hovers over content
@@ -92,13 +92,13 @@ See also:
  * <https://material.io/design/components/buttons-floating-action-button.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

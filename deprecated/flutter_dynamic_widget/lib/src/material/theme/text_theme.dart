@@ -19,7 +19,6 @@ class TextThemeBase extends _$TextThemeBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class SliverGridDelegateWithMaxCrossAxisExtentBase extends BaseWidget {
-    SliverGridDelegateWithMaxCrossAxisExtentBase();
+  SliverGridDelegateWithMaxCrossAxisExtentBase();
 
-    factory SliverGridDelegateWithMaxCrossAxisExtentBase.fromJson(Map<String, dynamic> data) {
-        return SliverGridDelegateWithMaxCrossAxisExtentBase();
-    }
+  factory SliverGridDelegateWithMaxCrossAxisExtentBase.fromJson(
+      Map<String, dynamic> data) {
+    return SliverGridDelegateWithMaxCrossAxisExtentBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Creates grid layouts with tiles that each have a maximum cross-axis extent.
 
 This delegate will select a cross-axis extent for the tiles that is as
@@ -36,13 +37,13 @@ See also:
    its tiles.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

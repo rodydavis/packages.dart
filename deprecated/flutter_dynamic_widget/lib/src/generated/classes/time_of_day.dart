@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TimeOfDayBase extends BaseWidget {
-    TimeOfDayBase();
+  TimeOfDayBase();
 
-    factory TimeOfDayBase.fromJson(Map<String, dynamic> data) {
-        return TimeOfDayBase();
-    }
+  factory TimeOfDayBase.fromJson(Map<String, dynamic> data) {
+    return TimeOfDayBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A value representing a time during the day, independent of the date that
 day might fall on or the time zone.
 
@@ -37,13 +37,13 @@ See also:
    time zones.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

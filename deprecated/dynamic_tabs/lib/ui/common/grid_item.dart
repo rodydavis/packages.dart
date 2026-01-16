@@ -82,7 +82,7 @@ class GridTabItem extends StatelessWidget {
         ],
       );
     }
-    
+
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[

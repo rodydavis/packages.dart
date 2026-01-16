@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ExpandedBase extends BaseWidget {
-    ExpandedBase();
+  ExpandedBase();
 
-    factory ExpandedBase.fromJson(Map<String, dynamic> data) {
-        return ExpandedBase();
-    }
+  factory ExpandedBase.fromJson(Map<String, dynamic> data) {
+    return ExpandedBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that expands a child of a [Row], [Column], or [Flex]
 so that the child fills the available space.
 
@@ -112,13 +112,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

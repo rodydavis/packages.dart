@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BoxDecorationBase extends BaseWidget {
-    BoxDecorationBase();
+  BoxDecorationBase();
 
-    factory BoxDecorationBase.fromJson(Map<String, dynamic> data) {
-        return BoxDecorationBase();
-    }
+  factory BoxDecorationBase.fromJson(Map<String, dynamic> data) {
+    return BoxDecorationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An immutable description of how to paint a box.
 
 The [BoxDecoration] class provides a variety of ways to draw a box.
@@ -65,13 +65,13 @@ See also:
  * [Decoration], the base class which lets you define other decorations.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

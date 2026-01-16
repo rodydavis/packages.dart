@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class StatefulBuilderBase extends BaseWidget {
-    StatefulBuilderBase();
+  StatefulBuilderBase();
 
-    factory StatefulBuilderBase.fromJson(Map<String, dynamic> data) {
-        return StatefulBuilderBase();
-    }
+  factory StatefulBuilderBase.fromJson(Map<String, dynamic> data) {
+    return StatefulBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A platonic widget that both has state and calls a closure to obtain its child widget.
 
 The [StateSetter] function passed to the [builder] is used to invoke a
@@ -55,13 +55,13 @@ See also:
  * [Builder], the platonic stateless widget.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

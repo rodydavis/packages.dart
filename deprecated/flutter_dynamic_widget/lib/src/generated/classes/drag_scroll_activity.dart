@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DragScrollActivityBase extends BaseWidget {
-    DragScrollActivityBase();
+  DragScrollActivityBase();
 
-    factory DragScrollActivityBase.fromJson(Map<String, dynamic> data) {
-        return DragScrollActivityBase();
-    }
+  factory DragScrollActivityBase.fromJson(Map<String, dynamic> data) {
+    return DragScrollActivityBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The activity a scroll view performs when a the user drags their finger
 across the screen.
 
@@ -18,13 +18,13 @@ See also:
    the scroll view.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

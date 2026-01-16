@@ -9,7 +9,7 @@ part 'icon_data.g.dart';
 @PropertyClass('IconData')
 class IconDataBase extends _$IconDataBase {
   IconDataBase(this.widgetData, this.widgetContext, this.widgetRender);
-  
+
   @PropertyKey(key: '0')
   int codePoint;
 
@@ -26,7 +26,6 @@ class IconDataBase extends _$IconDataBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

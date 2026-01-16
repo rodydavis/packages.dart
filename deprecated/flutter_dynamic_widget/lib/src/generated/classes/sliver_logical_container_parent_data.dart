@@ -1,25 +1,26 @@
 import '../base.dart';
 
 class SliverLogicalContainerParentDataBase extends BaseWidget {
-    SliverLogicalContainerParentDataBase();
+  SliverLogicalContainerParentDataBase();
 
-    factory SliverLogicalContainerParentDataBase.fromJson(Map<String, dynamic> data) {
-        return SliverLogicalContainerParentDataBase();
-    }
+  factory SliverLogicalContainerParentDataBase.fromJson(
+      Map<String, dynamic> data) {
+    return SliverLogicalContainerParentDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Parent data for slivers that have multiple children and that position their
 children using layout offsets.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

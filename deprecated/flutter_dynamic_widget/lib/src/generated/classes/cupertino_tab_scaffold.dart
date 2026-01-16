@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoTabScaffoldBase extends BaseWidget {
-    CupertinoTabScaffoldBase();
+  CupertinoTabScaffoldBase();
 
-    factory CupertinoTabScaffoldBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoTabScaffoldBase();
-    }
+  factory CupertinoTabScaffoldBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoTabScaffoldBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Implements a tabbed iOS application's root layout and behavior structure.
 
 The scaffold lays out the tab bar at the bottom and the content between or
@@ -109,13 +109,13 @@ See also:
  * [iOS human interface guidelines](https://developer.apple.com/design/human-interface-guidelines/ios/bars/tab-bars/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

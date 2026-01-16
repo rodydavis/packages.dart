@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SnackBarThemeDataBase extends BaseWidget {
-    SnackBarThemeDataBase();
+  SnackBarThemeDataBase();
 
-    factory SnackBarThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return SnackBarThemeDataBase();
-    }
+  factory SnackBarThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return SnackBarThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Customizes default property values for [SnackBar] widgets.
 
 Descendant widgets obtain the current [SnackBarThemeData] object using
@@ -28,13 +28,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -37,7 +37,6 @@ class FlutterLogoBase extends _$FlutterLogoBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
@@ -45,4 +44,3 @@ class FlutterLogoBase extends _$FlutterLogoBase {
   @ColorKey(defaultValue: 0xFF616161)
   Color textColor;
 }
-

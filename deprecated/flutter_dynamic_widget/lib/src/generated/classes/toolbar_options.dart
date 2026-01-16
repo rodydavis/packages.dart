@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ToolbarOptionsBase extends BaseWidget {
-    ToolbarOptionsBase();
+  ToolbarOptionsBase();
 
-    factory ToolbarOptionsBase.fromJson(Map<String, dynamic> data) {
-        return ToolbarOptionsBase();
-    }
+  factory ToolbarOptionsBase.fromJson(Map<String, dynamic> data) {
+    return ToolbarOptionsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Toolbar configuration for [EditableText].
 
 Toolbar is a context menu that will show up when user right click or long
@@ -20,13 +20,13 @@ Create a custom [ToolbarOptions] if you want explicit control over the toolbar
 option.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class InspectorSelectionBase extends BaseWidget {
-    InspectorSelectionBase();
+  InspectorSelectionBase();
 
-    factory InspectorSelectionBase.fromJson(Map<String, dynamic> data) {
-        return InspectorSelectionBase();
-    }
+  factory InspectorSelectionBase.fromJson(Map<String, dynamic> data) {
+    return InspectorSelectionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Mutable selection state of the inspector.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

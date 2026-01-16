@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class StackFrameBase extends BaseWidget {
-    StackFrameBase();
+  StackFrameBase();
 
-    factory StackFrameBase.fromJson(Map<String, dynamic> data) {
-        return StackFrameBase();
-    }
+  factory StackFrameBase.fromJson(Map<String, dynamic> data) {
+    return StackFrameBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A object representation of a frame from a stack trace.
 
 {@tool snippet}
@@ -22,13 +22,13 @@ final List<StackFrame> currentFrames = StackFrame.fromStackTrace(StackTrace.curr
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

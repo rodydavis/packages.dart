@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MaterialBannerThemeDataBase extends BaseWidget {
-    MaterialBannerThemeDataBase();
+  MaterialBannerThemeDataBase();
 
-    factory MaterialBannerThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return MaterialBannerThemeDataBase();
-    }
+  factory MaterialBannerThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return MaterialBannerThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the visual properties of [MaterialBanner] widgets.
 
 Descendant widgets obtain the current [MaterialBannerThemeData] object using
@@ -27,13 +27,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

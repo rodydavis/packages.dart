@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class VisualDensityBase extends BaseWidget {
-    VisualDensityBase();
+  VisualDensityBase();
 
-    factory VisualDensityBase.fromJson(Map<String, dynamic> data) {
-        return VisualDensityBase();
-    }
+  factory VisualDensityBase.fromJson(Map<String, dynamic> data) {
+    return VisualDensityBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the visual density of user interface components.
 
 Density, in the context of a UI, is the vertical and horizontal
@@ -32,13 +32,13 @@ See also:
  * [Material design guidance on density](https://material.io/design/layout/applying-density.html).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

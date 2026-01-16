@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class RoundedRectRangeSliderTrackShapeBase extends BaseWidget {
-    RoundedRectRangeSliderTrackShapeBase();
+  RoundedRectRangeSliderTrackShapeBase();
 
-    factory RoundedRectRangeSliderTrackShapeBase.fromJson(Map<String, dynamic> data) {
-        return RoundedRectRangeSliderTrackShapeBase();
-    }
+  factory RoundedRectRangeSliderTrackShapeBase.fromJson(
+      Map<String, dynamic> data) {
+    return RoundedRectRangeSliderTrackShapeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The default shape of a [RangeSlider]'s track.
 
 It paints a solid colored rectangle with rounded edges, vertically centered
@@ -37,13 +38,13 @@ See also:
  * [RectangularRangeSliderTrackShape], for a similar track with sharp edges.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

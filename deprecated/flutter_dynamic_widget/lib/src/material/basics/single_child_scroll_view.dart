@@ -12,7 +12,8 @@ part 'single_child_scroll_view.g.dart';
 
 @WidgetClass('SingleChildScrollView')
 class SingleChildScrollViewBase extends _$SingleChildScrollViewBase {
-  SingleChildScrollViewBase(this.widgetData, this.widgetContext, this.widgetRender);
+  SingleChildScrollViewBase(
+      this.widgetData, this.widgetContext, this.widgetRender);
 
   @enumClipHardEdge
   Clip clipBehavior;
@@ -36,7 +37,6 @@ class SingleChildScrollViewBase extends _$SingleChildScrollViewBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
@@ -49,4 +49,3 @@ class SingleChildScrollViewBase extends _$SingleChildScrollViewBase {
   @PropertyKey(defaultValue: 'false')
   bool reverse;
 }
-

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoTabViewBase extends BaseWidget {
-    CupertinoTabViewBase();
+  CupertinoTabViewBase();
 
-    factory CupertinoTabViewBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoTabViewBase();
-    }
+  factory CupertinoTabViewBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoTabViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A single tab view with its own [Navigator] state and history.
 
 A typical tab view used as the content of each tab in a [CupertinoTabScaffold]
@@ -42,13 +42,13 @@ See also:
    [CupertinoTabView]'s [Navigator].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

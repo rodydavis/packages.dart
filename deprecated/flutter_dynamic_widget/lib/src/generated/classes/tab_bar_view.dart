@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TabBarViewBase extends BaseWidget {
-    TabBarViewBase();
+  TabBarViewBase();
 
-    factory TabBarViewBase.fromJson(Map<String, dynamic> data) {
-        return TabBarViewBase();
-    }
+  factory TabBarViewBase.fromJson(Map<String, dynamic> data) {
+    return TabBarViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A page view that displays the widget which corresponds to the currently
 selected tab.
 
@@ -25,13 +25,13 @@ The tab controller's [TabController.length] must equal the length of the
 To see a sample implementation, visit the [TabController] documentation.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

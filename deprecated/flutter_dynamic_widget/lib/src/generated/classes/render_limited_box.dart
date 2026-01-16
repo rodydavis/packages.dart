@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderLimitedBoxBase extends BaseWidget {
-    RenderLimitedBoxBase();
+  RenderLimitedBoxBase();
 
-    factory RenderLimitedBoxBase.fromJson(Map<String, dynamic> data) {
-        return RenderLimitedBoxBase();
-    }
+  factory RenderLimitedBoxBase.fromJson(Map<String, dynamic> data) {
+    return RenderLimitedBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Constrains the child's [BoxConstraints.maxWidth] and
 [BoxConstraints.maxHeight] if they're otherwise unconstrained.
 
@@ -23,13 +23,13 @@ parents' size, so that they behave reasonably in lists (which are
 unbounded).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

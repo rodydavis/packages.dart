@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class StandardMethodCodecBase extends BaseWidget {
-    StandardMethodCodecBase();
+  StandardMethodCodecBase();
 
-    factory StandardMethodCodecBase.fromJson(Map<String, dynamic> data) {
-        return StandardMethodCodecBase();
-    }
+  factory StandardMethodCodecBase.fromJson(Map<String, dynamic> data) {
+    return StandardMethodCodecBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 [MethodCodec] using the Flutter standard binary encoding.
 
 The standard codec is guaranteed to be compatible with the corresponding
@@ -19,13 +19,13 @@ Values supported as method arguments and result payloads are those supported
 by [StandardMessageCodec].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

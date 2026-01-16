@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RouteObserverBase extends BaseWidget {
-    RouteObserverBase();
+  RouteObserverBase();
 
-    factory RouteObserverBase.fromJson(Map<String, dynamic> data) {
-        return RouteObserverBase();
-    }
+  factory RouteObserverBase.fromJson(Map<String, dynamic> data) {
+    return RouteObserverBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [Navigator] observer that notifies [RouteAware]s of changes to the
 state of their [Route].
 
@@ -84,13 +84,13 @@ class RouteAwareWidgetState extends State<RouteAwareWidget> with RouteAware {
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

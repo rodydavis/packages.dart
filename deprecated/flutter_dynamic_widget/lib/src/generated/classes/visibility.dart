@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class VisibilityBase extends BaseWidget {
-    VisibilityBase();
+  VisibilityBase();
 
-    factory VisibilityBase.fromJson(Map<String, dynamic> data) {
-        return VisibilityBase();
-    }
+  factory VisibilityBase.fromJson(Map<String, dynamic> data) {
+    return VisibilityBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Whether to show or hide a child.
 
 By default, the [visible] property controls whether the [child] is included
@@ -40,13 +40,13 @@ See also:
  * [AnimatedCrossFade], which can fade between two specific children.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

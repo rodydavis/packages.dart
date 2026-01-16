@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LicenseEntryWithLineBreaksBase extends BaseWidget {
-    LicenseEntryWithLineBreaksBase();
+  LicenseEntryWithLineBreaksBase();
 
-    factory LicenseEntryWithLineBreaksBase.fromJson(Map<String, dynamic> data) {
-        return LicenseEntryWithLineBreaksBase();
-    }
+  factory LicenseEntryWithLineBreaksBase.fromJson(Map<String, dynamic> data) {
+    return LicenseEntryWithLineBreaksBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Variant of [LicenseEntry] for licenses that separate paragraphs with blank
 lines and that hard-wrap text within paragraphs. Lines that begin with one
 or more space characters are also assumed to introduce new paragraphs,
@@ -67,13 +67,13 @@ another thread, or spreading the work across multiple frames using
 [SchedulerBinding.scheduleTask].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

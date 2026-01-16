@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IterablePropertyBase extends BaseWidget {
-    IterablePropertyBase();
+  IterablePropertyBase();
 
-    factory IterablePropertyBase.fromJson(Map<String, dynamic> data) {
-        return IterablePropertyBase();
-    }
+  factory IterablePropertyBase.fromJson(Map<String, dynamic> data) {
+    return IterablePropertyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Property with an `Iterable<T>` [value] that can be displayed with
 different [DiagnosticsTreeStyle] for custom rendering.
 
@@ -17,13 +17,13 @@ as a comma separated list, otherwise the iterable is described as a line
 break separated list.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

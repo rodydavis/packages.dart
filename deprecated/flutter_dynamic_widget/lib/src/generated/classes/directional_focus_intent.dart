@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DirectionalFocusIntentBase extends BaseWidget {
-    DirectionalFocusIntentBase();
+  DirectionalFocusIntentBase();
 
-    factory DirectionalFocusIntentBase.fromJson(Map<String, dynamic> data) {
-        return DirectionalFocusIntentBase();
-    }
+  factory DirectionalFocusIntentBase.fromJson(Map<String, dynamic> data) {
+    return DirectionalFocusIntentBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [Intent] that represents moving to the next focusable node in the given
 [direction].
 
@@ -20,13 +20,13 @@ appropriate associated directions.
 See [FocusTraversalPolicy] for more information about focus traversal.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

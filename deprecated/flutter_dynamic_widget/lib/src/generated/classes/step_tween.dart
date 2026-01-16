@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class StepTweenBase extends BaseWidget {
-    StepTweenBase();
+  StepTweenBase();
 
-    factory StepTweenBase.fromJson(Map<String, dynamic> data) {
-        return StepTweenBase();
-    }
+  factory StepTweenBase.fromJson(Map<String, dynamic> data) {
+    return StepTweenBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An interpolation between two integers that floors.
 
 This class specializes the interpolation of [Tween<int>] to be
@@ -25,13 +25,13 @@ calling [lerp] or [transform].
 See [Tween] for a discussion on how to use interpolation objects.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

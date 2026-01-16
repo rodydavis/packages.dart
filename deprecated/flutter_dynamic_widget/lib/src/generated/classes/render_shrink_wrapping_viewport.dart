@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderShrinkWrappingViewportBase extends BaseWidget {
-    RenderShrinkWrappingViewportBase();
+  RenderShrinkWrappingViewportBase();
 
-    factory RenderShrinkWrappingViewportBase.fromJson(Map<String, dynamic> data) {
-        return RenderShrinkWrappingViewportBase();
-    }
+  factory RenderShrinkWrappingViewportBase.fromJson(Map<String, dynamic> data) {
+    return RenderShrinkWrappingViewportBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A render object that is bigger on the inside and shrink wraps its children
 in the main axis.
 
@@ -36,13 +36,13 @@ See also:
    placed inside a [RenderSliver] (the opposite of this class).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

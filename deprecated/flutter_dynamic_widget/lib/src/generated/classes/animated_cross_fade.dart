@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedCrossFadeBase extends BaseWidget {
-    AnimatedCrossFadeBase();
+  AnimatedCrossFadeBase();
 
-    factory AnimatedCrossFadeBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedCrossFadeBase();
-    }
+  factory AnimatedCrossFadeBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedCrossFadeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that cross-fades between two given children and animates itself
 between their sizes.
 
@@ -57,13 +57,13 @@ See also:
    automatically change size.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

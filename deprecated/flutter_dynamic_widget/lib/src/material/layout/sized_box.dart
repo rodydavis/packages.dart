@@ -23,7 +23,6 @@ class SizedBoxBase extends _$SizedBoxBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class PaddleSliderValueIndicatorShapeBase extends BaseWidget {
-    PaddleSliderValueIndicatorShapeBase();
+  PaddleSliderValueIndicatorShapeBase();
 
-    factory PaddleSliderValueIndicatorShapeBase.fromJson(Map<String, dynamic> data) {
-        return PaddleSliderValueIndicatorShapeBase();
-    }
+  factory PaddleSliderValueIndicatorShapeBase.fromJson(
+      Map<String, dynamic> data) {
+    return PaddleSliderValueIndicatorShapeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A variant shape of a [Slider]'s value indicator . The value indicator is in
 the shape of an upside-down pear.
 
@@ -22,13 +23,13 @@ See also:
    of all sliders in a widget subtree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LinearGradientBase extends BaseWidget {
-    LinearGradientBase();
+  LinearGradientBase();
 
-    factory LinearGradientBase.fromJson(Map<String, dynamic> data) {
-        return LinearGradientBase();
-    }
+  factory LinearGradientBase.fromJson(Map<String, dynamic> data) {
+    return LinearGradientBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A 2D linear gradient.
 
 This class is used by [BoxDecoration] to represent linear gradients. This
@@ -63,13 +63,13 @@ See also:
    [BoxDecoration.gradient] property.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

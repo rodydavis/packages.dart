@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverFadeTransitionBase extends BaseWidget {
-    SliverFadeTransitionBase();
+  SliverFadeTransitionBase();
 
-    factory SliverFadeTransitionBase.fromJson(Map<String, dynamic> data) {
-        return SliverFadeTransitionBase();
-    }
+  factory SliverFadeTransitionBase.fromJson(Map<String, dynamic> data) {
+    return SliverFadeTransitionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animates the opacity of a sliver widget.
 
 {@tool dartpad --template=stateful_widget_scaffold_center_freeform_state}
@@ -73,13 +73,13 @@ See also:
  * [SliverOpacity], which does not animate changes in opacity.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

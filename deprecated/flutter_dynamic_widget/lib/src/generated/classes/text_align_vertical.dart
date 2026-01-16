@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextAlignVerticalBase extends BaseWidget {
-    TextAlignVerticalBase();
+  TextAlignVerticalBase();
 
-    factory TextAlignVerticalBase.fromJson(Map<String, dynamic> data) {
-        return TextAlignVerticalBase();
-    }
+  factory TextAlignVerticalBase.fromJson(Map<String, dynamic> data) {
+    return TextAlignVerticalBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The vertical alignment of text within an input box.
 
 A single [y] value that can range from -1.0 to 1.0. -1.0 aligns to the top
@@ -26,13 +26,13 @@ See also:
    prefix, input, and suffix within an [InputDecorator].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

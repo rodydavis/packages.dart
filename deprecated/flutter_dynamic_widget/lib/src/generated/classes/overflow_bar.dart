@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OverflowBarBase extends BaseWidget {
-    OverflowBarBase();
+  OverflowBarBase();
 
-    factory OverflowBarBase.fromJson(Map<String, dynamic> data) {
-        return OverflowBarBase();
-    }
+  factory OverflowBarBase.fromJson(Map<String, dynamic> data) {
+    return OverflowBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that lays out its [children] in a row unless they
 "overflow" the available horizontal space, in which case it lays
 them out in a column instead.
@@ -76,13 +76,13 @@ Widget build(BuildContext context) {
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

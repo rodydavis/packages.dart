@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverOverlapAbsorberHandleBase extends BaseWidget {
-    SliverOverlapAbsorberHandleBase();
+  SliverOverlapAbsorberHandleBase();
 
-    factory SliverOverlapAbsorberHandleBase.fromJson(Map<String, dynamic> data) {
-        return SliverOverlapAbsorberHandleBase();
-    }
+  factory SliverOverlapAbsorberHandleBase.fromJson(Map<String, dynamic> data) {
+    return SliverOverlapAbsorberHandleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Handle to provide to a [SliverOverlapAbsorber], a [SliverOverlapInjector],
 and an [NestedScrollViewViewport], to shift overlap in a [NestedScrollView].
 
@@ -34,13 +34,13 @@ See also:
    usage for this class.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

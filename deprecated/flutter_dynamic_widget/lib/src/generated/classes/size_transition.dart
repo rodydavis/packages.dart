@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SizeTransitionBase extends BaseWidget {
-    SizeTransitionBase();
+  SizeTransitionBase();
 
-    factory SizeTransitionBase.fromJson(Map<String, dynamic> data) {
-        return SizeTransitionBase();
-    }
+  factory SizeTransitionBase.fromJson(Map<String, dynamic> data) {
+    return SizeTransitionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animates its own size and clips and aligns its child.
 
 [SizeTransition] acts as a [ClipRect] that animates either its width or its
@@ -82,13 +82,13 @@ See also:
    position based on the value of a rectangle relative to a bounding box.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

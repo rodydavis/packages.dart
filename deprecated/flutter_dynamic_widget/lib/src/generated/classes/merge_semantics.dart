@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MergeSemanticsBase extends BaseWidget {
-    MergeSemanticsBase();
+  MergeSemanticsBase();
 
-    factory MergeSemanticsBase.fromJson(Map<String, dynamic> data) {
-        return MergeSemanticsBase();
-    }
+  factory MergeSemanticsBase.fromJson(Map<String, dynamic> data) {
+    return MergeSemanticsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that merges the semantics of its descendants.
 
 Causes all the semantics of the subtree rooted at this node to be
@@ -30,13 +30,13 @@ the first one in tree order will be the one to receive the
 callbacks.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

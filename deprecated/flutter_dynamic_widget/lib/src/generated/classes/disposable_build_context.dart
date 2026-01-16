@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DisposableBuildContextBase extends BaseWidget {
-    DisposableBuildContextBase();
+  DisposableBuildContextBase();
 
-    factory DisposableBuildContextBase.fromJson(Map<String, dynamic> data) {
-        return DisposableBuildContextBase();
-    }
+  factory DisposableBuildContextBase.fromJson(Map<String, dynamic> data) {
+    return DisposableBuildContextBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Provides non-leaking access to a [BuildContext].
 
 A [BuildContext] is only valid if it is pointing to an active [Element].
@@ -26,13 +26,13 @@ Creators of this object must guarantee the following:
 This object will not hold on to the [State] after disposal.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AlignTransitionBase extends BaseWidget {
-    AlignTransitionBase();
+  AlignTransitionBase();
 
-    factory AlignTransitionBase.fromJson(Map<String, dynamic> data) {
-        return AlignTransitionBase();
-    }
+  factory AlignTransitionBase.fromJson(Map<String, dynamic> data) {
+    return AlignTransitionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of an [Align] that animates its [Align.alignment] property.
 
 Here's an illustration of the [DecoratedBoxTransition] widget, with it's
@@ -31,13 +31,13 @@ See also:
    relative to its normal position.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollIntentBase extends BaseWidget {
-    ScrollIntentBase();
+  ScrollIntentBase();
 
-    factory ScrollIntentBase.fromJson(Map<String, dynamic> data) {
-        return ScrollIntentBase();
-    }
+  factory ScrollIntentBase.fromJson(Map<String, dynamic> data) {
+    return ScrollIntentBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [Intent] that represents scrolling the nearest scrollable by an amount
 appropriate for the [type] specified.
 
@@ -17,13 +17,13 @@ The actual amount of the scroll is determined by the
 specified.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

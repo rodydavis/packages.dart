@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ContinuousRectangleBorderBase extends BaseWidget {
-    ContinuousRectangleBorderBase();
+  ContinuousRectangleBorderBase();
 
-    factory ContinuousRectangleBorderBase.fromJson(Map<String, dynamic> data) {
-        return ContinuousRectangleBorderBase();
-    }
+  factory ContinuousRectangleBorderBase.fromJson(Map<String, dynamic> data) {
+    return ContinuousRectangleBorderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A rectangular border with smooth continuous transitions between the straight
 sides and the rounded corners.
 
@@ -32,13 +32,13 @@ See also:
    [ContinuousRectangleBorder].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

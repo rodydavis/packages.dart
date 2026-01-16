@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DataTableBase extends BaseWidget {
-    DataTableBase();
+  DataTableBase();
 
-    factory DataTableBase.fromJson(Map<String, dynamic> data) {
-        return DataTableBase();
-    }
+  factory DataTableBase.fromJson(Map<String, dynamic> data) {
+    return DataTableBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design data table.
 
 {@youtube 560 315 https://www.youtube.com/watch?v=ktTajqbhIcY}
@@ -147,13 +147,13 @@ See also:
  * <https://material.io/design/components/data-tables.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class HeroBase extends BaseWidget {
-    HeroBase();
+  HeroBase();
 
-    factory HeroBase.fromJson(Map<String, dynamic> data) {
-        return HeroBase();
-    }
+  factory HeroBase.fromJson(Map<String, dynamic> data) {
+    return HeroBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that marks its child as being a candidate for
 [hero animations](https://flutter.dev/docs/development/ui/animations/hero-animations).
 
@@ -78,13 +78,13 @@ non-nested case the top-most routes containing these [Hero]es in the nested
 ![Diagrams with parts of the Hero transition.](https://flutter.github.io/assets-for-api-docs/assets/interaction/heroes.png)
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

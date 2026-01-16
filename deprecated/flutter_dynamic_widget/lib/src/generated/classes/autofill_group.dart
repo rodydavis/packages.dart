@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AutofillGroupBase extends BaseWidget {
-    AutofillGroupBase();
+  AutofillGroupBase();
 
-    factory AutofillGroupBase.fromJson(Map<String, dynamic> data) {
-        return AutofillGroupBase();
-    }
+  factory AutofillGroupBase.fromJson(Map<String, dynamic> data) {
+    return AutofillGroupBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [AutofillScope] widget that groups [AutofillClient]s together.
 
 [AutofillClient]s that share the same closest [AutofillGroup] ancestor must
@@ -133,13 +133,13 @@ See also:
   clean up actions to be run when a topmost [AutofillGroup] is disposed.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

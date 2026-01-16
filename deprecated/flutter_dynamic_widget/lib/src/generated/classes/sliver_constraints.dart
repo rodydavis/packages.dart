@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverConstraintsBase extends BaseWidget {
-    SliverConstraintsBase();
+  SliverConstraintsBase();
 
-    factory SliverConstraintsBase.fromJson(Map<String, dynamic> data) {
-        return SliverConstraintsBase();
-    }
+  factory SliverConstraintsBase.fromJson(Map<String, dynamic> data) {
+    return SliverConstraintsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Immutable layout constraints for [RenderSliver] layout.
 
 The [SliverConstraints] describe the current scroll state of the viewport
@@ -18,13 +18,13 @@ visible in the viewport, not that the viewport itself has a zero scroll
 offset.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

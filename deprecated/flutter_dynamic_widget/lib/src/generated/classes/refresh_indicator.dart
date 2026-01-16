@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RefreshIndicatorBase extends BaseWidget {
-    RefreshIndicatorBase();
+  RefreshIndicatorBase();
 
-    factory RefreshIndicatorBase.fromJson(Map<String, dynamic> data) {
-        return RefreshIndicatorBase();
-    }
+  factory RefreshIndicatorBase.fromJson(Map<String, dynamic> data) {
+    return RefreshIndicatorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that supports the Material "swipe to refresh" idiom.
 
 When the child's [Scrollable] descendant overscrolls, an animated circular
@@ -49,13 +49,13 @@ See also:
    being overlaid on top of it.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

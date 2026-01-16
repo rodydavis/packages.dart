@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class TweenSequenceItemBase extends BaseWidget {
-    TweenSequenceItemBase();
+  TweenSequenceItemBase();
 
-    factory TweenSequenceItemBase.fromJson(Map<String, dynamic> data) {
-        return TweenSequenceItemBase();
-    }
+  factory TweenSequenceItemBase.fromJson(Map<String, dynamic> data) {
+    return TweenSequenceItemBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A simple holder for one element of a [TweenSequence].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

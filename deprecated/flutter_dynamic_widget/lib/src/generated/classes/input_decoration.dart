@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InputDecorationBase extends BaseWidget {
-    InputDecorationBase();
+  InputDecorationBase();
 
-    factory InputDecorationBase.fromJson(Map<String, dynamic> data) {
-        return InputDecorationBase();
-    }
+  factory InputDecorationBase.fromJson(Map<String, dynamic> data) {
+    return InputDecorationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The border, labels, icons, and styles used to decorate a Material
 Design text field.
 
@@ -114,13 +114,13 @@ See also:
    around a child widget.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

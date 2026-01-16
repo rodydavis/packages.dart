@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class EditableTextBase extends BaseWidget {
-    EditableTextBase();
+  EditableTextBase();
 
-    factory EditableTextBase.fromJson(Map<String, dynamic> data) {
-        return EditableTextBase();
-    }
+  factory EditableTextBase.fromJson(Map<String, dynamic> data) {
+    return EditableTextBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A basic text input field.
 
 This widget interacts with the [TextInput] service to let the user edit the
@@ -66,13 +66,13 @@ See also:
    with placeholder text, labels, and [Form] integration.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

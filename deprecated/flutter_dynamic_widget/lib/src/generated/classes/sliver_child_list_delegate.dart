@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverChildListDelegateBase extends BaseWidget {
-    SliverChildListDelegateBase();
+  SliverChildListDelegateBase();
 
-    factory SliverChildListDelegateBase.fromJson(Map<String, dynamic> data) {
-        return SliverChildListDelegateBase();
-    }
+  factory SliverChildListDelegateBase.fromJson(Map<String, dynamic> data) {
+    return SliverChildListDelegateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A delegate that supplies children for slivers using an explicit list.
 
 Many slivers lazily construct their box children to avoid creating more
@@ -62,13 +62,13 @@ See also:
    callback to construct the children.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

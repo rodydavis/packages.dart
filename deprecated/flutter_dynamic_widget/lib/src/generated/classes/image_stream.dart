@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ImageStreamBase extends BaseWidget {
-    ImageStreamBase();
+  ImageStreamBase();
 
-    factory ImageStreamBase.fromJson(Map<String, dynamic> data) {
-        return ImageStreamBase();
-    }
+  factory ImageStreamBase.fromJson(Map<String, dynamic> data) {
+    return ImageStreamBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A handle to an image resource.
 
 ImageStream represents a handle to a [dart:ui.Image] object and its scale
@@ -32,13 +32,13 @@ See also:
    [ImageStream] in a [Widget].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

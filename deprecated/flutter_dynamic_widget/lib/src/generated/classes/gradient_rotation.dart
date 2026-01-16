@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class GradientRotationBase extends BaseWidget {
-    GradientRotationBase();
+  GradientRotationBase();
 
-    factory GradientRotationBase.fromJson(Map<String, dynamic> data) {
-        return GradientRotationBase();
-    }
+  factory GradientRotationBase.fromJson(Map<String, dynamic> data) {
+    return GradientRotationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [GradientTransform] that rotates the gradient around the center-point of
 its bounding box.
 
@@ -25,13 +25,13 @@ const SweepGradient gradient = SweepGradient(
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

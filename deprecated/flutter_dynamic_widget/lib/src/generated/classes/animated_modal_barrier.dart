@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedModalBarrierBase extends BaseWidget {
-    AnimatedModalBarrierBase();
+  AnimatedModalBarrierBase();
 
-    factory AnimatedModalBarrierBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedModalBarrierBase();
-    }
+  factory AnimatedModalBarrierBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedModalBarrierBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that prevents the user from interacting with widgets behind itself,
 and can be configured with an animated color value.
 
@@ -27,13 +27,13 @@ See also:
  * [ModalRoute], which uses this widget.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

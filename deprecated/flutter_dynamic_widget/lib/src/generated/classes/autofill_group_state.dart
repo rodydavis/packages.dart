@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AutofillGroupStateBase extends BaseWidget {
-    AutofillGroupStateBase();
+  AutofillGroupStateBase();
 
-    factory AutofillGroupStateBase.fromJson(Map<String, dynamic> data) {
-        return AutofillGroupStateBase();
-    }
+  factory AutofillGroupStateBase.fromJson(Map<String, dynamic> data) {
+    return AutofillGroupStateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 State associated with an [AutofillGroup] widget.
 
 {@template flutter.widgets.autofill.AutofillGroupState}
@@ -27,13 +27,13 @@ with the platform's text input system.
 Typically obtained using [AutofillGroup.of].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

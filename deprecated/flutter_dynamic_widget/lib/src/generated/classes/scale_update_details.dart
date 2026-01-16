@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class ScaleUpdateDetailsBase extends BaseWidget {
-    ScaleUpdateDetailsBase();
+  ScaleUpdateDetailsBase();
 
-    factory ScaleUpdateDetailsBase.fromJson(Map<String, dynamic> data) {
-        return ScaleUpdateDetailsBase();
-    }
+  factory ScaleUpdateDetailsBase.fromJson(Map<String, dynamic> data) {
+    return ScaleUpdateDetailsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Details for [GestureScaleUpdateCallback].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

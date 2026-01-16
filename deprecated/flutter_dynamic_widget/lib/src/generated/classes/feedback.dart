@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FeedbackBase extends BaseWidget {
-    FeedbackBase();
+  FeedbackBase();
 
-    factory FeedbackBase.fromJson(Map<String, dynamic> data) {
-        return FeedbackBase();
-    }
+  factory FeedbackBase.fromJson(Map<String, dynamic> data) {
+    return FeedbackBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Provides platform-specific acoustic and/or haptic feedback for certain
 actions.
 
@@ -79,13 +79,13 @@ class WidgetWithExplicitCall extends StatelessWidget {
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

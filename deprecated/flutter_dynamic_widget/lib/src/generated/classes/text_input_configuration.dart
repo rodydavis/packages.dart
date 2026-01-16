@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextInputConfigurationBase extends BaseWidget {
-    TextInputConfigurationBase();
+  TextInputConfigurationBase();
 
-    factory TextInputConfigurationBase.fromJson(Map<String, dynamic> data) {
-        return TextInputConfigurationBase();
-    }
+  factory TextInputConfigurationBase.fromJson(Map<String, dynamic> data) {
+    return TextInputConfigurationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Controls the visual appearance of the text input control.
 
 Many [TextInputAction]s are common between Android and iOS. However, if an
@@ -27,13 +27,13 @@ See also:
  * [TextInputAction]
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

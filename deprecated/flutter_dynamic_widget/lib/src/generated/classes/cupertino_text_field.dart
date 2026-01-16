@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoTextFieldBase extends BaseWidget {
-    CupertinoTextFieldBase();
+  CupertinoTextFieldBase();
 
-    factory CupertinoTextFieldBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoTextFieldBase();
-    }
+  factory CupertinoTextFieldBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoTextFieldBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS-style text field.
 
 A text field lets the user enter text, either with a hardware keyboard or with
@@ -71,13 +71,13 @@ See also:
  * Learn how to use a [TextEditingController] in one of our [cookbook recipes](https://flutter.dev/docs/cookbook/forms/text-field-changes#2-use-a-texteditingcontroller).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -84,8 +84,8 @@ class _MyAppState extends State<MyApp> {
     final height = size.height;
     final width = size.width;
     final sb = StringBuffer();
-    final top =
-        offset?.dy ?? (screen.height != null ? (screen.height - height) / 2 : 0);
+    final top = offset?.dy ??
+        (screen.height != null ? (screen.height - height) / 2 : 0);
     final left =
         offset?.dx ?? (screen.width != null ? (screen.width - width) / 2 : 0);
     sb.write("height=");

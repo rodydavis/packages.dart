@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RadioBase extends BaseWidget {
-    RadioBase();
+  RadioBase();
 
-    factory RadioBase.fromJson(Map<String, dynamic> data) {
-        return RadioBase();
-    }
+  factory RadioBase.fromJson(Map<String, dynamic> data) {
+    return RadioBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design radio button.
 
 Used to select between a number of mutually exclusive values. When one radio
@@ -84,13 +84,13 @@ See also:
  * <https://material.io/design/components/selection-controls.html#radio-buttons>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

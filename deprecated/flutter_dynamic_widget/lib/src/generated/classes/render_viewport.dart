@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderViewportBase extends BaseWidget {
-    RenderViewportBase();
+  RenderViewportBase();
 
-    factory RenderViewportBase.fromJson(Map<String, dynamic> data) {
-        return RenderViewportBase();
-    }
+  factory RenderViewportBase.fromJson(Map<String, dynamic> data) {
+    return RenderViewportBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A render object that is bigger on the inside.
 
 [RenderViewport] is the visual workhorse of the scrolling machinery. It
@@ -42,13 +42,13 @@ See also:
    shrink-wraps its contents along the main axis.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class CupertinoSliverRefreshControlBase extends BaseWidget {
-    CupertinoSliverRefreshControlBase();
+  CupertinoSliverRefreshControlBase();
 
-    factory CupertinoSliverRefreshControlBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoSliverRefreshControlBase();
-    }
+  factory CupertinoSliverRefreshControlBase.fromJson(
+      Map<String, dynamic> data) {
+    return CupertinoSliverRefreshControlBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver widget implementing the iOS-style pull to refresh content control.
 
 When inserted as the first sliver in a scroll view or behind other slivers
@@ -115,13 +116,13 @@ See also:
    scrollable space.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

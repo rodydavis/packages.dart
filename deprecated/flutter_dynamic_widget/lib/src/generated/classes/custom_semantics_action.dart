@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CustomSemanticsActionBase extends BaseWidget {
-    CustomSemanticsActionBase();
+  CustomSemanticsActionBase();
 
-    factory CustomSemanticsActionBase.fromJson(Map<String, dynamic> data) {
-        return CustomSemanticsActionBase();
-    }
+  factory CustomSemanticsActionBase.fromJson(Map<String, dynamic> data) {
+    return CustomSemanticsActionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An identifier of a custom semantics action.
 
 Custom semantics actions can be provided to make complex user
@@ -33,13 +33,13 @@ See also:
  * [SemanticsProperties], where the handler for a custom action is provided.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MultiTapGestureRecognizerBase extends BaseWidget {
-    MultiTapGestureRecognizerBase();
+  MultiTapGestureRecognizerBase();
 
-    factory MultiTapGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
-        return MultiTapGestureRecognizerBase();
-    }
+  factory MultiTapGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
+    return MultiTapGestureRecognizerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Recognizes taps on a per-pointer basis.
 
 [MultiTapGestureRecognizer] considers each sequence of pointer events that
@@ -20,13 +20,13 @@ See also:
  * [TapGestureRecognizer]
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TweenSequenceBase extends BaseWidget {
-    TweenSequenceBase();
+  TweenSequenceBase();
 
-    factory TweenSequenceBase.fromJson(Map<String, dynamic> data) {
-        return TweenSequenceBase();
-    }
+  factory TweenSequenceBase.fromJson(Map<String, dynamic> data) {
+    return TweenSequenceBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Enables creating an [Animation] whose value is defined by a sequence of
 [Tween]s.
 
@@ -44,13 +44,13 @@ final Animation<double> animation = TweenSequence(
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PageTransitionsThemeBase extends BaseWidget {
-    PageTransitionsThemeBase();
+  PageTransitionsThemeBase();
 
-    factory PageTransitionsThemeBase.fromJson(Map<String, dynamic> data) {
-        return PageTransitionsThemeBase();
-    }
+  factory PageTransitionsThemeBase.fromJson(Map<String, dynamic> data) {
+    return PageTransitionsThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the page transition animations used by [MaterialPageRoute]
 for different [TargetPlatform]s.
 
@@ -30,13 +30,13 @@ See also:
    transition that matches native iOS page transitions.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

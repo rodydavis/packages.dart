@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoPopupSurfaceBase extends BaseWidget {
-    CupertinoPopupSurfaceBase();
+  CupertinoPopupSurfaceBase();
 
-    factory CupertinoPopupSurfaceBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoPopupSurfaceBase();
-    }
+  factory CupertinoPopupSurfaceBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoPopupSurfaceBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Rounded rectangle surface that looks like an iOS popup surface, e.g., alert dialog
 and action sheet.
 
@@ -26,13 +26,13 @@ See also:
  * <https://developer.apple.com/ios/human-interface-guidelines/views/alerts/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

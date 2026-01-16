@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MemoryImageBase extends BaseWidget {
-    MemoryImageBase();
+  MemoryImageBase();
 
-    factory MemoryImageBase.fromJson(Map<String, dynamic> data) {
-        return MemoryImageBase();
-    }
+  factory MemoryImageBase.fromJson(Map<String, dynamic> data) {
+    return MemoryImageBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Decodes the given [Uint8List] buffer as an image, associating it with the
 given scale.
 
@@ -23,13 +23,13 @@ See also:
  * [Image.memory] for a shorthand of an [Image] widget backed by [MemoryImage].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

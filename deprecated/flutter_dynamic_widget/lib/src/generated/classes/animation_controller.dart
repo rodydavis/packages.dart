@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimationControllerBase extends BaseWidget {
-    AnimationControllerBase();
+  AnimationControllerBase();
 
-    factory AnimationControllerBase.fromJson(Map<String, dynamic> data) {
-        return AnimationControllerBase();
-    }
+  factory AnimationControllerBase.fromJson(Map<String, dynamic> data) {
+    return AnimationControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A controller for an animation.
 
 This class lets you perform tasks such as:
@@ -152,13 +152,13 @@ See also:
    range of values of other types.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

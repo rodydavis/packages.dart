@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverIgnorePointerBase extends BaseWidget {
-    SliverIgnorePointerBase();
+  SliverIgnorePointerBase();
 
-    factory SliverIgnorePointerBase.fromJson(Map<String, dynamic> data) {
-        return SliverIgnorePointerBase();
-    }
+  factory SliverIgnorePointerBase.fromJson(Map<String, dynamic> data) {
+    return SliverIgnorePointerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver widget that is invisible during hit testing.
 
 When [ignoring] is true, this widget (and its subtree) is invisible
@@ -21,13 +21,13 @@ the semantics layer (and thus e.g. accessibility tools). If
 [ignoringSemantics] is null, it uses the value of [ignoring].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

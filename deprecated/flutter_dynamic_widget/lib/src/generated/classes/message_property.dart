@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MessagePropertyBase extends BaseWidget {
-    MessagePropertyBase();
+  MessagePropertyBase();
 
-    factory MessagePropertyBase.fromJson(Map<String, dynamic> data) {
-        return MessagePropertyBase();
-    }
+  factory MessagePropertyBase.fromJson(Map<String, dynamic> data) {
+    return MessagePropertyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Debugging message displayed like a property.
 
 {@tool snippet}
@@ -40,13 +40,13 @@ See also:
  * [StringProperty], which is a better fit for properties with string values.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

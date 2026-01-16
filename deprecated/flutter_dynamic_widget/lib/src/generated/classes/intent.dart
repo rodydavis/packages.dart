@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IntentBase extends BaseWidget {
-    IntentBase();
+  IntentBase();
 
-    factory IntentBase.fromJson(Map<String, dynamic> data) {
-        return IntentBase();
-    }
+  factory IntentBase.fromJson(Map<String, dynamic> data) {
+    return IntentBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A class representing a particular configuration of an [Action].
 
 This class is what the [Shortcuts.shortcuts] map has as values, and is used
@@ -22,13 +22,13 @@ See also:
    [BuildContext].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

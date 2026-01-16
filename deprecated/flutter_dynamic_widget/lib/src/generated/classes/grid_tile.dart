@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class GridTileBase extends BaseWidget {
-    GridTileBase();
+  GridTileBase();
 
-    factory GridTileBase.fromJson(Map<String, dynamic> data) {
-        return GridTileBase();
-    }
+  factory GridTileBase.fromJson(Map<String, dynamic> data) {
+    return GridTileBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A tile in a material design grid list.
 
 A grid list is a [GridView] of tiles in a vertical and horizontal
@@ -23,13 +23,13 @@ See also:
  * <https://material.io/design/components/image-lists.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

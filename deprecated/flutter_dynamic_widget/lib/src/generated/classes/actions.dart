@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ActionsBase extends BaseWidget {
-    ActionsBase();
+  ActionsBase();
 
-    factory ActionsBase.fromJson(Map<String, dynamic> data) {
-        return ActionsBase();
-    }
+  factory ActionsBase.fromJson(Map<String, dynamic> data) {
+    return ActionsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that establishes an [ActionDispatcher] and a map of [Intent] to
 [Action] to be used by its descendants when invoking an [Action].
 
@@ -25,13 +25,13 @@ See also:
  * [Shortcuts], a widget used to bind key combinations to [Intent]s.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

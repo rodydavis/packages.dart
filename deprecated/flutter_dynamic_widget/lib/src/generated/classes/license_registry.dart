@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LicenseRegistryBase extends BaseWidget {
-    LicenseRegistryBase();
+  LicenseRegistryBase();
 
-    factory LicenseRegistryBase.fromJson(Map<String, dynamic> data) {
-        return LicenseRegistryBase();
-    }
+  factory LicenseRegistryBase.fromJson(Map<String, dynamic> data) {
+    return LicenseRegistryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A registry for packages to add licenses to, so that they can be displayed
 together in an interface such as the [LicensePage].
 
@@ -36,13 +36,13 @@ See also:
    tapped it calls [showAboutDialog].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

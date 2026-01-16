@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TrackingScrollControllerBase extends BaseWidget {
-    TrackingScrollControllerBase();
+  TrackingScrollControllerBase();
 
-    factory TrackingScrollControllerBase.fromJson(Map<String, dynamic> data) {
-        return TrackingScrollControllerBase();
-    }
+  factory TrackingScrollControllerBase.fromJson(Map<String, dynamic> data) {
+    return TrackingScrollControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [ScrollController] whose [initialScrollOffset] tracks its most recently
 updated [ScrollPosition].
 
@@ -48,13 +48,13 @@ In this example the `_trackingController` would have been created by the
 stateful widget that built the widget tree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

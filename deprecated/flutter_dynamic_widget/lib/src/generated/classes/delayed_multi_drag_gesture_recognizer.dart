@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class DelayedMultiDragGestureRecognizerBase extends BaseWidget {
-    DelayedMultiDragGestureRecognizerBase();
+  DelayedMultiDragGestureRecognizerBase();
 
-    factory DelayedMultiDragGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
-        return DelayedMultiDragGestureRecognizerBase();
-    }
+  factory DelayedMultiDragGestureRecognizerBase.fromJson(
+      Map<String, dynamic> data) {
+    return DelayedMultiDragGestureRecognizerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Recognizes movement both horizontally and vertically on a per-pointer basis
 after a delay.
 
@@ -29,13 +30,13 @@ See also:
    regardless of how many fingers are involved.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

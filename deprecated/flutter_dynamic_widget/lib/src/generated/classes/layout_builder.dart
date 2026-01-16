@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LayoutBuilderBase extends BaseWidget {
-    LayoutBuilderBase();
+  LayoutBuilderBase();
 
-    factory LayoutBuilderBase.fromJson(Map<String, dynamic> data) {
-        return LayoutBuilderBase();
-    }
+  factory LayoutBuilderBase.fromJson(Map<String, dynamic> data) {
+    return LayoutBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Builds a widget tree that can depend on the parent widget's size.
 
 Similar to the [Builder] widget except that the framework calls the [builder]
@@ -87,13 +87,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

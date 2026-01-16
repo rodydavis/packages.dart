@@ -69,7 +69,8 @@ abstract class FirestoreHttpClient implements FirestoreClient {
   Future<List<DocumentSnapshot>> listDocumentSnapshots(String path) async {
     var list = <DocumentSnapshot>[];
 
-    var result = await (getJsonList("$path", extract: 'documents') as FutureOr<List<dynamic>>);
+    var result = await (getJsonList("$path", extract: 'documents')
+        as FutureOr<List<dynamic>>);
 
     for (var item in result) {
       list.add(new DocumentSnapshot(this, item));

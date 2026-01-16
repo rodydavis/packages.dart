@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CheckedPopupMenuItemBase extends BaseWidget {
-    CheckedPopupMenuItemBase();
+  CheckedPopupMenuItemBase();
 
-    factory CheckedPopupMenuItemBase.fromJson(Map<String, dynamic> data) {
-        return CheckedPopupMenuItemBase();
-    }
+  factory CheckedPopupMenuItemBase.fromJson(Map<String, dynamic> data) {
+    return CheckedPopupMenuItemBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An item with a checkmark in a material design popup menu.
 
 To show a popup menu, use the [showMenu] function. To create a button that
@@ -73,13 +73,13 @@ See also:
    it is tapped.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

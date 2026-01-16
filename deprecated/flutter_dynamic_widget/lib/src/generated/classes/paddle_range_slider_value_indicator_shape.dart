@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class PaddleRangeSliderValueIndicatorShapeBase extends BaseWidget {
-    PaddleRangeSliderValueIndicatorShapeBase();
+  PaddleRangeSliderValueIndicatorShapeBase();
 
-    factory PaddleRangeSliderValueIndicatorShapeBase.fromJson(Map<String, dynamic> data) {
-        return PaddleRangeSliderValueIndicatorShapeBase();
-    }
+  factory PaddleRangeSliderValueIndicatorShapeBase.fromJson(
+      Map<String, dynamic> data) {
+    return PaddleRangeSliderValueIndicatorShapeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A variant shape of a [RangeSlider]'s value indicators. The value indicator
 is in the shape of an upside-down pear.
 
@@ -22,13 +23,13 @@ See also:
    indicator of all sliders in a widget subtree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

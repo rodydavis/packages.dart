@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class NestedScrollViewBase extends BaseWidget {
-    NestedScrollViewBase();
+  NestedScrollViewBase();
 
-    factory NestedScrollViewBase.fromJson(Map<String, dynamic> data) {
-        return NestedScrollViewBase();
-    }
+  factory NestedScrollViewBase.fromJson(Map<String, dynamic> data) {
+    return NestedScrollViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A scrolling view inside of which can be nested other scrolling views, with
 their scroll positions being intrinsically linked.
 
@@ -329,13 +329,13 @@ See also:
    the values stored in a [SliverOverlapAbsorberHandle].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

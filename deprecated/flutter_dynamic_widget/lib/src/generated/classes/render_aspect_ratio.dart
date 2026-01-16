@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderAspectRatioBase extends BaseWidget {
-    RenderAspectRatioBase();
+  RenderAspectRatioBase();
 
-    factory RenderAspectRatioBase.fromJson(Map<String, dynamic> data) {
-        return RenderAspectRatioBase();
-    }
+  factory RenderAspectRatioBase.fromJson(Map<String, dynamic> data) {
+    return RenderAspectRatioBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Attempts to size the child to a specific aspect ratio.
 
 The render object first tries the largest width permitted by the layout
@@ -37,13 +37,13 @@ will eventually select a size for the child that meets the layout
 constraints but fails to meet the aspect ratio constraints.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

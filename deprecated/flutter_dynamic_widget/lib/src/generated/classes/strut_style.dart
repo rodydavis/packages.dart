@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class StrutStyleBase extends BaseWidget {
-    StrutStyleBase();
+  StrutStyleBase();
 
-    factory StrutStyleBase.fromJson(Map<String, dynamic> data) {
-        return StrutStyleBase();
-    }
+  factory StrutStyleBase.fromJson(Map<String, dynamic> data) {
+    return StrutStyleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the strut, which sets the minimum height a line can be
 relative to the baseline.
 
@@ -279,13 +279,13 @@ Text.rich(
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

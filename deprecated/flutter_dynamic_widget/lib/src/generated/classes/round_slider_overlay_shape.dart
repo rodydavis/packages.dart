@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RoundSliderOverlayShapeBase extends BaseWidget {
-    RoundSliderOverlayShapeBase();
+  RoundSliderOverlayShapeBase();
 
-    factory RoundSliderOverlayShapeBase.fromJson(Map<String, dynamic> data) {
-        return RoundSliderOverlayShapeBase();
-    }
+  factory RoundSliderOverlayShapeBase.fromJson(Map<String, dynamic> data) {
+    return RoundSliderOverlayShapeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The default shape of a [Slider]'s thumb overlay.
 
 The shape of the overlay is a circle with the same center as the thumb, but
@@ -26,13 +26,13 @@ See also:
    sliders in a widget subtree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

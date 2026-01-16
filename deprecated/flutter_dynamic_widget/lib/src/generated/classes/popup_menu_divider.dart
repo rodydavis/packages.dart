@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PopupMenuDividerBase extends BaseWidget {
-    PopupMenuDividerBase();
+  PopupMenuDividerBase();
 
-    factory PopupMenuDividerBase.fromJson(Map<String, dynamic> data) {
-        return PopupMenuDividerBase();
-    }
+  factory PopupMenuDividerBase.fromJson(Map<String, dynamic> data) {
+    return PopupMenuDividerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A horizontal divider in a material design popup menu.
 
 This widget adapts the [Divider] for use in popup menus.
@@ -21,13 +21,13 @@ See also:
    it is tapped.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

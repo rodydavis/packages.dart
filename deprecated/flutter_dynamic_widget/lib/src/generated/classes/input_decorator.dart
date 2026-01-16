@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InputDecoratorBase extends BaseWidget {
-    InputDecoratorBase();
+  InputDecoratorBase();
 
-    factory InputDecoratorBase.fromJson(Map<String, dynamic> data) {
-        return InputDecoratorBase();
-    }
+  factory InputDecoratorBase.fromJson(Map<String, dynamic> data) {
+    return InputDecoratorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the appearance of a Material Design text field.
 
 [InputDecorator] displays the visual elements of a Material Design text
@@ -31,13 +31,13 @@ See also:
    around other widgets.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

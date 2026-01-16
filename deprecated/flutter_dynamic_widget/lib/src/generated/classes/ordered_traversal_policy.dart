@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OrderedTraversalPolicyBase extends BaseWidget {
-    OrderedTraversalPolicyBase();
+  OrderedTraversalPolicyBase();
 
-    factory OrderedTraversalPolicyBase.fromJson(Map<String, dynamic> data) {
-        return OrderedTraversalPolicyBase();
-    }
+  factory OrderedTraversalPolicyBase.fromJson(Map<String, dynamic> data) {
+    return OrderedTraversalPolicyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [FocusTraversalPolicy] that orders nodes by an explicit order that resides
 in the nearest [FocusTraversalOrder] widget ancestor.
 
@@ -97,13 +97,13 @@ See also:
    orderings.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

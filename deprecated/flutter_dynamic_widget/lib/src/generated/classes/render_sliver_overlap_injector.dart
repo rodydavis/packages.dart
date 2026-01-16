@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderSliverOverlapInjectorBase extends BaseWidget {
-    RenderSliverOverlapInjectorBase();
+  RenderSliverOverlapInjectorBase();
 
-    factory RenderSliverOverlapInjectorBase.fromJson(Map<String, dynamic> data) {
-        return RenderSliverOverlapInjectorBase();
-    }
+  factory RenderSliverOverlapInjectorBase.fromJson(Map<String, dynamic> data) {
+    return RenderSliverOverlapInjectorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver that has a sliver geometry based on the values stored in a
 [SliverOverlapAbsorberHandle].
 
@@ -18,13 +18,13 @@ that it will always be laid out before the [RenderSliverOverlapInjector]
 during a particular frame.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

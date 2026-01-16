@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PopupMenuThemeDataBase extends BaseWidget {
-    PopupMenuThemeDataBase();
+  PopupMenuThemeDataBase();
 
-    factory PopupMenuThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return PopupMenuThemeDataBase();
-    }
+  factory PopupMenuThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return PopupMenuThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the visual properties of the routes used to display popup menus
 as well as [PopupMenuItem] and [PopupMenuDivider] widgets.
 
@@ -31,13 +31,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

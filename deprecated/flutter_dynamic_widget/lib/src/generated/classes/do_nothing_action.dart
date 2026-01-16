@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DoNothingActionBase extends BaseWidget {
-    DoNothingActionBase();
+  DoNothingActionBase();
 
-    factory DoNothingActionBase.fromJson(Map<String, dynamic> data) {
-        return DoNothingActionBase();
-    }
+  factory DoNothingActionBase.fromJson(Map<String, dynamic> data) {
+    return DoNothingActionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [Action], that, as the name implies, does nothing.
 
 Attaching a [DoNothingAction] to an [Actions] mapping is one way to disable
@@ -21,13 +21,13 @@ See also:
    a [Shortcuts] widget to do nothing.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

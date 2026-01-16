@@ -10,9 +10,7 @@ abstract class WidgetPreferredSizedBase extends WidgetBase {
   Size get preferredSize;
 }
 
-abstract class PropertyBase extends WidgetConfig {
- 
-}
+abstract class PropertyBase extends WidgetConfig {}
 
 abstract class AcceptData {
   Map<String, dynamic> get data;

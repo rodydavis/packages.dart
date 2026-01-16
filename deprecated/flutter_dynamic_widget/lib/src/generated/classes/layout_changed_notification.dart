@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LayoutChangedNotificationBase extends BaseWidget {
-    LayoutChangedNotificationBase();
+  LayoutChangedNotificationBase();
 
-    factory LayoutChangedNotificationBase.fromJson(Map<String, dynamic> data) {
-        return LayoutChangedNotificationBase();
-    }
+  factory LayoutChangedNotificationBase.fromJson(Map<String, dynamic> data) {
+    return LayoutChangedNotificationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Indicates that the layout of one of the descendants of the object receiving
 this notification has changed in some way, and that therefore any
 assumptions about that layout are no longer valid.
@@ -39,13 +39,13 @@ notification to change the build, for instance, you would always be one
 frame behind, which would look really ugly and laggy.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

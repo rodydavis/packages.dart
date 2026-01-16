@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class RestorableTextEditingControllerBase extends BaseWidget {
-    RestorableTextEditingControllerBase();
+  RestorableTextEditingControllerBase();
 
-    factory RestorableTextEditingControllerBase.fromJson(Map<String, dynamic> data) {
-        return RestorableTextEditingControllerBase();
-    }
+  factory RestorableTextEditingControllerBase.fromJson(
+      Map<String, dynamic> data) {
+    return RestorableTextEditingControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [RestorableProperty] that knows how to store and restore a
 [TextEditingController].
 
@@ -18,13 +19,13 @@ the value it had when the restoration data it is getting restored from was
 collected.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

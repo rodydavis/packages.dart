@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DatePickerHeaderBase extends BaseWidget {
-    DatePickerHeaderBase();
+  DatePickerHeaderBase();
 
-    factory DatePickerHeaderBase.fromJson(Map<String, dynamic> data) {
-        return DatePickerHeaderBase();
-    }
+  factory DatePickerHeaderBase.fromJson(Map<String, dynamic> data) {
+    return DatePickerHeaderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Re-usable widget that displays the selected date (in large font) and the
 help text above it.
 
@@ -22,13 +22,13 @@ These types include:
 non-null.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

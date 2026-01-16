@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TweenAnimationBuilderBase extends BaseWidget {
-    TweenAnimationBuilderBase();
+  TweenAnimationBuilderBase();
 
-    factory TweenAnimationBuilderBase.fromJson(Map<String, dynamic> data) {
-        return TweenAnimationBuilderBase();
-    }
+  factory TweenAnimationBuilderBase.fromJson(Map<String, dynamic> data) {
+    return TweenAnimationBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 [Widget] builder that animates a property of a [Widget] to a target value
 whenever the target value changes.
 
@@ -116,13 +116,13 @@ full control over the animation. An example of an [AnimatedWidget] is the
 developer-managed [AnimationController].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

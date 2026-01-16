@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MaterialBase extends BaseWidget {
-    MaterialBase();
+  MaterialBase();
 
-    factory MaterialBase.fromJson(Map<String, dynamic> data) {
-        return MaterialBase();
-    }
+  factory MaterialBase.fromJson(Map<String, dynamic> data) {
+    return MaterialBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A piece of material.
 
 The Material widget is responsible for:
@@ -89,13 +89,13 @@ See also:
  * <https://material.io/design/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ExcludeSemanticsBase extends BaseWidget {
-    ExcludeSemanticsBase();
+  ExcludeSemanticsBase();
 
-    factory ExcludeSemanticsBase.fromJson(Map<String, dynamic> data) {
-        return ExcludeSemanticsBase();
-    }
+  factory ExcludeSemanticsBase.fromJson(Map<String, dynamic> data) {
+    return ExcludeSemanticsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that drops all the semantics of its descendants.
 
 When [excluding] is true, this widget (and its subtree) is excluded from
@@ -24,13 +24,13 @@ See also:
  * [BlockSemantics] which drops semantics of widgets earlier in the tree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

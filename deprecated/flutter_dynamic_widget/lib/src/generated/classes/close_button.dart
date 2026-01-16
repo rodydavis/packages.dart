@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CloseButtonBase extends BaseWidget {
-    CloseButtonBase();
+  CloseButtonBase();
 
-    factory CloseButtonBase.fromJson(Map<String, dynamic> data) {
-        return CloseButtonBase();
-    }
+  factory CloseButtonBase.fromJson(Map<String, dynamic> data) {
+    return CloseButtonBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design close button.
 
 A [CloseButton] is an [IconButton] with a "close" icon. When pressed, the
@@ -27,13 +27,13 @@ See also:
  * [IconButton], to create other material design icon buttons.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

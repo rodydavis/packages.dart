@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PageStorageBase extends BaseWidget {
-    PageStorageBase();
+  PageStorageBase();
 
-    factory PageStorageBase.fromJson(Map<String, dynamic> data) {
-        return PageStorageBase();
-    }
+  factory PageStorageBase.fromJson(Map<String, dynamic> data) {
+    return PageStorageBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Establish a subtree in which widgets can opt into persisting states after
 being destroyed.
 
@@ -134,13 +134,13 @@ See also:
  * [ModalRoute], which includes this class.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

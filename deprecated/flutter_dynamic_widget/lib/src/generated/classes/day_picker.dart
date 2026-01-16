@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DayPickerBase extends BaseWidget {
-    DayPickerBase();
+  DayPickerBase();
 
-    factory DayPickerBase.fromJson(Map<String, dynamic> data) {
-        return DayPickerBase();
-    }
+  factory DayPickerBase.fromJson(Map<String, dynamic> data) {
+    return DayPickerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Displays the days of a given month and allows choosing a day.
 
 The days are arranged in a rectangular grid with one column for each day of
@@ -26,13 +26,13 @@ See also:
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

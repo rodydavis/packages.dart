@@ -9,7 +9,7 @@ class TemplateGenerator {
     Map<String, dynamic> tokens,
     String name,
     bool silentErrors = true,
-    bool htmlEscapeValues  =false,
+    bool htmlEscapeValues = false,
     String delimiters,
     bool lenient = false,
     Template Function(String) partialResolver,

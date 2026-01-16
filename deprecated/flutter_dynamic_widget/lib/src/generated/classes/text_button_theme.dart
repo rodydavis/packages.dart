@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextButtonThemeBase extends BaseWidget {
-    TextButtonThemeBase();
+  TextButtonThemeBase();
 
-    factory TextButtonThemeBase.fromJson(Map<String, dynamic> data) {
-        return TextButtonThemeBase();
-    }
+  factory TextButtonThemeBase.fromJson(Map<String, dynamic> data) {
+    return TextButtonThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Overrides the default [ButtonStyle] of its [TextButton] descendants.
 
 See also:
@@ -22,13 +22,13 @@ See also:
    [ButtonStyle] for [TextButton]s below the overall [Theme].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

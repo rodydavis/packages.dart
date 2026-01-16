@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoTabControllerBase extends BaseWidget {
-    CupertinoTabControllerBase();
+  CupertinoTabControllerBase();
 
-    factory CupertinoTabControllerBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoTabControllerBase();
-    }
+  factory CupertinoTabControllerBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoTabControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Coordinates tab selection between a [CupertinoTabBar] and a [CupertinoTabScaffold].
 
 The [index] property is the index of the selected tab. Changing its value
@@ -64,13 +64,13 @@ See also:
    controlled by a [CupertinoTabController].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

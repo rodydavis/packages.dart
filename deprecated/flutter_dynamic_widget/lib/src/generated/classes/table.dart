@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TableBase extends BaseWidget {
-    TableBase();
+  TableBase();
 
-    factory TableBase.fromJson(Map<String, dynamic> data) {
-        return TableBase();
-    }
+  factory TableBase.fromJson(Map<String, dynamic> data) {
+    return TableBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that uses the table layout algorithm for its children.
 
 {@youtube 560 315 https://www.youtube.com/watch?v=_lbE0wsVZSw}
@@ -37,13 +37,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

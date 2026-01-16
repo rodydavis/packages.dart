@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LongPressGestureRecognizerBase extends BaseWidget {
-    LongPressGestureRecognizerBase();
+  LongPressGestureRecognizerBase();
 
-    factory LongPressGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
-        return LongPressGestureRecognizerBase();
-    }
+  factory LongPressGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
+    return LongPressGestureRecognizerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Recognizes when the user has pressed down at the same location for a long
 period of time.
 
@@ -22,13 +22,13 @@ moved, triggering [onLongPressMoveUpdate] callbacks, unless the
 one corresponding callback is non-null. If it has no callbacks, it is a no-op.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

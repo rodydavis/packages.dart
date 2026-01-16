@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ForcePressGestureRecognizerBase extends BaseWidget {
-    ForcePressGestureRecognizerBase();
+  ForcePressGestureRecognizerBase();
 
-    factory ForcePressGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
-        return ForcePressGestureRecognizerBase();
-    }
+  factory ForcePressGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
+    return ForcePressGestureRecognizerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Recognizes a force press on devices that have force sensors.
 
 Only the force from a single pointer is used to invoke events. A tap
@@ -32,13 +32,13 @@ maximum pressure and 0.0 is minimum pressure. If using a custom
 custom curve.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ActionChipBase extends BaseWidget {
-    ActionChipBase();
+  ActionChipBase();
 
-    factory ActionChipBase.fromJson(Map<String, dynamic> data) {
-        return ActionChipBase();
-    }
+  factory ActionChipBase.fromJson(Map<String, dynamic> data) {
+    return ActionChipBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design action chip.
 
 Action chips are a set of options which trigger an action related to primary
@@ -58,13 +58,13 @@ See also:
  * <https://material.io/design/components/chips.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

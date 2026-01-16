@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TabBase extends BaseWidget {
-    TabBase();
+  TabBase();
 
-    factory TabBase.fromJson(Map<String, dynamic> data) {
-        return TabBase();
-    }
+  factory TabBase.fromJson(Map<String, dynamic> data) {
+    return TabBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design [TabBar] tab.
 
 If both [icon] and [text] are provided, the text is displayed below
@@ -22,13 +22,13 @@ See also:
  * <https://material.io/design/components/tabs.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

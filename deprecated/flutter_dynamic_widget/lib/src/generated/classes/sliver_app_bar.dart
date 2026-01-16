@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverAppBarBase extends BaseWidget {
-    SliverAppBarBase();
+  SliverAppBarBase();
 
-    factory SliverAppBarBase.fromJson(Map<String, dynamic> data) {
-        return SliverAppBarBase();
-    }
+  factory SliverAppBarBase.fromJson(Map<String, dynamic> data) {
+    return SliverAppBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design app bar that integrates with a [CustomScrollView].
 
 An app bar consists of a toolbar and potentially other widgets, such as a
@@ -89,13 +89,13 @@ See also:
  * <https://material.io/design/components/app-bars-top.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

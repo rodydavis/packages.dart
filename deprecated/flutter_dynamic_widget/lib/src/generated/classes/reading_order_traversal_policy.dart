@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ReadingOrderTraversalPolicyBase extends BaseWidget {
-    ReadingOrderTraversalPolicyBase();
+  ReadingOrderTraversalPolicyBase();
 
-    factory ReadingOrderTraversalPolicyBase.fromJson(Map<String, dynamic> data) {
-        return ReadingOrderTraversalPolicyBase();
-    }
+  factory ReadingOrderTraversalPolicyBase.fromJson(Map<String, dynamic> data) {
+    return ReadingOrderTraversalPolicyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Traverses the focus order in "reading order".
 
 By default, reading order traversal goes in the reading direction, and then
@@ -36,13 +36,13 @@ See also:
    explicitly using [FocusTraversalOrder] widgets.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

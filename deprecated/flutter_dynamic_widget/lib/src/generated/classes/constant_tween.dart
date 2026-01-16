@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class ConstantTweenBase extends BaseWidget {
-    ConstantTweenBase();
+  ConstantTweenBase();
 
-    factory ConstantTweenBase.fromJson(Map<String, dynamic> data) {
-        return ConstantTweenBase();
-    }
+  factory ConstantTweenBase.fromJson(Map<String, dynamic> data) {
+    return ConstantTweenBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A tween with a constant value.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

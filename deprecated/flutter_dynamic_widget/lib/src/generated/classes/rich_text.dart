@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RichTextBase extends BaseWidget {
-    RichTextBase();
+  RichTextBase();
 
-    factory RichTextBase.fromJson(Map<String, dynamic> data) {
-        return RichTextBase();
-    }
+  factory RichTextBase.fromJson(Map<String, dynamic> data) {
+    return RichTextBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A paragraph of rich text.
 
 {@youtube 560 315 https://www.youtube.com/watch?v=rykDVh-QFfw}
@@ -62,13 +62,13 @@ See also:
    as [RichText]. [Text.rich] will inherit [TextStyle] from [DefaultTextStyle].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

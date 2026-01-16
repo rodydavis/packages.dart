@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OutlinedButtonThemeBase extends BaseWidget {
-    OutlinedButtonThemeBase();
+  OutlinedButtonThemeBase();
 
-    factory OutlinedButtonThemeBase.fromJson(Map<String, dynamic> data) {
-        return OutlinedButtonThemeBase();
-    }
+  factory OutlinedButtonThemeBase.fromJson(Map<String, dynamic> data) {
+    return OutlinedButtonThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Overrides the default [ButtonStyle] of its [OutlinedButton] descendants.
 
 See also:
@@ -22,13 +22,13 @@ See also:
    [ButtonStyle] for [OutlinedButton]s below the overall [Theme].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ChildBackButtonDispatcherBase extends BaseWidget {
-    ChildBackButtonDispatcherBase();
+  ChildBackButtonDispatcherBase();
 
-    factory ChildBackButtonDispatcherBase.fromJson(Map<String, dynamic> data) {
-        return ChildBackButtonDispatcherBase();
-    }
+  factory ChildBackButtonDispatcherBase.fromJson(Map<String, dynamic> data) {
+    return ChildBackButtonDispatcherBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A variant of [BackButtonDispatcher] which listens to notifications from a
 parent back button dispatcher, and can take priority from its parent for the
 handling of such notifications.
@@ -20,13 +20,13 @@ which the [Router.backButtonDispatcher] can be found, and then used as the
 [parent] of the [ChildBackButtonDispatcher].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

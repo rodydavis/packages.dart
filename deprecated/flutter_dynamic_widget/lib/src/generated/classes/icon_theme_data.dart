@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IconThemeDataBase extends BaseWidget {
-    IconThemeDataBase();
+  IconThemeDataBase();
 
-    factory IconThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return IconThemeDataBase();
-    }
+  factory IconThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return IconThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the color, opacity, and size of icons.
 
 Used by [IconTheme] to control the color, opacity, and size of icons in a
@@ -19,13 +19,13 @@ theme to a version with all the fields filled in, use [new
 IconThemeData.fallback].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

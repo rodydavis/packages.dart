@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class EdgeInsetsGeometryTweenBase extends BaseWidget {
-    EdgeInsetsGeometryTweenBase();
+  EdgeInsetsGeometryTweenBase();
 
-    factory EdgeInsetsGeometryTweenBase.fromJson(Map<String, dynamic> data) {
-        return EdgeInsetsGeometryTweenBase();
-    }
+  factory EdgeInsetsGeometryTweenBase.fromJson(Map<String, dynamic> data) {
+    return EdgeInsetsGeometryTweenBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An interpolation between two [EdgeInsetsGeometry]s.
 
 This class specializes the interpolation of [Tween<EdgeInsetsGeometry>] to
@@ -21,13 +21,13 @@ See also:
  * [EdgeInsetsTween], which interpolates between two [EdgeInsets] objects.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

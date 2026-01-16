@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CircularProgressIndicatorBase extends BaseWidget {
-    CircularProgressIndicatorBase();
+  CircularProgressIndicatorBase();
 
-    factory CircularProgressIndicatorBase.fromJson(Map<String, dynamic> data) {
-        return CircularProgressIndicatorBase();
-    }
+  factory CircularProgressIndicatorBase.fromJson(Map<String, dynamic> data) {
+    return CircularProgressIndicatorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design circular progress indicator, which spins to indicate that
 the application is busy.
 
@@ -37,13 +37,13 @@ See also:
  * <https://material.io/design/components/progress-indicators.html#circular-progress-indicators>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

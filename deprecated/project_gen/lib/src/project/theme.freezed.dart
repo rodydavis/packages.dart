@@ -556,26 +556,26 @@ mixin _$CustomGradient {
   Result when<Result extends Object>(
     Result $default(String name, List<int> colors), {
     @required
-        Result radial(
-            String name,
-            List<double> stops,
-            List<int> colors,
-            double radius,
-            double alignX,
-            double alignY,
-            double focalX,
-            double focalY),
+    Result radial(
+        String name,
+        List<double> stops,
+        List<int> colors,
+        double radius,
+        double alignX,
+        double alignY,
+        double focalX,
+        double focalY),
     @required
-        Result linear(
-            String name,
-            List<double> stops,
-            List<int> colors,
-            double radius,
-            double startX,
-            double startY,
-            double endX,
-            double endY,
-            TileMode tileMode),
+    Result linear(
+        String name,
+        List<double> stops,
+        List<int> colors,
+        double radius,
+        double startX,
+        double startY,
+        double endX,
+        double endY,
+        TileMode tileMode),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>(
@@ -729,26 +729,26 @@ class _$_CustomGradient
   Result when<Result extends Object>(
     Result $default(String name, List<int> colors), {
     @required
-        Result radial(
-            String name,
-            List<double> stops,
-            List<int> colors,
-            double radius,
-            double alignX,
-            double alignY,
-            double focalX,
-            double focalY),
+    Result radial(
+        String name,
+        List<double> stops,
+        List<int> colors,
+        double radius,
+        double alignX,
+        double alignY,
+        double focalX,
+        double focalY),
     @required
-        Result linear(
-            String name,
-            List<double> stops,
-            List<int> colors,
-            double radius,
-            double startX,
-            double startY,
-            double endX,
-            double endY,
-            TileMode tileMode),
+    Result linear(
+        String name,
+        List<double> stops,
+        List<int> colors,
+        double radius,
+        double startX,
+        double startY,
+        double endX,
+        double endY,
+        TileMode tileMode),
   }) {
     assert($default != null);
     assert(radial != null);
@@ -985,26 +985,26 @@ class _$CustomRadialGradient
   Result when<Result extends Object>(
     Result $default(String name, List<int> colors), {
     @required
-        Result radial(
-            String name,
-            List<double> stops,
-            List<int> colors,
-            double radius,
-            double alignX,
-            double alignY,
-            double focalX,
-            double focalY),
+    Result radial(
+        String name,
+        List<double> stops,
+        List<int> colors,
+        double radius,
+        double alignX,
+        double alignY,
+        double focalX,
+        double focalY),
     @required
-        Result linear(
-            String name,
-            List<double> stops,
-            List<int> colors,
-            double radius,
-            double startX,
-            double startY,
-            double endX,
-            double endY,
-            TileMode tileMode),
+    Result linear(
+        String name,
+        List<double> stops,
+        List<int> colors,
+        double radius,
+        double startX,
+        double startY,
+        double endX,
+        double endY,
+        TileMode tileMode),
   }) {
     assert($default != null);
     assert(radial != null);
@@ -1267,26 +1267,26 @@ class _$CustomLinearGradient
   Result when<Result extends Object>(
     Result $default(String name, List<int> colors), {
     @required
-        Result radial(
-            String name,
-            List<double> stops,
-            List<int> colors,
-            double radius,
-            double alignX,
-            double alignY,
-            double focalX,
-            double focalY),
+    Result radial(
+        String name,
+        List<double> stops,
+        List<int> colors,
+        double radius,
+        double alignX,
+        double alignY,
+        double focalX,
+        double focalY),
     @required
-        Result linear(
-            String name,
-            List<double> stops,
-            List<int> colors,
-            double radius,
-            double startX,
-            double startY,
-            double endX,
-            double endY,
-            TileMode tileMode),
+    Result linear(
+        String name,
+        List<double> stops,
+        List<int> colors,
+        double radius,
+        double startX,
+        double startY,
+        double endX,
+        double endY,
+        TileMode tileMode),
   }) {
     assert($default != null);
     assert(radial != null);

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoPageBase extends BaseWidget {
-    CupertinoPageBase();
+  CupertinoPageBase();
 
-    factory CupertinoPageBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoPageBase();
-    }
+  factory CupertinoPageBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoPageBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A page that creates a cupertino style [PageRoute].
 
 {@macro flutter.cupertino.cupertinoRouteTransitionMixin}
@@ -27,13 +27,13 @@ See also:
  * [CupertinoPageRoute], for a [PageRoute] version of this class.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

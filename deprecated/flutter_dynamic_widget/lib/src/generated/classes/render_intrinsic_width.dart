@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderIntrinsicWidthBase extends BaseWidget {
-    RenderIntrinsicWidthBase();
+  RenderIntrinsicWidthBase();
 
-    factory RenderIntrinsicWidthBase.fromJson(Map<String, dynamic> data) {
-        return RenderIntrinsicWidthBase();
-    }
+  factory RenderIntrinsicWidthBase.fromJson(Map<String, dynamic> data) {
+    return RenderIntrinsicWidthBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Sizes its child to the child's maximum intrinsic width.
 
 This class is useful, for example, when unlimited width is available and
@@ -43,13 +43,13 @@ See also:
    width to be smaller than that of its parent.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

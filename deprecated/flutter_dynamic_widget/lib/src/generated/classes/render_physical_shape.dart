@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderPhysicalShapeBase extends BaseWidget {
-    RenderPhysicalShapeBase();
+  RenderPhysicalShapeBase();
 
-    factory RenderPhysicalShapeBase.fromJson(Map<String, dynamic> data) {
-        return RenderPhysicalShapeBase();
-    }
+  factory RenderPhysicalShapeBase.fromJson(Map<String, dynamic> data) {
+    return RenderPhysicalShapeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Creates a physical shape layer that clips its child to a [Path].
 
 A physical shape layer casts a shadow based on its [elevation].
@@ -19,13 +19,13 @@ See also:
    circles.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

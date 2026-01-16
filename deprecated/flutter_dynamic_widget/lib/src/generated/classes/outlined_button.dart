@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OutlinedButtonBase extends BaseWidget {
-    OutlinedButtonBase();
+  OutlinedButtonBase();
 
-    factory OutlinedButtonBase.fromJson(Map<String, dynamic> data) {
-        return OutlinedButtonBase();
-    }
+  factory OutlinedButtonBase.fromJson(Map<String, dynamic> data) {
+    return OutlinedButtonBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A Material Design "Outlined Button"; essentially a [TextButton]
 with an outlined border.
 
@@ -39,13 +39,13 @@ See also:
  * <https://material.io/design/components/buttons.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

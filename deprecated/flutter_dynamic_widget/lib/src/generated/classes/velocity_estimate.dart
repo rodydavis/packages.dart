@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class VelocityEstimateBase extends BaseWidget {
-    VelocityEstimateBase();
+  VelocityEstimateBase();
 
-    factory VelocityEstimateBase.fromJson(Map<String, dynamic> data) {
-        return VelocityEstimateBase();
-    }
+  factory VelocityEstimateBase.fromJson(Map<String, dynamic> data) {
+    return VelocityEstimateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A two dimensional velocity estimate.
 
 VelocityEstimates are computed by [VelocityTracker.getVelocityEstimate]. An
@@ -24,13 +24,13 @@ See also:
    useful velocity operations.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

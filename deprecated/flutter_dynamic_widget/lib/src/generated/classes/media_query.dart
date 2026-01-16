@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MediaQueryBase extends BaseWidget {
-    MediaQueryBase();
+  MediaQueryBase();
 
-    factory MediaQueryBase.fromJson(Map<String, dynamic> data) {
-        return MediaQueryBase();
-    }
+  factory MediaQueryBase.fromJson(Map<String, dynamic> data) {
+    return MediaQueryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Establishes a subtree in which media queries resolve to the given data.
 
 For example, to learn the size of the current media (e.g., the window
@@ -33,13 +33,13 @@ See also:
  * [MediaQueryData], the data structure that represents the metrics.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

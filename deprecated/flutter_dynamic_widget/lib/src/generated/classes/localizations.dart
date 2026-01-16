@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LocalizationsBase extends BaseWidget {
-    LocalizationsBase();
+  LocalizationsBase();
 
-    factory LocalizationsBase.fromJson(Map<String, dynamic> data) {
-        return LocalizationsBase();
-    }
+  factory LocalizationsBase.fromJson(Map<String, dynamic> data) {
+    return LocalizationsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the [Locale] for its `child` and the localized resources that the
 child depends on.
 
@@ -105,13 +105,13 @@ One could choose another approach for loading localized resources and looking th
 still conforming to the structure of this example.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

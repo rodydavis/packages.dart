@@ -21,14 +21,16 @@ class PushIdGenerator {
 
   static int? _lastPushTime;
 
-  static final List<int?> _lastRandChars = List<int?>.filled(12, null, growable: false);
+  static final List<int?> _lastRandChars =
+      List<int?>.filled(12, null, growable: false);
 
   static String generatePushChildName() {
     int now = DateTime.now().millisecondsSinceEpoch;
     final bool duplicateTime = (now == _lastPushTime);
     _lastPushTime = now;
 
-    final List<String?> timeStampChars = List<String?>.filled(8, null, growable: false);
+    final List<String?> timeStampChars =
+        List<String?>.filled(8, null, growable: false);
     for (int i = 7; i >= 0; i--) {
       timeStampChars[i] = PUSH_CHARS[now % 64];
       now = (now / 64).floor();

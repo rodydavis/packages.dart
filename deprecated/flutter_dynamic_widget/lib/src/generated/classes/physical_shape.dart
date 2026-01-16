@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PhysicalShapeBase extends BaseWidget {
-    PhysicalShapeBase();
+  PhysicalShapeBase();
 
-    factory PhysicalShapeBase.fromJson(Map<String, dynamic> data) {
-        return PhysicalShapeBase();
-    }
+  factory PhysicalShapeBase.fromJson(Map<String, dynamic> data) {
+    return PhysicalShapeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget representing a physical layer that clips its children to a path.
 
 Physical layers cast shadows based on an [elevation] which is nominally in
@@ -23,13 +23,13 @@ See also:
    needed by this widget.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

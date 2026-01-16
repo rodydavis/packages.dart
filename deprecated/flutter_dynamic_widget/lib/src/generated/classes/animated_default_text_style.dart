@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedDefaultTextStyleBase extends BaseWidget {
-    AnimatedDefaultTextStyleBase();
+  AnimatedDefaultTextStyleBase();
 
-    factory AnimatedDefaultTextStyleBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedDefaultTextStyleBase();
-    }
+  factory AnimatedDefaultTextStyleBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedDefaultTextStyleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of [DefaultTextStyle] which automatically transitions the
 default text style (the text style to apply to descendant [Text] widgets
 without explicit style) over a given duration whenever the given style
@@ -31,13 +31,13 @@ it also requires more development overhead as you have to manually manage
 the lifecycle of the underlying [AnimationController].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

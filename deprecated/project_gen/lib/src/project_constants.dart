@@ -191,7 +191,7 @@ class MyApp extends StatelessWidget {
 
 """;
 
-const String webManifest =  """
+const String webManifest = """
 {
     "name": "{{name}}",
     "short_name": "{{name}}",

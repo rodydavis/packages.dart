@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DrawerBase extends BaseWidget {
-    DrawerBase();
+  DrawerBase();
 
-    factory DrawerBase.fromJson(Map<String, dynamic> data) {
-        return DrawerBase();
-    }
+  factory DrawerBase.fromJson(Map<String, dynamic> data) {
+    return DrawerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design panel that slides in horizontally from the edge of a
 [Scaffold] to show navigation links in an application.
 
@@ -97,13 +97,13 @@ See also:
  * <https://material.io/design/components/navigation-drawer.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

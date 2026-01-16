@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderRepaintBoundaryBase extends BaseWidget {
-    RenderRepaintBoundaryBase();
+  RenderRepaintBoundaryBase();
 
-    factory RenderRepaintBoundaryBase.fromJson(Map<String, dynamic> data) {
-        return RenderRepaintBoundaryBase();
-    }
+  factory RenderRepaintBoundaryBase.fromJson(Map<String, dynamic> data) {
+    return RenderRepaintBoundaryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Creates a separate display list for its child.
 
 This render object creates a separate display list for its child, which
@@ -36,13 +36,13 @@ was not. These counts can also be inspected programmatically using
 [debugAsymmetricPaintCount] and [debugSymmetricPaintCount] respectively.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

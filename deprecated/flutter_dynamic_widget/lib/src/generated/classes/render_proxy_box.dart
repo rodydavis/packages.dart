@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderProxyBoxBase extends BaseWidget {
-    RenderProxyBoxBase();
+  RenderProxyBoxBase();
 
-    factory RenderProxyBoxBase.fromJson(Map<String, dynamic> data) {
-        return RenderProxyBoxBase();
-    }
+  factory RenderProxyBoxBase.fromJson(Map<String, dynamic> data) {
+    return RenderProxyBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A base class for render boxes that resemble their children.
 
 A proxy box has a single child and simply mimics all the properties of that
@@ -27,13 +27,13 @@ See also:
    children.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderAnnotatedRegionBase extends BaseWidget {
-    RenderAnnotatedRegionBase();
+  RenderAnnotatedRegionBase();
 
-    factory RenderAnnotatedRegionBase.fromJson(Map<String, dynamic> data) {
-        return RenderAnnotatedRegionBase();
-    }
+  factory RenderAnnotatedRegionBase.fromJson(Map<String, dynamic> data) {
+    return RenderAnnotatedRegionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Render object which inserts an [AnnotatedRegionLayer] into the layer tree.
 
 See also:
@@ -17,13 +17,13 @@ See also:
  * [AnnotatedRegionLayer], the layer this render object creates.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

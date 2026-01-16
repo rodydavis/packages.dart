@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AlignmentTweenBase extends BaseWidget {
-    AlignmentTweenBase();
+  AlignmentTweenBase();
 
-    factory AlignmentTweenBase.fromJson(Map<String, dynamic> data) {
-        return AlignmentTweenBase();
-    }
+  factory AlignmentTweenBase.fromJson(Map<String, dynamic> data) {
+    return AlignmentTweenBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An interpolation between two alignments.
 
 This class specializes the interpolation of [Tween<Alignment>] to be
@@ -22,13 +22,13 @@ See also:
    [AlignmentGeometry] objects.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

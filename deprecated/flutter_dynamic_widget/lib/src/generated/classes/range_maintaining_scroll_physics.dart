@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class RangeMaintainingScrollPhysicsBase extends BaseWidget {
-    RangeMaintainingScrollPhysicsBase();
+  RangeMaintainingScrollPhysicsBase();
 
-    factory RangeMaintainingScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
-        return RangeMaintainingScrollPhysicsBase();
-    }
+  factory RangeMaintainingScrollPhysicsBase.fromJson(
+      Map<String, dynamic> data) {
+    return RangeMaintainingScrollPhysicsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Scroll physics that attempt to keep the scroll position in range when the
 contents change dimensions suddenly.
 
@@ -63,13 +64,13 @@ then the new position is obtained by deferring to the other physics,
 if any, and then clamped to the new range.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

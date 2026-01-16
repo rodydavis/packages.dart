@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class NavigationToolbarBase extends BaseWidget {
-    NavigationToolbarBase();
+  NavigationToolbarBase();
 
-    factory NavigationToolbarBase.fromJson(Map<String, dynamic> data) {
-        return NavigationToolbarBase();
-    }
+  factory NavigationToolbarBase.fromJson(Map<String, dynamic> data) {
+    return NavigationToolbarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 [NavigationToolbar] is a layout helper to position 3 widgets or groups of
 widgets along a horizontal axis that's sensible for an application's
 navigation bar such as in Material Design and in iOS.
@@ -22,13 +22,13 @@ the iOS [CupertinoNavigationBar] or wrap this widget with more theming
 specifications for your own custom app bar.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

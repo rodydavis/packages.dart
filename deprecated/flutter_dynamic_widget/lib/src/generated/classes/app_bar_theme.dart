@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AppBarThemeBase extends BaseWidget {
-    AppBarThemeBase();
+  AppBarThemeBase();
 
-    factory AppBarThemeBase.fromJson(Map<String, dynamic> data) {
-        return AppBarThemeBase();
-    }
+  factory AppBarThemeBase.fromJson(Map<String, dynamic> data) {
+    return AppBarThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines default property values for descendant [AppBar] widgets.
 
 Descendant widgets obtain the current [AppBarTheme] object using
@@ -28,13 +28,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class KeepAliveNotificationBase extends BaseWidget {
-    KeepAliveNotificationBase();
+  KeepAliveNotificationBase();
 
-    factory KeepAliveNotificationBase.fromJson(Map<String, dynamic> data) {
-        return KeepAliveNotificationBase();
-    }
+  factory KeepAliveNotificationBase.fromJson(Map<String, dynamic> data) {
+    return KeepAliveNotificationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Indicates that the subtree through which this notification bubbles must be
 kept alive even if it would normally be discarded as an optimization.
 
@@ -48,13 +48,13 @@ consider using [AutomaticKeepAliveClientMixin], which uses
 [KeepAliveNotification] internally.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

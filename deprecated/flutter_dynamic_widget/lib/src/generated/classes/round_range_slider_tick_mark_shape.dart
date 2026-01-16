@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class RoundRangeSliderTickMarkShapeBase extends BaseWidget {
-    RoundRangeSliderTickMarkShapeBase();
+  RoundRangeSliderTickMarkShapeBase();
 
-    factory RoundRangeSliderTickMarkShapeBase.fromJson(Map<String, dynamic> data) {
-        return RoundRangeSliderTickMarkShapeBase();
-    }
+  factory RoundRangeSliderTickMarkShapeBase.fromJson(
+      Map<String, dynamic> data) {
+    return RoundRangeSliderTickMarkShapeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The default shape of each [RangeSlider] tick mark.
 
 Tick marks are only displayed if the slider is discrete, which can be done
@@ -32,13 +33,13 @@ See also:
    sliders in a widget subtree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

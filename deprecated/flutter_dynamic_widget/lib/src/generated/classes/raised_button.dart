@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RaisedButtonBase extends BaseWidget {
-    RaisedButtonBase();
+  RaisedButtonBase();
 
-    factory RaisedButtonBase.fromJson(Map<String, dynamic> data) {
-        return RaisedButtonBase();
-    }
+  factory RaisedButtonBase.fromJson(Map<String, dynamic> data) {
+    return RaisedButtonBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design "raised button".
 
 ### This class is obsolete, please use [ElevatedButton] instead.
@@ -110,13 +110,13 @@ See also:
  * Cookbook: [Build a form with validation](https://flutter.dev/docs/cookbook/forms/validation)
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FlowBase extends BaseWidget {
-    FlowBase();
+  FlowBase();
 
-    factory FlowBase.fromJson(Map<String, dynamic> data) {
-        return FlowBase();
-    }
+  factory FlowBase.fromJson(Map<String, dynamic> data) {
+    return FlowBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that sizes and positions children efficiently, according to the
 logic in a [FlowDelegate].
 
@@ -166,13 +166,13 @@ class FlowMenuDelegate extends FlowDelegate {
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

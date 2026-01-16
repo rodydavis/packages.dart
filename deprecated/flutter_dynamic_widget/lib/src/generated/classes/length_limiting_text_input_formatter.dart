@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class LengthLimitingTextInputFormatterBase extends BaseWidget {
-    LengthLimitingTextInputFormatterBase();
+  LengthLimitingTextInputFormatterBase();
 
-    factory LengthLimitingTextInputFormatterBase.fromJson(Map<String, dynamic> data) {
-        return LengthLimitingTextInputFormatterBase();
-    }
+  factory LengthLimitingTextInputFormatterBase.fromJson(
+      Map<String, dynamic> data) {
+    return LengthLimitingTextInputFormatterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [TextInputFormatter] that prevents the insertion of more characters
 (currently defined as Unicode scalar values) than allowed.
 
@@ -19,13 +20,13 @@ text, it preserves the existing [TextEditingValue.selection].
    characters" and how it may differ from the intuitive meaning.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

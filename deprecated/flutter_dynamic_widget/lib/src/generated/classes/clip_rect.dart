@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ClipRectBase extends BaseWidget {
-    ClipRectBase();
+  ClipRectBase();
 
-    factory ClipRectBase.fromJson(Map<String, dynamic> data) {
-        return ClipRectBase();
-    }
+  factory ClipRectBase.fromJson(Map<String, dynamic> data) {
+    return ClipRectBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that clips its child using a rectangle.
 
 By default, [ClipRect] prevents its child from painting outside its
@@ -50,13 +50,13 @@ See also:
  * [ClipPath], for an arbitrarily shaped clip.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

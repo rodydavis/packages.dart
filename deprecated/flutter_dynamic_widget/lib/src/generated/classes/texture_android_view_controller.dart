@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextureAndroidViewControllerBase extends BaseWidget {
-    TextureAndroidViewControllerBase();
+  TextureAndroidViewControllerBase();
 
-    factory TextureAndroidViewControllerBase.fromJson(Map<String, dynamic> data) {
-        return TextureAndroidViewControllerBase();
-    }
+  factory TextureAndroidViewControllerBase.fromJson(Map<String, dynamic> data) {
+    return TextureAndroidViewControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Controls an Android view that is rendered to a texture.
 
 This is typically used by [AndroidView] to display an Android View in a
@@ -17,13 +17,13 @@ This is typically used by [AndroidView] to display an Android View in a
 Typically created with [PlatformViewsService.initAndroidView].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RawKeyboardBase extends BaseWidget {
-    RawKeyboardBase();
+  RawKeyboardBase();
 
-    factory RawKeyboardBase.fromJson(Map<String, dynamic> data) {
-        return RawKeyboardBase();
-    }
+  factory RawKeyboardBase.fromJson(Map<String, dynamic> data) {
+    return RawKeyboardBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An interface for listening to raw key events.
 
 Raw key events pass through as much information as possible from the
@@ -31,13 +31,13 @@ See also:
    events from the system.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

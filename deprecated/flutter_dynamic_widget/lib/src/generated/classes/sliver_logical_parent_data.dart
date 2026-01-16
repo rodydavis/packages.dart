@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverLogicalParentDataBase extends BaseWidget {
-    SliverLogicalParentDataBase();
+  SliverLogicalParentDataBase();
 
-    factory SliverLogicalParentDataBase.fromJson(Map<String, dynamic> data) {
-        return SliverLogicalParentDataBase();
-    }
+  factory SliverLogicalParentDataBase.fromJson(Map<String, dynamic> data) {
+    return SliverLogicalParentDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Parent data structure used by parents of slivers that position their
 children using layout offsets.
 
@@ -17,13 +17,13 @@ that expect to have many children whose relative positions don't change even
 when the scroll offset does.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

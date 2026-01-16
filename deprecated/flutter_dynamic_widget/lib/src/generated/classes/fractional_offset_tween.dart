@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FractionalOffsetTweenBase extends BaseWidget {
-    FractionalOffsetTweenBase();
+  FractionalOffsetTweenBase();
 
-    factory FractionalOffsetTweenBase.fromJson(Map<String, dynamic> data) {
-        return FractionalOffsetTweenBase();
-    }
+  factory FractionalOffsetTweenBase.fromJson(Map<String, dynamic> data) {
+    return FractionalOffsetTweenBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An interpolation between two fractional offsets.
 
 This class specializes the interpolation of [Tween<FractionalOffset>] to be
@@ -21,13 +21,13 @@ See also:
  * [AlignmentTween], which interpolates between to [Alignment] objects.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

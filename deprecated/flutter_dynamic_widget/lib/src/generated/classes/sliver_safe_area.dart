@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverSafeAreaBase extends BaseWidget {
-    SliverSafeAreaBase();
+  SliverSafeAreaBase();
 
-    factory SliverSafeAreaBase.fromJson(Map<String, dynamic> data) {
-        return SliverSafeAreaBase();
-    }
+  factory SliverSafeAreaBase.fromJson(Map<String, dynamic> data) {
+    return SliverSafeAreaBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver that insets another sliver by sufficient padding to avoid
 intrusions by the operating system.
 
@@ -31,13 +31,13 @@ See also:
    system.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IndexedSlotBase extends BaseWidget {
-    IndexedSlotBase();
+  IndexedSlotBase();
 
-    factory IndexedSlotBase.fromJson(Map<String, dynamic> data) {
-        return IndexedSlotBase();
-    }
+  factory IndexedSlotBase.fromJson(Map<String, dynamic> data) {
+    return IndexedSlotBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A value for [Element.slot] used for children of
 [MultiChildRenderObjectElement]s.
 
@@ -24,13 +24,13 @@ See also:
    used as slot values for the children of a [MultiChildRenderObjectElement].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

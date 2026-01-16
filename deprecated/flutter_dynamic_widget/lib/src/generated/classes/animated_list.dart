@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedListBase extends BaseWidget {
-    AnimatedListBase();
+  AnimatedListBase();
 
-    factory AnimatedListBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedListBase();
-    }
+  factory AnimatedListBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedListBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A scrolling container that animates items when they are inserted or removed.
 
 This widget's [AnimatedListState] can be used to dynamically insert or
@@ -238,13 +238,13 @@ See also:
    or removed from a list.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

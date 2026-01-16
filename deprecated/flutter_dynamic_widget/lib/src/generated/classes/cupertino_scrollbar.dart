@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoScrollbarBase extends BaseWidget {
-    CupertinoScrollbarBase();
+  CupertinoScrollbarBase();
 
-    factory CupertinoScrollbarBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoScrollbarBase();
-    }
+  factory CupertinoScrollbarBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoScrollbarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS style scrollbar.
 
 A scrollbar indicates which portion of a [Scrollable] widget is actually
@@ -29,13 +29,13 @@ See also:
    platform showing either an Android style or iOS style scrollbar.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

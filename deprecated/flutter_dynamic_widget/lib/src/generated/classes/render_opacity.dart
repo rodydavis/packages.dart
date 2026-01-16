@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderOpacityBase extends BaseWidget {
-    RenderOpacityBase();
+  RenderOpacityBase();
 
-    factory RenderOpacityBase.fromJson(Map<String, dynamic> data) {
-        return RenderOpacityBase();
-    }
+  factory RenderOpacityBase.fromJson(Map<String, dynamic> data) {
+    return RenderOpacityBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Makes its child partially transparent.
 
 This class paints its child into an intermediate buffer and then blends the
@@ -20,13 +20,13 @@ buffer. For the value 0.0, the child is simply not painted at all. For the
 value 1.0, the child is painted immediately without an intermediate buffer.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

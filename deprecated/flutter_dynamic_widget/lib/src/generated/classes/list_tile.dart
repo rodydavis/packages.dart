@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ListTileBase extends BaseWidget {
-    ListTileBase();
+  ListTileBase();
 
-    factory ListTileBase.fromJson(Map<String, dynamic> data) {
-        return ListTileBase();
-    }
+  factory ListTileBase.fromJson(Map<String, dynamic> data) {
+    return ListTileBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A single fixed-height row that typically contains some text as well as
 a leading or trailing icon.
 
@@ -495,13 +495,13 @@ See also:
  * Cookbook: [Implement swipe to dismiss](https://flutter.dev/docs/cookbook/gestures/dismissible)
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MouseTrackerBase extends BaseWidget {
-    MouseTrackerBase();
+  MouseTrackerBase();
 
-    factory MouseTrackerBase.fromJson(Map<String, dynamic> data) {
-        return MouseTrackerBase();
-    }
+  factory MouseTrackerBase.fromJson(Map<String, dynamic> data) {
+    return MouseTrackerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Tracks the relationship between mouse devices and annotations, and
 triggers mouse events and cursor changes accordingly.
 
@@ -32,13 +32,13 @@ See also:
     device updates.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

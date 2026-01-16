@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverVisibilityBase extends BaseWidget {
-    SliverVisibilityBase();
+  SliverVisibilityBase();
 
-    factory SliverVisibilityBase.fromJson(Map<String, dynamic> data) {
-        return SliverVisibilityBase();
-    }
+  factory SliverVisibilityBase.fromJson(Map<String, dynamic> data) {
+    return SliverVisibilityBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Whether to show or hide a sliver child.
 
 By default, the [visible] property controls whether the [sliver] is included
@@ -36,13 +36,13 @@ because the parent is a [StatelessWidget]) then to use a childless
 [SliverToBoxAdapter] instead of the child that would otherwise be included.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

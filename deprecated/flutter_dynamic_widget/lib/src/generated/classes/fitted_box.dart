@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FittedBoxBase extends BaseWidget {
-    FittedBoxBase();
+  FittedBoxBase();
 
-    factory FittedBoxBase.fromJson(Map<String, dynamic> data) {
-        return FittedBoxBase();
-    }
+  factory FittedBoxBase.fromJson(Map<String, dynamic> data) {
+    return FittedBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Scales and positions its child within itself according to [fit].
 
 {@youtube 560 315 https://www.youtube.com/watch?v=T4Uehk3_wlY}
@@ -20,13 +20,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AspectRatioBase extends BaseWidget {
-    AspectRatioBase();
+  AspectRatioBase();
 
-    factory AspectRatioBase.fromJson(Map<String, dynamic> data) {
-        return AspectRatioBase();
-    }
+  factory AspectRatioBase.fromJson(Map<String, dynamic> data) {
+    return AspectRatioBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that attempts to size the child to a specific aspect ratio.
 
 The widget first tries the largest width permitted by the layout
@@ -49,13 +49,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

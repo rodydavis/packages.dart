@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OrientationBuilderBase extends BaseWidget {
-    OrientationBuilderBase();
+  OrientationBuilderBase();
 
-    factory OrientationBuilderBase.fromJson(Map<String, dynamic> data) {
-        return OrientationBuilderBase();
-    }
+  factory OrientationBuilderBase.fromJson(Map<String, dynamic> data) {
+    return OrientationBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Builds a widget tree that can depend on the parent widget's orientation
 (distinct from the device orientation).
 
@@ -23,13 +23,13 @@ See also:
    landscape or portrait mode.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

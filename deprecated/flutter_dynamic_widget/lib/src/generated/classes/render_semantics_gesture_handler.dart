@@ -1,25 +1,26 @@
 import '../base.dart';
 
 class RenderSemanticsGestureHandlerBase extends BaseWidget {
-    RenderSemanticsGestureHandlerBase();
+  RenderSemanticsGestureHandlerBase();
 
-    factory RenderSemanticsGestureHandlerBase.fromJson(Map<String, dynamic> data) {
-        return RenderSemanticsGestureHandlerBase();
-    }
+  factory RenderSemanticsGestureHandlerBase.fromJson(
+      Map<String, dynamic> data) {
+    return RenderSemanticsGestureHandlerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Listens for the specified gestures from the semantics server (e.g.
 an accessibility tool).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

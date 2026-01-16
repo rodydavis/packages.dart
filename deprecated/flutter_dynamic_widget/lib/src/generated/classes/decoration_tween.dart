@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DecorationTweenBase extends BaseWidget {
-    DecorationTweenBase();
+  DecorationTweenBase();
 
-    factory DecorationTweenBase.fromJson(Map<String, dynamic> data) {
-        return DecorationTweenBase();
-    }
+  factory DecorationTweenBase.fromJson(Map<String, dynamic> data) {
+    return DecorationTweenBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An interpolation between two [Decoration]s.
 
 This class specializes the interpolation of [Tween<BoxConstraints>] to use
@@ -28,13 +28,13 @@ See also:
    [BoxBorder]s.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

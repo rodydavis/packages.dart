@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class GestureDetectorBase extends BaseWidget {
-    GestureDetectorBase();
+  GestureDetectorBase();
 
-    factory GestureDetectorBase.fromJson(Map<String, dynamic> data) {
-        return GestureDetectorBase();
-    }
+  factory GestureDetectorBase.fromJson(Map<String, dynamic> data) {
+    return GestureDetectorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that detects gestures.
 
 Attempts to recognize gestures that correspond to its non-null callbacks.
@@ -105,13 +105,13 @@ See also:
    button is pressed.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

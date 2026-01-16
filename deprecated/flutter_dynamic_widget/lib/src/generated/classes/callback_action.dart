@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CallbackActionBase extends BaseWidget {
-    CallbackActionBase();
+  CallbackActionBase();
 
-    factory CallbackActionBase.fromJson(Map<String, dynamic> data) {
-        return CallbackActionBase();
-    }
+  factory CallbackActionBase.fromJson(Map<String, dynamic> data) {
+    return CallbackActionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [Action] that takes a callback in order to configure it without having to
 create an explicit [Action] subclass just to call a callback.
 
@@ -22,13 +22,13 @@ See also:
    [FocusNode] for context.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

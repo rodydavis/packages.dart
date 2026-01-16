@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PageControllerBase extends BaseWidget {
-    PageControllerBase();
+  PageControllerBase();
 
-    factory PageControllerBase.fromJson(Map<String, dynamic> data) {
-        return PageControllerBase();
-    }
+  factory PageControllerBase.fromJson(Map<String, dynamic> data) {
+    return PageControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A controller for [PageView].
 
 A page controller lets you manipulate which page is visible in a [PageView].
@@ -100,13 +100,13 @@ class _MyPageViewState extends State<MyPageView> {
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

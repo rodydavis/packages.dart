@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BottomNavigationBarItemBase extends BaseWidget {
-    BottomNavigationBarItemBase();
+  BottomNavigationBarItemBase();
 
-    factory BottomNavigationBarItemBase.fromJson(Map<String, dynamic> data) {
-        return BottomNavigationBarItemBase();
-    }
+  factory BottomNavigationBarItemBase.fromJson(Map<String, dynamic> data) {
+    return BottomNavigationBarItemBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An interactive button within either material's [BottomNavigationBar]
 or the iOS themed [CupertinoTabBar] with an icon and title.
 
@@ -23,13 +23,13 @@ See also:
  * <https://developer.apple.com/ios/human-interface-guidelines/bars/tab-bars>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

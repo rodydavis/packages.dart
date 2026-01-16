@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class HorizontalDragGestureRecognizerBase extends BaseWidget {
-    HorizontalDragGestureRecognizerBase();
+  HorizontalDragGestureRecognizerBase();
 
-    factory HorizontalDragGestureRecognizerBase.fromJson(Map<String, dynamic> data) {
-        return HorizontalDragGestureRecognizerBase();
-    }
+  factory HorizontalDragGestureRecognizerBase.fromJson(
+      Map<String, dynamic> data) {
+    return HorizontalDragGestureRecognizerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Recognizes movement in the horizontal direction.
 
 Used for horizontal scrolling.
@@ -21,13 +22,13 @@ See also:
    track each touch point independently.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

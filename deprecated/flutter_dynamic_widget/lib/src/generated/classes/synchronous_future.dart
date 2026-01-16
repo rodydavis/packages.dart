@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SynchronousFutureBase extends BaseWidget {
-    SynchronousFutureBase();
+  SynchronousFutureBase();
 
-    factory SynchronousFutureBase.fromJson(Map<String, dynamic> data) {
-        return SynchronousFutureBase();
-    }
+  factory SynchronousFutureBase.fromJson(Map<String, dynamic> data) {
+    return SynchronousFutureBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [Future] whose [then] implementation calls the callback immediately.
 
 This is similar to [new Future.value], except that the value is available in
@@ -21,13 +21,13 @@ general use of this class should be avoided as it is very difficult to debug
 such bimodal behavior.**
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

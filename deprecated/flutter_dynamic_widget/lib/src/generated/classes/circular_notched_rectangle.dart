@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CircularNotchedRectangleBase extends BaseWidget {
-    CircularNotchedRectangleBase();
+  CircularNotchedRectangleBase();
 
-    factory CircularNotchedRectangleBase.fromJson(Map<String, dynamic> data) {
-        return CircularNotchedRectangleBase();
-    }
+  factory CircularNotchedRectangleBase.fromJson(Map<String, dynamic> data) {
+    return CircularNotchedRectangleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A rectangle with a smooth circular notch.
 
 See also:
@@ -16,13 +16,13 @@ See also:
  * [CircleBorder], a [ShapeBorder] that describes a circle.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

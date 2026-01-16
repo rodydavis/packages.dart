@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class StandardMessageCodecBase extends BaseWidget {
-    StandardMessageCodecBase();
+  StandardMessageCodecBase();
 
-    factory StandardMessageCodecBase.fromJson(Map<String, dynamic> data) {
-        return StandardMessageCodecBase();
-    }
+  factory StandardMessageCodecBase.fromJson(Map<String, dynamic> data) {
+    return StandardMessageCodecBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 [MessageCodec] using the Flutter standard binary encoding.
 
 Supported messages are acyclic values of these forms:
@@ -62,13 +62,13 @@ The codec is extensible by subclasses overriding [writeValue] and
 [readValueOfType].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DecorationImagePainterBase extends BaseWidget {
-    DecorationImagePainterBase();
+  DecorationImagePainterBase();
 
-    factory DecorationImagePainterBase.fromJson(Map<String, dynamic> data) {
-        return DecorationImagePainterBase();
-    }
+  factory DecorationImagePainterBase.fromJson(Map<String, dynamic> data) {
+    return DecorationImagePainterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The painter for a [DecorationImage].
 
 To obtain a painter, call [DecorationImage.createPainter].
@@ -22,13 +22,13 @@ This object should be disposed using the [dispose] method when it is no
 longer needed.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

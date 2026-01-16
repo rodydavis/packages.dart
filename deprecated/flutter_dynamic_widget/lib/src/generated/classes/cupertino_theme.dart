@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoThemeBase extends BaseWidget {
-    CupertinoThemeBase();
+  CupertinoThemeBase();
 
-    factory CupertinoThemeBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoThemeBase();
-    }
+  factory CupertinoThemeBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Applies a visual styling theme to descendant Cupertino widgets.
 
 Affects the color and text styles of Cupertino widgets whose styling
@@ -30,13 +30,13 @@ See also:
    with a [CupertinoThemeData] derived from the Material [ThemeData].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

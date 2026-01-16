@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class BoxHitTestEntryBase extends BaseWidget {
-    BoxHitTestEntryBase();
+  BoxHitTestEntryBase();
 
-    factory BoxHitTestEntryBase.fromJson(Map<String, dynamic> data) {
-        return BoxHitTestEntryBase();
-    }
+  factory BoxHitTestEntryBase.fromJson(Map<String, dynamic> data) {
+    return BoxHitTestEntryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A hit test entry used by [RenderBox].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

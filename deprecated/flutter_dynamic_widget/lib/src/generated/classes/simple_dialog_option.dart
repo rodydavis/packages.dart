@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SimpleDialogOptionBase extends BaseWidget {
-    SimpleDialogOptionBase();
+  SimpleDialogOptionBase();
 
-    factory SimpleDialogOptionBase.fromJson(Map<String, dynamic> data) {
-        return SimpleDialogOptionBase();
-    }
+  factory SimpleDialogOptionBase.fromJson(Map<String, dynamic> data) {
+    return SimpleDialogOptionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An option used in a [SimpleDialog].
 
 A simple dialog offers the user a choice between several options. This
@@ -41,13 +41,13 @@ See also:
  * <https://material.io/design/components/dialogs.html#simple-dialog>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

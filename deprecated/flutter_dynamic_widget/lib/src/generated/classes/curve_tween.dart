@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CurveTweenBase extends BaseWidget {
-    CurveTweenBase();
+  CurveTweenBase();
 
-    factory CurveTweenBase.fromJson(Map<String, dynamic> data) {
-        return CurveTweenBase();
-    }
+  factory CurveTweenBase.fromJson(Map<String, dynamic> data) {
+    return CurveTweenBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Transforms the value of the given animation by the given curve.
 
 This class differs from [CurvedAnimation] in that [CurvedAnimation] applies
@@ -37,13 +37,13 @@ See also:
    [AnimationController].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

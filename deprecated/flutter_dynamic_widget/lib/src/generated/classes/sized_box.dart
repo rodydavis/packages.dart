@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SizedBoxBase extends BaseWidget {
-    SizedBoxBase();
+  SizedBoxBase();
 
-    factory SizedBoxBase.fromJson(Map<String, dynamic> data) {
-        return SizedBoxBase();
-    }
+  factory SizedBoxBase.fromJson(Map<String, dynamic> data) {
+    return SizedBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A box with a specified size.
 
 If given a child, this widget forces its child to have a specific width
@@ -56,13 +56,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

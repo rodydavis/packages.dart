@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AlertDialogBase extends BaseWidget {
-    AlertDialogBase();
+  AlertDialogBase();
 
-    factory AlertDialogBase.fromJson(Map<String, dynamic> data) {
-        return AlertDialogBase();
-    }
+  factory AlertDialogBase.fromJson(Map<String, dynamic> data) {
+    return AlertDialogBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design alert dialog.
 
 An alert dialog informs the user about situations that require
@@ -80,13 +80,13 @@ See also:
  * <https://material.io/design/components/dialogs.html#alert-dialog>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoDialogBase extends BaseWidget {
-    CupertinoDialogBase();
+  CupertinoDialogBase();
 
-    factory CupertinoDialogBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoDialogBase();
-    }
+  factory CupertinoDialogBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoDialogBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS-style dialog.
 
 This dialog widget does not have any opinion about the contents of the
@@ -25,13 +25,13 @@ See also:
  * <https://developer.apple.com/ios/human-interface-guidelines/views/alerts/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

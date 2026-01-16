@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IntrinsicColumnWidthBase extends BaseWidget {
-    IntrinsicColumnWidthBase();
+  IntrinsicColumnWidthBase();
 
-    factory IntrinsicColumnWidthBase.fromJson(Map<String, dynamic> data) {
-        return IntrinsicColumnWidthBase();
-    }
+  factory IntrinsicColumnWidthBase.fromJson(Map<String, dynamic> data) {
+    return IntrinsicColumnWidthBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Sizes the column according to the intrinsic dimensions of all the
 cells in that column.
 
@@ -19,13 +19,13 @@ column will participate in the distribution of remaining space
 once all the non-flexible columns have been sized.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

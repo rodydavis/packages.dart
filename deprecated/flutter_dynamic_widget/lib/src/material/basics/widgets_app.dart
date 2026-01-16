@@ -40,7 +40,6 @@ class WidgetsAppBase extends _$WidgetsAppBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);
@@ -80,5 +79,4 @@ class WidgetsAppBase extends _$WidgetsAppBase {
   // Locale Function(List<Locale>, Iterable<Locale>) localeListResolutionCallback;
 
   // Locale Function(Locale, Iterable<Locale>) localeResolutionCallback;
-
 }

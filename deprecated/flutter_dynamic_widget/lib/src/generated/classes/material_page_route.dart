@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MaterialPageRouteBase extends BaseWidget {
-    MaterialPageRouteBase();
+  MaterialPageRouteBase();
 
-    factory MaterialPageRouteBase.fromJson(Map<String, dynamic> data) {
-        return MaterialPageRouteBase();
-    }
+  factory MaterialPageRouteBase.fromJson(Map<String, dynamic> data) {
+    return MaterialPageRouteBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A modal route that replaces the entire screen with a platform-adaptive
 transition.
 
@@ -33,13 +33,13 @@ See also:
  * [MaterialPage], which is a [Page] of this class.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

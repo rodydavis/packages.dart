@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DirectionalFocusActionBase extends BaseWidget {
-    DirectionalFocusActionBase();
+  DirectionalFocusActionBase();
 
-    factory DirectionalFocusActionBase.fromJson(Map<String, dynamic> data) {
-        return DirectionalFocusActionBase();
-    }
+  factory DirectionalFocusActionBase.fromJson(Map<String, dynamic> data) {
+    return DirectionalFocusActionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [Action] that moves the focus to the focusable node in the direction
 configured by the associated [DirectionalFocusIntent.direction].
 
@@ -18,13 +18,13 @@ default to the [LogicalKeyboardKey.arrowUp], [LogicalKeyboardKey.arrowDown],
 the [WidgetsApp], with the appropriate associated directions.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

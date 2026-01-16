@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverOverlapInjectorBase extends BaseWidget {
-    SliverOverlapInjectorBase();
+  SliverOverlapInjectorBase();
 
-    factory SliverOverlapInjectorBase.fromJson(Map<String, dynamic> data) {
-        return SliverOverlapInjectorBase();
-    }
+  factory SliverOverlapInjectorBase.fromJson(Map<String, dynamic> data) {
+    return SliverOverlapInjectorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver that has a sliver geometry based on the values stored in a
 [SliverOverlapAbsorberHandle].
 
@@ -22,13 +22,13 @@ See also:
    children, and which shows sample usage for this class.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,26 +1,26 @@
 import '../base.dart';
 
 class RestorableIntBase extends BaseWidget {
-    RestorableIntBase();
+  RestorableIntBase();
 
-    factory RestorableIntBase.fromJson(Map<String, dynamic> data) {
-        return RestorableIntBase();
-    }
+  factory RestorableIntBase.fromJson(Map<String, dynamic> data) {
+    return RestorableIntBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [RestorableProperty] that knows how to store and restore an [int].
 
 {@macro flutter.widgets.restoration.primitivevalue}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

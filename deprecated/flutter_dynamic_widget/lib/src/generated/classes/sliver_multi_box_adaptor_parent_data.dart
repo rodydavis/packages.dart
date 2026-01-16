@@ -1,24 +1,25 @@
 import '../base.dart';
 
 class SliverMultiBoxAdaptorParentDataBase extends BaseWidget {
-    SliverMultiBoxAdaptorParentDataBase();
+  SliverMultiBoxAdaptorParentDataBase();
 
-    factory SliverMultiBoxAdaptorParentDataBase.fromJson(Map<String, dynamic> data) {
-        return SliverMultiBoxAdaptorParentDataBase();
-    }
+  factory SliverMultiBoxAdaptorParentDataBase.fromJson(
+      Map<String, dynamic> data) {
+    return SliverMultiBoxAdaptorParentDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Parent data structure used by [RenderSliverMultiBoxAdaptor].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

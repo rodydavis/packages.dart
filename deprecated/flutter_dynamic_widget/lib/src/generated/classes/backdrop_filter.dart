@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BackdropFilterBase extends BaseWidget {
-    BackdropFilterBase();
+  BackdropFilterBase();
 
-    factory BackdropFilterBase.fromJson(Map<String, dynamic> data) {
-        return BackdropFilterBase();
-    }
+  factory BackdropFilterBase.fromJson(Map<String, dynamic> data) {
+    return BackdropFilterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that applies a filter to the existing painted content and then
 paints [child].
 
@@ -64,13 +64,13 @@ See also:
  * [Opacity], which changes the opacity of the widget itself.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

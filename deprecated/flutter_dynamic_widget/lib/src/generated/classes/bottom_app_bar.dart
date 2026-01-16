@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BottomAppBarBase extends BaseWidget {
-    BottomAppBarBase();
+  BottomAppBarBase();
 
-    factory BottomAppBarBase.fromJson(Map<String, dynamic> data) {
-        return BottomAppBarBase();
-    }
+  factory BottomAppBarBase.fromJson(Map<String, dynamic> data) {
+    return BottomAppBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A container that is typically used with [Scaffold.bottomNavigationBar], and
 can have a notch along the top that makes room for an overlapping
 [FloatingActionButton].
@@ -34,13 +34,13 @@ See also:
  * [AppBar] for a toolbar that is shown at the top of the screen.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TickerFutureBase extends BaseWidget {
-    TickerFutureBase();
+  TickerFutureBase();
 
-    factory TickerFutureBase.fromJson(Map<String, dynamic> data) {
-        return TickerFutureBase();
-    }
+  factory TickerFutureBase.fromJson(Map<String, dynamic> data) {
+    return TickerFutureBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An object representing an ongoing [Ticker] sequence.
 
 The [Ticker.start] method returns a [TickerFuture]. The [TickerFuture] will
@@ -27,13 +27,13 @@ To run a callback when either this future resolves or when the ticker is
 canceled, use [whenCompleteOrCancel].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

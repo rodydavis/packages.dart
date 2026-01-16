@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ClipPathBase extends BaseWidget {
-    ClipPathBase();
+  ClipPathBase();
 
-    factory ClipPathBase.fromJson(Map<String, dynamic> data) {
-        return ClipPathBase();
-    }
+  factory ClipPathBase.fromJson(Map<String, dynamic> data) {
+    return ClipPathBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that clips its child using a path.
 
 Calls a callback on a delegate whenever the widget is to be
@@ -29,13 +29,13 @@ To clip to a particular [ShapeBorder], consider using either the
 class.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

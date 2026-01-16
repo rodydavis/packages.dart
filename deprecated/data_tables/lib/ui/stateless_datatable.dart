@@ -25,11 +25,17 @@ class StatelessDataTable extends StatelessWidget {
     this.rowsPerPage = defaultRowsPerPage,
     this.handlePrevious,
     this.handleNext,
-    this.availableRowsPerPage = const <int>[defaultRowsPerPage, defaultRowsPerPage * 2, defaultRowsPerPage * 5, defaultRowsPerPage * 10],
+    this.availableRowsPerPage = const <int>[
+      defaultRowsPerPage,
+      defaultRowsPerPage * 2,
+      defaultRowsPerPage * 5,
+      defaultRowsPerPage * 10
+    ],
     this.onRowsPerPageChanged,
     this.dragStartBehavior = DragStartBehavior.down,
   })  : assert(columns.isNotEmpty),
-        assert(sortColumnIndex == null || (sortColumnIndex >= 0 && sortColumnIndex < columns.length)),
+        assert(sortColumnIndex == null ||
+            (sortColumnIndex >= 0 && sortColumnIndex < columns.length)),
         assert(rowsPerPage > 0),
         assert(() {
           if (onRowsPerPageChanged != null) {
@@ -60,7 +66,11 @@ class StatelessDataTable extends StatelessWidget {
   final bool rowCountApproximate;
   final Map<int, DataRow> _rows = <int, DataRow>{};
 
-  DataRow _getBlankRowFor(int index) => DataRow.byIndex(index: index, cells: columns.map<DataCell>((DataColumn column) => DataCell.empty).toList());
+  DataRow _getBlankRowFor(int index) => DataRow.byIndex(
+      index: index,
+      cells: columns
+          .map<DataCell>((DataColumn column) => DataCell.empty)
+          .toList());
 
   DataRow _getProgressIndicatorRowFor(int index) {
     bool haveProgressIndicator = false;
@@ -100,7 +110,8 @@ class StatelessDataTable extends StatelessWidget {
     }
     //show no data
     if (result.isEmpty) {
-      var cells = columns.map<DataCell>((DataColumn column) => DataCell.empty).toList();
+      var cells =
+          columns.map<DataCell>((DataColumn column) => DataCell.empty).toList();
       cells[cells.length ~/ 2] = const DataCell(Text('no data'));
       result.add(DataRow.byIndex(index: 0, cells: cells));
     }
@@ -110,13 +121,15 @@ class StatelessDataTable extends StatelessWidget {
 
   final GlobalKey _tableKey = GlobalKey();
 
-  int get _selectedRowCount => rows.where((d) => d.selected).toSet().toList().length;
+  int get _selectedRowCount =>
+      rows.where((d) => d.selected).toSet().toList().length;
 
   @override
   Widget build(BuildContext context) {
     assert(debugCheckHasMaterialLocalizations(context));
     final ThemeData themeData = Theme.of(context);
-    final MaterialLocalizations localizations = MaterialLocalizations.of(context);
+    final MaterialLocalizations localizations =
+        MaterialLocalizations.of(context);
 
     final List<Widget> headerWidgets = <Widget>[];
     double startPadding = 24;
@@ -152,8 +165,9 @@ class StatelessDataTable extends StatelessWidget {
     final TextStyle? footerTextStyle = themeData.textTheme.caption;
     final List<Widget> footerWidgets = <Widget>[];
     if (onRowsPerPageChanged != null) {
-      final List<Widget> _footerChildren =
-          availableRowsPerPage.where((int value) => value <= rows.length || value == rowsPerPage).map<DropdownMenuItem<int>>((int value) {
+      final List<Widget> _footerChildren = availableRowsPerPage
+          .where((int value) => value <= rows.length || value == rowsPerPage)
+          .map<DropdownMenuItem<int>>((int value) {
         return DropdownMenuItem<int>(value: value, child: Text('$value'));
       }).toList();
       footerWidgets.addAll(<Widget>[
@@ -177,7 +191,11 @@ class StatelessDataTable extends StatelessWidget {
     }
     footerWidgets.addAll(<Widget>[
       Container(width: 32),
-      Text(localizations.pageRowsInfoTitle(firstRowIndex + 1, firstRowIndex + rowsPerPage, totalItems ?? rows.length, rowCountApproximate)),
+      Text(localizations.pageRowsInfoTitle(
+          firstRowIndex + 1,
+          firstRowIndex + rowsPerPage,
+          totalItems ?? rows.length,
+          rowCountApproximate)),
       Container(width: 32),
       IconButton(
           icon: const Icon(Icons.chevron_left),
@@ -189,7 +207,10 @@ class StatelessDataTable extends StatelessWidget {
           icon: const Icon(Icons.chevron_right),
           padding: EdgeInsets.zero,
           tooltip: localizations.nextPageTooltip,
-          onPressed: (!rowCountApproximate && (firstRowIndex + rowsPerPage >= (totalItems ?? rows.length))) ? null : handleNext),
+          onPressed: (!rowCountApproximate &&
+                  (firstRowIndex + rowsPerPage >= (totalItems ?? rows.length)))
+              ? null
+              : handleNext),
       Container(width: 14),
     ]);
 
@@ -203,17 +224,24 @@ class StatelessDataTable extends StatelessWidget {
                 container: true,
                 child: DefaultTextStyle(
                   style: _selectedRowCount > 0
-                      ? themeData.textTheme.subtitle1!.copyWith(color: themeData.colorScheme.secondary)
-                      : themeData.textTheme.headline6!.copyWith(fontWeight: FontWeight.w400),
+                      ? themeData.textTheme.subtitle1!
+                          .copyWith(color: themeData.colorScheme.secondary)
+                      : themeData.textTheme.headline6!
+                          .copyWith(fontWeight: FontWeight.w400),
                   child: IconTheme.merge(
                     data: const IconThemeData(opacity: 0.54),
                     child: ButtonTheme(
                       child: Ink(
                         height: 64,
-                        color: _selectedRowCount > 0 ? themeData.secondaryHeaderColor : null,
+                        color: _selectedRowCount > 0
+                            ? themeData.secondaryHeaderColor
+                            : null,
                         child: Padding(
-                          padding: EdgeInsetsDirectional.only(start: startPadding, end: 14),
-                          child: Row(mainAxisAlignment: MainAxisAlignment.end, children: headerWidgets),
+                          padding: EdgeInsetsDirectional.only(
+                              start: startPadding, end: 14),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: headerWidgets),
                         ),
                       ),
                     ),
@@ -269,17 +297,24 @@ class StatelessDataTable extends StatelessWidget {
               container: true,
               child: DefaultTextStyle(
                 style: _selectedRowCount > 0
-                    ? themeData.textTheme.subtitle1!.copyWith(color: themeData.colorScheme.secondary)
-                    : themeData.textTheme.headline6!.copyWith(fontWeight: FontWeight.w400),
+                    ? themeData.textTheme.subtitle1!
+                        .copyWith(color: themeData.colorScheme.secondary)
+                    : themeData.textTheme.headline6!
+                        .copyWith(fontWeight: FontWeight.w400),
                 child: IconTheme.merge(
                   data: const IconThemeData(opacity: 0.54),
                   child: ButtonTheme(
                     child: Ink(
                       height: 64,
-                      color: _selectedRowCount > 0 ? themeData.secondaryHeaderColor : null,
+                      color: _selectedRowCount > 0
+                          ? themeData.secondaryHeaderColor
+                          : null,
                       child: Padding(
-                        padding: EdgeInsetsDirectional.only(start: startPadding, end: 14),
-                        child: Row(mainAxisAlignment: MainAxisAlignment.end, children: headerWidgets),
+                        padding: EdgeInsetsDirectional.only(
+                            start: startPadding, end: 14),
+                        child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: headerWidgets),
                       ),
                     ),
                   ),
@@ -287,23 +322,23 @@ class StatelessDataTable extends StatelessWidget {
               ),
             ),
           Expanded(
-              flex: 8,
-              child: ScrollConfiguration(
-                behavior: CustomScrollBehavior(),
+            flex: 8,
+            child: ScrollConfiguration(
+              behavior: CustomScrollBehavior(),
+              child: SingleChildScrollView(
+                scrollDirection: Axis.vertical,
                 child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: SingleChildScrollView(
-                    scrollDirection: Axis.horizontal,
-                    child: DataTable(
-                        key: _tableKey,
-                        columns: columns,
-                        sortColumnIndex: sortColumnIndex,
-                        sortAscending: sortAscending,
-                        onSelectAll: onSelectAll,
-                        rows: _getRows(firstRowIndex, rowsPerPage)),
-                  ),
+                  scrollDirection: Axis.horizontal,
+                  child: DataTable(
+                      key: _tableKey,
+                      columns: columns,
+                      sortColumnIndex: sortColumnIndex,
+                      sortAscending: sortAscending,
+                      onSelectAll: onSelectAll,
+                      rows: _getRows(firstRowIndex, rowsPerPage)),
                 ),
               ),
+            ),
           ),
           DefaultTextStyle(
             style: footerTextStyle!,

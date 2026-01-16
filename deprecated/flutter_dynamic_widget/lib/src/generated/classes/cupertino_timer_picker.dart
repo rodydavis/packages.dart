@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoTimerPickerBase extends BaseWidget {
-    CupertinoTimerPickerBase();
+  CupertinoTimerPickerBase();
 
-    factory CupertinoTimerPickerBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoTimerPickerBase();
-    }
+  factory CupertinoTimerPickerBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoTimerPickerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A countdown timer picker in iOS style.
 
 This picker shows a countdown duration with hour, minute and second spinners.
@@ -28,13 +28,13 @@ See also:
  * [CupertinoPicker], the class that implements a content agnostic spinner UI.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

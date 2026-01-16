@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoUserInterfaceLevelBase extends BaseWidget {
-    CupertinoUserInterfaceLevelBase();
+  CupertinoUserInterfaceLevelBase();
 
-    factory CupertinoUserInterfaceLevelBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoUserInterfaceLevelBase();
-    }
+  factory CupertinoUserInterfaceLevelBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoUserInterfaceLevelBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Establishes a subtree in which [CupertinoUserInterfaceLevel.of] resolves to
 the given data.
 
@@ -26,13 +26,13 @@ See also:
    in the subtree [CupertinoUserInterfaceLevel] established.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

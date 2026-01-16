@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class StadiumBorderBase extends BaseWidget {
-    StadiumBorderBase();
+  StadiumBorderBase();
 
-    factory StadiumBorderBase.fromJson(Map<String, dynamic> data) {
-        return StadiumBorderBase();
-    }
+  factory StadiumBorderBase.fromJson(Map<String, dynamic> data) {
+    return StadiumBorderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A border that fits a stadium-shaped border (a box with semicircles on the ends)
 within the rectangle of the widget it is applied to.
 
@@ -22,13 +22,13 @@ See also:
  * [BorderSide], which is used to describe the border of the stadium.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

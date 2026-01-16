@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DocumentationIconBase extends BaseWidget {
-    DocumentationIconBase();
+  DocumentationIconBase();
 
-    factory DocumentationIconBase.fromJson(Map<String, dynamic> data) {
-        return DocumentationIconBase();
-    }
+  factory DocumentationIconBase.fromJson(Map<String, dynamic> data) {
+    return DocumentationIconBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A class annotation to provide a URL to an image that represents the class.
 
 Each class should only have one [DocumentationIcon].
@@ -33,13 +33,13 @@ See also:
    class that overrides the inline documentations' own description.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

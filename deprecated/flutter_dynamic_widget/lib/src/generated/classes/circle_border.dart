@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CircleBorderBase extends BaseWidget {
-    CircleBorderBase();
+  CircleBorderBase();
 
-    factory CircleBorderBase.fromJson(Map<String, dynamic> data) {
-        return CircleBorderBase();
-    }
+  factory CircleBorderBase.fromJson(Map<String, dynamic> data) {
+    return CircleBorderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A border that fits a circle within the available space.
 
 Typically used with [ShapeDecoration] to draw a circle.
@@ -24,13 +24,13 @@ See also:
    describe a circle.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

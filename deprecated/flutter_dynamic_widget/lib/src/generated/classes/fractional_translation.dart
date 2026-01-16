@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FractionalTranslationBase extends BaseWidget {
-    FractionalTranslationBase();
+  FractionalTranslationBase();
 
-    factory FractionalTranslationBase.fromJson(Map<String, dynamic> data) {
-        return FractionalTranslationBase();
-    }
+  factory FractionalTranslationBase.fromJson(Map<String, dynamic> data) {
+    return FractionalTranslationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Applies a translation transformation before painting its child.
 
 The translation is expressed as a [Offset] scaled to the child's size. For
@@ -28,13 +28,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

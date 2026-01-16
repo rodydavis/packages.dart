@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class StreamBuilderBase extends BaseWidget {
-    StreamBuilderBase();
+  StreamBuilderBase();
 
-    factory StreamBuilderBase.fromJson(Map<String, dynamic> data) {
-        return StreamBuilderBase();
-    }
+  factory StreamBuilderBase.fromJson(Map<String, dynamic> data) {
+    return StreamBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Widget that builds itself based on the latest snapshot of interaction with
 a [Stream].
 
@@ -173,13 +173,13 @@ See also:
    that spans all interactions made with the stream.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

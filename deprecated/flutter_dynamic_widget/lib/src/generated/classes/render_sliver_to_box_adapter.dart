@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderSliverToBoxAdapterBase extends BaseWidget {
-    RenderSliverToBoxAdapterBase();
+  RenderSliverToBoxAdapterBase();
 
-    factory RenderSliverToBoxAdapterBase.fromJson(Map<String, dynamic> data) {
-        return RenderSliverToBoxAdapterBase();
-    }
+  factory RenderSliverToBoxAdapterBase.fromJson(Map<String, dynamic> data) {
+    return RenderSliverToBoxAdapterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [RenderSliver] that contains a single [RenderBox].
 
 The child will not be laid out if it is not visible. It is sized according
@@ -23,13 +23,13 @@ See also:
    a [RenderBox] (the opposite of this class).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

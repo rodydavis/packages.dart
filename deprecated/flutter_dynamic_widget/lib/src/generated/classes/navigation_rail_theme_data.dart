@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class NavigationRailThemeDataBase extends BaseWidget {
-    NavigationRailThemeDataBase();
+  NavigationRailThemeDataBase();
 
-    factory NavigationRailThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return NavigationRailThemeDataBase();
-    }
+  factory NavigationRailThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return NavigationRailThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines default property values for descendant [NavigationRail]
 widgets.
 
@@ -32,13 +32,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

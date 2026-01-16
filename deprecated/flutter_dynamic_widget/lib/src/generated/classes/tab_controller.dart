@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TabControllerBase extends BaseWidget {
-    TabControllerBase();
+  TabControllerBase();
 
-    factory TabControllerBase.fromJson(Map<String, dynamic> data) {
-        return TabControllerBase();
-    }
+  factory TabControllerBase.fromJson(Map<String, dynamic> data) {
+    return TabControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Coordinates tab selection between a [TabBar] and a [TabBarView].
 
 The [index] property is the index of the selected tab and the [animation]
@@ -136,13 +136,13 @@ Widget build(BuildContext context) {
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class ScrollPositionWithSingleContextBase extends BaseWidget {
-    ScrollPositionWithSingleContextBase();
+  ScrollPositionWithSingleContextBase();
 
-    factory ScrollPositionWithSingleContextBase.fromJson(Map<String, dynamic> data) {
-        return ScrollPositionWithSingleContextBase();
-    }
+  factory ScrollPositionWithSingleContextBase.fromJson(
+      Map<String, dynamic> data) {
+    return ScrollPositionWithSingleContextBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A scroll position that manages scroll activities for a single
 [ScrollContext].
 
@@ -29,13 +30,13 @@ See also:
    scroll positions.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

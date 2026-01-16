@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PositionedBase extends BaseWidget {
-    PositionedBase();
+  PositionedBase();
 
-    factory PositionedBase.fromJson(Map<String, dynamic> data) {
-        return PositionedBase();
-    }
+  factory PositionedBase.fromJson(Map<String, dynamic> data) {
+    return PositionedBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that controls where a child of a [Stack] is positioned.
 
 A [Positioned] widget must be a descendant of a [Stack], and the path from
@@ -45,13 +45,13 @@ See also:
  * [PositionedDirectional], which adapts to the ambient [Directionality].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

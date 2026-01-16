@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoPickerBase extends BaseWidget {
-    CupertinoPickerBase();
+  CupertinoPickerBase();
 
-    factory CupertinoPickerBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoPickerBase();
-    }
+  factory CupertinoPickerBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoPickerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS-styled picker.
 
 Displays its children widgets on a wheel for selection and
@@ -34,13 +34,13 @@ See also:
  * <https://developer.apple.com/ios/human-interface-guidelines/controls/pickers/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

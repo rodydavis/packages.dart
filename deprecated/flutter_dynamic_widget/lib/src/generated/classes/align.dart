@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AlignBase extends BaseWidget {
-    AlignBase();
+  AlignBase();
 
-    factory AlignBase.fromJson(Map<String, dynamic> data) {
-        return AlignBase();
-    }
+  factory AlignBase.fromJson(Map<String, dynamic> data) {
+    return AlignBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that aligns its child within itself and optionally sizes itself
 based on the child's size.
 
@@ -139,13 +139,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

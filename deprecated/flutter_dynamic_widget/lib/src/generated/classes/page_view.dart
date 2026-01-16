@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PageViewBase extends BaseWidget {
-    PageViewBase();
+  PageViewBase();
 
-    factory PageViewBase.fromJson(Map<String, dynamic> data) {
-        return PageViewBase();
-    }
+  factory PageViewBase.fromJson(Map<String, dynamic> data) {
+    return PageViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A scrollable list that works page by page.
 
 Each child of a page view is forced to be the same size as the viewport.
@@ -35,13 +35,13 @@ See also:
    the scroll position without using a [ScrollController].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

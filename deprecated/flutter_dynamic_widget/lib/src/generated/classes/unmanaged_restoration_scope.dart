@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class UnmanagedRestorationScopeBase extends BaseWidget {
-    UnmanagedRestorationScopeBase();
+  UnmanagedRestorationScopeBase();
 
-    factory UnmanagedRestorationScopeBase.fromJson(Map<String, dynamic> data) {
-        return UnmanagedRestorationScopeBase();
-    }
+  factory UnmanagedRestorationScopeBase.fromJson(Map<String, dynamic> data) {
+    return UnmanagedRestorationScopeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Inserts a provided [RestorationBucket] into the widget tree and makes it
 available to descendants via [RestorationScope.of].
 
@@ -34,13 +34,13 @@ See also:
    restoration in Flutter.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

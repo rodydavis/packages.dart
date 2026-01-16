@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PositionedDirectionalBase extends BaseWidget {
-    PositionedDirectionalBase();
+  PositionedDirectionalBase();
 
-    factory PositionedDirectionalBase.fromJson(Map<String, dynamic> data) {
-        return PositionedDirectionalBase();
-    }
+  factory PositionedDirectionalBase.fromJson(Map<String, dynamic> data) {
+    return PositionedDirectionalBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that controls where a child of a [Stack] is positioned without
 committing to a specific [TextDirection].
 
@@ -43,13 +43,13 @@ See also:
    changes.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

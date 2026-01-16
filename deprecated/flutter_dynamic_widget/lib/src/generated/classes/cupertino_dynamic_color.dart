@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoDynamicColorBase extends BaseWidget {
-    CupertinoDynamicColorBase();
+  CupertinoDynamicColorBase();
 
-    factory CupertinoDynamicColorBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoDynamicColorBase();
-    }
+  factory CupertinoDynamicColorBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoDynamicColorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [Color] subclass that represents a family of colors, and the correct effective
 color in the color family.
 
@@ -113,13 +113,13 @@ See also:
    and then resolves [CupertinoDynamicColor]s used in the retrieved data.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AutomaticKeepAliveBase extends BaseWidget {
-    AutomaticKeepAliveBase();
+  AutomaticKeepAliveBase();
 
-    factory AutomaticKeepAliveBase.fromJson(Map<String, dynamic> data) {
-        return AutomaticKeepAliveBase();
-    }
+  factory AutomaticKeepAliveBase.fromJson(Map<String, dynamic> data) {
+    return AutomaticKeepAliveBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Allows subtrees to request to be kept alive in lazy lists.
 
 This widget is like [KeepAlive] but instead of being explicitly configured,
@@ -22,13 +22,13 @@ sent a [KeepAliveNotification] and not yet triggered its
 To send these notifications, consider using [AutomaticKeepAliveClientMixin].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

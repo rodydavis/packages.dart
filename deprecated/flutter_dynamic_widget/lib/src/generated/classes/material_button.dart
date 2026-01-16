@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MaterialButtonBase extends BaseWidget {
-    MaterialButtonBase();
+  MaterialButtonBase();
 
-    factory MaterialButtonBase.fromJson(Map<String, dynamic> data) {
-        return MaterialButtonBase();
-    }
+  factory MaterialButtonBase.fromJson(Map<String, dynamic> data) {
+    return MaterialButtonBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A utility class for building Material buttons that depend on the
 ambient [ButtonTheme] and [Theme].
 
@@ -46,13 +46,13 @@ See also:
  * [IconButton], to create buttons that contain icons rather than text.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MethodChannelBase extends BaseWidget {
-    MethodChannelBase();
+  MethodChannelBase();
 
-    factory MethodChannelBase.fromJson(Map<String, dynamic> data) {
-        return MethodChannelBase();
-    }
+  factory MethodChannelBase.fromJson(Map<String, dynamic> data) {
+    return MethodChannelBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A named channel for communicating with platform plugins using asynchronous
 method calls.
 
@@ -28,13 +28,13 @@ channels will interfere with each other's communication.
 See: <https://flutter.dev/platform-channels/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -58,44 +58,44 @@ class HomeScreen extends StatelessWidget {
             showMobilePopup(
               context: context,
               builder: (context) => MobilePopUp(
-                    title: 'App Settings',
-                    showFullScreen: true,
-                    leadingColor: Colors.white,
-                    child: Builder(
-                      builder: (navigator) => Scaffold(
-                            body: SingleChildScrollView(
-                              child: Column(
-                                children: <Widget>[
-                                  ListTile(
-                                    leading: Icon(Icons.brightness_auto),
-                                    title: Text('Brightness'),
-                                    trailing: Switch.adaptive(
-                                      value: true,
-                                      onChanged: (value) {},
-                                    ),
-                                  ),
-                                  ListTile(
-                                    leading: Icon(Icons.fingerprint),
-                                    title: Text('Fingerprint'),
-                                    trailing: Switch.adaptive(
-                                      value: false,
-                                      onChanged: (value) {},
-                                    ),
-                                  ),
-                                  ListTile(
-                                    leading: Icon(Icons.map),
-                                    title: Text('Navigation'),
-                                    trailing: Switch.adaptive(
-                                      value: true,
-                                      onChanged: (value) {},
-                                    ),
-                                  ),
-                                ],
-                              ),
+                title: 'App Settings',
+                showFullScreen: true,
+                leadingColor: Colors.white,
+                child: Builder(
+                  builder: (navigator) => Scaffold(
+                    body: SingleChildScrollView(
+                      child: Column(
+                        children: <Widget>[
+                          ListTile(
+                            leading: Icon(Icons.brightness_auto),
+                            title: Text('Brightness'),
+                            trailing: Switch.adaptive(
+                              value: true,
+                              onChanged: (value) {},
                             ),
                           ),
+                          ListTile(
+                            leading: Icon(Icons.fingerprint),
+                            title: Text('Fingerprint'),
+                            trailing: Switch.adaptive(
+                              value: false,
+                              onChanged: (value) {},
+                            ),
+                          ),
+                          ListTile(
+                            leading: Icon(Icons.map),
+                            title: Text('Navigation'),
+                            trailing: Switch.adaptive(
+                              value: true,
+                              onChanged: (value) {},
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
                   ),
+                ),
+              ),
             );
           },
         ),

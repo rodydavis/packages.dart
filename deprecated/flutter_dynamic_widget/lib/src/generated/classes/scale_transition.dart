@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScaleTransitionBase extends BaseWidget {
-    ScaleTransitionBase();
+  ScaleTransitionBase();
 
-    factory ScaleTransitionBase.fromJson(Map<String, dynamic> data) {
-        return ScaleTransitionBase();
-    }
+  factory ScaleTransitionBase.fromJson(Map<String, dynamic> data) {
+    return ScaleTransitionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animates the scale of a transformed widget.
 
 Here's an illustration of the [ScaleTransition] widget, with it's [alignment]
@@ -70,13 +70,13 @@ See also:
    aligns its child.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

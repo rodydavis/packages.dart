@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FadeTransitionBase extends BaseWidget {
-    FadeTransitionBase();
+  FadeTransitionBase();
 
-    factory FadeTransitionBase.fromJson(Map<String, dynamic> data) {
-        return FadeTransitionBase();
-    }
+  factory FadeTransitionBase.fromJson(Map<String, dynamic> data) {
+    return FadeTransitionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animates the opacity of a widget.
 
 For a widget that automatically animates between the sizes of two children,
@@ -70,13 +70,13 @@ See also:
    explicit [Animation] argument.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

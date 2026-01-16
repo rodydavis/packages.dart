@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderMouseRegionBase extends BaseWidget {
-    RenderMouseRegionBase();
+  RenderMouseRegionBase();
 
-    factory RenderMouseRegionBase.fromJson(Map<String, dynamic> data) {
-        return RenderMouseRegionBase();
-    }
+  factory RenderMouseRegionBase.fromJson(Map<String, dynamic> data) {
+    return RenderMouseRegionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Calls callbacks in response to pointer events that are exclusive to mice.
 
 It responds to events that are related to hovering, i.e. when the mouse
@@ -29,13 +29,13 @@ See also:
    [RenderMouseRegion].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

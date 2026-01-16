@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FlutterErrorDetailsBase extends BaseWidget {
-    FlutterErrorDetailsBase();
+  FlutterErrorDetailsBase();
 
-    factory FlutterErrorDetailsBase.fromJson(Map<String, dynamic> data) {
-        return FlutterErrorDetailsBase();
-    }
+  factory FlutterErrorDetailsBase.fromJson(Map<String, dynamic> data) {
+    return FlutterErrorDetailsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Class for information provided to [FlutterExceptionHandler] callbacks.
 
 {@tool snippet}
@@ -37,13 +37,13 @@ See also:
     catches an error.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

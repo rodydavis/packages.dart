@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class ListWheelChildLoopingListDelegateBase extends BaseWidget {
-    ListWheelChildLoopingListDelegateBase();
+  ListWheelChildLoopingListDelegateBase();
 
-    factory ListWheelChildLoopingListDelegateBase.fromJson(Map<String, dynamic> data) {
-        return ListWheelChildLoopingListDelegateBase();
-    }
+  factory ListWheelChildLoopingListDelegateBase.fromJson(
+      Map<String, dynamic> data) {
+    return ListWheelChildLoopingListDelegateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A delegate that supplies infinite children for [ListWheelScrollView] by
 looping an explicit list.
 
@@ -31,13 +32,13 @@ demand). For example, the body of a dialog box might fit both of these
 conditions.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

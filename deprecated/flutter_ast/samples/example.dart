@@ -7,7 +7,7 @@
 
 // /// This is a doc comment
 // class MyScreen extends StatelessWidget {
-//   const MyScreen(this.position, {Key key, this.myField = false, this.mySecondField = 1, 
+//   const MyScreen(this.position, {Key key, this.myField = false, this.mySecondField = 1,
 //   this.numField = 3,
 //   this.mapField = const {},
 //   this.dateField,

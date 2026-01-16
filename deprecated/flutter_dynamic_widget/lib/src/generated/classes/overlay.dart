@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OverlayBase extends BaseWidget {
-    OverlayBase();
+  OverlayBase();
 
-    factory OverlayBase.fromJson(Map<String, dynamic> data) {
-        return OverlayBase();
-    }
+  factory OverlayBase.fromJson(Map<String, dynamic> data) {
+    return OverlayBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [Stack] of entries that can be managed independently.
 
 Overlays let independent child widgets "float" visual elements on top of
@@ -28,13 +28,13 @@ See also:
  * [MaterialApp].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

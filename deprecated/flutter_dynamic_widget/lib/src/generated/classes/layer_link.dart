@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LayerLinkBase extends BaseWidget {
-    LayerLinkBase();
+  LayerLinkBase();
 
-    factory LayerLinkBase.fromJson(Map<String, dynamic> data) {
-        return LayerLinkBase();
-    }
+  factory LayerLinkBase.fromJson(Map<String, dynamic> data) {
+    return LayerLinkBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An object that a [LeaderLayer] can register with.
 
 An instance of this class should be provided as the [LeaderLayer.link] and
@@ -23,13 +23,13 @@ See also:
    render objects.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

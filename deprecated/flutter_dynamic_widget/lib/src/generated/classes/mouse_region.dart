@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MouseRegionBase extends BaseWidget {
-    MouseRegionBase();
+  MouseRegionBase();
 
-    factory MouseRegionBase.fromJson(Map<String, dynamic> data) {
-        return MouseRegionBase();
-    }
+  factory MouseRegionBase.fromJson(Map<String, dynamic> data) {
+    return MouseRegionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that tracks the movement of mice, even when no button is pressed.
 
 It does not listen to events that can construct gestures, such as when the
@@ -89,13 +89,13 @@ See also:
    has buttons pressed.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

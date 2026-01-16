@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DecoratedBoxBase extends BaseWidget {
-    DecoratedBoxBase();
+  DecoratedBoxBase();
 
-    factory DecoratedBoxBase.fromJson(Map<String, dynamic> data) {
-        return DecoratedBoxBase();
-    }
+  factory DecoratedBoxBase.fromJson(Map<String, dynamic> data) {
+    return DecoratedBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that paints a [Decoration] either before or after its child paints.
 
 [Container] insets its child by the widths of the borders; this widget does
@@ -51,13 +51,13 @@ See also:
  * [CustomPaint], another way to draw custom effects from the widget layer.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

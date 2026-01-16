@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PointerDownEventBase extends BaseWidget {
-    PointerDownEventBase();
+  PointerDownEventBase();
 
-    factory PointerDownEventBase.fromJson(Map<String, dynamic> data) {
-        return PointerDownEventBase();
-    }
+  factory PointerDownEventBase.fromJson(Map<String, dynamic> data) {
+    return PointerDownEventBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The pointer has made contact with the device.
 
 See also:
@@ -17,13 +17,13 @@ See also:
    events in a widget tree.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ColorTweenBase extends BaseWidget {
-    ColorTweenBase();
+  ColorTweenBase();
 
-    factory ColorTweenBase.fromJson(Map<String, dynamic> data) {
-        return ColorTweenBase();
-    }
+  factory ColorTweenBase.fromJson(Map<String, dynamic> data) {
+    return ColorTweenBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An interpolation between two colors.
 
 This class specializes the interpolation of [Tween<Color>] to use
@@ -20,13 +20,13 @@ transparent black, as represented by [Colors.transparent]).
 See [Tween] for a discussion on how to use interpolation objects.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

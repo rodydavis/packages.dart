@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ObjectFlagPropertyBase extends BaseWidget {
-    ObjectFlagPropertyBase();
+  ObjectFlagPropertyBase();
 
-    factory ObjectFlagPropertyBase.fromJson(Map<String, dynamic> data) {
-        return ObjectFlagPropertyBase();
-    }
+  factory ObjectFlagPropertyBase.fromJson(Map<String, dynamic> data) {
+    return ObjectFlagPropertyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A property where the important diagnostic information is primarily whether
 the [value] is present (non-null) or absent (null), rather than the actual
 value of the property itself.
@@ -33,13 +33,13 @@ See also:
    a [value] is true or false.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

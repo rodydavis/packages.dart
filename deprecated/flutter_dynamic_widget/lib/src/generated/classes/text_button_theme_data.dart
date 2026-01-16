@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextButtonThemeDataBase extends BaseWidget {
-    TextButtonThemeDataBase();
+  TextButtonThemeDataBase();
 
-    factory TextButtonThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return TextButtonThemeDataBase();
-    }
+  factory TextButtonThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return TextButtonThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [ButtonStyle] that overrides the default appearance of
 [TextButton]s when it's used with [TextButtonTheme] or with the
 overall [Theme]'s [ThemeData.textButtonTheme].
@@ -31,13 +31,13 @@ See also:
    [ButtonStyle] for [TextButton]s below the overall [Theme].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

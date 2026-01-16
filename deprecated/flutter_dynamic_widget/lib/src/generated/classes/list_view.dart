@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ListViewBase extends BaseWidget {
-    ListViewBase();
+  ListViewBase();
 
-    factory ListViewBase.fromJson(Map<String, dynamic> data) {
-        return ListViewBase();
-    }
+  factory ListViewBase.fromJson(Map<String, dynamic> data) {
+    return ListViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A scrollable list of widgets arranged linearly.
 
 {@youtube 560 315 https://www.youtube.com/watch?v=KJpkjHGiI5A}
@@ -331,13 +331,13 @@ See also:
  * Cookbook: [Implement swipe to dismiss](https://flutter.dev/docs/cookbook/gestures/dismissible)
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

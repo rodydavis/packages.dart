@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class NavigationRailBase extends BaseWidget {
-    NavigationRailBase();
+  NavigationRailBase();
 
-    factory NavigationRailBase.fromJson(Map<String, dynamic> data) {
-        return NavigationRailBase();
-    }
+  factory NavigationRailBase.fromJson(Map<String, dynamic> data) {
+    return NavigationRailBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material widget that is meant to be displayed at the left or right of an
 app to navigate between a small number of views, typically between three and
 five.
@@ -97,13 +97,13 @@ See also:
  * [https://material.io/components/navigation-rail/]
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

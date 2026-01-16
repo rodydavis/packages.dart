@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FormBase extends BaseWidget {
-    FormBase();
+  FormBase();
 
-    factory FormBase.fromJson(Map<String, dynamic> data) {
-        return FormBase();
-    }
+  factory FormBase.fromJson(Map<String, dynamic> data) {
+    return FormBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An optional container for grouping together multiple form field widgets
 (e.g. [TextField] widgets).
 
@@ -74,13 +74,13 @@ See also:
  * [TextFormField], a convenience widget that wraps a [TextField] widget in a [FormField].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

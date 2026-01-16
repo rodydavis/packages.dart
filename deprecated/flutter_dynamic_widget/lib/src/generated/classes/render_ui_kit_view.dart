@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderUiKitViewBase extends BaseWidget {
-    RenderUiKitViewBase();
+  RenderUiKitViewBase();
 
-    factory RenderUiKitViewBase.fromJson(Map<String, dynamic> data) {
-        return RenderUiKitViewBase();
-    }
+  factory RenderUiKitViewBase.fromJson(Map<String, dynamic> data) {
+    return RenderUiKitViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A render object for an iOS UIKit UIView.
 
 {@template flutter.rendering.platformView.preview}
@@ -33,13 +33,13 @@ See also:
  * [PlatformViewsService] which is a service for controlling platform views.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

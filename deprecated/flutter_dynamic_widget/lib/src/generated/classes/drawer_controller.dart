@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DrawerControllerBase extends BaseWidget {
-    DrawerControllerBase();
+  DrawerControllerBase();
 
-    factory DrawerControllerBase.fromJson(Map<String, dynamic> data) {
-        return DrawerControllerBase();
-    }
+  factory DrawerControllerBase.fromJson(Map<String, dynamic> data) {
+    return DrawerControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Provides interactive behavior for [Drawer] widgets.
 
 Rarely used directly. Drawer controllers are typically created automatically
@@ -25,13 +25,13 @@ See also:
  * [Scaffold.drawer], the [Scaffold] slot for showing a drawer.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

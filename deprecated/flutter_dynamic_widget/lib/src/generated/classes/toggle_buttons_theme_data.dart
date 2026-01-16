@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ToggleButtonsThemeDataBase extends BaseWidget {
-    ToggleButtonsThemeDataBase();
+  ToggleButtonsThemeDataBase();
 
-    factory ToggleButtonsThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return ToggleButtonsThemeDataBase();
-    }
+  factory ToggleButtonsThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return ToggleButtonsThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines the color and border properties of [ToggleButtons] widgets.
 
 Used by [ToggleButtonsTheme] to control the color and border properties
@@ -25,13 +25,13 @@ See also:
    toggle buttons theme.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

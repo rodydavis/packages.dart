@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MaterialPageBase extends BaseWidget {
-    MaterialPageBase();
+  MaterialPageBase();
 
-    factory MaterialPageBase.fromJson(Map<String, dynamic> data) {
-        return MaterialPageBase();
-    }
+  factory MaterialPageBase.fromJson(Map<String, dynamic> data) {
+    return MaterialPageBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A page that creates a material style [PageRoute].
 
 {@macro flutter.material.materialRouteTransitionMixin}
@@ -31,13 +31,13 @@ See also:
  * [MaterialPageRoute], which is the [PageRoute] version of this class
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

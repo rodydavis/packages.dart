@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ParentDataBase extends BaseWidget {
-    ParentDataBase();
+  ParentDataBase();
 
-    factory ParentDataBase.fromJson(Map<String, dynamic> data) {
-        return ParentDataBase();
-    }
+  factory ParentDataBase.fromJson(Map<String, dynamic> data) {
+    return ParentDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Base class for data associated with a [RenderObject] by its parent.
 
 Some render objects wish to store data on their children, such as the
@@ -21,13 +21,13 @@ See also:
    override to attach specific types of parent data to children.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

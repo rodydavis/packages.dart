@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FormStateBase extends BaseWidget {
-    FormStateBase();
+  FormStateBase();
 
-    factory FormStateBase.fromJson(Map<String, dynamic> data) {
-        return FormStateBase();
-    }
+  factory FormStateBase.fromJson(Map<String, dynamic> data) {
+    return FormStateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 State associated with a [Form] widget.
 
 A [FormState] object can be used to [save], [reset], and [validate] every
@@ -17,13 +17,13 @@ A [FormState] object can be used to [save], [reset], and [validate] every
 Typically obtained via [Form.of].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

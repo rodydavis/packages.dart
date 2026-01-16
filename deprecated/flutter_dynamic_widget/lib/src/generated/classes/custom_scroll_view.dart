@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CustomScrollViewBase extends BaseWidget {
-    CustomScrollViewBase();
+  CustomScrollViewBase();
 
-    factory CustomScrollViewBase.fromJson(Map<String, dynamic> data) {
-        return CustomScrollViewBase();
-    }
+  factory CustomScrollViewBase.fromJson(Map<String, dynamic> data) {
+    return CustomScrollViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [ScrollView] that creates custom scroll effects using slivers.
 
 A [CustomScrollView] lets you supply [slivers] directly to create various
@@ -192,13 +192,13 @@ See also:
    for scroll announcements.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SystemMouseCursorsBase extends BaseWidget {
-    SystemMouseCursorsBase();
+  SystemMouseCursorsBase();
 
-    factory SystemMouseCursorsBase.fromJson(Map<String, dynamic> data) {
-        return SystemMouseCursorsBase();
-    }
+  factory SystemMouseCursorsBase.fromJson(Map<String, dynamic> data) {
+    return SystemMouseCursorsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A collection of system [MouseCursor]s.
 
 System cursors are standard mouse cursors that are provided by the current
@@ -24,13 +24,13 @@ appearance, because different platforms might (although not commonly) use
 different shapes for the same use case.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

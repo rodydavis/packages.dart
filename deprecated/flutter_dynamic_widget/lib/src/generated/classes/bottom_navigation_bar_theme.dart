@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BottomNavigationBarThemeBase extends BaseWidget {
-    BottomNavigationBarThemeBase();
+  BottomNavigationBarThemeBase();
 
-    factory BottomNavigationBarThemeBase.fromJson(Map<String, dynamic> data) {
-        return BottomNavigationBarThemeBase();
-    }
+  factory BottomNavigationBarThemeBase.fromJson(Map<String, dynamic> data) {
+    return BottomNavigationBarThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Applies a bottom navigation bar theme to descendant [BottomNavigationBar]
 widgets.
 
@@ -26,13 +26,13 @@ See also:
    of a bottom navigation bar theme.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

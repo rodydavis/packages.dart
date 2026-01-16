@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class CupertinoPageTransitionsBuilderBase extends BaseWidget {
-    CupertinoPageTransitionsBuilderBase();
+  CupertinoPageTransitionsBuilderBase();
 
-    factory CupertinoPageTransitionsBuilderBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoPageTransitionsBuilderBase();
-    }
+  factory CupertinoPageTransitionsBuilderBase.fromJson(
+      Map<String, dynamic> data) {
+    return CupertinoPageTransitionsBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Used by [PageTransitionsTheme] to define a horizontal [MaterialPageRoute]
 page transition animation that matches native iOS page transitions.
 
@@ -21,13 +22,13 @@ See also:
    to the one provided in Android 10.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

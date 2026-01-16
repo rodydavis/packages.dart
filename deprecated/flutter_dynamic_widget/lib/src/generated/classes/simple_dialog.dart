@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SimpleDialogBase extends BaseWidget {
-    SimpleDialogBase();
+  SimpleDialogBase();
 
-    factory SimpleDialogBase.fromJson(Map<String, dynamic> data) {
-        return SimpleDialogBase();
-    }
+  factory SimpleDialogBase.fromJson(Map<String, dynamic> data) {
+    return SimpleDialogBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A simple material design dialog.
 
 A simple dialog offers the user a choice between several options. A simple
@@ -80,13 +80,13 @@ See also:
  * <https://material.io/design/components/dialogs.html#simple-dialog>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

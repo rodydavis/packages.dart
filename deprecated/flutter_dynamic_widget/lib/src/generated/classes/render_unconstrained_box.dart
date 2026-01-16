@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderUnconstrainedBoxBase extends BaseWidget {
-    RenderUnconstrainedBoxBase();
+  RenderUnconstrainedBoxBase();
 
-    factory RenderUnconstrainedBoxBase.fromJson(Map<String, dynamic> data) {
-        return RenderUnconstrainedBoxBase();
-    }
+  factory RenderUnconstrainedBoxBase.fromJson(Map<String, dynamic> data) {
+    return RenderUnconstrainedBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Renders a box, imposing no constraints on its child, allowing the child to
 render at its "natural" size.
 
@@ -35,13 +35,13 @@ See also:
    overflow.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

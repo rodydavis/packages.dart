@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OutlineInputBorderBase extends BaseWidget {
-    OutlineInputBorderBase();
+  OutlineInputBorderBase();
 
-    factory OutlineInputBorderBase.fromJson(Map<String, dynamic> data) {
-        return OutlineInputBorderBase();
-    }
+  factory OutlineInputBorderBase.fromJson(Map<String, dynamic> data) {
+    return OutlineInputBorderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Draws a rounded rectangle around an [InputDecorator]'s container.
 
 When the input decorator's label is floating, for example because its
@@ -24,13 +24,13 @@ See also:
  * [InputDecoration], which is used to configure an [InputDecorator].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

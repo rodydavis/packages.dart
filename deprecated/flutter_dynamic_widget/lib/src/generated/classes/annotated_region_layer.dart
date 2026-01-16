@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnnotatedRegionLayerBase extends BaseWidget {
-    AnnotatedRegionLayerBase();
+  AnnotatedRegionLayerBase();
 
-    factory AnnotatedRegionLayerBase.fromJson(Map<String, dynamic> data) {
-        return AnnotatedRegionLayerBase();
-    }
+  factory AnnotatedRegionLayerBase.fromJson(Map<String, dynamic> data) {
+    return AnnotatedRegionLayerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A composited layer which annotates its children with a value. Pushing this
 layer to the tree is the common way of adding an annotation.
 
@@ -32,13 +32,13 @@ This layer is opaque to a type of annotation if any child is also opaque, or
 if [opaque] is true and the layer's annotation is added.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

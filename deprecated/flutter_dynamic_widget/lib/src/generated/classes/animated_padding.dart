@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedPaddingBase extends BaseWidget {
-    AnimatedPaddingBase();
+  AnimatedPaddingBase();
 
-    factory AnimatedPaddingBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedPaddingBase();
-    }
+  factory AnimatedPaddingBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedPaddingBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of [Padding] which automatically transitions the
 indentation over a given duration whenever the given inset changes.
 
@@ -26,13 +26,13 @@ See also:
    [AnimatedAlign.alignment] changes.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FocusableActionDetectorBase extends BaseWidget {
-    FocusableActionDetectorBase();
+  FocusableActionDetectorBase();
 
-    factory FocusableActionDetectorBase.fromJson(Map<String, dynamic> data) {
-        return FocusableActionDetectorBase();
-    }
+  factory FocusableActionDetectorBase.fromJson(Map<String, dynamic> data) {
+    return FocusableActionDetectorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that combines the functionality of [Actions], [Shortcuts],
 [MouseRegion] and a [Focus] widget to create a detector that defines actions
 and key bindings, and provides callbacks for handling focus and hover
@@ -157,13 +157,13 @@ provides focus and hover capabilities.
 It hosts its own [FocusNode] or uses [focusNode], if given.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

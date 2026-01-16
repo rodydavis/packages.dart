@@ -23,7 +23,6 @@ class PaddingBase extends _$PaddingBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

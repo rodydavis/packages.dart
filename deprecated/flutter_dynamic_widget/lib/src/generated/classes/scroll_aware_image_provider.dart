@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollAwareImageProviderBase extends BaseWidget {
-    ScrollAwareImageProviderBase();
+  ScrollAwareImageProviderBase();
 
-    factory ScrollAwareImageProviderBase.fromJson(Map<String, dynamic> data) {
-        return ScrollAwareImageProviderBase();
-    }
+  factory ScrollAwareImageProviderBase.fromJson(Map<String, dynamic> data) {
+    return ScrollAwareImageProviderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An [ImageProvider] that makes use of
 [Scrollable.recommendDeferredLoadingForContext] to avoid loading images when
 rapidly scrolling.
@@ -40,13 +40,13 @@ overutilization of resources for images that would never appear on screen or
 only be visible for a very brief period.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

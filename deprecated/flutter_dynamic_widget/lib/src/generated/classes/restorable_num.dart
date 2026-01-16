@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RestorableNumBase extends BaseWidget {
-    RestorableNumBase();
+  RestorableNumBase();
 
-    factory RestorableNumBase.fromJson(Map<String, dynamic> data) {
-        return RestorableNumBase();
-    }
+  factory RestorableNumBase.fromJson(Map<String, dynamic> data) {
+    return RestorableNumBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [RestorableProperty] that knows how to store and restore a [num].
 
 {@template flutter.widgets.restoration.primitivevalue}
@@ -25,13 +25,13 @@ one of the more specific subclasses (e.g. [RestorableDouble] to store a
 [double] and [RestorableInt] to store an [int]).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

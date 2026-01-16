@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PaginatedDataTableBase extends BaseWidget {
-    PaginatedDataTableBase();
+  PaginatedDataTableBase();
 
-    factory PaginatedDataTableBase.fromJson(Map<String, dynamic> data) {
-        return PaginatedDataTableBase();
-    }
+  factory PaginatedDataTableBase.fromJson(Map<String, dynamic> data) {
+    return PaginatedDataTableBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design data table that shows data using multiple pages.
 
 A paginated data table shows [rowsPerPage] rows of data per page and
@@ -23,13 +23,13 @@ See also:
  * <https://material.io/go/design-data-tables#data-tables-tables-within-cards>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

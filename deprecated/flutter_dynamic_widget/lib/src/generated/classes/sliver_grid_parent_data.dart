@@ -1,24 +1,24 @@
 import '../base.dart';
 
 class SliverGridParentDataBase extends BaseWidget {
-    SliverGridParentDataBase();
+  SliverGridParentDataBase();
 
-    factory SliverGridParentDataBase.fromJson(Map<String, dynamic> data) {
-        return SliverGridParentDataBase();
-    }
+  factory SliverGridParentDataBase.fromJson(Map<String, dynamic> data) {
+    return SliverGridParentDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Parent data structure used by [RenderSliverGrid].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ActionListenerBase extends BaseWidget {
-    ActionListenerBase();
+  ActionListenerBase();
 
-    factory ActionListenerBase.fromJson(Map<String, dynamic> data) {
-        return ActionListenerBase();
-    }
+  factory ActionListenerBase.fromJson(Map<String, dynamic> data) {
+    return ActionListenerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A helper widget for making sure that listeners on an action are removed properly.
 
 Listeners on the [Action] class must have their listener callbacks removed
@@ -22,13 +22,13 @@ this widget. If you are using an [Action] outside of a widget context, then
 you must call removeListener yourself.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MouseTrackerAnnotationBase extends BaseWidget {
-    MouseTrackerAnnotationBase();
+  MouseTrackerAnnotationBase();
 
-    factory MouseTrackerAnnotationBase.fromJson(Map<String, dynamic> data) {
-        return MouseTrackerAnnotationBase();
-    }
+  factory MouseTrackerAnnotationBase.fromJson(Map<String, dynamic> data) {
+    return MouseTrackerAnnotationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The annotation object used to annotate regions that are interested in mouse
 movements.
 
@@ -30,13 +30,13 @@ See also:
  * [BaseMouseTracker], which uses [MouseTrackerAnnotation].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoDatePickerBase extends BaseWidget {
-    CupertinoDatePickerBase();
+  CupertinoDatePickerBase();
 
-    factory CupertinoDatePickerBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoDatePickerBase();
-    }
+  factory CupertinoDatePickerBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoDatePickerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A date picker widget in iOS style.
 
 There are several modes of the date picker listed in [CupertinoDatePickerMode].
@@ -34,13 +34,13 @@ See also:
  * [CupertinoPicker], the class that implements a content agnostic spinner UI.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

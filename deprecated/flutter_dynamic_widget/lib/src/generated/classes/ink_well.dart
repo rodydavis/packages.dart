@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InkWellBase extends BaseWidget {
-    InkWellBase();
+  InkWellBase();
 
-    factory InkWellBase.fromJson(Map<String, dynamic> data) {
-        return InkWellBase();
-    }
+  factory InkWellBase.fromJson(Map<String, dynamic> data) {
+    return InkWellBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A rectangular area of a [Material] that responds to touch.
 
 For a variant of this widget that does not clip splashes, see [InkResponse].
@@ -99,13 +99,13 @@ See also:
    shape on the ink reaction.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

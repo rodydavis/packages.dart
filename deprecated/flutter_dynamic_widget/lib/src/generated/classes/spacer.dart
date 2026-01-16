@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SpacerBase extends BaseWidget {
-    SpacerBase();
+  SpacerBase();
 
-    factory SpacerBase.fromJson(Map<String, dynamic> data) {
-        return SpacerBase();
-    }
+  factory SpacerBase.fromJson(Map<String, dynamic> data) {
+    return SpacerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Spacer creates an adjustable, empty spacer that can be used to tune the
 spacing between widgets in a [Flex] container, like [Row] or [Column].
 
@@ -44,13 +44,13 @@ See also:
  * [SizedBox], to create a box with a specific size and an optional child.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

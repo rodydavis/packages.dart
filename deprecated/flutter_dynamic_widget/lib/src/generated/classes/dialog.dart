@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DialogBase extends BaseWidget {
-    DialogBase();
+  DialogBase();
 
-    factory DialogBase.fromJson(Map<String, dynamic> data) {
-        return DialogBase();
-    }
+  factory DialogBase.fromJson(Map<String, dynamic> data) {
+    return DialogBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design dialog.
 
 This dialog widget does not have any opinion about the contents of the
@@ -24,13 +24,13 @@ See also:
  * <https://material.io/design/components/dialogs.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

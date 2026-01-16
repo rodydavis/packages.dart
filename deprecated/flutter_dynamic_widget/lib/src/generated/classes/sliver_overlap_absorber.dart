@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverOverlapAbsorberBase extends BaseWidget {
-    SliverOverlapAbsorberBase();
+  SliverOverlapAbsorberBase();
 
-    factory SliverOverlapAbsorberBase.fromJson(Map<String, dynamic> data) {
-        return SliverOverlapAbsorberBase();
-    }
+  factory SliverOverlapAbsorberBase.fromJson(Map<String, dynamic> data) {
+    return SliverOverlapAbsorberBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver that wraps another, forcing its layout extent to be treated as
 overlap.
 
@@ -23,13 +23,13 @@ See also:
    use this widget.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

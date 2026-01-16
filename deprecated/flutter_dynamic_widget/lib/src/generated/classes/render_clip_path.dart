@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderClipPathBase extends BaseWidget {
-    RenderClipPathBase();
+  RenderClipPathBase();
 
-    factory RenderClipPathBase.fromJson(Map<String, dynamic> data) {
-        return RenderClipPathBase();
-    }
+  factory RenderClipPathBase.fromJson(Map<String, dynamic> data) {
+    return RenderClipPathBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Clips its child using a path.
 
 Takes a delegate whose primary method returns a path that should
@@ -22,13 +22,13 @@ optimized render objects:
  * To clip to a rounded rectangle, consider [RenderClipRRect].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

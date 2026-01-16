@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RadioListTileBase extends BaseWidget {
-    RadioListTileBase();
+  RadioListTileBase();
 
-    factory RadioListTileBase.fromJson(Map<String, dynamic> data) {
-        return RadioListTileBase();
-    }
+  factory RadioListTileBase.fromJson(Map<String, dynamic> data) {
+    return RadioListTileBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [ListTile] with a [Radio]. In other words, a radio button with a label.
 
 The entire list tile is interactive: tapping anywhere in the tile selects
@@ -289,13 +289,13 @@ See also:
  * [ListTile] and [Radio], the widgets from which this widget is made.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

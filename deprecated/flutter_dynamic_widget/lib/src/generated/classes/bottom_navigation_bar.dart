@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BottomNavigationBarBase extends BaseWidget {
-    BottomNavigationBarBase();
+  BottomNavigationBarBase();
 
-    factory BottomNavigationBarBase.fromJson(Map<String, dynamic> data) {
-        return BottomNavigationBarBase();
-    }
+  factory BottomNavigationBarBase.fromJson(Map<String, dynamic> data) {
+    return BottomNavigationBarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material widget that's displayed at the bottom of an app for selecting
 among a small number of views, typically between three and five.
 
@@ -112,13 +112,13 @@ See also:
  * <https://material.io/design/components/bottom-navigation.html>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

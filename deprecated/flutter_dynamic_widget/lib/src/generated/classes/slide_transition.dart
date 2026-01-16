@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SlideTransitionBase extends BaseWidget {
-    SlideTransitionBase();
+  SlideTransitionBase();
 
-    factory SlideTransitionBase.fromJson(Map<String, dynamic> data) {
-        return SlideTransitionBase();
-    }
+  factory SlideTransitionBase.fromJson(Map<String, dynamic> data) {
+    return SlideTransitionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animates the position of a widget relative to its normal position.
 
 The translation is expressed as an [Offset] scaled to the child's size. For
@@ -80,13 +80,13 @@ See also:
    position based on the value of a rectangle relative to a bounding box.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

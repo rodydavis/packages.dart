@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CupertinoDialogActionBase extends BaseWidget {
-    CupertinoDialogActionBase();
+  CupertinoDialogActionBase();
 
-    factory CupertinoDialogActionBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoDialogActionBase();
-    }
+  factory CupertinoDialogActionBase.fromJson(Map<String, dynamic> data) {
+    return CupertinoDialogActionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A button typically used in a [CupertinoAlertDialog].
 
 See also:
@@ -17,13 +17,13 @@ See also:
    that require acknowledgement.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

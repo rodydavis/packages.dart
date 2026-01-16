@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderFlowBase extends BaseWidget {
-    RenderFlowBase();
+  RenderFlowBase();
 
-    factory RenderFlowBase.fromJson(Map<String, dynamic> data) {
-        return RenderFlowBase();
-    }
+  factory RenderFlowBase.fromJson(Map<String, dynamic> data) {
+    return RenderFlowBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Implements the flow layout algorithm.
 
 Flow layouts are optimized for repositioning children using transformation
@@ -35,13 +35,13 @@ See also:
  * [RenderStack]
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

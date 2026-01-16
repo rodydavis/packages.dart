@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class InkSplashBase extends BaseWidget {
-    InkSplashBase();
+  InkSplashBase();
 
-    factory InkSplashBase.fromJson(Map<String, dynamic> data) {
-        return InkSplashBase();
-    }
+  factory InkSplashBase.fromJson(Map<String, dynamic> data) {
+    return InkSplashBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A visual reaction on a piece of [Material] to user input.
 
 A circular ink feature whose origin starts at the input touch point
@@ -33,13 +33,13 @@ See also:
    Material widgets.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PaintingContextBase extends BaseWidget {
-    PaintingContextBase();
+  PaintingContextBase();
 
-    factory PaintingContextBase.fromJson(Map<String, dynamic> data) {
-        return PaintingContextBase();
-    }
+  factory PaintingContextBase.fromJson(Map<String, dynamic> data) {
+    return PaintingContextBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A place to paint.
 
 Rather than holding a canvas directly, [RenderObject]s paint using a painting
@@ -26,13 +26,13 @@ New [PaintingContext] objects are created automatically when using
 [PaintingContext.repaintCompositedChild] and [pushLayer].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

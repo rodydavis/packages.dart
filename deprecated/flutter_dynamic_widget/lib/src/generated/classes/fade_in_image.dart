@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FadeInImageBase extends BaseWidget {
-    FadeInImageBase();
+  FadeInImageBase();
 
-    factory FadeInImageBase.fromJson(Map<String, dynamic> data) {
-        return FadeInImageBase();
-    }
+  factory FadeInImageBase.fromJson(Map<String, dynamic> data) {
+    return FadeInImageBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An image that shows a [placeholder] image while the target [image] is
 loading, then fades in the new image when it loads.
 
@@ -57,13 +57,13 @@ FadeInImage(
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

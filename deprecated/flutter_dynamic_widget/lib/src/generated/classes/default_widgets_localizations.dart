@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DefaultWidgetsLocalizationsBase extends BaseWidget {
-    DefaultWidgetsLocalizationsBase();
+  DefaultWidgetsLocalizationsBase();
 
-    factory DefaultWidgetsLocalizationsBase.fromJson(Map<String, dynamic> data) {
-        return DefaultWidgetsLocalizationsBase();
-    }
+  factory DefaultWidgetsLocalizationsBase.fromJson(Map<String, dynamic> data) {
+    return DefaultWidgetsLocalizationsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 US English localizations for the widgets library.
 
 See also:
@@ -19,13 +19,13 @@ See also:
    [DefaultWidgetsLocalizations.delegate] by default.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

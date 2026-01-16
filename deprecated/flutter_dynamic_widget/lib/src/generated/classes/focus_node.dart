@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FocusNodeBase extends BaseWidget {
-    FocusNodeBase();
+  FocusNodeBase();
 
-    factory FocusNodeBase.fromJson(Map<String, dynamic> data) {
-        return FocusNodeBase();
-    }
+  factory FocusNodeBase.fromJson(Map<String, dynamic> data) {
+    return FocusNodeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An object that can be used by a stateful widget to obtain the keyboard focus
 and to handle keyboard events.
 
@@ -246,13 +246,13 @@ See also:
   other nodes.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

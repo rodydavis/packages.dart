@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OpacityLayerBase extends BaseWidget {
-    OpacityLayerBase();
+  OpacityLayerBase();
 
-    factory OpacityLayerBase.fromJson(Map<String, dynamic> data) {
-        return OpacityLayerBase();
-    }
+  factory OpacityLayerBase.fromJson(Map<String, dynamic> data) {
+    return OpacityLayerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A composited layer that makes its children partially transparent.
 
 When debugging, setting [debugDisableOpacityLayers] to true will cause this
@@ -19,13 +19,13 @@ Try to avoid an [OpacityLayer] with no children. Remove that layer if
 possible to save some tree walks.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

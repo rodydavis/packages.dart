@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BorderRadiusDirectionalBase extends BaseWidget {
-    BorderRadiusDirectionalBase();
+  BorderRadiusDirectionalBase();
 
-    factory BorderRadiusDirectionalBase.fromJson(Map<String, dynamic> data) {
-        return BorderRadiusDirectionalBase();
-    }
+  factory BorderRadiusDirectionalBase.fromJson(Map<String, dynamic> data) {
+    return BorderRadiusDirectionalBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An immutable set of radii for each corner of a rectangle, but with the
 corners specified in a manner dependent on the writing direction.
 
@@ -23,13 +23,13 @@ See also:
    `topRight` instead of `topStart` and `topEnd`).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AndroidViewBase extends BaseWidget {
-    AndroidViewBase();
+  AndroidViewBase();
 
-    factory AndroidViewBase.fromJson(Map<String, dynamic> data) {
-        return AndroidViewBase();
-    }
+  factory AndroidViewBase.fromJson(Map<String, dynamic> data) {
+    return AndroidViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Embeds an Android view in the Widget hierarchy.
 
 Requires Android API level 20 or greater.
@@ -53,13 +53,13 @@ or it has a [GlobalKey] and it's moved within the tree, it will not be disposed.
 {@endtemplate}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class FloatingActionButtonThemeDataBase extends BaseWidget {
-    FloatingActionButtonThemeDataBase();
+  FloatingActionButtonThemeDataBase();
 
-    factory FloatingActionButtonThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return FloatingActionButtonThemeDataBase();
-    }
+  factory FloatingActionButtonThemeDataBase.fromJson(
+      Map<String, dynamic> data) {
+    return FloatingActionButtonThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines default property values for descendant [FloatingActionButton]
 widgets.
 
@@ -30,13 +31,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class GridViewBase extends BaseWidget {
-    GridViewBase();
+  GridViewBase();
 
-    factory GridViewBase.fromJson(Map<String, dynamic> data) {
-        return GridViewBase();
-    }
+  factory GridViewBase.fromJson(Map<String, dynamic> data) {
+    return GridViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A scrollable, 2D array of widgets.
 
 The main axis direction of a grid is the direction in which it scrolls (the
@@ -219,13 +219,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TickerBase extends BaseWidget {
-    TickerBase();
+  TickerBase();
 
-    factory TickerBase.fromJson(Map<String, dynamic> data) {
-        return TickerBase();
-    }
+  factory TickerBase.fromJson(Map<String, dynamic> data) {
+    return TickerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Calls its callback once per animation frame.
 
 When created, a ticker is initially disabled. Call [start] to
@@ -26,13 +26,13 @@ Tickers are driven by the [SchedulerBinding]. See
 [SchedulerBinding.scheduleFrameCallback].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

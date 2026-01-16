@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IntrinsicHeightBase extends BaseWidget {
-    IntrinsicHeightBase();
+  IntrinsicHeightBase();
 
-    factory IntrinsicHeightBase.fromJson(Map<String, dynamic> data) {
-        return IntrinsicHeightBase();
-    }
+  factory IntrinsicHeightBase.fromJson(Map<String, dynamic> data) {
+    return IntrinsicHeightBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that sizes its child to the child's intrinsic height.
 
 This class is useful, for example, when unlimited height is available and
@@ -40,13 +40,13 @@ See also:
  * [The catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

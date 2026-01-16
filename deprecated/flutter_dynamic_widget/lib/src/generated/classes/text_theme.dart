@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TextThemeBase extends BaseWidget {
-    TextThemeBase();
+  TextThemeBase();
 
-    factory TextThemeBase.fromJson(Map<String, dynamic> data) {
-        return TextThemeBase();
-    }
+  factory TextThemeBase.fromJson(Map<String, dynamic> data) {
+    return TextThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Material design text theme.
 
 Definitions for the various typographical styles found in Material Design
@@ -102,13 +102,13 @@ See also:
  * <https://material.io/design/typography/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

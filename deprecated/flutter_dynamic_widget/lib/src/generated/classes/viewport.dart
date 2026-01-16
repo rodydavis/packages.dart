@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ViewportBase extends BaseWidget {
-    ViewportBase();
+  ViewportBase();
 
-    factory ViewportBase.fromJson(Map<String, dynamic> data) {
-        return ViewportBase();
-    }
+  factory ViewportBase.fromJson(Map<String, dynamic> data) {
+    return ViewportBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that is bigger on the inside.
 
 [Viewport] is the visual workhorse of the scrolling machinery. It displays a
@@ -42,13 +42,13 @@ See also:
    contents along the main axis.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

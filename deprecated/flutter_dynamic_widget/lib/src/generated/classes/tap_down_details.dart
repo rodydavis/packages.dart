@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TapDownDetailsBase extends BaseWidget {
-    TapDownDetailsBase();
+  TapDownDetailsBase();
 
-    factory TapDownDetailsBase.fromJson(Map<String, dynamic> data) {
-        return TapDownDetailsBase();
-    }
+  factory TapDownDetailsBase.fromJson(Map<String, dynamic> data) {
+    return TapDownDetailsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Details for [GestureTapDownCallback], such as position.
 
 See also:
@@ -17,13 +17,13 @@ See also:
  * [TapGestureRecognizer], which passes this information to one of its callbacks.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

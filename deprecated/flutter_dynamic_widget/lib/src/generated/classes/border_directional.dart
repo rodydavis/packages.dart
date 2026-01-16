@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BorderDirectionalBase extends BaseWidget {
-    BorderDirectionalBase();
+  BorderDirectionalBase();
 
-    factory BorderDirectionalBase.fromJson(Map<String, dynamic> data) {
-        return BorderDirectionalBase();
-    }
+  factory BorderDirectionalBase.fromJson(Map<String, dynamic> data) {
+    return BorderDirectionalBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A border of a box, comprised of four sides, the lateral sides of which
 flip over based on the reading direction.
 
@@ -30,13 +30,13 @@ See also:
    to use for borders in a material app, as shown in the "divider" sample above.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

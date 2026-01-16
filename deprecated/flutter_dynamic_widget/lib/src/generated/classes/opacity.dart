@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OpacityBase extends BaseWidget {
-    OpacityBase();
+  OpacityBase();
 
-    factory OpacityBase.fromJson(Map<String, dynamic> data) {
-        return OpacityBase();
-    }
+  factory OpacityBase.fromJson(Map<String, dynamic> data) {
+    return OpacityBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that makes its child partially transparent.
 
 This class paints its child into an intermediate buffer and then blends the
@@ -89,13 +89,13 @@ See also:
    much less performance hit.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

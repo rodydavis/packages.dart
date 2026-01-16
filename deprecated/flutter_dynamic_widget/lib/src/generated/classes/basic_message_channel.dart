@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BasicMessageChannelBase extends BaseWidget {
-    BasicMessageChannelBase();
+  BasicMessageChannelBase();
 
-    factory BasicMessageChannelBase.fromJson(Map<String, dynamic> data) {
-        return BasicMessageChannelBase();
-    }
+  factory BasicMessageChannelBase.fromJson(Map<String, dynamic> data) {
+    return BasicMessageChannelBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A named channel for communicating with platform plugins using asynchronous
 message passing.
 
@@ -28,13 +28,13 @@ channels will interfere with each other's communication.
 See: <https://flutter.dev/platform-channels/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

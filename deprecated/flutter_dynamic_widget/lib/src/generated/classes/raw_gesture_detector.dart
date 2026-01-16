@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RawGestureDetectorBase extends BaseWidget {
-    RawGestureDetectorBase();
+  RawGestureDetectorBase();
 
-    factory RawGestureDetectorBase.fromJson(Map<String, dynamic> data) {
-        return RawGestureDetectorBase();
-    }
+  factory RawGestureDetectorBase.fromJson(Map<String, dynamic> data) {
+    return RawGestureDetectorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that detects gestures described by the given gesture
 factories.
 
@@ -51,13 +51,13 @@ See also:
  * [GestureRecognizer], the class that you extend to create a custom gesture recognizer.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

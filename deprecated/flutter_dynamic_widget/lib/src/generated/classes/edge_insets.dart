@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class EdgeInsetsBase extends BaseWidget {
-    EdgeInsetsBase();
+  EdgeInsetsBase();
 
-    factory EdgeInsetsBase.fromJson(Map<String, dynamic> data) {
-        return EdgeInsetsBase();
-    }
+  factory EdgeInsetsBase.fromJson(Map<String, dynamic> data) {
+    return EdgeInsetsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An immutable set of offsets in each of the four cardinal directions.
 
 Typically used for an offset from each of the four sides of a box. For
@@ -56,13 +56,13 @@ See also:
    specified in a [TextDirection]-aware manner.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

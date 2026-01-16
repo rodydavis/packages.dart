@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedContainerBase extends BaseWidget {
-    AnimatedContainerBase();
+  AnimatedContainerBase();
 
-    factory AnimatedContainerBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedContainerBase();
-    }
+  factory AnimatedContainerBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedContainerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Animated version of [Container] that gradually changes its values over a period of time.
 
 The [AnimatedContainer] will automatically animate between the old and
@@ -71,13 +71,13 @@ See also:
  * [AnimatedCrossFade], which fades between two children and interpolates their sizes.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

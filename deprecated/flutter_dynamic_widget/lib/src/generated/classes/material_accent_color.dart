@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MaterialAccentColorBase extends BaseWidget {
-    MaterialAccentColorBase();
+  MaterialAccentColorBase();
 
-    factory MaterialAccentColorBase.fromJson(Map<String, dynamic> data) {
-        return MaterialAccentColorBase();
-    }
+  factory MaterialAccentColorBase.fromJson(Map<String, dynamic> data) {
+    return MaterialAccentColorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines a single accent color as well a swatch of four shades of the
 accent color.
 
@@ -23,13 +23,13 @@ See also:
  * <https://material.io/go/design-theming#color-color-schemes>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

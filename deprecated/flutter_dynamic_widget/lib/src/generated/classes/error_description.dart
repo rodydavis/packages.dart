@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ErrorDescriptionBase extends BaseWidget {
-    ErrorDescriptionBase();
+  ErrorDescriptionBase();
 
-    factory ErrorDescriptionBase.fromJson(Map<String, dynamic> data) {
-        return ErrorDescriptionBase();
-    }
+  factory ErrorDescriptionBase.fromJson(Map<String, dynamic> data) {
+    return ErrorDescriptionBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An explanation of the problem and its cause, any information that may help
 track down the problem, background information, etc.
 
@@ -29,13 +29,13 @@ See also:
    [ErrorDescription].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LimitedBoxBase extends BaseWidget {
-    LimitedBoxBase();
+  LimitedBoxBase();
 
-    factory LimitedBoxBase.fromJson(Map<String, dynamic> data) {
-        return LimitedBoxBase();
-    }
+  factory LimitedBoxBase.fromJson(Map<String, dynamic> data) {
+    return LimitedBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A box that limits its size only when it's unconstrained.
 
 If this widget's maximum width is unconstrained then its child's width is
@@ -36,13 +36,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class UiKitViewBase extends BaseWidget {
-    UiKitViewBase();
+  UiKitViewBase();
 
-    factory UiKitViewBase.fromJson(Map<String, dynamic> data) {
-        return UiKitViewBase();
-    }
+  factory UiKitViewBase.fromJson(Map<String, dynamic> data) {
+    return UiKitViewBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Embeds an iOS view in the Widget hierarchy.
 
 {@macro flutter.rendering.platformView.preview}
@@ -29,13 +29,13 @@ If a conic path clipping is applied to a UIKitView,
 a quad path is used to approximate the clip due to limitation of Quartz.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

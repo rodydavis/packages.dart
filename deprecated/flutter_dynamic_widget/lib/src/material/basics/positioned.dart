@@ -33,5 +33,4 @@ class PositionedBase extends _$PositionedBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 }

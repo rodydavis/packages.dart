@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BackButtonIconBase extends BaseWidget {
-    BackButtonIconBase();
+  BackButtonIconBase();
 
-    factory BackButtonIconBase.fromJson(Map<String, dynamic> data) {
-        return BackButtonIconBase();
-    }
+  factory BackButtonIconBase.fromJson(Map<String, dynamic> data) {
+    return BackButtonIconBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A "back" icon that's appropriate for the current [TargetPlatform].
 
 The current platform is determined by querying for the ambient [Theme].
@@ -23,13 +23,13 @@ See also:
  * [ThemeData.platform], which specifies the current platform.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

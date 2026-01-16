@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ButtonBarThemeBase extends BaseWidget {
-    ButtonBarThemeBase();
+  ButtonBarThemeBase();
 
-    factory ButtonBarThemeBase.fromJson(Map<String, dynamic> data) {
-        return ButtonBarThemeBase();
-    }
+  factory ButtonBarThemeBase.fromJson(Map<String, dynamic> data) {
+    return ButtonBarThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Applies a button bar theme to descendant [ButtonBar] widgets.
 
 A button bar theme describes the layout and properties for the buttons
@@ -27,13 +27,13 @@ See also:
    bar theme.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

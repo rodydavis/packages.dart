@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FixedExtentScrollPhysicsBase extends BaseWidget {
-    FixedExtentScrollPhysicsBase();
+  FixedExtentScrollPhysicsBase();
 
-    factory FixedExtentScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
-        return FixedExtentScrollPhysicsBase();
-    }
+  factory FixedExtentScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
+    return FixedExtentScrollPhysicsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A snapping physics that always lands directly on items instead of anywhere
 within the scroll extent.
 
@@ -21,13 +21,13 @@ Must be used with a scrollable that uses a [FixedExtentScrollController].
 Defers back to the parent beyond the scroll extents.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

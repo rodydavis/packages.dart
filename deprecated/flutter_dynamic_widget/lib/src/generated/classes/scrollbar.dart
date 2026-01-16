@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollbarBase extends BaseWidget {
-    ScrollbarBase();
+  ScrollbarBase();
 
-    factory ScrollbarBase.fromJson(Map<String, dynamic> data) {
-        return ScrollbarBase();
-    }
+  factory ScrollbarBase.fromJson(Map<String, dynamic> data) {
+    return ScrollbarBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A material design scrollbar.
 
 A scrollbar indicates which portion of a [Scrollable] widget is actually
@@ -26,13 +26,13 @@ See also:
  * [GridView], which display a 2 dimensional, scrollable array of children.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

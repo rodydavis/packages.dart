@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SemanticsHandleBase extends BaseWidget {
-    SemanticsHandleBase();
+  SemanticsHandleBase();
 
-    factory SemanticsHandleBase.fromJson(Map<String, dynamic> data) {
-        return SemanticsHandleBase();
-    }
+  factory SemanticsHandleBase.fromJson(Map<String, dynamic> data) {
+    return SemanticsHandleBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A reference to the semantics tree.
 
 The framework maintains the semantics tree (used for accessibility and
@@ -27,13 +27,13 @@ To obtain a [SemanticsHandle], call [PipelineOwner.ensureSemantics] on the
 You can obtain the [PipelineOwner] using the [RenderObject.owner] property.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

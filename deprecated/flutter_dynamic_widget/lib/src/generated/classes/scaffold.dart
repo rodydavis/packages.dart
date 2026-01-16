@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScaffoldBase extends BaseWidget {
-    ScaffoldBase();
+  ScaffoldBase();
 
-    factory ScaffoldBase.fromJson(Map<String, dynamic> data) {
-        return ScaffoldBase();
-    }
+  factory ScaffoldBase.fromJson(Map<String, dynamic> data) {
+    return ScaffoldBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Implements the basic material design visual layout structure.
 
 This class provides APIs for showing drawers, snack bars, and bottom sheets.
@@ -194,13 +194,13 @@ See also:
    [Scaffold Sample Apps](https://flutter.dev/docs/catalog/samples/Scaffold).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

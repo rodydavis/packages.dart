@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RestorationBucketBase extends BaseWidget {
-    RestorationBucketBase();
+  RestorationBucketBase();
 
-    factory RestorationBucketBase.fromJson(Map<String, dynamic> data) {
-        return RestorationBucketBase();
-    }
+  factory RestorationBucketBase.fromJson(Map<String, dynamic> data) {
+    return RestorationBucketBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [RestorationBucket] holds pieces of the restoration data that a part of
 the application needs to restore its state.
 
@@ -78,13 +78,13 @@ information will not be available again when the application is restored to
 this state in the future.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

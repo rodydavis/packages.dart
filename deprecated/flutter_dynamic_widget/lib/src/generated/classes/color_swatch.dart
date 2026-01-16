@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ColorSwatchBase extends BaseWidget {
-    ColorSwatchBase();
+  ColorSwatchBase();
 
-    factory ColorSwatchBase.fromJson(Map<String, dynamic> data) {
-        return ColorSwatchBase();
-    }
+  factory ColorSwatchBase.fromJson(Map<String, dynamic> data) {
+    return ColorSwatchBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A color that has a small table of related colors called a "swatch".
 
 The table is indexed by values of type `T`.
@@ -21,13 +21,13 @@ See also:
    colors.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

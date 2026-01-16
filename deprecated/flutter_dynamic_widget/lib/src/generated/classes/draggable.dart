@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DraggableBase extends BaseWidget {
-    DraggableBase();
+  DraggableBase();
 
-    factory DraggableBase.fromJson(Map<String, dynamic> data) {
-        return DraggableBase();
-    }
+  factory DraggableBase.fromJson(Map<String, dynamic> data) {
+    return DraggableBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that can be dragged from to a [DragTarget].
 
 When a draggable widget recognizes the start of a drag gesture, it displays
@@ -34,13 +34,13 @@ See also:
  * [LongPressDraggable]
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

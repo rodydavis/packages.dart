@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AboutDialogBase extends BaseWidget {
-    AboutDialogBase();
+  AboutDialogBase();
 
-    factory AboutDialogBase.fromJson(Map<String, dynamic> data) {
-        return AboutDialogBase();
-    }
+  factory AboutDialogBase.fromJson(Map<String, dynamic> data) {
+    return AboutDialogBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An about box. This is a dialog box with the application's icon, name,
 version number, and copyright, plus a button to show licenses for software
 used by the application.
@@ -27,13 +27,13 @@ The licenses shown on the [LicensePage] are those returned by the
 [LicenseRegistry] API, which can be used to add more licenses to the list.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

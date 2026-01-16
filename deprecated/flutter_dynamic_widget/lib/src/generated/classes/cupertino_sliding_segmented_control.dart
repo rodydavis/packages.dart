@@ -1,14 +1,15 @@
 import '../base.dart';
 
 class CupertinoSlidingSegmentedControlBase extends BaseWidget {
-    CupertinoSlidingSegmentedControlBase();
+  CupertinoSlidingSegmentedControlBase();
 
-    factory CupertinoSlidingSegmentedControlBase.fromJson(Map<String, dynamic> data) {
-        return CupertinoSlidingSegmentedControlBase();
-    }
+  factory CupertinoSlidingSegmentedControlBase.fromJson(
+      Map<String, dynamic> data) {
+    return CupertinoSlidingSegmentedControlBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An iOS 13 style segmented control.
 
 Displays the widgets provided in the [Map] of [children] in a horizontal list.
@@ -52,13 +53,13 @@ See also:
  * <https://developer.apple.com/design/human-interface-guidelines/ios/controls/segmented-controls/>
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

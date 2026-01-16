@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class NestedScrollViewStateBase extends BaseWidget {
-    NestedScrollViewStateBase();
+  NestedScrollViewStateBase();
 
-    factory NestedScrollViewStateBase.fromJson(Map<String, dynamic> data) {
-        return NestedScrollViewStateBase();
-    }
+  factory NestedScrollViewStateBase.fromJson(Map<String, dynamic> data) {
+    return NestedScrollViewStateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 The [State] for a [NestedScrollView].
 
 The [ScrollController]s, [innerController] and [outerController], of the
@@ -52,13 +52,13 @@ ScrollController get innerController {
 {@end-tool}
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

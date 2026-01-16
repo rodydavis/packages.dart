@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverChildBuilderDelegateBase extends BaseWidget {
-    SliverChildBuilderDelegateBase();
+  SliverChildBuilderDelegateBase();
 
-    factory SliverChildBuilderDelegateBase.fromJson(Map<String, dynamic> data) {
-        return SliverChildBuilderDelegateBase();
-    }
+  factory SliverChildBuilderDelegateBase.fromJson(Map<String, dynamic> data) {
+    return SliverChildBuilderDelegateBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A delegate that supplies children for slivers using a builder callback.
 
 Many slivers lazily construct their box children to avoid creating more
@@ -115,13 +115,13 @@ See also:
    with semantic indexes.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class IgnorePointerBase extends BaseWidget {
-    IgnorePointerBase();
+  IgnorePointerBase();
 
-    factory IgnorePointerBase.fromJson(Map<String, dynamic> data) {
-        return IgnorePointerBase();
-    }
+  factory IgnorePointerBase.fromJson(Map<String, dynamic> data) {
+    return IgnorePointerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that is invisible during hit testing.
 
 {@youtube 560 315 https://www.youtube.com/watch?v=qV9pqHWxYgI}
@@ -28,13 +28,13 @@ See also:
    events but is itself visible to hit testing.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

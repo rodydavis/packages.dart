@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TransitionBuilderPageBase extends BaseWidget {
-    TransitionBuilderPageBase();
+  TransitionBuilderPageBase();
 
-    factory TransitionBuilderPageBase.fromJson(Map<String, dynamic> data) {
-        return TransitionBuilderPageBase();
-    }
+  factory TransitionBuilderPageBase.fromJson(Map<String, dynamic> data) {
+    return TransitionBuilderPageBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A page that creates a [PageRoute] with customizable transition.
 
 Similar to the [PageRouteBuilder], callers must define the [pageBuilder]
@@ -20,13 +20,13 @@ See also:
  * [PageRouteBuilder], which is a [PageRoute] version of this class.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

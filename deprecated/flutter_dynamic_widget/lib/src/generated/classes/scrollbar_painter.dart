@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollbarPainterBase extends BaseWidget {
-    ScrollbarPainterBase();
+  ScrollbarPainterBase();
 
-    factory ScrollbarPainterBase.fromJson(Map<String, dynamic> data) {
-        return ScrollbarPainterBase();
-    }
+  factory ScrollbarPainterBase.fromJson(Map<String, dynamic> data) {
+    return ScrollbarPainterBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [CustomPainter] for painting scrollbars.
 
 The size of the scrollbar along its scroll direction is typically
@@ -39,13 +39,13 @@ See also:
    [Scrollable] in the iOS style.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

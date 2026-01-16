@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AlignmentBase extends BaseWidget {
-    AlignmentBase();
+  AlignmentBase();
 
-    factory AlignmentBase.fromJson(Map<String, dynamic> data) {
-        return AlignmentBase();
-    }
+  factory AlignmentBase.fromJson(Map<String, dynamic> data) {
+    return AlignmentBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A point within a rectangle.
 
 `Alignment(0.0, 0.0)` represents the center of the rectangle. The distance
@@ -51,13 +51,13 @@ See also:
    whether the horizontal direction depends on the [TextDirection].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

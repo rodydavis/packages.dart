@@ -30,5 +30,4 @@ class SizedBoxBase extends _$SizedBoxBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 }

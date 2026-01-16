@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ErrorSummaryBase extends BaseWidget {
-    ErrorSummaryBase();
+  ErrorSummaryBase();
 
-    factory ErrorSummaryBase.fromJson(Map<String, dynamic> data) {
-        return ErrorSummaryBase();
-    }
+  factory ErrorSummaryBase.fromJson(Map<String, dynamic> data) {
+    return ErrorSummaryBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A short (one line) description of the problem that was detected.
 
 Error summaries from the same source location should have little variance,
@@ -32,13 +32,13 @@ See also:
  * [FlutterError], which is the most common place to use an [ErrorSummary].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

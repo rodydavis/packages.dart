@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderLeaderLayerBase extends BaseWidget {
-    RenderLeaderLayerBase();
+  RenderLeaderLayerBase();
 
-    factory RenderLeaderLayerBase.fromJson(Map<String, dynamic> data) {
-        return RenderLeaderLayerBase();
-    }
+  factory RenderLeaderLayerBase.fromJson(Map<String, dynamic> data) {
+    return RenderLeaderLayerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Provides an anchor for a [RenderFollowerLayer].
 
 See also:
@@ -17,13 +17,13 @@ See also:
  * [LeaderLayer], the layer that this render object creates.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

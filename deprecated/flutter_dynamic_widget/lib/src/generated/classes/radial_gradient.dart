@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RadialGradientBase extends BaseWidget {
-    RadialGradientBase();
+  RadialGradientBase();
 
-    factory RadialGradientBase.fromJson(Map<String, dynamic> data) {
-        return RadialGradientBase();
-    }
+  factory RadialGradientBase.fromJson(Map<String, dynamic> data) {
+    return RadialGradientBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A 2D radial gradient.
 
 This class is used by [BoxDecoration] to represent radial gradients. This
@@ -80,13 +80,13 @@ See also:
    painter.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -23,7 +23,6 @@ class LimitedBoxBase extends _$LimitedBoxBase {
 
   @override
   final GenerateWidget widgetRender;
-     
 
   @override
   get onAction => (context, val) => MaterialBase.onAction(context, val);

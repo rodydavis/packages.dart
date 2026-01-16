@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderFlexBase extends BaseWidget {
-    RenderFlexBase();
+  RenderFlexBase();
 
-    factory RenderFlexBase.fromJson(Map<String, dynamic> data) {
-        return RenderFlexBase();
-    }
+  factory RenderFlexBase.fromJson(Map<String, dynamic> data) {
+    return RenderFlexBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Displays its children in a one-dimensional array.
 
 ## Layout algorithm
@@ -58,13 +58,13 @@ See also:
  * [Row] and [Column], direction-specific variants of [Flex].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

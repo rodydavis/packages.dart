@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DraggableScrollableActuatorBase extends BaseWidget {
-    DraggableScrollableActuatorBase();
+  DraggableScrollableActuatorBase();
 
-    factory DraggableScrollableActuatorBase.fromJson(Map<String, dynamic> data) {
-        return DraggableScrollableActuatorBase();
-    }
+  factory DraggableScrollableActuatorBase.fromJson(Map<String, dynamic> data) {
+    return DraggableScrollableActuatorBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that can notify a descendent [DraggableScrollableSheet] that it
 should reset its position to the initial state.
 
@@ -18,13 +18,13 @@ than when at its initial position. This is important for users of assistive
 technology, where dragging may be difficult to communicate.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

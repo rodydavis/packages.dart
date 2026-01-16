@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class AnimatedIconBase extends BaseWidget {
-    AnimatedIconBase();
+  AnimatedIconBase();
 
-    factory AnimatedIconBase.fromJson(Map<String, dynamic> data) {
-        return AnimatedIconBase();
-    }
+  factory AnimatedIconBase.fromJson(Map<String, dynamic> data) {
+    return AnimatedIconBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Shows an animated icon at a given animation [progress].
 
 The available icons are specified in [AnimatedIcons].
@@ -28,13 +28,13 @@ AnimatedIcon(
 
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class OrdinalSortKeyBase extends BaseWidget {
-    OrdinalSortKeyBase();
+  OrdinalSortKeyBase();
 
-    factory OrdinalSortKeyBase.fromJson(Map<String, dynamic> data) {
-        return OrdinalSortKeyBase();
-    }
+  factory OrdinalSortKeyBase.fromJson(Map<String, dynamic> data) {
+    return OrdinalSortKeyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A [SemanticsSortKey] that sorts simply based on the `double` value it is
 given.
 
@@ -29,13 +29,13 @@ numbers. The value must be finite (it cannot be [double.nan],
 [double.infinity], or [double.negativeInfinity]).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

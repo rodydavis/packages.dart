@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FlagPropertyBase extends BaseWidget {
-    FlagPropertyBase();
+  FlagPropertyBase();
 
-    factory FlagPropertyBase.fromJson(Map<String, dynamic> data) {
-        return FlagPropertyBase();
-    }
+  factory FlagPropertyBase.fromJson(Map<String, dynamic> data) {
+    return FlagPropertyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Property where the description is either [ifTrue] or [ifFalse] depending on
 whether [value] is true or false.
 
@@ -50,13 +50,13 @@ See also:
    a [value] is null.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

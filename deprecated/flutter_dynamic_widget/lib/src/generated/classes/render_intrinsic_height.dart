@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderIntrinsicHeightBase extends BaseWidget {
-    RenderIntrinsicHeightBase();
+  RenderIntrinsicHeightBase();
 
-    factory RenderIntrinsicHeightBase.fromJson(Map<String, dynamic> data) {
-        return RenderIntrinsicHeightBase();
-    }
+  factory RenderIntrinsicHeightBase.fromJson(Map<String, dynamic> data) {
+    return RenderIntrinsicHeightBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Sizes its child to the child's intrinsic height.
 
 This class is useful, for example, when unlimited height is available and
@@ -39,13 +39,13 @@ See also:
    height to be smaller than that of its parent.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class PrimaryScrollControllerBase extends BaseWidget {
-    PrimaryScrollControllerBase();
+  PrimaryScrollControllerBase();
 
-    factory PrimaryScrollControllerBase.fromJson(Map<String, dynamic> data) {
-        return PrimaryScrollControllerBase();
-    }
+  factory PrimaryScrollControllerBase.fromJson(Map<String, dynamic> data) {
+    return PrimaryScrollControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Associates a [ScrollController] with a subtree.
 
 When a [ScrollView] has [ScrollView.primary] set to true and is not given
@@ -20,13 +20,13 @@ subtree. For example, the [Scaffold] uses this mechanism to implement the
 scroll-to-top gesture on iOS.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

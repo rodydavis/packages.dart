@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollControllerBase extends BaseWidget {
-    ScrollControllerBase();
+  ScrollControllerBase();
 
-    factory ScrollControllerBase.fromJson(Map<String, dynamic> data) {
-        return ScrollControllerBase();
-    }
+  factory ScrollControllerBase.fromJson(Map<String, dynamic> data) {
+    return ScrollControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Controls a scrollable widget.
 
 Scroll controllers are typically stored as member variables in [State]
@@ -42,13 +42,13 @@ See also:
    the scroll position without using a [ScrollController].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

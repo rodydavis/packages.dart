@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BaselineBase extends BaseWidget {
-    BaselineBase();
+  BaselineBase();
 
-    factory BaselineBase.fromJson(Map<String, dynamic> data) {
-        return BaselineBase();
-    }
+  factory BaselineBase.fromJson(Map<String, dynamic> data) {
+    return BaselineBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A widget that positions its child according to the child's baseline.
 
 This widget shifts the child down such that the child's baseline (or the
@@ -26,13 +26,13 @@ See also:
  * The [catalog of layout widgets](https://flutter.dev/widgets/layout/).
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class DualTransitionBuilderBase extends BaseWidget {
-    DualTransitionBuilderBase();
+  DualTransitionBuilderBase();
 
-    factory DualTransitionBuilderBase.fromJson(Map<String, dynamic> data) {
-        return DualTransitionBuilderBase();
-    }
+  factory DualTransitionBuilderBase.fromJson(Map<String, dynamic> data) {
+    return DualTransitionBuilderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A transition builder that animates its [child] based on the
 [AnimationStatus] of the provided [animation].
 
@@ -24,13 +24,13 @@ the enter and exit transitions. This ensures that no state information of
 any descendant widget is lost when the transition starts or completes.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

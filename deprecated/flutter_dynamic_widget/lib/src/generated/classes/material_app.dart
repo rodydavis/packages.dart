@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class MaterialAppBase extends BaseWidget {
-    MaterialAppBase();
+  MaterialAppBase();
 
-    factory MaterialAppBase.fromJson(Map<String, dynamic> data) {
-        return MaterialAppBase();
-    }
+  factory MaterialAppBase.fromJson(Map<String, dynamic> data) {
+    return MaterialAppBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An application that uses material design.
 
 A convenience widget that wraps a number of widgets that are commonly
@@ -114,13 +114,13 @@ See also:
    <https://flutter.dev/tutorials/internationalization/>.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

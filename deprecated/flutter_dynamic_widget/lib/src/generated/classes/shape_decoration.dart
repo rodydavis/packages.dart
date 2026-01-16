@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ShapeDecorationBase extends BaseWidget {
-    ShapeDecorationBase();
+  ShapeDecorationBase();
 
-    factory ShapeDecorationBase.fromJson(Map<String, dynamic> data) {
-        return ShapeDecorationBase();
-    }
+  factory ShapeDecorationBase.fromJson(Map<String, dynamic> data) {
+    return ShapeDecorationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An immutable description of how to paint an arbitrary shape.
 
 The [ShapeDecoration] class provides a way to draw a [ShapeBorder],
@@ -51,13 +51,13 @@ See also:
    [shape] property.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

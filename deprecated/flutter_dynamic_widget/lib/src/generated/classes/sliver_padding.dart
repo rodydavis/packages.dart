@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class SliverPaddingBase extends BaseWidget {
-    SliverPaddingBase();
+  SliverPaddingBase();
 
-    factory SliverPaddingBase.fromJson(Map<String, dynamic> data) {
-        return SliverPaddingBase();
-    }
+  factory SliverPaddingBase.fromJson(Map<String, dynamic> data) {
+    return SliverPaddingBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A sliver that applies padding on each side of another sliver.
 
 Slivers are special-purpose widgets that can be combined using a
@@ -27,13 +27,13 @@ See also:
  * [CustomScrollView], which displays a scrollable list of slivers.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

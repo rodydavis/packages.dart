@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class FormFieldBase extends BaseWidget {
-    FormFieldBase();
+  FormFieldBase();
 
-    factory FormFieldBase.fromJson(Map<String, dynamic> data) {
-        return FormFieldBase();
-    }
+  factory FormFieldBase.fromJson(Map<String, dynamic> data) {
+    return FormFieldBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A single form field.
 
 This widget maintains the current state of the form field, so that updates
@@ -32,13 +32,13 @@ See also:
  * [TextField], which is a commonly used form field for entering text.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

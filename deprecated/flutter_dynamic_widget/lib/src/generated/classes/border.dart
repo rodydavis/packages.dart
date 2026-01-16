@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class BorderBase extends BaseWidget {
-    BorderBase();
+  BorderBase();
 
-    factory BorderBase.fromJson(Map<String, dynamic> data) {
-        return BorderBase();
-    }
+  factory BorderBase.fromJson(Map<String, dynamic> data) {
+    return BorderBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A border of a box, comprised of four sides: top, right, bottom, left.
 
 The sides are represented by [BorderSide] objects.
@@ -72,13 +72,13 @@ See also:
    to use for borders in a material app, as shown in the "divider" sample above.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

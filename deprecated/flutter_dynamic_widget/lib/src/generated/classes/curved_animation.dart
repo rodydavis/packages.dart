@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class CurvedAnimationBase extends BaseWidget {
-    CurvedAnimationBase();
+  CurvedAnimationBase();
 
-    factory CurvedAnimationBase.fromJson(Map<String, dynamic> data) {
-        return CurvedAnimationBase();
-    }
+  factory CurvedAnimationBase.fromJson(Map<String, dynamic> data) {
+    return CurvedAnimationBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 An animation that applies a curve to another animation.
 
 [CurvedAnimation] is useful when you want to apply a non-linear [Curve] to
@@ -62,13 +62,13 @@ See also:
    [Curve].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

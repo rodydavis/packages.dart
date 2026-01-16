@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class ScrollDragControllerBase extends BaseWidget {
-    ScrollDragControllerBase();
+  ScrollDragControllerBase();
 
-    factory ScrollDragControllerBase.fromJson(Map<String, dynamic> data) {
-        return ScrollDragControllerBase();
-    }
+  factory ScrollDragControllerBase.fromJson(Map<String, dynamic> data) {
+    return ScrollDragControllerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Scrolls a scroll view as the user drags their finger across the screen.
 
 See also:
@@ -17,13 +17,13 @@ See also:
    while a drag is underway.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

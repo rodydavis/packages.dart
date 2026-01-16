@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderSliverIgnorePointerBase extends BaseWidget {
-    RenderSliverIgnorePointerBase();
+  RenderSliverIgnorePointerBase();
 
-    factory RenderSliverIgnorePointerBase.fromJson(Map<String, dynamic> data) {
-        return RenderSliverIgnorePointerBase();
-    }
+  factory RenderSliverIgnorePointerBase.fromJson(Map<String, dynamic> data) {
+    return RenderSliverIgnorePointerBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A render object that is invisible during hit testing.
 
 When [ignoring] is true, this render object (and its subtree) is invisible
@@ -21,13 +21,13 @@ semantics layer (and thus e.g. accessibility tools). If [ignoringSemantics]
 is null, it uses the value of [ignoring].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

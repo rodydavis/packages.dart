@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class NeverScrollableScrollPhysicsBase extends BaseWidget {
-    NeverScrollableScrollPhysicsBase();
+  NeverScrollableScrollPhysicsBase();
 
-    factory NeverScrollableScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
-        return NeverScrollableScrollPhysicsBase();
-    }
+  factory NeverScrollableScrollPhysicsBase.fromJson(Map<String, dynamic> data) {
+    return NeverScrollableScrollPhysicsBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Scroll physics that does not allow the user to scroll.
 
 See also:
@@ -21,13 +21,13 @@ See also:
    found on Android.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

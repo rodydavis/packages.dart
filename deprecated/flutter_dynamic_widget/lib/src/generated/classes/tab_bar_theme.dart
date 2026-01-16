@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class TabBarThemeBase extends BaseWidget {
-    TabBarThemeBase();
+  TabBarThemeBase();
 
-    factory TabBarThemeBase.fromJson(Map<String, dynamic> data) {
-        return TabBarThemeBase();
-    }
+  factory TabBarThemeBase.fromJson(Map<String, dynamic> data) {
+    return TabBarThemeBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Defines a theme for [TabBar] widgets.
 
 A tab bar theme describes the color of the tab label and the size/shape of
@@ -25,13 +25,13 @@ See also:
    application.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

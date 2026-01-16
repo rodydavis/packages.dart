@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class LogicalKeyboardKeyBase extends BaseWidget {
-    LogicalKeyboardKeyBase();
+  LogicalKeyboardKeyBase();
 
-    factory LogicalKeyboardKeyBase.fromJson(Map<String, dynamic> data) {
-        return LogicalKeyboardKeyBase();
-    }
+  factory LogicalKeyboardKeyBase.fromJson(Map<String, dynamic> data) {
+    return LogicalKeyboardKeyBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 A class with static values that describe the keys that are returned from
 [RawKeyEvent.logicalKey].
 
@@ -108,13 +108,13 @@ See also:
    keyboard events.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class RenderConstrainedBoxBase extends BaseWidget {
-    RenderConstrainedBoxBase();
+  RenderConstrainedBoxBase();
 
-    factory RenderConstrainedBoxBase.fromJson(Map<String, dynamic> data) {
-        return RenderConstrainedBoxBase();
-    }
+  factory RenderConstrainedBoxBase.fromJson(Map<String, dynamic> data) {
+    return RenderConstrainedBoxBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Imposes additional constraints on its child.
 
 A render constrained box proxies most functions in the render box protocol
@@ -21,13 +21,13 @@ pixels, you could use `const BoxConstraints(minHeight: 50.0)` as the
 [additionalConstraints].
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }

@@ -1,14 +1,14 @@
 import '../base.dart';
 
 class NoDefaultCupertinoThemeDataBase extends BaseWidget {
-    NoDefaultCupertinoThemeDataBase();
+  NoDefaultCupertinoThemeDataBase();
 
-    factory NoDefaultCupertinoThemeDataBase.fromJson(Map<String, dynamic> data) {
-        return NoDefaultCupertinoThemeDataBase();
-    }
+  factory NoDefaultCupertinoThemeDataBase.fromJson(Map<String, dynamic> data) {
+    return NoDefaultCupertinoThemeDataBase();
+  }
 
-    @override
-    String get description => r"""
+  @override
+  String get description => r"""
 Styling specifications for a cupertino theme without default values for
 unspecified properties.
 
@@ -23,13 +23,13 @@ See also:
    unspecified theme properties.
 """;
 
-    @override
-    Map<String, dynamic> toJson() {
-        return {};
-    }
+  @override
+  Map<String, dynamic> toJson() {
+    return {};
+  }
 
-    @override
-    Widget render(BuildContext context) {
-        return Container();
-    }
+  @override
+  Widget render(BuildContext context) {
+    return Container();
+  }
 }
