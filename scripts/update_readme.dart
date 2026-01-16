@@ -85,8 +85,12 @@ Future<List<_Package>> _scanDirectory(
       }
 
       // Skip example directories
-      if (entity.parent.path.split(Platform.pathSeparator).contains('example') ||
-          entity.parent.path.split(Platform.pathSeparator).contains('examples')) {
+      if (entity.parent.path
+              .split(Platform.pathSeparator)
+              .contains('example') ||
+          entity.parent.path
+              .split(Platform.pathSeparator)
+              .contains('examples')) {
         continue;
       }
 
