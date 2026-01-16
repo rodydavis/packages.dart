@@ -38,12 +38,8 @@ class ColorOptionTemplate extends SettingsImpl {
     sb.write('return $propertyType(_value);');
     sb.writeln('}');
     sb.writeln('}');
-    if (defaultValue != null) {
-      sb.writeln("return $propertyType($defaultValue);");
-    } else {
-      sb.writeln("return null;");
-    }
-    sb.writeln('}');
+    sb.writeln("return $propertyType($defaultValue);");
+      sb.writeln('}');
     // Setter
     sb.writeln('set ${name}Val($propertyType val) {');
     sb.write('params[${name}Key] = "');

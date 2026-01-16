@@ -67,7 +67,7 @@ class TabState extends ChangeNotifier {
 
   void changeTabOrder(List<String> _list) {
     List<String> _tabs = _list;
-    if (_tabs != null && _tabs.isNotEmpty) {
+    if (_tabs.isNotEmpty) {
       List<DynamicTab> _newOrder = [];
       for (var item in _tabs) {
         _newOrder.add(_items!.firstWhere((t) => t.tag == item));
@@ -92,14 +92,12 @@ class TabState extends ChangeNotifier {
   void _loadIndex() {
     if (_persistIndex) {
       int _index = _storage.getInt(navKey);
-      if (_index != null) {
-        if (_index > _maxTabs) {
-          _index = 0;
-        }
-        _currentIndex = _index;
-        notifyListeners();
+      if (_index > _maxTabs) {
+        _index = 0;
       }
-      _saveIndex();
+      _currentIndex = _index;
+      notifyListeners();
+          _saveIndex();
     }
   }
 

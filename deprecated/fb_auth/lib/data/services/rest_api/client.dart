@@ -43,18 +43,16 @@ class FbClient implements FBAuthImpl {
   @override
   Future<AuthUser> currentUser() async {
     FirestoreJsonAccessToken token = await _loadToken();
-    if (token != null) {
-      var result = await http.post(
-        'https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${app.apiKey}',
-        body: json.encode({
-          "idToken": token?.idToken,
-          "returnSecureToken": true,
-        }),
-      );
-      token = await _saveToken(result);
-      return _getUser(token);
-    }
-    return null;
+    var result = await http.post(
+      'https://identitytoolkit.googleapis.com/v1/accounts:lookup?key=${app.apiKey}',
+      body: json.encode({
+        "idToken": token.idToken,
+        "returnSecureToken": true,
+      }),
+    );
+    token = await _saveToken(result);
+    return _getUser(token);
+      return null;
   }
 
   @override
@@ -63,16 +61,15 @@ class FbClient implements FBAuthImpl {
     final result = await http.post(
       'https://identitytoolkit.googleapis.com/v1/accounts:update?key=${app.apiKey}',
       body: json.encode({
-        "idToken": token?.idToken,
-        if (displayName != null) ...{
-          'displayName': displayName,
-        },
-        if (photoUrl != null) ...{
-          'photoUrl': photoUrl,
-        },
+        "idToken": token.idToken,
+        ...{
+        'displayName': displayName,
+      },
+        ...{
+        'photoUrl': photoUrl,
+      },
         "deleteAttribute": [
-          if (displayName == null) 'DISPLAY_NAME',
-          if (photoUrl == null) 'PHOTO_URL',
+          
         ],
         "returnSecureToken": true,
       }),
@@ -126,7 +123,7 @@ class FbClient implements FBAuthImpl {
     var result = await http.post(
       'https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=${app.apiKey}',
       body: json.encode({
-        "idToken": token?.idToken,
+        "idToken": token.idToken,
         "requestType": 'VERIFY_EMAIL',
       }),
     );
@@ -169,12 +166,12 @@ class FbClient implements FBAuthImpl {
         final _user = FirebaseUser(item, token.idToken);
         if (_user.uid == token.localId) {
           final _auth = AuthUser(
-            displayName: _user?.displayName,
-            email: _user?.email,
-            isAnonymous: _user?.isAnonymous ?? true,
-            isEmailVerified: _user?.isEmailVerified ?? false,
+            displayName: _user.displayName,
+            email: _user.email,
+            isAnonymous: _user.isAnonymous ?? true,
+            isEmailVerified: _user.isEmailVerified ?? false,
             photoUrl: _user.photoUrl,
-            uid: _user?.uid,
+            uid: _user.uid,
           );
           _onAuthChanged.add(_auth);
           return _auth;
@@ -185,11 +182,9 @@ class FbClient implements FBAuthImpl {
 
   Future<FirestoreJsonAccessToken> _loadToken() async {
     final _data = await onLoad();
-    if (_data != null) {
-      final token = FirestoreJsonAccessToken(_data, DateTime.now());
-      return token;
-    }
-    return null;
+    final token = FirestoreJsonAccessToken(_data, DateTime.now());
+    return token;
+      return null;
   }
 
   @override

@@ -2,7 +2,7 @@ import 'package:easy_web_view/easy_web_view.dart';
 import 'package:flutter/material.dart';
 
 class BasicExample extends StatefulWidget {
-  const BasicExample({Key? key}) : super(key: key);
+  const BasicExample({super.key});
 
   @override
   _BasicExampleState createState() => _BasicExampleState();

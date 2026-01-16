@@ -21,10 +21,8 @@ class WidgetOptionTemplate extends SettingsImpl {
   @override
   String access() {
     final sb = StringBuffer();
-    if (acceptType != null) {
-      sb.writeln('final _${name}Listen = ValueNotifier<bool>(false);');
-    }
-    sb.writeln('WidgetBase get ${name}Val {');
+    sb.writeln('final _${name}Listen = ValueNotifier<bool>(false);');
+      sb.writeln('WidgetBase get ${name}Val {');
     sb.write("if (params[${name}Key] != null) ");
     sb.writeln('{');
     sb.write('return ');
@@ -54,69 +52,60 @@ class WidgetOptionTemplate extends SettingsImpl {
   String constructor() {
     final sb = StringBuffer();
     sb.write('    ');
-    if (key != null && int.tryParse(key) != null) {
+    if (int.tryParse(key) != null) {
       sb.write('');
-    } else if (key != null) {
-      sb.write("$key: ");
-    } else {
-      sb.write("$name: ");
-    }
-    if (acceptType == null) {
-      sb.writeln('${name}Val?.build(context)');
-    } else {
+    } else    sb.write("$key: ");
+  
+    sb.write("""
+    !widgetContext.isDragging || (widgetContext.isDragging && ${name}Val?.build(context) != null) ? 
+    (
+      ${name}Val?.build(context) 
+      
+    """);
+    sb.write("""
+   ?? (widgetRender(widgetContext, json.decode(json.encode({
+    'id': '${shortid.generate()}',
+    'name': '$fallback',
+    'params': {},
+  })))).build(context)
+  """);
       sb.write("""
-      !widgetContext.isDragging || (widgetContext.isDragging && ${name}Val?.build(context) != null) ? 
-      (
-        ${name}Val?.build(context) 
-        
-      """);
-      if (fallback != null) {
-        sb.write("""
-       ?? (widgetRender(widgetContext, json.decode(json.encode({
-        'id': '${shortid.generate()}',
-        'name': '$fallback',
-        'params': {},
-      })))).build(context)
-      """);
-      }
-      sb.write("""
-      ) 
-      """);
-      sb.write("""
-      : 
-      PreferredSize(
-        preferredSize: Size(${acceptWidth ?? 30}, ${acceptHeight ?? 30}),
-        child: DragTarget<$acceptType>(
-          onAccept: (val) {
-            _${name}Listen.value = false;
-            if (val != null) {
-              ${name}ValUpdate(val?.data);
-            }
-          },
-          onLeave: (val) {
-            _${name}Listen.value = false;
-          },
-          onWillAccept: (val) {
-            _${name}Listen.value = true;
-            return _${name}Listen.value;
-          },
-          builder: (context, accepted, rejected) {
-            return ValueListenableBuilder<bool>(
-              valueListenable: _${name}Listen,
-              builder: (context, _accepting, child) => SizedBox.fromSize(
-              size: Size(${acceptWidth ?? 30}, ${acceptHeight ?? 30}),
-              child: Placeholder(
-                  color: !_accepting ? 
-                      Colors.grey : 
-                      Theme.of(context).accentColor,
-              ),
-            ));
-          },
-        ),
-      )
-      """);
-    }
-    sb.writeln(',');
+    ) 
+    """);
+    sb.write("""
+    : 
+    PreferredSize(
+      preferredSize: Size(${acceptWidth ?? 30}, ${acceptHeight ?? 30}),
+      child: DragTarget<$acceptType>(
+        onAccept: (val) {
+          _${name}Listen.value = false;
+          if (val != null) {
+            ${name}ValUpdate(val?.data);
+          }
+        },
+        onLeave: (val) {
+          _${name}Listen.value = false;
+        },
+        onWillAccept: (val) {
+          _${name}Listen.value = true;
+          return _${name}Listen.value;
+        },
+        builder: (context, accepted, rejected) {
+          return ValueListenableBuilder<bool>(
+            valueListenable: _${name}Listen,
+            builder: (context, _accepting, child) => SizedBox.fromSize(
+            size: Size(${acceptWidth ?? 30}, ${acceptHeight ?? 30}),
+            child: Placeholder(
+                color: !_accepting ? 
+                    Colors.grey : 
+                    Theme.of(context).accentColor,
+            ),
+          ));
+        },
+      ),
+    )
+    """);
+      sb.writeln(',');
     return sb.toString();
   }
 }

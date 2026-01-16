@@ -151,9 +151,6 @@ class FancyTitle extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (logo == null) {
-      return logo;
-    }
     return Row(
       children: <Widget>[
         logo,

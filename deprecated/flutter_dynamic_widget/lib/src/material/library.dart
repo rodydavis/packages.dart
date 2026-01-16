@@ -1,6 +1,4 @@
 import '../../flutter_dynamic_widget.dart';
-import '../base.dart';
-import './index.dart';
 
 class MaterialBase extends WidgetLibrary {
   MaterialBase(this.data, this.widgetContext);
@@ -10,7 +8,7 @@ class MaterialBase extends WidgetLibrary {
   GenerateWidget get widgetRender => (context, data) {
         if (data is Map) {
           final _base = MaterialBase(data, context);
-          final _config = _base?.base;
+          final _config = _base.base;
           if (_config is WidgetBase) {
             return _config;
           }
@@ -40,14 +38,13 @@ class MaterialBase extends WidgetLibrary {
 
   @override
   WidgetConfig get base {
-    if (data == null) return null;
     final name = data['name'].toString();
     final _materialBase = library[name];
     if (_materialBase != null) return _materialBase;
     return DynamicWidget(
       data: data,
       widgetContext: widgetContext,
-    )?.base;
+    ).base;
   }
 
   static ActionCallback onAction = (context, val) {

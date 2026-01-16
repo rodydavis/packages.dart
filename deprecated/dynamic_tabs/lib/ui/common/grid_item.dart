@@ -28,7 +28,7 @@ class GridTabItem extends StatelessWidget {
         feedback: DefaultTextStyle(
             style: adaptive && defaultTargetPlatform == TargetPlatform.iOS
                 ? CupertinoTheme.of(context).textTheme.textStyle
-                : Theme.of(context).textTheme.title!,
+                : Theme.of(context).textTheme.titleLarge!,
             child: Container(
               width: 120.0,
               height: 80.0,

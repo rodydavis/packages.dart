@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import '../../pocketbase_auth.dart';
-import '../auth_service.dart';
-import '../view_models/login_view_model.dart';
 
 class PocketBaseLoginScreen extends StatefulWidget {
   final AuthService authService;

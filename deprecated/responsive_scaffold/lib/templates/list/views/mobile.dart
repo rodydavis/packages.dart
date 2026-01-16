@@ -69,11 +69,10 @@ class MobileView extends StatelessWidget {
         ..addAll(slivers ?? [])
         ..add(Builder(
           builder: (BuildContext context) {
-            if (childDelagate?.estimatedChildCount == null && nullItems != null)
+            if (childDelagate.estimatedChildCount == null)
               return SliverFillRemaining(child: nullItems);
-            if (childDelagate?.estimatedChildCount != null &&
-                childDelagate.estimatedChildCount == 0 &&
-                emptyItems != null)
+            if (childDelagate.estimatedChildCount != null &&
+                childDelagate.estimatedChildCount == 0)
               return SliverFillRemaining(child: emptyItems);
             return SliverList(
                 delegate: SliverChildBuilderDelegate(
@@ -101,7 +100,7 @@ class MobileView extends StatelessWidget {
                   ),
                 );
               },
-              childCount: childDelagate?.estimatedChildCount ?? 0,
+              childCount: childDelagate.estimatedChildCount ?? 0,
               addAutomaticKeepAlives: false,
               addRepaintBoundaries: false,
               addSemanticIndexes: false,

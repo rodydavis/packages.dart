@@ -101,10 +101,8 @@ Future _writeFilesDir(
       if (!_dir.existsSync()) {
         _dir.createSync(recursive: true);
       }
-      if (file?.children != null) {
-        await _writeFilesDir(file.children, path, base);
-      }
-    }
+      await _writeFilesDir(file.children, path, base);
+        }
   }
 }
 

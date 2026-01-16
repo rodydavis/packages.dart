@@ -81,7 +81,7 @@ class _Selector {
     return new _Selector('ByTagName', element.localName);
   }
 
-  _Selector(this.type, this.name, [this.value]);
+  _Selector(this.type, this.name);
 
   @override
   String toString() => "@$type('${value ?? name}')";
@@ -99,9 +99,6 @@ class _Variable implements Comparable<_Variable> {
 
   factory _Variable.fromElement(Element element) {
     var selector = new _Selector.fromElement(element);
-    if (selector == null) {
-      return null;
-    }
 
     var type = new DartClassInfo(
         'PageLoaderElement', 'package:pageloader/objects.dart');

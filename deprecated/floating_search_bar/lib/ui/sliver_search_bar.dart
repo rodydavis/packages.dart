@@ -19,11 +19,7 @@ class SliverFloatingBar extends StatefulWidget {
     this.floating = false,
     this.pinned = false,
     this.snap = false,
-  })  : assert(automaticallyImplyLeading != null),
-        assert(floating != null),
-        assert(pinned != null),
-        assert(snap != null),
-        assert(floating || !snap,
+  })  : assert(floating || !snap,
             'The "snap" argument only makes sense for floating app bars.'),
         super(key: key);
 
@@ -224,35 +220,28 @@ class _FloatingAppBarState extends State<_FloatingAppBar> {
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    if (_position != null)
-      _position.isScrollingNotifier.removeListener(_isScrollingListener);
-    _position = Scrollable.of(context)?.position;
-    if (_position != null)
-      _position.isScrollingNotifier.addListener(_isScrollingListener);
+    _position.isScrollingNotifier.removeListener(_isScrollingListener);
+    _position = Scrollable.of(context).position;
+    _position.isScrollingNotifier.addListener(_isScrollingListener);
   }
 
   @override
   void dispose() {
-    if (_position != null)
-      _position.isScrollingNotifier.removeListener(_isScrollingListener);
+    _position.isScrollingNotifier.removeListener(_isScrollingListener);
     super.dispose();
   }
 
   RenderSliverFloatingPersistentHeader _headerRenderer() {
-    return context.ancestorRenderObjectOfType(
-        const TypeMatcher<RenderSliverFloatingPersistentHeader>());
+    return context.findAncestorRenderObjectOfType<RenderSliverFloatingPersistentHeader>(
+        );
   }
 
   void _isScrollingListener() {
-    if (_position == null) return;
-
-    // When a scroll stops, then maybe snap the appbar into view.
-    // Similarly, when a scroll starts, then maybe stop the snap animation.
     final RenderSliverFloatingPersistentHeader header = _headerRenderer();
     if (_position.isScrollingNotifier.value)
-      header?.maybeStopSnapAnimation(_position.userScrollDirection);
+      header.maybeStopSnapAnimation(_position.userScrollDirection);
     else
-      header?.maybeStartSnapAnimation(_position.userScrollDirection);
+      header.maybeStartSnapAnimation(_position.userScrollDirection);
   }
 
   @override

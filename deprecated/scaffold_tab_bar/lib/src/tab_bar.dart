@@ -61,7 +61,7 @@ class _ScaffoldTabBarState extends State<ScaffoldTabBar> {
     _screens = widget.children;
     _currentIndex = 0;
     for (var screen in _screens) {
-      _keys.add(GlobalKey<NavigatorState>(debugLabel: screen?.debugLabel));
+      _keys.add(GlobalKey<NavigatorState>(debugLabel: screen.debugLabel));
     }
   }
 
@@ -98,23 +98,23 @@ class _ScaffoldTabBarState extends State<ScaffoldTabBar> {
       ));
     }
     return Scaffold(
-      backgroundColor: widget?.backgroundColor,
-      key: widget?.scaffoldKey,
-      drawer: widget?.drawer,
-      endDrawer: widget?.endDrawer,
-      persistentFooterButtons: widget?.persistentFooterButtons,
-      floatingActionButton: widget?.floatingActionButton,
-      floatingActionButtonAnimator: widget?.floatingActionButtonAnimator,
-      floatingActionButtonLocation: widget?.floatingActionButtonLocation,
+      backgroundColor: widget.backgroundColor,
+      key: widget.scaffoldKey,
+      drawer: widget.drawer,
+      endDrawer: widget.endDrawer,
+      persistentFooterButtons: widget.persistentFooterButtons,
+      floatingActionButton: widget.floatingActionButton,
+      floatingActionButtonAnimator: widget.floatingActionButtonAnimator,
+      floatingActionButtonLocation: widget.floatingActionButtonLocation,
       body: IndexedStack(
         index: _currentIndex,
         children: _children,
       ),
       bottomNavigationBar: BottomNavigationBar(
-        type: widget?.bottomNavigationBarType,
+        type: widget.bottomNavigationBarType,
         currentIndex: _currentIndex,
         onTap: (val) => _onTap(val, context),
-        backgroundColor: widget?.bottomNavigationBarBackgroundColor ??
+        backgroundColor: widget.bottomNavigationBarBackgroundColor ??
             Theme.of(context).scaffoldBackgroundColor,
         items: _screens.map((s) => s.tab).toList(),
       ),

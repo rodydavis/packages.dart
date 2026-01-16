@@ -74,37 +74,33 @@ class __WidgetAcceptState extends State<_WidgetAccept> {
 
   @override
   Widget build(BuildContext context) {
-    if (widget.child != null) {
-      return widget.child;
-    }
-    if (!widget.scope.isDragging) {
+    return widget.child;
+      if (!widget.scope.isDragging) {
       return SizedBox.fromSize(
         size: widget.sizeOnlyDragging ? null : widget.size,
         child: Container(),
       );
     }
     return SizedBox(
-      height: widget?.size?.height,
-      width: widget?.size?.width,
+      height: widget.size.height,
+      width: widget.size.width,
       child: DragTarget<Map<String, dynamic>>(
-        onAccept: (val) {
+        onAcceptWithDetails: (val) {
           if (mounted) {
             setState(() {
               _accepting = false;
             });
           }
-          if (val != null) {
-            final _data = val;
-            _data['id'] = StringGen.id;
-            if (_data['name'] == 'Text') {
-              _data['params']['style']['id'] = StringGen.id;
-            }
-            if (_data['name'] == 'Icon') {
-              _data['params']['0']['id'] = StringGen.id;
-            }
-            widget.onAccept(context, _data);
+          final _data = val;
+          _data['id'] = StringGen.id;
+          if (_data['name'] == 'Text') {
+            _data['params']['style']['id'] = StringGen.id;
           }
-        },
+          if (_data['name'] == 'Icon') {
+            _data['params']['0']['id'] = StringGen.id;
+          }
+          widget.onAccept(context, _data);
+                },
         onLeave: (val) {
           if (mounted) {
             setState(() {
@@ -112,7 +108,7 @@ class __WidgetAcceptState extends State<_WidgetAccept> {
             });
           }
         },
-        onWillAccept: (val) {
+        onWillAcceptWithDetails: (val) {
           if (mounted) {
             setState(() {
               _accepting = true;
@@ -123,11 +119,11 @@ class __WidgetAcceptState extends State<_WidgetAccept> {
         builder: (context, accepted, rejected) {
           return Center(
             child: Container(
-              width: widget?.size?.width,
-              height: widget?.size?.height,
+              width: widget.size.width,
+              height: widget.size.height,
               child: Placeholder(
                 color:
-                    !_accepting ? Colors.grey : Theme.of(context).accentColor,
+                    !_accepting ? Colors.grey : Theme.of(context).colorScheme.secondary,
               ),
             ),
           );
@@ -143,13 +139,9 @@ Map<String, dynamic> modifyAccept(Map<String, dynamic> val,
   _data['id'] = StringGen.id;
   switch (_data['name']) {
     case 'Container':
-      if (height != null) {
-        _data['params']['height'] = height;
-      }
-      if (width != null) {
-        _data['params']['width'] = width;
-      }
-      break;
+      _data['params']['height'] = height;
+          _data['params']['width'] = width;
+          break;
     default:
   }
   return _data;

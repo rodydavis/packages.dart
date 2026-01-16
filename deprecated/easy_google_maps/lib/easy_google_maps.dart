@@ -63,19 +63,19 @@ class _EasyGoogleMapsState extends State<EasyGoogleMaps> {
       return EasyWebView(
         src: _src,
         webAllowFullScreen: true,
-        width: widget?.width,
-        height: widget?.height,
+        width: widget.width,
+        height: widget.height,
       );
     }
 
     return SizedBox(
-      width: widget?.width,
-      height: widget?.height,
+      width: widget.width,
+      height: widget.height,
       child: FutureBuilder<List<Placemark>>(
         future: geo.placemarkFromAddress(widget.address),
         builder: (_, snapshot) {
           if (snapshot.hasData) {
-            final _place = snapshot?.data?.first;
+            final _place = snapshot.data?.first;
             if (_place == null) {
               return Center(
                 child: Text('Address not found!'),
@@ -89,7 +89,7 @@ class _EasyGoogleMapsState extends State<EasyGoogleMaps> {
               markerId: MarkerId(widget.address.toString()),
               position: _latLang,
               infoWindow: InfoWindow(
-                title: widget?.title ?? '',
+                title: widget.title ?? '',
                 snippet: widget.address,
               ),
             );

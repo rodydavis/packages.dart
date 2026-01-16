@@ -70,7 +70,7 @@ class _EditScreenState extends State<EditScreen> {
           ));
     }
     return DefaultTextStyle(
-        style: Theme.of(context).textTheme.display1!,
+        style: Theme.of(context).textTheme.headlineMedium!,
         child: Scaffold(
           appBar: AppBar(
             actions: <Widget>[
@@ -118,7 +118,7 @@ class _EditScreenState extends State<EditScreen> {
                 "Drag the icons to\norganize tabs.",
                 style: Theme.of(context)
                     .textTheme
-                    .headline4!
+                    .headlineMedium!
                     .copyWith(fontSize: 22.0),
                 textAlign: TextAlign.center,
               ),
@@ -197,7 +197,7 @@ class _BottomEditableTabBarState extends State<BottomEditableTabBar> {
             // draggable: true,
           );
         },
-        onWillAccept: (String? data) {
+        onWillAcceptWithDetails: (String? data) {
           setState(() {
             _previewIndex = _targets.indexOf(t);
           });
@@ -208,7 +208,7 @@ class _BottomEditableTabBarState extends State<BottomEditableTabBar> {
             _previewIndex = null;
           });
         },
-        onAccept: (String data) {
+        onAcceptWithDetails: (String data) {
           final DynamicTab _baseTab = _targets[_previewIndex!];
           final DynamicTab _newTab = _tabs!.firstWhere((t) => t.tag == data);
           final int _oldIndex = _tabs!.indexOf(_newTab);
@@ -232,7 +232,7 @@ class _BottomEditableTabBarState extends State<BottomEditableTabBar> {
         child: Container(),
         tab: BottomNavigationBarItem(
           icon: Icon(Icons.more_horiz),
-          title: Text("More"),
+          label: Text("More"),
         ),
         tag: "",
       ),

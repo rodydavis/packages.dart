@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'dart:io';
 
 import '../../classes/index.dart';
-import '../../utils/directory.dart';
 import '../mobile/sdk.dart';
 import '../rest_api/client.dart';
 import 'impl.dart';
@@ -35,12 +34,8 @@ class FBAuth implements FBAuthImpl {
         },
         onSave: (data) async {
           try {
-            if (data == null) {
-              await _saveFile.delete();
-            } else {
-              await _saveFile.writeAsString(json.encode(data));
-            }
-          } catch (e) {}
+            await _saveFile.writeAsString(json.encode(data));
+                    } catch (e) {}
         },
       );
     }
@@ -50,10 +45,7 @@ class FBAuth implements FBAuthImpl {
   }
 
   Future _loadFile() async {
-    if (_saveFile == null) {
-      final dir = await PathUtils.getDocumentDir();
-      _saveFile = File('${dir.path}/fb_auth.json');
-    }
+    
   }
 
   bool get useClient => isDesktop || useRestClient;

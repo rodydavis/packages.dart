@@ -4,7 +4,6 @@ import 'tabs/master_detail_controller.dart';
 
 import 'tabs/table_view_controller.dart';
 
-import 'package:flutter/foundation.dart';
 
 void main() => runApp(MyApp());
 
@@ -26,11 +25,11 @@ class CupertinoControllersApp extends StatelessWidget {
         items: [
           BottomNavigationBarItem(
             icon: Icon(Icons.list),
-            title: Text("Table"),
+            label: Text("Table"),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.layers),
-            title: Text("Mater Detail"),
+            label: Text("Mater Detail"),
           ),
         ],
       ),
@@ -41,9 +40,9 @@ class CupertinoControllersApp extends StatelessWidget {
         ];
         return CupertinoTabView(
           builder: (BuildContext context) {
-            return pages[index]?.child;
+            return pages[index].child;
           },
-          defaultTitle: pages[index]?.title,
+          defaultTitle: pages[index].title,
         );
         ;
       },

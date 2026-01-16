@@ -34,55 +34,51 @@ class _GoldenLayoutState extends State<GoldenLayout> {
 
   @override
   void initState() {
-    _controller = widget?.controller ?? WindowController();
-    if (widget?.collection != null) {
-      _controller.base = widget.collection;
-    }
-    super.initState();
+    _controller = widget.controller ?? WindowController();
+    _controller.base = widget.collection;
+      super.initState();
   }
 
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, dimens) {
-      if (_controller.fullScreen != null) {
-        return RenderWindowGroup(
-          onAddTab: widget.onAddTab,
-          onCancel: (val) {
-            _controller.addToBase(val);
-          },
-          isDragging: _isDragging,
-          onDraggingChanged: (val) {
-            if (mounted) {
-              setState(() {
-                _isDragging = val;
-              });
-            }
-          },
-          popUpSize: widget.popupSize,
-          minimize: true,
-          group: _controller.fullScreen,
-          onFullScreen: () {
-            if (mounted) {
-              setState(() {
-                _controller.exitFullScreen();
-              });
-            }
-          },
-          onClose: !_controller.fullScreen.canClose
-              ? null
-              : () {
-                  if (mounted) {
-                    setState(() {
-                      _controller.exitFullScreen(true);
-                    });
-                  }
-                },
-          update: () {
-            if (mounted) setState(() {});
-          },
-        );
-      }
-      return _renderItem(
+      return RenderWindowGroup(
+        onAddTab: widget.onAddTab,
+        onCancel: (val) {
+          _controller.addToBase(val);
+        },
+        isDragging: _isDragging,
+        onDraggingChanged: (val) {
+          if (mounted) {
+            setState(() {
+              _isDragging = val;
+            });
+          }
+        },
+        popUpSize: widget.popupSize,
+        minimize: true,
+        group: _controller.fullScreen,
+        onFullScreen: () {
+          if (mounted) {
+            setState(() {
+              _controller.exitFullScreen();
+            });
+          }
+        },
+        onClose: !_controller.fullScreen.canClose
+            ? null
+            : () {
+                if (mounted) {
+                  setState(() {
+                    _controller.exitFullScreen(true);
+                  });
+                }
+              },
+        update: () {
+          if (mounted) setState(() {});
+        },
+      );
+          return _renderItem(
         _controller.base,
         index: 0,
         size: Size(dimens.maxWidth, dimens.maxHeight),

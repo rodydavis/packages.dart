@@ -85,9 +85,9 @@ class _ThreeColumnNavigationState extends State<ThreeColumnNavigation> {
                   Container(
                     width: 300,
                     child: Scaffold(
-                      backgroundColor: widget?.backgroundColor,
+                      backgroundColor: widget.backgroundColor,
                       appBar: AppBar(
-                        title: widget?.title,
+                        title: widget.title,
                         leading: IconButton(
                           icon: Icon(widget.expandedIconData),
                           onPressed: () {
@@ -111,7 +111,7 @@ class _ThreeColumnNavigationState extends State<ThreeColumnNavigation> {
                           }
                         },
                       ),
-                      bottomNavigationBar: widget?.bottomAppBar,
+                      bottomNavigationBar: widget.bottomAppBar,
                     ),
                   ),
                 Container(
@@ -164,7 +164,7 @@ class _ThreeColumnNavigationState extends State<ThreeColumnNavigation> {
                       },
                     ),
                     bottomNavigationBar:
-                        widget.sections[_sectionIndex]?.bottomAppBar,
+                        widget.sections[_sectionIndex].bottomAppBar,
                   ),
                 ),
                 Expanded(
@@ -221,7 +221,7 @@ class _ThreeColumnNavigationState extends State<ThreeColumnNavigation> {
             },
           ),
           appBar: AppBar(
-            title: widget.sections[_sectionIndex]?.label,
+            title: widget.sections[_sectionIndex].label,
           ),
           body: SectionList(
             controller: controller,
@@ -250,7 +250,7 @@ class _ThreeColumnNavigationState extends State<ThreeColumnNavigation> {
               }
             },
           ),
-          bottomNavigationBar: widget.sections[_sectionIndex]?.bottomAppBar,
+          bottomNavigationBar: widget.sections[_sectionIndex].bottomAppBar,
         );
       },
     );

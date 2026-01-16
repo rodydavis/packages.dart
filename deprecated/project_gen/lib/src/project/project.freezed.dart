@@ -166,9 +166,6 @@ class _$FlutterProjectCopyWithImpl<$Res>
 
   @override
   $ProjectThemeCopyWith<$Res> get lightTheme {
-    if (_value.lightTheme == null) {
-      return null;
-    }
     return $ProjectThemeCopyWith<$Res>(_value.lightTheme, (value) {
       return _then(_value.copyWith(lightTheme: value));
     });
@@ -176,9 +173,6 @@ class _$FlutterProjectCopyWithImpl<$Res>
 
   @override
   $ProjectThemeCopyWith<$Res> get darkTheme {
-    if (_value.darkTheme == null) {
-      return null;
-    }
     return $ProjectThemeCopyWith<$Res>(_value.darkTheme, (value) {
       return _then(_value.copyWith(darkTheme: value));
     });
@@ -298,16 +292,7 @@ class _$_FlutterProject
       this.themeMode,
       this.canvasZoom = 0,
       this.canvasOffsetDx = 0,
-      this.canvasOffsetDy = 0})
-      : assert(name != null),
-        assert(org != null),
-        assert(description != null),
-        assert(useSwift != null),
-        assert(useKotlin != null),
-        assert(targets != null),
-        assert(canvasZoom != null),
-        assert(canvasOffsetDx != null),
-        assert(canvasOffsetDy != null);
+      this.canvasOffsetDy = 0});
 
   factory _$_FlutterProject.fromJson(Map<String, dynamic> json) =>
       _$_$_FlutterProjectFromJson(json);

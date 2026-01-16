@@ -80,7 +80,7 @@ Widget _generateScreen({
       return Scaffold(
         appBar: AppBar(title: title),
         backgroundColor: color,
-        body: args == null ? null : Center(child: Text(args.toString())),
+        body: Center(child: Text(args.toString())),
         floatingActionButton: fab,
       );
     },

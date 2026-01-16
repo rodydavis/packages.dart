@@ -42,8 +42,6 @@ class PackageUriResolver {
 
   /// Resolves a package URI to a file path.
   String resolve(String packageUri) {
-    if (_packageMap == null) _buildPackageMap();
-
     var packageName = getPackageName(packageUri);
 
     if (_packageMap[packageName] == null) {

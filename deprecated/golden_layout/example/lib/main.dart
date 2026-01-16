@@ -12,9 +12,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        accentColor: Colors.red,
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        visualDensity: VisualDensity.adaptivePlatformDensity, colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(secondary: Colors.red),
       ),
       home: MyHomePage(title: 'Flutter Golden Layout'),
     );
@@ -88,7 +86,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: GoldenLayoutTheme(
         data: GoldenLayoutThemeData(
-          tabSelectedBackgroundColor: Theme.of(context).accentColor,
+          tabSelectedBackgroundColor: Theme.of(context).colorScheme.secondary,
         ),
         child: GoldenLayout(
           controller: _controller,
@@ -103,7 +101,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: (context, selected, index) => Text(
               'Window $count',
               style: TextStyle(
-                color: selected ? Theme.of(context).accentColor : Colors.white,
+                color: selected ? Theme.of(context).colorScheme.secondary : Colors.white,
               ),
             ),
         child: Container(color: Colors.red[100 * count]));

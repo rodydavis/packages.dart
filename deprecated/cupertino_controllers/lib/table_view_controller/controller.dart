@@ -138,7 +138,7 @@ class CupertinoTableViewController extends StatelessWidget {
     }
 
     return DefaultTextStyle(
-      style: Theme.of(context).textTheme.title!,
+      style: Theme.of(context).textTheme.titleLarge!,
       child: Scaffold(
         body: CustomScrollView(
           primary: true,

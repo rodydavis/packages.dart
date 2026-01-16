@@ -11,9 +11,7 @@ class ParamTemplate {
   String get metadata => hasRequiredAnnotation ? '@required ' : '';
 
   @override
-  String toString() => defaultValue == null
-      ? '$metadata$type $name'
-      : '$type $name = $defaultValue';
+  String toString() => '$type $name = $defaultValue';
 }
 
 class TypeParamTemplate {
@@ -23,7 +21,7 @@ class TypeParamTemplate {
   String get asArgument => name;
 
   @override
-  String toString() => bound == null ? name : '$name extends $bound';
+  String toString() => '$name extends $bound';
 }
 
 class NamedArgTemplate {

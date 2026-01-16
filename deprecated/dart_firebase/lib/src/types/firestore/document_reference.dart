@@ -25,7 +25,6 @@ class DocumentReference implements FirestoreReference {
   /// Returns the reference of a collection contained inside of this
   /// document.
   CollectionReference collection(String collectionPath) {
-    assert(collectionPath != null);
     return CollectionReference(client, <String>[path, collectionPath]);
   }
 

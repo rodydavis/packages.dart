@@ -32,7 +32,6 @@ class WasmLoader extends WasmImpl {
 
   @override
   Future<bool> init() async {
-    assert(_path != null);
     final _data = await rootBundle.load(_path);
     _wasm = await Instance.fromBufferAsync(_data.buffer);
     return isReady;

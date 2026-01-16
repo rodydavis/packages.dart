@@ -1,9 +1,6 @@
-import 'dart:math';
 
 import 'package:auto_size_text/auto_size_text.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class TabChild {
   final String title;
@@ -72,15 +69,13 @@ class MobileSidebar extends StatelessWidget {
         return Scaffold(
           key: _scaffoldKey,
           drawer: _showDrawer
-              ? drawerBuilder != null
-                  ? drawerBuilder(context, _titles, onTabChanged)
-                  : _buildDrawer(context, _titles)
+              ? drawerBuilder(context, _titles, onTabChanged)
               : null,
           appBar: PreferredSize(
             preferredSize: Size.fromHeight(kToolbarHeight),
             child: Material(
               color: theme.appBarTheme.color,
-              elevation: theme.appBarTheme?.elevation ?? 4.0,
+              elevation: theme.appBarTheme.elevation ?? 4.0,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
@@ -187,8 +182,8 @@ class MobileSidebar extends StatelessWidget {
                         if (showSearchButton) ...[
                           _searchBuilder(context, _showDrawer),
                         ],
-                        if (ctaBuilder != null) ctaBuilder(context),
-                        if (accountBuilder != null) accountBuilder(context),
+                        ctaBuilder(context),
+                        accountBuilder(context),
                       ],
                     ),
                   ],
@@ -216,7 +211,7 @@ class MobileSidebar extends StatelessWidget {
               child: Center(
                 child: AutoSizeText(
                   tab,
-                  style: theme.textTheme.body2.copyWith(
+                  style: theme.textTheme.bodyLarge.copyWith(
                     color: Colors.black,
                   ),
                 ),
@@ -227,7 +222,7 @@ class MobileSidebar extends StatelessWidget {
               height: kBarHeight,
               width: tabWidth * 2,
               color: tab == _titles[currentIndex]
-                  ? theme.accentColor
+                  ? theme.colorScheme.secondary
                   : Colors.transparent,
             ),
           ],
@@ -239,10 +234,8 @@ class MobileSidebar extends StatelessWidget {
   final kBarHeight = 3.0;
 
   Widget _menuIconBuilder(BuildContext context) {
-    if (menuButtonBuilder != null) {
-      return menuButtonBuilder(context);
-    }
-    return IconButton(
+    return menuButtonBuilder(context);
+      return IconButton(
       icon: Icon(Icons.menu),
       onPressed: () => _scaffoldKey.currentState.openDrawer(),
     );
@@ -250,22 +243,16 @@ class MobileSidebar extends StatelessWidget {
 
   Widget _searchBuilder(BuildContext context, bool showDrawer) {
     if (showDrawer) {
-      if (searchIconBuilder != null) {
-        return searchIconBuilder(context);
-      }
-      return IconButton(
+      return searchIconBuilder(context);
+          return IconButton(
         icon: Icon(Icons.search),
         onPressed: () {
-          if (isSearchChanged != null) {
-            isSearchChanged(!isSearching);
-          }
-        },
+          isSearchChanged(!isSearching);
+                },
       );
     }
-    if (searchBarBuilder != null) {
-      return searchBarBuilder(context, searchChanged);
-    }
-    const kSearchBarWidth = 225.0;
+    return searchBarBuilder(context, searchChanged);
+      const kSearchBarWidth = 225.0;
 
     return Container(
       width: kSearchBarWidth,
@@ -289,10 +276,8 @@ class MobileSidebar extends StatelessWidget {
           onTap: isSearching
               ? null
               : () {
-                  if (isSearchChanged != null) {
-                    isSearchChanged(!isSearching);
-                  }
-                },
+                  isSearchChanged(!isSearching);
+                                },
         ),
       ),
     );
@@ -345,10 +330,10 @@ class MobileSidebar extends StatelessWidget {
                 ],
               ),
               _divider,
-              if (ctaBuilder != null) ...[
-                ctaBuilder(context),
-                _divider,
-              ],
+              ...[
+              ctaBuilder(context),
+              _divider,
+            ],
             ],
           ),
         ),

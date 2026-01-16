@@ -49,9 +49,7 @@ class App {
     this.messagingSenderId,
     this.appId,
     String? database,
-  })  : _name = database,
-        assert(apiKey != null),
-        assert(projectId != null);
+  })  : _name = database;
 
   factory App.fromJson(Map<String, dynamic> json) {
     return App(

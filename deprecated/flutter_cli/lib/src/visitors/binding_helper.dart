@@ -56,7 +56,7 @@ void processBindingElement(Expression node, ModuleInfo module) {
     throw new UnsupportedError('Unable to handle $node.');
   }
 
-  if (binding != null) module.directChildren.add(binding);
+  module.directChildren.add(binding);
 }
 
 /// Extracts binding information from instance creation expression [node].
@@ -107,10 +107,8 @@ BindingInstance _buildBindingInstance(
     binding = new BindingInstance(token.value, creationExpression);
   }
 
-  if (binding != null) {
-    _handleBindingArgs(args, binding);
-    return binding;
-  }
+  _handleBindingArgs(args, binding);
+  return binding;
 
   throw new UnsupportedError('Unable to handle $token '
       '(${token.runtimeType}) in $creationExpression');

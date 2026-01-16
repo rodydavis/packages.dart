@@ -114,15 +114,13 @@ class MyApp extends StatelessWidget {
 """;
 
 String buildCustomColors(List<CustomColor> colors) {
-  if (colors != null) {
-    final sb = StringBuffer();
-    for (var color in colors) {
-      String _name = ReCase(color.name).camelCase;
-      int _value = color.color;
-      sb.writeln('  static Color get $_name => const Color($_value);');
-    }
-    return sb.toString();
+  final sb = StringBuffer();
+  for (var color in colors) {
+    String _name = ReCase(color.name).camelCase;
+    int _value = color.color;
+    sb.writeln('  static Color get $_name => const Color($_value);');
   }
+  return sb.toString();
   return '';
 }
 
@@ -134,52 +132,42 @@ import 'package:flutter/material.dart';
 
 bool isDark(BuildContext context) => Theme.of(context).brightness == Brightness.dark;
 
-ThemeMode get themeMode => ${(project?.themeMode ?? ThemeMode.system).toString()};
+ThemeMode get themeMode => ${(project.themeMode ?? ThemeMode.system).toString()};
 
   """);
 
-  sb.writeln(_writeProjectTheme(project?.lightTheme, 'LightTheme', true));
-  sb.writeln(_writeProjectTheme(project?.darkTheme, 'DarkTheme', false));
+  sb.writeln(_writeProjectTheme(project.lightTheme, 'LightTheme', true));
+  sb.writeln(_writeProjectTheme(project.darkTheme, 'DarkTheme', false));
   return sb.toString();
 }
 
 String _writeProjectTheme(ProjectTheme theme, String name, bool isLight) {
-  if (theme == null) {
-    return """
-class $name {
-  $name._();
-
-  static ThemeData get data => ThemeData.${isLight ? 'light' : 'dark'}();
-  
-} 
-  """;
-  }
   ThemeData _base = isLight ? ThemeData.light() : ThemeData.dark();
   return """
 class $name {
   $name._();
 
   static ThemeData get data => ThemeData(
-        brightness: ${theme?.lightBrightness ?? isLight ? 'Brightness.light' : 'Brightness.dark'},
+        brightness: ${theme.lightBrightness ?? isLight ? 'Brightness.light' : 'Brightness.dark'},
         visualDensity: VisualDensity.adaptivePlatformDensity,
         textTheme: ThemeData.${isLight ? 'light' : 'dark'}().textTheme
       ).copyWith(
-     primaryColor: const Color(${_getColor(theme?.primaryColor, _base.primaryColor)}),
-      accentColor: const Color(${_getColor(theme?.accentColor, _base.accentColor)}),
+     primaryColor: const Color(${_getColor(theme.primaryColor, _base.primaryColor)}),
+      accentColor: const Color(${_getColor(theme.accentColor, _base.colorScheme.secondary)}),
     floatingActionButtonTheme:
         ThemeData.${isLight ? 'light' : 'dark'}().floatingActionButtonTheme.copyWith(
-                backgroundColor: const Color(${_getColor(theme?.floatingActionButtonBackgroundColor, _base.floatingActionButtonTheme.backgroundColor)}),
-                 foregroundColor: const Color(${_getColor(theme?.floatingActionButtonForegroundColor, _base.floatingActionButtonTheme.foregroundColor)}),
+                backgroundColor: const Color(${_getColor(theme.floatingActionButtonBackgroundColor, _base.floatingActionButtonTheme.backgroundColor)}),
+                 foregroundColor: const Color(${_getColor(theme.floatingActionButtonForegroundColor, _base.floatingActionButtonTheme.foregroundColor)}),
             ),
-    scaffoldBackgroundColor: const Color(${_getColor(theme?.scaffoldBackgroundColor, _base.scaffoldBackgroundColor)}),
+    scaffoldBackgroundColor: const Color(${_getColor(theme.scaffoldBackgroundColor, _base.scaffoldBackgroundColor)}),
     appBarTheme: ThemeData.${isLight ? 'light' : 'dark'}().appBarTheme,
   );
 
-${buildCustomColors(theme?.customColors)}
+${buildCustomColors(theme.customColors)}
 }
   """;
 }
 
 int _getColor(int value, Color fallback) {
-  return value ?? fallback?.value ?? Colors.blue.value;
+  return value ?? fallback.value ?? Colors.blue.value;
 }

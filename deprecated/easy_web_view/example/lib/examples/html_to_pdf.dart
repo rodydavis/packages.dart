@@ -10,7 +10,7 @@ import 'package:async/async.dart';
 import 'package:flutter/services.dart';
 
 class HtmlToPdfTest extends StatefulWidget {
-  const HtmlToPdfTest({Key? key}) : super(key: key);
+  const HtmlToPdfTest({super.key});
 
   @override
   State<HtmlToPdfTest> createState() => _HtmlToPdfTestState();

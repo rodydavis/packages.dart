@@ -6,7 +6,7 @@ import 'src/index.dart';
 export 'src/index.dart';
 
 DartResult parseSource(String source, [String path]) {
-  assert(source != null && source.isNotEmpty);
+  assert(source.isNotEmpty);
   final result = parseString(
     content: source,
     path: path,

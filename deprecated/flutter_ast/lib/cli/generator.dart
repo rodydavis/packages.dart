@@ -132,7 +132,6 @@ void _processFile(
       if (item.isValid) {
         if (!cache.addName(item.name)) continue;
         final _template = _processClass(item, input);
-        if (_template == null) continue;
         final name = ReCase(item.name).snakeCase;
         final _path = 'classes/' + name + '.dart';
         final _file = _getFile(output.path, _path);

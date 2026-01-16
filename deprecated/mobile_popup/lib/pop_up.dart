@@ -23,7 +23,7 @@ Future<T> showMobilePopup<T>({
         Animation<double> secondaryAnimation) {
       final Widget pageChild = Builder(builder: builder);
       return Builder(builder: (BuildContext context) {
-        return theme != null ? Theme(data: theme, child: pageChild) : pageChild;
+        return Theme(data: theme, child: pageChild);
       });
     },
     barrierDismissible: barrierDismissible,

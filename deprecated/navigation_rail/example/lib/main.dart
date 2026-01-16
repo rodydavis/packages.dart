@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'NavigationRail Demo',
       theme: _theme(ThemeData.light().copyWith(
-        accentColor: Colors.red,
+        colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red),
       )),
       darkTheme: ThemeData.dark(),
       home: Directionality(
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
       appBarTheme: base.appBarTheme.copyWith(elevation: 0.0),
       floatingActionButtonTheme: base.floatingActionButtonTheme.copyWith(
         elevation: 2.0,
-        backgroundColor: base.accentColor,
+        backgroundColor: base.colorScheme.secondary,
       ),
     );
   }
@@ -96,19 +96,19 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       tabs: <BottomNavigationBarItem>[
         BottomNavigationBarItem(
-          title: Text("Folders"),
+          label: Text("Folders"),
           icon: Icon(Icons.folder),
         ),
         BottomNavigationBarItem(
-          title: Text("History"),
+          label: Text("History"),
           icon: Icon(Icons.history),
         ),
         BottomNavigationBarItem(
-          title: Text("Gallery"),
+          label: Text("Gallery"),
           icon: Icon(Icons.photo_library),
         ),
         BottomNavigationBarItem(
-          title: Text("Camera"),
+          label: Text("Camera"),
           icon: Icon(Icons.camera),
         ),
       ],

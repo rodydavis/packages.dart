@@ -77,7 +77,7 @@ class _MobilePopUpState extends State<MobilePopUp> {
   void init() {
     if (mounted)
       setState(() {
-        leadingColor = widget?.leadingColor;
+        leadingColor = widget.leadingColor;
       });
   }
 
@@ -88,10 +88,10 @@ class _MobilePopUpState extends State<MobilePopUp> {
         _size.height < widget.breakpoint.height;
     final _full = _mobile || fullscreen;
     final _content = _PopUpContent(
-      title: widget?.title,
+      title: widget.title,
       showDoneButton: widget.showDoneButton,
-      child: widget?.child,
-      routes: widget?.routes,
+      child: widget.child,
+      routes: widget.routes,
       leadingColor: leadingColor,
       fullscreen: !widget.showFullScreen ? null : fullscreen,
       toggleFullscreen: (value) {
@@ -155,14 +155,13 @@ class _PopUpContent extends StatelessWidget {
                 )
               : null,
           actions: <Widget>[
-            if (fullscreen != null)
-              IconButton(
-                icon:
-                    Icon(fullscreen ? Icons.fullscreen_exit : Icons.fullscreen),
-                onPressed: () => toggleFullscreen(!fullscreen),
-              )
+            IconButton(
+              icon:
+                  Icon(fullscreen ? Icons.fullscreen_exit : Icons.fullscreen),
+              onPressed: () => toggleFullscreen(!fullscreen),
+            )
           ],
-          title: title == null ? null : Text(title),
+          title: Text(title),
         ),
         body: child,
       ),

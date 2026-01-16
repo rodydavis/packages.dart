@@ -33,21 +33,17 @@ class ListWidgetOptionTemplate extends SettingsImpl {
     return _children;
     """);
     sb.writeln('}');
-    if (fallback != null) {
-      final random = DateTime.now().millisecondsSinceEpoch.toString();
-      sb.writeln("""
-      return [
-        widgetRender({
-        'id': '$random',
-        'name': '$fallback',
-        'params': {},
-      })
-      ];
-      """);
-    } else {
-      sb.writeln("return null;");
-    }
-    sb.writeln('}');
+    final random = DateTime.now().millisecondsSinceEpoch.toString();
+    sb.writeln("""
+    return [
+      widgetRender({
+      'id': '$random',
+      'name': '$fallback',
+      'params': {},
+    })
+    ];
+    """);
+      sb.writeln('}');
     sb.writeln('void ${name}ValUpdate(Map<String, dynamic> val) {');
     sb.write("""
     if (params[${name}Key] == null) {
@@ -64,19 +60,16 @@ class ListWidgetOptionTemplate extends SettingsImpl {
   String constructor() {
     final sb = StringBuffer();
     sb.write('    ');
-    if (key != null && int.tryParse(key) != null) {
+    if (int.tryParse(key) != null) {
       sb.write('');
-    } else if (key != null) {
-      sb.write("$key: ");
-    } else {
-      sb.write("$name: ");
-    } 
+    } else    sb.write("$key: ");
+   
     sb.write("""
       ${name}Val == null && !widgetContext.isDragging ? ${empty ? '[]' : 'null'} :  [
          if (${name}Val != null)
          for (final item in ${name}Val) item.build(context),
       """);
-    if (acceptType != null && acceptType.isNotEmpty) {
+    if (acceptType.isNotEmpty) {
       sb.write("""
          if (widgetContext.isDragging)
          DragTarget<$acceptType>(

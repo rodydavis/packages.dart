@@ -104,7 +104,7 @@ class _SyncHomePageState extends State<SyncHomePage> {
       final auth = await pb
           .collection('users')
           .authWithPassword(email, password);
-      _currentUserEmail = auth.record?.getStringValue('email');
+      _currentUserEmail = auth.record.getStringValue('email');
     } catch (e, stack) {
       _logger.warning('Auth failed', e, stack);
     }

@@ -168,11 +168,6 @@ class _UsesExampleState extends State<UsesExample> {
       ),
       body: Builder(
         builder: (_) {
-          if (_users == null) {
-            return Center(
-              child: CircularProgressIndicator(),
-            );
-          }
           if (_users.isEmpty) {
             return Center(
               child: Text('No Users Found'),

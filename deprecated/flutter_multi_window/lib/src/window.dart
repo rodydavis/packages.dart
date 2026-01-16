@@ -64,8 +64,6 @@ class NewWindow {
   }
 
   static NewWindow fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return NewWindow(
       url: map['url'],
       width: map['width'],
@@ -114,8 +112,8 @@ void createWindow(NewWindow window) {
     window.url,
     window.width,
     window.height,
-    dx: window?.offsetX,
-    dy: window?.offsetY,
-    name: window?.name,
+    dx: window.offsetX,
+    dy: window.offsetY,
+    name: window.name,
   );
 }

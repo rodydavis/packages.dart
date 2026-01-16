@@ -61,7 +61,6 @@ class _Lane extends StatelessWidget {
     required this.androidDevice,
     required this.cupertinoDevice,
     this.title,
-    this.itemBuilder,
     this.laneBuilder,
     this.size,
     this.shadow,

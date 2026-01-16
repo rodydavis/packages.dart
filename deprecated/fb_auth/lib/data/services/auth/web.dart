@@ -115,8 +115,8 @@ class FBAuth implements FBAuthImpl {
   Future editInfo({String displayName, String photoUrl}) async {
     final _user = _auth.currentUser;
     final _info = UserProfile();
-    if (displayName != null) _info.displayName = displayName;
-    if (photoUrl != null) _info.photoURL = photoUrl;
+    _info.displayName = displayName;
+    _info.photoURL = photoUrl;
     try {
       await _user.updateProfile(_info);
     } catch (e) {

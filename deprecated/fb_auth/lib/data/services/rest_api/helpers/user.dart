@@ -24,7 +24,7 @@ class FirebaseUser {
     }).toList();
   }
 
-  bool get isAnonymous => email == null || email.isEmpty;
+  bool get isAnonymous => email.isEmpty;
 
   bool get isEmailVerified => json['emailVerified'];
 

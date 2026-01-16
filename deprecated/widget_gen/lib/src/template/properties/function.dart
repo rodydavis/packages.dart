@@ -23,12 +23,8 @@ class FunctionOptionTemplate extends SettingsImpl {
     sb.write('params[${name}Key] as String');
     sb.writeln(';');
     sb.writeln('}');
-    if (defaultValue != null) {
-      sb.writeln("return $defaultValue;");
-    } else {
-      sb.writeln("return null;");
-    }
-    sb.writeln('}');
+    sb.writeln("return $defaultValue;");
+      sb.writeln('}');
     sb.writeln('set ${name}Val(String val) {');
     sb.writeln('params[${name}Key] = val;');
     sb.writeln('widgetContext.onUpdate(id, widgetData);');
@@ -40,13 +36,10 @@ class FunctionOptionTemplate extends SettingsImpl {
   String constructor() {
     final sb = StringBuffer();
     sb.write('    ');
-    if (key != null && int.tryParse(key) != null) {
+    if (int.tryParse(key) != null) {
       sb.write('');
-    } else if (key != null) {
-      sb.write("$key: ");
-    } else {
-      sb.write("$name: ");
-    }
+    } else    sb.write("$key: ");
+  
     sb.writeln("() => onAction(context, ${name}Val)");
     sb.writeln(',');
     return sb.toString();

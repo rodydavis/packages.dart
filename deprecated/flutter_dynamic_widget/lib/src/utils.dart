@@ -3,7 +3,6 @@ import 'package:url_launcher/url_launcher.dart';
 import 'string_gen.dart';
 
 T getEnum<T>(String val, {T fallback, List<T> values}) {
-  if (val == null) return fallback;
   final _value = val.replaceAll('#', '');
   return values.firstWhere(
     (element) => element.toString() == _value,
@@ -21,7 +20,6 @@ Key getKey(dynamic value, [Key fallback]) {
 }
 
 Paint getPaint(Map<String, dynamic> data, [Paint fallback]) {
-  if (data == null) return fallback;
   if (data['params'] == null) return fallback;
   final params = data['params'];
   // TODO: get values here
@@ -29,7 +27,6 @@ Paint getPaint(Map<String, dynamic> data, [Paint fallback]) {
 }
 
 Decoration getDecoration(Map<String, dynamic> data, [Decoration fallback]) {
-  if (data == null) return fallback;
   if (data['params'] == null) return fallback;
   final params = data['params'];
   // TODO: get values here
@@ -37,7 +34,6 @@ Decoration getDecoration(Map<String, dynamic> data, [Decoration fallback]) {
 }
 
 Duration getDuration(Map<String, dynamic> data, [Duration fallback]) {
-  if (data == null) return fallback;
   if (data['params'] == null) return fallback;
   final params = data['params'];
   if (!params.toString().contains('zero')) {
@@ -62,7 +58,6 @@ Duration getDuration(Map<String, dynamic> data, [Duration fallback]) {
 
 BorderRadiusGeometry getBorderRadiusGeometry(Map<String, dynamic> data,
     [BorderRadiusGeometry fallback]) {
-  if (data == null) return fallback;
   if (data['params'] == null) return fallback;
   final params = data['params'];
   // TODO: get values here
@@ -70,7 +65,6 @@ BorderRadiusGeometry getBorderRadiusGeometry(Map<String, dynamic> data,
 }
 
 Matrix4 getMatrix4(Map<String, dynamic> data, [Matrix4 fallback]) {
-  if (data == null) return fallback;
   if (data['params'] == null) return fallback;
   final params = data['params'];
   // TODO: get values here
@@ -79,7 +73,6 @@ Matrix4 getMatrix4(Map<String, dynamic> data, [Matrix4 fallback]) {
 
 BorderStyle getBorderStyle(Map<String, dynamic> data,
     [BorderStyle fallback = BorderStyle.none]) {
-  if (data == null) return fallback;
   if (data['params'] == null) return fallback;
   final params = data['params'];
   // TODO: get values here
@@ -87,7 +80,6 @@ BorderStyle getBorderStyle(Map<String, dynamic> data,
 }
 
 FocusNode getFocusNode(Map<String, dynamic> data, [FocusNode fallback]) {
-  if (data == null) return fallback;
   if (data['params'] == null) return fallback;
   final params = data['params'];
   final debugLabel = getString(params['debugLabel']);
@@ -104,7 +96,6 @@ FocusNode getFocusNode(Map<String, dynamic> data, [FocusNode fallback]) {
 
 BorderSide getBorderSide(Map<String, dynamic> data,
     [BorderSide fallback = BorderSide.none]) {
-  if (data == null) return fallback;
   if (data['params'] == null) return fallback;
   final params = data['params'];
   return null;
@@ -133,7 +124,6 @@ List<Alignment> getAlignmentValues() {
 }
 
 ShapeBorder getShapeBorder(Map<String, dynamic> data, [ShapeBorder fallback]) {
-  if (data == null) return fallback;
   if (data['params'] == null) return fallback;
   final params = data['params'];
   final top = getBorderSide(params['top']);
@@ -167,7 +157,6 @@ ShapeBorder getShapeBorder(Map<String, dynamic> data, [ShapeBorder fallback]) {
 }
 
 Offset getOffset(Map<String, dynamic> data, [Offset fallback]) {
-  if (data == null) return fallback;
   if (data['params'] == null) return fallback;
   final params = data['params'];
   final dx = getDouble(params['dx']);
@@ -176,7 +165,6 @@ Offset getOffset(Map<String, dynamic> data, [Offset fallback]) {
 }
 
 BoxShadow getBoxShadow(Map<String, dynamic> data, [BoxShadow fallback]) {
-  if (data == null) return fallback;
   if (data['params'] == null) return fallback;
   final params = data['params'];
   final color = getColor(params['color']);
@@ -226,16 +214,14 @@ Map<String, dynamic> setIconData(IconData value) {
     'id': StringGen.id,
     'params': {
       '0': value.codePoint,
-      if (value?.fontFamily != null) 'fontFamily': value?.fontFamily,
-      if (value?.fontPackage != null) 'fontPackage': value?.fontPackage,
-      if (value?.matchTextDirection != null)
-        'matchTextDirection': value?.matchTextDirection,
+      if (value.fontFamily != null) 'fontFamily': value.fontFamily,
+      if (value.fontPackage != null) 'fontPackage': value.fontPackage,
+      'matchTextDirection': value.matchTextDirection,
     },
   };
 }
 
 IconData getIconData(Map<String, dynamic> data, [IconData fallback]) {
-  if (data == null) return fallback;
   final name = data['name'];
   if (name == 'IconData') {
     final params = data['params'];
@@ -258,10 +244,10 @@ IconData getIconData(Map<String, dynamic> data, [IconData fallback]) {
           getBool(params['matchTextDirection'], matchTextDirection);
     }
     return IconData(
-      codePoint ?? fallback?.codePoint,
-      fontFamily: fontFamily ?? fallback?.fontFamily,
-      fontPackage: fontPackage ?? fallback?.fontPackage,
-      matchTextDirection: matchTextDirection ?? fallback?.matchTextDirection,
+      codePoint ?? fallback.codePoint,
+      fontFamily: fontFamily ?? fallback.fontFamily,
+      fontPackage: fontPackage ?? fallback.fontPackage,
+      matchTextDirection: matchTextDirection ?? fallback.matchTextDirection,
     );
   }
   return fallback;
@@ -455,10 +441,10 @@ Map<String, dynamic> setEdgeInsets(EdgeInsets val) {
     'id': StringGen.id,
     'name': 'EdgeInsets.only',
     'params': {
-      'top': val?.top ?? 0,
-      'bottom': val?.bottom ?? 0,
-      'left': val?.left ?? 0,
-      'right': val?.right ?? 0,
+      'top': val.top ?? 0,
+      'bottom': val.bottom ?? 0,
+      'left': val.left ?? 0,
+      'right': val.right ?? 0,
     },
   };
 }
@@ -471,10 +457,10 @@ extension EdgeInsetUtils on EdgeInsets {
     double bottom,
   ]) {
     return EdgeInsets.only(
-      top: top ?? this?.top ?? 0,
-      left: left ?? this?.left ?? 0,
-      right: right ?? this?.right ?? 0,
-      bottom: bottom ?? this?.bottom ?? 0,
+      top: top ?? this.top ?? 0,
+      left: left ?? this.left ?? 0,
+      right: right ?? this.right ?? 0,
+      bottom: bottom ?? this.bottom ?? 0,
     );
   }
 

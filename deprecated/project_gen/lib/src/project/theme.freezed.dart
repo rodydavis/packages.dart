@@ -750,9 +750,6 @@ class _$_CustomGradient
         double endY,
         TileMode tileMode),
   }) {
-    assert($default != null);
-    assert(radial != null);
-    assert(linear != null);
     return $default(name, colors);
   }
 
@@ -781,11 +778,8 @@ class _$_CustomGradient
         TileMode tileMode),
     @required Result orElse(),
   }) {
-    assert(orElse != null);
-    if ($default != null) {
-      return $default(name, colors);
-    }
-    return orElse();
+    return $default(name, colors);
+      return orElse();
   }
 
   @override
@@ -795,9 +789,6 @@ class _$_CustomGradient
     @required Result radial(CustomRadialGradient value),
     @required Result linear(CustomLinearGradient value),
   }) {
-    assert($default != null);
-    assert(radial != null);
-    assert(linear != null);
     return $default(this);
   }
 
@@ -809,11 +800,8 @@ class _$_CustomGradient
     Result linear(CustomLinearGradient value),
     @required Result orElse(),
   }) {
-    assert(orElse != null);
-    if ($default != null) {
-      return $default(this);
-    }
-    return orElse();
+    return $default(this);
+      return orElse();
   }
 
   @override
@@ -1006,9 +994,6 @@ class _$CustomRadialGradient
         double endY,
         TileMode tileMode),
   }) {
-    assert($default != null);
-    assert(radial != null);
-    assert(linear != null);
     return radial(name, stops, colors, radius, alignX, alignY, focalX, focalY);
   }
 
@@ -1037,12 +1022,9 @@ class _$CustomRadialGradient
         TileMode tileMode),
     @required Result orElse(),
   }) {
-    assert(orElse != null);
-    if (radial != null) {
-      return radial(
-          name, stops, colors, radius, alignX, alignY, focalX, focalY);
-    }
-    return orElse();
+    return radial(
+        name, stops, colors, radius, alignX, alignY, focalX, focalY);
+      return orElse();
   }
 
   @override
@@ -1052,9 +1034,6 @@ class _$CustomRadialGradient
     @required Result radial(CustomRadialGradient value),
     @required Result linear(CustomLinearGradient value),
   }) {
-    assert($default != null);
-    assert(radial != null);
-    assert(linear != null);
     return radial(this);
   }
 
@@ -1066,11 +1045,8 @@ class _$CustomRadialGradient
     Result linear(CustomLinearGradient value),
     @required Result orElse(),
   }) {
-    assert(orElse != null);
-    if (radial != null) {
-      return radial(this);
-    }
-    return orElse();
+    return radial(this);
+      return orElse();
   }
 
   @override
@@ -1288,9 +1264,6 @@ class _$CustomLinearGradient
         double endY,
         TileMode tileMode),
   }) {
-    assert($default != null);
-    assert(radial != null);
-    assert(linear != null);
     return linear(
         name, stops, colors, radius, startX, startY, endX, endY, tileMode);
   }
@@ -1320,12 +1293,9 @@ class _$CustomLinearGradient
         TileMode tileMode),
     @required Result orElse(),
   }) {
-    assert(orElse != null);
-    if (linear != null) {
-      return linear(
-          name, stops, colors, radius, startX, startY, endX, endY, tileMode);
-    }
-    return orElse();
+    return linear(
+        name, stops, colors, radius, startX, startY, endX, endY, tileMode);
+      return orElse();
   }
 
   @override
@@ -1335,9 +1305,6 @@ class _$CustomLinearGradient
     @required Result radial(CustomRadialGradient value),
     @required Result linear(CustomLinearGradient value),
   }) {
-    assert($default != null);
-    assert(radial != null);
-    assert(linear != null);
     return linear(this);
   }
 
@@ -1349,11 +1316,8 @@ class _$CustomLinearGradient
     Result linear(CustomLinearGradient value),
     @required Result orElse(),
   }) {
-    assert(orElse != null);
-    if (linear != null) {
-      return linear(this);
-    }
-    return orElse();
+    return linear(this);
+      return orElse();
   }
 
   @override

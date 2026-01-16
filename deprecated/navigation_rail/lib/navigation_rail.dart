@@ -144,10 +144,10 @@ class NavRail extends StatelessWidget {
       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       minWidth: isDense ? _denseRailSize : _railSize,
       selectedIconTheme: IconThemeData(
-        color: Theme.of(context).accentColor,
+        color: Theme.of(context).colorScheme.secondary,
       ),
       selectedLabelTextStyle: TextStyle(
-        color: Theme.of(context).accentColor,
+        color: Theme.of(context).colorScheme.secondary,
       ),
       unselectedIconTheme: IconThemeData(
         color: Colors.grey,
@@ -157,7 +157,7 @@ class NavRail extends StatelessWidget {
       onDestinationSelected: (val) => onTap(val),
       destinations: tabs
           .map((e) => NavigationRailDestination(
-                label: e.title,
+                label: e.label,
                 icon: e.icon,
               ))
           .toList(),
@@ -169,15 +169,15 @@ class NavRail extends StatelessWidget {
       child: SafeArea(
         child: Column(
           children: <Widget>[
-            if (drawerHeaderBuilder != null) ...[
-              drawerHeaderBuilder(context),
-            ],
+            ...[
+            drawerHeaderBuilder(context),
+          ],
             if (showTabs) ...[
               Expanded(child: buildRail(context, true)),
             ],
-            if (drawerFooterBuilder != null) ...[
-              drawerFooterBuilder(context),
-            ],
+            ...[
+            drawerFooterBuilder(context),
+          ],
           ],
         ),
       ),

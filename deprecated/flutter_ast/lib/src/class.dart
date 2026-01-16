@@ -25,10 +25,10 @@ extension ClauseDeclarationImplUtils on ClassDeclarationImpl {
       comments.add(item.toDartComment());
     }
     return base.copyWith(
-      isAbstract: this?.abstractKeyword != null,
-      extendsClause: this?.extendsClause?.toString(),
-      implementsClause: this?.implementsClause?.toString(),
-      withClause: this?.withClause?.toString(),
+      isAbstract: this.abstractKeyword != null,
+      extendsClause: this.extendsClause?.toString(),
+      implementsClause: this.implementsClause?.toString(),
+      withClause: this.withClause?.toString(),
       fields: fields,
       constructors: constructors,
       methods: methods,

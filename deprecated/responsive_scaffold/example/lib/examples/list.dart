@@ -53,7 +53,7 @@ class _ListExampleState extends State<ListExample> {
           title: Text("App Bar"),
         ),
       ],
-      itemCount: _items?.length ?? 0,
+      itemCount: _items.length ?? 0,
       itemBuilder: (BuildContext context, int index) {
         final i = _items[index];
         return ListTile(

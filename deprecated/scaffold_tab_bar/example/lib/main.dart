@@ -18,21 +18,21 @@ class MyApp extends StatelessWidget {
             screen: Screen1(),
             tab: BottomNavigationBarItem(
               icon: Icon(Icons.home),
-              title: Text('Home'),
+              label: Text('Home'),
             ),
           ),
           ScreenTab(
             screen: Screen2(),
             tab: BottomNavigationBarItem(
               icon: Icon(Icons.event),
-              title: Text('Calendar'),
+              label: Text('Calendar'),
             ),
           ),
           ScreenTab(
             screen: Screen3(),
             tab: BottomNavigationBarItem(
               icon: Icon(Icons.search),
-              title: Text('Search'),
+              label: Text('Search'),
             ),
           ),
         ],

@@ -14,7 +14,7 @@ class FirestoreClientImpl extends FirestoreHttpClient {
 
   @override
   Future<dynamic> sendHttpRequest(Uri uri,
-      {bool needsToken: true,
+      {bool needsToken = true,
       String? extract,
       Map<String, dynamic>? body}) async {
     var request = new HttpRequest();

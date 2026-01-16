@@ -54,11 +54,11 @@ class _RenderWindowGroupState extends State<RenderWindowGroup> {
   @override
   Widget build(BuildContext context) {
     final _theme =
-        GoldenLayoutTheme.of(context)?.theme ?? GoldenLayoutThemeData();
+        GoldenLayoutTheme.of(context).theme ?? GoldenLayoutThemeData();
     return Column(
       children: [
         Container(
-          color: _theme?.backgroundColor,
+          color: _theme.backgroundColor,
           height: 32,
           child: Row(
             children: [
@@ -72,13 +72,12 @@ class _RenderWindowGroupState extends State<RenderWindowGroup> {
                       for (var i = 0; i < widget.group.tabs.length; i++)
                         Draggable<WindowTab>(
                           data: widget.group.tabs[i],
-                          dragAnchor: DragAnchor.child,
                           onDragStarted: () {
                             _draggingTab = widget.group.tabs[i];
                             widget.group.removeTab(_draggingTab);
                             widget.update();
                             if (widget.group.tabs.isEmpty) {
-                              widget.onClose?.call();
+                              widget.onClose.call();
                             }
                             widget.onDraggingChanged(true);
                           },
@@ -128,7 +127,7 @@ class _RenderWindowGroupState extends State<RenderWindowGroup> {
                                 });
                               }
                             },
-                            onWillAccept: (val) {
+                            onWillAcceptWithDetails: (val) {
                               if (mounted) {
                                 setState(() {
                                   accepting = i;
@@ -136,7 +135,7 @@ class _RenderWindowGroupState extends State<RenderWindowGroup> {
                               }
                               return true;
                             },
-                            onAccept: (val) {
+                            onAcceptWithDetails: (val) {
                               widget.onModify(
                                   context, val, WindowPos.tab, accepting);
                               if (mounted) {
@@ -155,9 +154,9 @@ class _RenderWindowGroupState extends State<RenderWindowGroup> {
                                 child: Container(
                                   decoration: BoxDecoration(
                                     color: selected
-                                        ? _theme?.tabSelectedBackgroundColor ??
+                                        ? _theme.tabSelectedBackgroundColor ??
                                             Colors.grey.shade600
-                                        : _theme?.backgroundColor,
+                                        : _theme.backgroundColor,
                                     borderRadius: selected
                                         ? BorderRadius.only(
                                             topLeft: Radius.circular(5),
@@ -197,17 +196,17 @@ class _RenderWindowGroupState extends State<RenderWindowGroup> {
                                           child: Icon(
                                             Icons.close,
                                             size: 18,
-                                            color: _theme?.tabIconColor ??
+                                            color: _theme.tabIconColor ??
                                                 Colors.white,
                                           ),
                                           onTap: () {
                                             widget.group.tabs[i].onClose
-                                                ?.call();
+                                                .call();
                                             widget.group.removeTab(
                                                 widget.group.tabs[i]);
                                             widget.update();
                                             if (widget.group.tabs.isEmpty) {
-                                              widget.onClose?.call();
+                                              widget.onClose.call();
                                             }
                                           },
                                         ),
@@ -225,17 +224,16 @@ class _RenderWindowGroupState extends State<RenderWindowGroup> {
                                 ),
                               );
                             },
-                          ),
+                          ), dragAnchorStrategy: childDragAnchorStrategy,
                         ),
-                      if (widget.onAddTab != null)
-                        IconButton(
-                            iconSize: 20,
-                            icon: Icon(
-                              Icons.add,
-                              color: Colors.white,
-                            ),
-                            onPressed: () =>
-                                widget.group.addTab(widget.onAddTab())),
+                      IconButton(
+                          iconSize: 20,
+                          icon: Icon(
+                            Icons.add,
+                            color: Colors.white,
+                          ),
+                          onPressed: () =>
+                              widget.group.addTab(widget.onAddTab())),
                       if (widget.isDragging)
                         WindowAcceptRegion(
                           size: Size(100, 32),
@@ -249,18 +247,17 @@ class _RenderWindowGroupState extends State<RenderWindowGroup> {
                 ),
               ),
               IconButton(
-                color: _theme?.tabIconColor ?? Colors.white,
+                color: _theme.tabIconColor ?? Colors.white,
                 iconSize: 18,
                 icon: Icon(widget.minimize ? Icons.minimize : Icons.fullscreen),
                 onPressed: widget.onFullScreen,
               ),
-              if (widget.onClose != null)
-                IconButton(
-                  color: _theme?.tabIconColor ?? Colors.white,
-                  iconSize: 18,
-                  icon: Icon(Icons.close),
-                  onPressed: widget.onClose,
-                ),
+              IconButton(
+                color: _theme.tabIconColor ?? Colors.white,
+                iconSize: 18,
+                icon: Icon(Icons.close),
+                onPressed: widget.onClose,
+              ),
             ],
           ),
         ),

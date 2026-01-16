@@ -35,13 +35,10 @@ class SupportedOptionTemplate extends SettingsImpl {
   String constructor() {
     final sb = StringBuffer();
     sb.write('    ');
-    if (key != null && int.tryParse(key) != null) {
+    if (int.tryParse(key) != null) {
       sb.write('');
-    } else if (key != null) {
-      sb.write("$key: ");
-    } else {
-      sb.write("$name: ");
-    }
+    } else    sb.write("$key: ");
+  
     sb.writeln("${name}Val?.build(context)");
     sb.writeln(',');
     return sb.toString();

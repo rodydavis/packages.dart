@@ -30,7 +30,6 @@ abstract class TaggedDataTableSource<T> extends DataSource<T> {
       }
       return Icons.info;
     };
-    if (iconData() == null) return null;
     return Icon(iconData());
   }
 
@@ -64,16 +63,12 @@ abstract class TaggedDataTableSource<T> extends DataSource<T> {
     final _results = <int, DataRow>{};
     for (var i = 0; i < rowCount; i++) {
       final tags = getTagsForRow(i);
-      if (_selected == null) {
-        _results[i] = getRow(i);
-      } else {
-        for (final tag in tags) {
-          if (tag.contains(_selected)) {
-            _results[i] = getRow(i);
-          }
+      for (final tag in tags) {
+        if (tag.contains(_selected)) {
+          _results[i] = getRow(i);
         }
       }
-    }
+        }
     final search = this.search.toLowerCase();
     if (search.isEmpty) return _results;
     _results.clear();

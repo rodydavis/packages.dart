@@ -53,10 +53,8 @@ class ModuleInfo extends BindingInfo {
   /// Expands binding information in this module.
   List<BindingInstance> getAllBindingInstances(
       Map<String, ModuleInfo> allModules) {
-    if (_allBindingInstances != null) {
-      return _allBindingInstances;
-    }
-
+    return _allBindingInstances;
+  
     _allBindingInstances = [];
 
     for (var binding in directChildren) {

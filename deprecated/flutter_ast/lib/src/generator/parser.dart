@@ -38,22 +38,22 @@ class GenParser {
 
   void merge(String source) {
     final DartResult result = parseSource(source);
-    if (result?.file != null) {
-      if (result?.file?.classes != null) {
+    if (result.file != null) {
+      if (result.file?.classes != null) {
         for (final item in result.file.classes) {
           this._classes.putIfAbsent(item.name, () => item);
         }
       }
-      if (result?.file?.enums != null) {
+      if (result.file?.enums != null) {
         this._enums.addAll(result.file.enums);
       }
-      if (result?.file?.fields != null) {
+      if (result.file?.fields != null) {
         this._fields.addAll(result.file.fields);
       }
-      if (result?.file?.methods != null) {
+      if (result.file?.methods != null) {
         this._methods.addAll(result.file.methods);
       }
-      if (result?.file?.imports != null) {
+      if (result.file?.imports != null) {
         this._imports.addAll(result.file.imports);
       }
     }

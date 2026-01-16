@@ -3,7 +3,6 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
-import 'package:meta/meta.dart';
 
 import 'base_class.dart';
 import 'widget_index.dart';

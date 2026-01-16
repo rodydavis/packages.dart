@@ -23,24 +23,18 @@ class BaseOptionTemplate extends SettingsImpl {
     sb.write('return ');
     if (tryParse) {
       sb.write("$propertyType.tryParse(params[${name}Key].toString())");
-      if (defaultValue != null) {
-        sb.write(' ?? $defaultValue');
-      }
-    } else {
+      sb.write(' ?? $defaultValue');
+        } else {
       sb.write('params[${name}Key] as $propertyType');
     }
     sb.writeln(';');
     sb.writeln('}');
-    if (defaultValue != null) {
-      if (propertyType == 'String') {
-        sb.writeln("return '$defaultValue';");
-      } else {
-        sb.writeln("return $defaultValue;");
-      }
+    if (propertyType == 'String') {
+      sb.writeln("return '$defaultValue';");
     } else {
-      sb.writeln("return null;");
+      sb.writeln("return $defaultValue;");
     }
-    sb.writeln('}');
+      sb.writeln('}');
     sb.writeln('set ${name}Val($propertyType val) {');
     sb.writeln('params[${name}Key] = val;');
     sb.writeln('widgetContext.onUpdate(id, widgetData);');

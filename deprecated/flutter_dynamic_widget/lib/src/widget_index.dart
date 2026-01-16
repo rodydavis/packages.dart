@@ -941,13 +941,11 @@ class WidgetIndex {
   Map<String, dynamic> toMap() {
     return {
       'version': version,
-      'widgets': widgets?.map((x) => x?.toMap())?.toList(),
+      'widgets': widgets.map((x) => x.toMap()).toList(),
     };
   }
 
   static WidgetIndex fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return WidgetIndex(
       version: map['version'],
       widgets: List<FlutterWidget>.from(
@@ -980,8 +978,6 @@ class FlutterWidget {
   }
 
   static FlutterWidget fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return FlutterWidget(
       name: map['name'],
       description: map['description'],

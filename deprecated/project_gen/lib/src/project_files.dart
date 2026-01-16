@@ -106,12 +106,8 @@ class ProjectFile extends ProjectFileBase {
 
   Future<FileData> getFileData() async {
     List<int> _data;
-    if (content.value != null) {
-      _data = content.value;
-    } else if (readAsBytes != null) {
-      _data = await readAsBytes;
-    }
-    return FileData(
+    _data = content.value;
+      return FileData(
       _data,
       _data.length,
       filename,

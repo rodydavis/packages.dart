@@ -26,10 +26,6 @@ abstract class FirestoreHttpClient implements FirestoreClient {
   FirestoreAccessToken token;
 
   bool isCurrentTokenValid(bool refreshable) {
-    if (token == null) {
-      return false;
-    }
-
     if (refreshable) {
       var now = DateTime.now();
       return token.expiresAt.difference(now).abs().inSeconds >= 60;
@@ -81,13 +77,11 @@ abstract class FirestoreHttpClient implements FirestoreClient {
 
   @override
   CollectionReference collection(String path) {
-    assert(path != null);
     return CollectionReference(this, path.split('/'));
   }
 
   @override
   DocumentReference document(String path) {
-    assert(path != null);
     return DocumentReference(this, path.split('/'));
   }
 
@@ -99,22 +93,22 @@ abstract class FirestoreHttpClient implements FirestoreClient {
 
   Future<Map<String, dynamic>?> getJsonMap(String url,
       {Map<String, dynamic>? body,
-      String? extract: "response",
-      bool standard: true}) async {
+      String? extract = "response",
+      bool standard = true}) async {
     return (await sendHttpRequest(_apiUrl(url, standard),
         body: body, extract: extract)) as Map<String, dynamic>?;
   }
 
   Future<List<dynamic>?> getJsonList(String url,
       {Map<String, dynamic>? body,
-      String extract: "response",
-      bool standard: true}) async {
+      String extract = "response",
+      bool standard = true}) async {
     return (await sendHttpRequest(_apiUrl(url, standard),
         body: body, extract: extract)) as List<dynamic>?;
   }
 
   Future<dynamic> sendHttpRequest(Uri uri,
-      {bool needsToken: true, String? extract, Map<String, dynamic>? body});
+      {bool needsToken = true, String? extract, Map<String, dynamic>? body});
 
   Uri _apiUrl(String path, bool standard) {
     path = standard ? "$path" : path;

@@ -49,7 +49,7 @@ class ProjectModel {
       this.componentClassUri, this.dartClasses, this.components, this.modules);
 
   /// Whether providers are needed when generating test.
-  bool get needProviders => serviceClasses != null && serviceClasses.isNotEmpty;
+  bool get needProviders => serviceClasses.isNotEmpty;
 
   /// Uris for service classes used.
   List<String> get referencedUris => serviceClasses
@@ -84,10 +84,6 @@ class ProjectModel {
             file, out, asts.publicUris, _getBindingVariables(components))));
 
     var componentClassName = className;
-    if (componentClassName == null) {
-      componentClassName =
-          _getComponentClassName(componentClassUri, components);
-    }
 
     var serviceClasses = _getServiceClasses(
         componentClassName, dartClasses, components, modules);
@@ -125,8 +121,6 @@ Set<String> _getBindingVariables(Map<String, ComponentInfo> components) {
   var result = new Set<String>();
 
   for (var component in components.values) {
-    if (component.module == null) continue;
-
     for (var binding in component.module.directChildren) {
       if (binding is String) result.add(binding);
     }
@@ -159,17 +153,14 @@ List<String> _getServiceClasses(
   var dependencies = <String>[];
   for (var parameter in dartClasses[componentClassName].constructorParameters) {
     var service = parameter.dependency;
-    if (dartClasses[service].uri == null) continue;
 
     dependencies.add(service);
   }
 
   var module = components[componentClassName].module;
-  if (module != null) {
-    for (var binding in module.getAllBindingInstances(modules)) {
-      if (dependencies.contains(binding.className)) {
-        dependencies.remove(binding.className);
-      }
+  for (var binding in module.getAllBindingInstances(modules)) {
+    if (dependencies.contains(binding.className)) {
+      dependencies.remove(binding.className);
     }
   }
 

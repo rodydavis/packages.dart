@@ -21,10 +21,8 @@ const List<String> _passwordEnvVars = const <String>[
 String? _getEnvKey(List<String> possible) {
   for (var key in possible) {
     var dartEnvValue = new String.fromEnvironment(key);
-    if (dartEnvValue != null) {
-      return dartEnvValue;
-    }
-
+    return dartEnvValue;
+  
     if (Platform.environment.containsKey(key) &&
         Platform.environment[key]!.isNotEmpty) {
       return Platform.environment[key];

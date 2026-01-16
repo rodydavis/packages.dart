@@ -25,9 +25,7 @@ void _setTargetPlatformForDesktop() {
   } else if (Platform.isLinux || Platform.isWindows) {
     targetPlatform = TargetPlatform.android;
   }
-  if (targetPlatform != null) {
-    debugDefaultTargetPlatformOverride = targetPlatform;
-  }
+  debugDefaultTargetPlatformOverride = targetPlatform;
 }
 
 class MyApp extends StatefulWidget {

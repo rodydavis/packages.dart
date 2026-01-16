@@ -18,8 +18,7 @@ class MyApp extends StatelessWidget {
           margin: const EdgeInsets.all(4.0),
           color: RandomColor(title.hashCode).randomColor(),
           child: Stack(
-            overflow: Overflow.visible,
-            children: [
+            clipBehavior: Clip.none, children: [
               child,
               Positioned(
                 left: -50,
@@ -94,7 +93,7 @@ Widget _generateScreen({
       return Scaffold(
         appBar: AppBar(title: title),
         backgroundColor: color,
-        body: args == null ? null : Center(child: Text(args.toString())),
+        body: Center(child: Text(args.toString())),
         floatingActionButton: fab,
       );
     },

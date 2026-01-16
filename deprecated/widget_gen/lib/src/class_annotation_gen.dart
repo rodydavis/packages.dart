@@ -58,18 +58,16 @@ class WidgetGenerator extends Generator {
     if (isPropertyClass(baseClass)) {
       _base = 'PropertyBase';
     }
-    if (_base != null) {
-      final _template = MixinStoreTemplate(_base)
-        ..width = width
-        ..height = height;
-      yield _generateCodeFromTemplate(
-        baseClass.name,
-        baseClass,
-        _template,
-        typeNameFinder,
-      );
+    final _template = MixinStoreTemplate(_base)
+      ..width = width
+      ..height = height;
+    yield _generateCodeFromTemplate(
+      baseClass.name,
+      baseClass,
+      _template,
+      typeNameFinder,
+    );
     }
-  }
 
   String _generateCodeFromTemplate(
     String publicTypeName,

@@ -60,11 +60,11 @@ class FileReaderMock implements FileReader {
   ];
 
   @override
-  List<String> readAsLines(Object uri, {Encoding encoding: utf8}) {
+  List<String> readAsLines(Object uri, {Encoding encoding = utf8}) {
     if (uri is String && uri == '.packages') return _dotPackages;
     return null;
   }
 
   @override
-  String readAsString(Object uri, {Encoding encoding: utf8}) => null;
+  String readAsString(Object uri, {Encoding encoding = utf8}) => null;
 }

@@ -196,10 +196,7 @@ class _$ProjectScreen with DiagnosticableTreeMixin implements ProjectScreen {
       this.dx,
       this.dy,
       this.width,
-      this.height})
-      : assert(className != null),
-        assert(isStateful != null),
-        assert(route != null);
+      this.height});
 
   factory _$ProjectScreen.fromJson(Map<String, dynamic> json) =>
       _$_$ProjectScreenFromJson(json);

@@ -51,12 +51,11 @@ extension DefaultFormalParameterImplUtils on DefaultFormalParameterImpl {
             base = base.copyWith(name: child.toString());
           }
         }
-        if (fields != null)
-          for (final field in fields) {
-            if (field.name == base.name) {
-              base = base.copyWith(type: field.type);
-            }
+        for (final field in fields) {
+          if (field.name == base.name) {
+            base = base.copyWith(type: field.type);
           }
+        }
       }
       if (node.runtimeType.toString() == 'SimpleToken' &&
           node.toString() == '=') {

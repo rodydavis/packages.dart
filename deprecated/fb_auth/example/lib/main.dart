@@ -35,7 +35,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void dispose() {
     _auth.close();
-    _userChanged?.cancel();
+    _userChanged.cancel();
     super.dispose();
   }
 

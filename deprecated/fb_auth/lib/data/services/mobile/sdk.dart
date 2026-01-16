@@ -94,8 +94,8 @@ class FbSdk implements FBAuthImpl {
   Future editInfo({String displayName, String photoUrl}) async {
     final _user = await _auth.currentUser();
     final _info = UserUpdateInfo();
-    if (displayName != null) _info.displayName = displayName;
-    if (photoUrl != null) _info.photoUrl = photoUrl;
+    _info.displayName = displayName;
+    _info.photoUrl = photoUrl;
     try {
       await _user.updateProfile(_info);
     } catch (e) {

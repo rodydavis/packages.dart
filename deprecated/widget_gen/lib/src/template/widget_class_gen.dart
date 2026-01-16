@@ -21,20 +21,15 @@ class MixinStoreTemplate extends StoreTemplate {
     if (_hasPreferredSize) {
       sb.writeln('@override');
       sb.write('Size get preferredSize => ');
-      if (width != null && height != null) {
-        sb.write('Size($width, $height)');
-      } else if (width != null) {
-        sb.write('Size.fromWidth($width)');
-      } else if (height != null) {
-        sb.write('Size.fromHeight($height)');
-      }
+      sb.write('Size($width, $height)');
+        
       sb.writeln(';');
     }
     sb.writeln('');
     sb.writeln('@override');
     sb.writeln('Map<String, String> get properties => {');
     for (final setting in settings) {
-      sb.write("'${setting?.key ?? setting.name}'");
+      sb.write("'${setting.key ?? setting.name}'");
       sb.write(':');
       sb.write("'${setting.propertyType}'");
       sb.writeln(',');
@@ -62,7 +57,7 @@ class MixinStoreTemplate extends StoreTemplate {
       sb.write('Animated');
     }
     sb.writeln('$widgetName(');
-    settings.sort((a, b) => (a?.key ?? a.name).compareTo((b?.key ?? b.name)));
+    settings.sort((a, b) => (a.key ?? a.name).compareTo((b.key ?? b.name)));
     if (isAnimated) {
       sb.writeln(
           'duration: const Duration(milliseconds: $animatedDurationMilliseconds),');

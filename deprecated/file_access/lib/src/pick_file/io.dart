@@ -9,13 +9,11 @@ import 'package:image_picker/image_picker.dart';
 
 Future<FileX> openFile() async {
   final _files = await _open(false, false);
-  if (_files == null) return null;
   return _files.first;
 }
 
 Future<List<FileX>> openFiles() async {
   final _files = await _open(true, false);
-  if (_files == null) return null;
   return _files;
 }
 
@@ -30,7 +28,7 @@ Future<FileX> pickImage() async {
       fileExtensions: kImageExtensions,
     ),
   ]);
-  if (_files == null || _files.isEmpty) return null;
+  if (_files.isEmpty) return null;
   return _files.first;
 }
 
@@ -45,7 +43,7 @@ Future<FileX> pickVideo() async {
       fileExtensions: kVideoExtensions,
     ),
   ]);
-  if (_files == null || _files.isEmpty) return null;
+  if (_files.isEmpty) return null;
   return _files.first;
 }
 
@@ -68,13 +66,11 @@ Future<List<FileX>> _open(bool multiple, bool folders,
     final List<FileX> _files = [];
     if (multiple) {
       List<File> files = await FilePicker.getMultiFile();
-      if (files == null) return null;
       for (final file in files) {
         _files.add(await _add(file));
       }
     } else {
       File file = await FilePicker.getFile();
-      if (file == null) return null;
       _files.add(await _add(file));
     }
     return _files;

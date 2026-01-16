@@ -80,7 +80,7 @@ class TableViewScreenState extends State<TableViewScreen>
     var _sections = <CupertinoTableViewSection>[];
 
     _sections = _buildSections(context,
-        data: _search != null && _search.isNotEmpty
+        data: _search.isNotEmpty
             ? _searchItems(context, search: _search)
             : contacts);
 
@@ -117,10 +117,9 @@ class TableViewScreenState extends State<TableViewScreen>
               });
             },
             onChanged: (String value) {
-              if (value != null)
-                setState(() {
-                  _search = value;
-                });
+              setState(() {
+                _search = value;
+              });
             },
           ),
         ),
@@ -144,17 +143,15 @@ class TableViewScreenState extends State<TableViewScreen>
       },
       isEditing: _isEditing,
       onEditing: (bool value) {
-        if (value != null) {
+        setState(() {
+          _isEditing = value;
+        });
+        if (!_isEditing) {
           setState(() {
-            _isEditing = value;
+            selected.clear();
           });
-          if (!_isEditing) {
-            setState(() {
-              selected.clear();
-            });
-          }
         }
-      },
+            },
       isSearching: _isSearching,
       showEditingButtonLeft: true,
     );
@@ -197,7 +194,7 @@ class TableViewScreenState extends State<TableViewScreen>
   }
 
   Widget _buildListTile(BuildContext context, List<String> item) {
-    final bool _selected = selected?.contains(item) ?? false;
+    final bool _selected = selected.contains(item) ?? false;
     CupertinoEditingAction _action;
     switch (sharedValue) {
       case 0:

@@ -46,16 +46,16 @@ class ResponsiveScaffold extends StatelessWidget {
               children: <Widget>[
                 Row(
                   children: <Widget>[
-                    if (drawer != null) ...[
-                      SizedBox(
-                        width: _drawerWidth,
-                        child: Drawer(
-                          child: SafeArea(
-                            child: drawer,
-                          ),
+                    ...[
+                    SizedBox(
+                      width: _drawerWidth,
+                      child: Drawer(
+                        child: SafeArea(
+                          child: drawer,
                         ),
                       ),
-                    ],
+                    ),
+                  ],
                     Expanded(
                       child: Scaffold(
                         key: scaffoldKey,
@@ -64,9 +64,9 @@ class ResponsiveScaffold extends StatelessWidget {
                           automaticallyImplyLeading: false,
                           title: title,
                           actions: <Widget>[
-                            if (trailing != null) ...[
-                              trailing,
-                            ],
+                            ...[
+                            trailing,
+                          ],
                           ],
                         ),
                         body: Row(
@@ -74,30 +74,30 @@ class ResponsiveScaffold extends StatelessWidget {
                             Expanded(
                               child: body ?? Container(),
                             ),
-                            if (endDrawer != null) ...[
-                              Container(
-                                width: _drawerWidth,
-                                child: Drawer(
-                                  elevation: 3.0,
-                                  child: SafeArea(
-                                    child: endDrawer,
-                                  ),
+                            ...[
+                            Container(
+                              width: _drawerWidth,
+                              child: Drawer(
+                                elevation: 3.0,
+                                child: SafeArea(
+                                  child: endDrawer,
                                 ),
                               ),
-                            ],
+                            ),
+                          ],
                           ],
                         ),
                       ),
                     ),
                   ],
                 ),
-                if (floatingActionButton != null) ...[
-                  Positioned(
-                    top: 100.0,
-                    left: _drawerWidth - 30,
-                    child: floatingActionButton,
-                  )
-                ],
+                ...[
+                Positioned(
+                  top: 100.0,
+                  left: _drawerWidth - 30,
+                  child: floatingActionButton,
+                )
+              ],
               ],
             ),
           );
@@ -105,9 +105,7 @@ class ResponsiveScaffold extends StatelessWidget {
         if (constraints.maxWidth >= kTabletBreakpoint) {
           return Scaffold(
             key: scaffoldKey,
-            drawer: drawer == null
-                ? null
-                : Drawer(
+            drawer: Drawer(
                     child: SafeArea(
                       child: drawer,
                     ),
@@ -118,9 +116,9 @@ class ResponsiveScaffold extends StatelessWidget {
               title: title,
               leading: _MenuButton(iconData: menuIcon),
               actions: <Widget>[
-                if (trailing != null) ...[
-                  trailing,
-                ],
+                ...[
+                trailing,
+              ],
               ],
             ),
             body: SafeArea(
@@ -133,26 +131,26 @@ class ResponsiveScaffold extends StatelessWidget {
                       Expanded(
                         child: body ?? Container(),
                       ),
-                      if (endDrawer != null) ...[
-                        Container(
-                          width: _drawerWidth,
-                          child: Drawer(
-                            elevation: 3.0,
-                            child: SafeArea(
-                              child: endDrawer,
-                            ),
+                      ...[
+                      Container(
+                        width: _drawerWidth,
+                        child: Drawer(
+                          elevation: 3.0,
+                          child: SafeArea(
+                            child: endDrawer,
                           ),
                         ),
-                      ],
+                      ),
+                    ],
                     ],
                   ),
-                  if (floatingActionButton != null) ...[
-                    Positioned(
-                      top: 10.0,
-                      left: 10.0,
-                      child: floatingActionButton,
-                    )
-                  ],
+                  ...[
+                  Positioned(
+                    top: 10.0,
+                    left: 10.0,
+                    child: floatingActionButton,
+                  )
+                ],
                 ],
               ),
             ),
@@ -160,16 +158,12 @@ class ResponsiveScaffold extends StatelessWidget {
         }
         return Scaffold(
           key: scaffoldKey,
-          drawer: drawer == null
-              ? null
-              : Drawer(
+          drawer: Drawer(
                   child: SafeArea(
                     child: drawer,
                   ),
                 ),
-          endDrawer: endDrawer == null
-              ? null
-              : Drawer(
+          endDrawer: Drawer(
                   child: SafeArea(
                     child: endDrawer,
                   ),
@@ -180,12 +174,12 @@ class ResponsiveScaffold extends StatelessWidget {
             leading: _MenuButton(iconData: menuIcon),
             title: title,
             actions: <Widget>[
-              if (trailing != null) ...[
-                trailing,
-              ],
-              if (endDrawer != null) ...[
-                _OptionsButton(iconData: endIcon),
-              ]
+              ...[
+              trailing,
+            ],
+              ...[
+              _OptionsButton(iconData: endIcon),
+            ]
             ],
           ),
           body: body,

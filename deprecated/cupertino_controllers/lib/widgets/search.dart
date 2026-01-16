@@ -14,9 +14,7 @@ class CupertinoSearchBar extends AnimatedWidget {
     this.onClear,
     this.enabled = true,
     this.autoCorrect = true,
-  })  : assert(controller != null),
-        assert(focusNode != null),
-        super(key: key, listenable: animation);
+  })  : super(key: key, listenable: animation);
 
   final TextEditingController controller;
   final FocusNode focusNode;
@@ -68,7 +66,7 @@ class CupertinoSearchBar extends AnimatedWidget {
                         style: new TextStyle(
                           inherit: false,
                           color: CupertinoColors.inactiveGray
-                              .withOpacity(_opacityTween.evaluate(animation)),
+                              .withValues(alpha: _opacityTween.evaluate(animation)),
                           fontSize: _kFontSize,
                         ),
                       ),
@@ -102,11 +100,10 @@ class CupertinoSearchBar extends AnimatedWidget {
                         ),
                       ),
                       new CupertinoButton(
-                        minSize: 10.0,
                         padding: const EdgeInsets.all(1.0),
                         borderRadius: new BorderRadius.circular(30.0),
-                        color: CupertinoColors.inactiveGray.withOpacity(
-                          1.0 - _opacityTween.evaluate(animation),
+                        color: CupertinoColors.inactiveGray.withValues(
+                          alpha: 1.0 - _opacityTween.evaluate(animation),
                         ),
                         child: new Icon(
                           Icons.close,
@@ -118,7 +115,7 @@ class CupertinoSearchBar extends AnimatedWidget {
                             return;
                           else
                             onClear!();
-                        },
+                        }, minimumSize: Size(10.0, 10.0),
                       ),
                     ],
                   ),

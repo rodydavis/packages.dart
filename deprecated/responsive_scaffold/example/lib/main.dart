@@ -22,16 +22,14 @@ void _setTargetPlatformForDesktop() {
   } else if (Platform.isLinux || Platform.isWindows) {
     targetPlatform = TargetPlatform.android;
   }
-  if (targetPlatform != null) {
-    debugDefaultTargetPlatformOverride = targetPlatform;
-  }
+  debugDefaultTargetPlatformOverride = targetPlatform;
 }
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      theme: ThemeData.light().copyWith(accentColor: Colors.red),
+      theme: ThemeData.light().copyWith(colorScheme: ColorScheme.fromSwatch().copyWith(secondary: Colors.red)),
       debugShowCheckedModeBanner: false,
       home: HomePage(),
     );

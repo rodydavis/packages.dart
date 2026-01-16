@@ -10,17 +10,9 @@ void newWindow(
 }) {
   final screen = html.window.screen;
   double top = 0;
-  if (dy != null) {
-    top = dy;
-  } else if (screen.height != null) {
-    top = (screen.height - height) / 2;
-  }
+  top = dy;
   double left = 0;
-  if (dx != null) {
-    left = dx;
-  } else if (screen.width != null) {
-    left = (screen.width - width) / 2;
-  }
+  left = dx;
   final sb = StringBuffer();
   sb.write("height=");
   sb.write(height);

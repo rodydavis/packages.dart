@@ -34,12 +34,8 @@ class KeyOptionTemplate extends SettingsImpl {
     """);
     sb.writeln(';');
     sb.writeln('}');
-    if (defaultValue != null) {
-      sb.writeln("return ValueKey<String>('$defaultValue');");
-    } else {
-      sb.writeln("return null;");
-    }
-    sb.writeln('}');
+    sb.writeln("return ValueKey<String>('$defaultValue');");
+      sb.writeln('}');
     sb.writeln('set ${name}Val($propertyType val) {');
     sb.write("""
     if (val == null) {

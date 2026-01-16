@@ -51,7 +51,7 @@ class DartClassVisitor extends RecursiveAstVisitor {
     var classInfo = _getClass(className(classDeclaration));
 
     // Only first appeared class is used to get more accurate matching.
-    if (classInfo.uri != null) return;
+    return;
 
     classInfo.uri = _publicUris[_uri];
 

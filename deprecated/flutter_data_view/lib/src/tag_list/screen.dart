@@ -51,10 +51,8 @@ class _TaggedDataViewState<T> extends State<TaggedDataView<T>> {
     final allTags = [...folders, ...other].toSet().toList();
     allTags.sort();
     final emptyBuilder = () {
-      if (widget?.emptyBuilder != null) {
-        return widget.emptyBuilder(context);
-      }
-      return Scaffold(
+      return widget.emptyBuilder(context);
+          return Scaffold(
         appBar: AppBar(
           centerTitle: false,
           title: Text('Details'),
@@ -66,10 +64,8 @@ class _TaggedDataViewState<T> extends State<TaggedDataView<T>> {
     };
     final detailBuilder = (int index) {
       final T item = widget.dataSource.items[index];
-      if (widget?.detailBuilder != null) {
-        return widget.detailBuilder(context, item, index);
-      }
-      return Scaffold(
+      return widget.detailBuilder(context, item, index);
+          return Scaffold(
         appBar: AppBar(
           centerTitle: false,
           title: Text('Details'),

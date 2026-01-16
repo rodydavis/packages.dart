@@ -11,13 +11,10 @@ abstract class SettingsImpl {
   String constructor() {
     final sb = StringBuffer();
     sb.write('    ');
-    if (key != null && int.tryParse(key) != null) {
+    if (int.tryParse(key) != null) {
       sb.write('${name}Val');
-    } else if (key != null) {
-      sb.write("$key: ${name}Val");
-    } else {
-      sb.write("$name: ${name}Val");
-    }
+    } else    sb.write("$key: ${name}Val");
+  
     sb.writeln(',');
     return sb.toString();
   }

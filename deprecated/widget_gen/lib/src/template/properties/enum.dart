@@ -29,7 +29,7 @@ class EnumOptionTemplate extends SettingsImpl {
     sb.write('final _value = ');
     sb.writeln("params[${name}Key].toString().replaceAll('#', '');");
     final _fallback =
-        defaultValue == null ? null : _getEnumValueFromString(defaultValue);
+        _getEnumValueFromString(defaultValue);
     sb.writeln("""
     return ${name}Values.firstWhere(
       (element) => element.toString() == _value,
@@ -58,7 +58,6 @@ class EnumOptionTemplate extends SettingsImpl {
 }
 
 T getEnum<T>(String val, {T fallback, List<T> values}) {
-  if (val == null) return fallback;
   final _value = val.replaceAll('#', '');
   return values.firstWhere(
     (element) => element.toString() == _value,

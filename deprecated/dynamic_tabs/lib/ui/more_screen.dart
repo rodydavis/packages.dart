@@ -183,7 +183,7 @@ class MaterialPage extends StatelessWidget {
                   final i = model.extraTabs[index];
                   return ListTile(
                     leading: i.tab.icon,
-                    title: i.tab.title,
+                    title: i.tab.label,
                     selected: expanded ? index == model.subIndex : false,
                     trailing:
                         !expanded ? Icon(Icons.keyboard_arrow_right) : null,
@@ -245,7 +245,7 @@ class CupertinoPage extends StatelessWidget {
                     (BuildContext context, int index) {
                       final i = model.extraTabs[index];
                       final Icon _icon = i.tab.icon as Icon;
-                      final Text _text = i.tab.title as Text;
+                      final Text _text = i.tab.label as Text;
                       return DefaultTextStyle(
                           style: CupertinoTheme.of(context).textTheme.textStyle,
                           child: CupertinoListTile(

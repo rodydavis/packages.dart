@@ -24,12 +24,8 @@ class WindowController extends ChangeNotifier {
   WindowCollection base = WindowColumn([]);
 
   void addToBase(WindowTab tab) {
-    if (base == null) {
-      base = WindowColumn([WindowGroup(tab)]);
-    } else {
-      _addTab(base, tab);
-    }
-    notifyListeners();
+    _addTab(base, tab);
+      notifyListeners();
   }
 
   bool _addTab(WindowCollection item, WindowTab tab) {

@@ -18,7 +18,7 @@ abstract class NgDartCommand extends Command {
   String readArg(String errorMessage) {
     var args = argResults.rest;
 
-    if (args == null || args.length == 0) {
+    if (args.length == 0) {
       // Usage is provided by command runner.
       throw new UsageException(errorMessage, '');
     }

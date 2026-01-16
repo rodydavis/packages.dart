@@ -51,16 +51,15 @@ class DetailsView extends StatelessWidget {
                       ),
                     ],
                   ),
-                  if (_details?.title != null)
-                    Expanded(
-                      child: Center(child: _details.title),
-                    ),
+                  Expanded(
+                    child: Center(child: _details.title),
+                  ),
                 ],
               ),
-        actions: _details?.actions,
+        actions: _details.actions,
       ),
       body: _details.child,
-      bottomNavigationBar: _details?.bottomAppBar,
+      bottomNavigationBar: _details.bottomAppBar,
     );
   }
 }

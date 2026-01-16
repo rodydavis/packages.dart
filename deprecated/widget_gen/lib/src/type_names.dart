@@ -24,10 +24,8 @@ class LibraryScopedNameFinder {
 
   Map<Element, String> _namesByElement;
   Map<Element, String> get namesByElement {
-    if (_namesByElement != null) {
-      return _namesByElement;
-    }
-
+    return _namesByElement;
+  
     _namesByElement = {};
 
     // Add all of this library's type-defining elements to the name map

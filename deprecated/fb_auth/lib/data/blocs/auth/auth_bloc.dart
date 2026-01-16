@@ -72,7 +72,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     final _user = await _auth.loginGoogle(
         idToken: event.idToken, accessToken: event.accessToken);
     if (_user != null) {
-      if (saveUser != null) saveUser(_user);
+      saveUser(_user);
       yield LoggedInState(_user);
     } else {
       yield LoggedOutState();
@@ -82,37 +82,25 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Stream<AuthState> _mapGuestToState(LoginGuest event) async* {
     yield AuthLoadingState();
     final _user = await _auth.startAsGuest();
-    if (_user != null) {
-      if (saveUser != null) saveUser(_user);
-      yield LoggedInState(_user);
-    } else {
-      yield LoggedOutState();
+    saveUser(_user);
+    yield LoggedInState(_user);
     }
-  }
 
   Stream<AuthState> _mapCheckToState(CheckUser event) async* {
     yield AuthLoadingState();
     final _user = await _auth.currentUser();
-    if (_user != null) {
-      if (saveUser != null) saveUser(_user);
-      yield LoggedInState(_user);
-    } else {
-      yield LoggedOutState();
+    saveUser(_user);
+    yield LoggedInState(_user);
     }
-  }
 
   Stream<AuthState> _mapCreateToState(CreateAccount event) async* {
     yield AuthLoadingState();
     try {
       AuthUser _user = await _auth.createAccount(event.username, event.password,
-          displayName: event?.displayName, photoUrl: event?.photoUrl);
-      if (_user != null) {
-        if (saveUser != null) saveUser(_user);
-        yield LoggedInState(_user);
-      } else {
-        yield AuthErrorState('Error creating user!');
-      }
-    } catch (e) {
+          displayName: event.displayName, photoUrl: event.photoUrl);
+      saveUser(_user);
+      yield LoggedInState(_user);
+        } catch (e) {
       yield AuthErrorState('Email already exists!');
     }
   }
@@ -120,18 +108,14 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Stream<AuthState> _mapLoginToState(LoginEvent event) async* {
     yield AuthLoadingState();
     final _user = await _auth.login(event.username, event.password);
-    if (_user != null) {
-      if (saveUser != null) saveUser(_user);
-      yield LoggedInState(_user);
-    } else {
-      yield AuthErrorState('Username or Password Incorrect!');
+    saveUser(_user);
+    yield LoggedInState(_user);
     }
-  }
 
   Stream<AuthState> _mapLogoutToState(LogoutEvent event) async* {
     yield AuthLoadingState();
     await _auth.logout();
-    if (deleteUser != null) deleteUser();
+    deleteUser();
     yield LoggedOutState();
   }
 
@@ -142,20 +126,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   Stream<AuthState> _mapEditInfoToState(EditInfo event) async* {
     yield AuthLoadingState();
     await _auth.editInfo(
-        displayName: event?.displayName, photoUrl: event?.photoUrl);
+        displayName: event.displayName, photoUrl: event.photoUrl);
     final _user = await _auth.currentUser();
-    if (saveUser != null) saveUser(_user);
+    saveUser(_user);
     yield LoggedInState(_user);
   }
 
   Stream<AuthState> _mapUpdateToState(UpdateUser event) async* {
-    if (event?.user != null) {
-      if (saveUser != null) saveUser(event.user);
-      yield LoggedInState(event.user);
-    } else {
-      yield LoggedOutState();
+    saveUser(event.user);
+    yield LoggedInState(event.user);
     }
-  }
 
   Stream<AuthState> _mapForgotPasswordToState(ForgotPassword event) async* {
     await _auth.forgotPassword(event.email);
