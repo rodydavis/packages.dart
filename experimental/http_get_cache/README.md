@@ -1,7 +1,5 @@
 # http_get_cache
 
-[![Pub](https://img.shields.io/pub/v/http_get_cache.svg)](https://pub.dev/packages/http_get_cache)
-
 A robust, HTTP-compliant caching library for Flutter and Dart. `http_get_cache` wraps the standard [`http`](https://pub.dev/packages/http) package to automatically cache GET requests based on `Cache-Control`, `Vary`, `ETag`, and `Last-Modified` headers.
 
 It uses **SQLite** (via [`drift`](https://pub.dev/packages/drift)) for metadata storage and the file system for caching response bodies, ensuring separate, non-blocking storage.
