@@ -4,6 +4,9 @@ publish_to: none
 environment:
   sdk: ^3.5.0
 
+dev_dependencies:
+  flutter_lints: ^6.0.0
+
 workspace:
   - packages/flutter_vibrate
   - packages/flutter_sms
