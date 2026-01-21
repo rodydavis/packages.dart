@@ -1,0 +1,26 @@
+name: example
+description: "A new Flutter project."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: '>=3.4.3 <4.0.0'
+
+dependencies:
+  http_get_cache:
+    path: ..
+  flutter:
+    sdk: flutter
+  drift: ^2.24.2
+  drift_flutter: ^0.2.8
+  signals: ^5.5.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+  drift_dev: ^2.24.2
+  build_runner: ^2.4.11
+
+flutter:
+  uses-material-design: true
