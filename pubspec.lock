@@ -372,10 +372,10 @@ packages:
     dependency: transitive
     description:
       name: pigeon
-      sha256: fcfee18cf18dae434a149879e6876214c1b57c8d2d5d0cc55a5ba0c85278b886
+      sha256: b12f739047654cd65338dc7e9c6c03cbd4a1de179364a45c9e8bbeccf23729c6
       url: "https://pub.dev"
     source: hosted
-    version: "26.1.5"
+    version: "26.1.7"
   platform:
     dependency: transitive
     description:
