@@ -26,6 +26,7 @@ A collection of Flutter packages maintained by @rodydavis.
 | Package | Description | Version |
 | :--- | :--- | :--- |
 | [diff_algorithims](./experimental/diff_algorithims) | A set of diffing algorithims for Dart | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
+| [http_get_cache](./experimental/http_get_cache) | HTTP Compliant cache for Flutter | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [pocketbase_auth](./experimental/pocketbase_auth) | Pocketbase auth client with built in UI screens and token refresh | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [pocketbase_sync](./experimental/pocketbase_sync) | A Flutter package for offline-first syncing with PocketBase. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [web_file_system](./experimental/web_file_system) | A high-performance, asynchronous file system for the web using IDB and OPFS. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
