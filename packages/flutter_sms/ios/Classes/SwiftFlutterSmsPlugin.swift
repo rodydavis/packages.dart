@@ -13,7 +13,7 @@ public class SwiftFlutterSmsPlugin: NSObject, FlutterPlugin, SmsHostApi, UINavig
 
   public func sendSms(message: String, recipients: [String], completion: @escaping (Result<String, Error>) -> Void) {
     #if targetEnvironment(simulator)
-      completion(.failure(FlutterError(
+      completion(.failure(PigeonError(
           code: "message_not_sent",
           message: "Cannot send message on this device!",
           details: "Cannot send SMS and MMS on a Simulator. Test on a real device."
@@ -27,7 +27,7 @@ public class SwiftFlutterSmsPlugin: NSObject, FlutterPlugin, SmsHostApi, UINavig
         controller.messageComposeDelegate = self
         UIApplication.shared.keyWindow?.rootViewController?.present(controller, animated: true, completion: nil)
       } else {
-        completion(.failure(FlutterError(
+        completion(.failure(PigeonError(
             code: "device_not_capable",
             message: "The current device is not capable of sending text messages.",
             details: "A device may be unable to send messages if it does not support messaging or if it is not currently configured to send messages. This only applies to the ability to send text messages via iMessage, SMS, and MMS."
@@ -36,14 +36,14 @@ public class SwiftFlutterSmsPlugin: NSObject, FlutterPlugin, SmsHostApi, UINavig
     #endif
   }
 
-  public func canSendSms() -> Bool {
+  public func canSendSms(completion: @escaping (Result<Bool, Error>) -> Void) {
     #if targetEnvironment(simulator)
-      return false
+      completion(.success(false))
     #else
       if (MFMessageComposeViewController.canSendText()) {
-        return true
+        completion(.success(true))
       } else {
-        return false
+        completion(.success(false))
       }
     #endif
   }
