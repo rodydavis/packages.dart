@@ -1,3 +1,7 @@
+## 1.3.2
+
+* Fix by @josealba to use .sizeOf(context): https://github.com/rodydavis/packages.dart/pull/14
+
 ## 1.3.0
 
 * Update Dart SDK constraint to >=3.0.0.

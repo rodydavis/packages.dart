@@ -1,3 +1,7 @@
+# 3.0.1
+
+- Fix iOS build error: https://github.com/rodydavis/packages.dart/pull/11
+
 # 3.0.0
 
 * **Breaking Change**: Migrated to Pigeon for type-safe platform channels.

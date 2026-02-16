@@ -1,6 +1,6 @@
 name: flutter_sms
 description: A Flutter plugin to send SMS and MMS on iOS and Android.
-version: 3.0.0
+version: 3.0.1
 homepage: https://github.com/rodydavis/packages.dart
 repository: https://github.com/rodydavis/packages.dart
 maintainer: Rody Davis (@rodydavis)
