@@ -51,16 +51,14 @@ class Breakpoint {
   ///
   /// Use [Breakpoint.fromConstraints] when the widget does not take up the full screen
   factory Breakpoint.fromMediaQuery(BuildContext context) {
-    final _media = MediaQuery.of(context);
+    final size = MediaQuery.sizeOf(context);
 
-    double _width = 359;
+    double width = size.width;
 
-    Orientation orientation = Orientation.portrait;
+    final orientation =
+    size.width > size.height ? Orientation.landscape : Orientation.portrait;
 
-    _width = _media.size.width;
-    orientation = _media.orientation;
-
-    return _calcBreakpoint(orientation, _width);
+    return _calcBreakpoint(orientation, width);
   }
 
   static Breakpoint _calcBreakpoint(Orientation orientation, double _width) {
