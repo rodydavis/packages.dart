@@ -1,0 +1,11 @@
+build
+.dart_tool
+.git
+.github
+.gitea
+.vscode
+.agents
+node_modules
+# Ignore nested package builds
+**/build
+**/.dart_tool

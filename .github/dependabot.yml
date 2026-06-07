@@ -29,3 +29,19 @@ updates:
     directory: "/packages/flutter_whatsnew"
     schedule:
       interval: "daily"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/app_review"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "pub"
+    directory: "/packages/undo"
+    schedule:
+      interval: "daily"
+
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "daily"
+
