@@ -228,6 +228,18 @@ class WebFileSystem extends FileSystem {
   @override
   bool identicalSync(String path1, String path2) =>
       throw UnsupportedError('Sync not supported');
+
+  Future<String> resolveSymbolicLinks(String pathStr) async {
+    final inode = await resolvepath(pathStr, followLinks: true);
+    final List<String> segments = [];
+    Inode current = inode;
+    while (current.id != IdbInodeService.rootId) {
+      segments.add(current.name);
+      current = await _idb.getInode(current.parentId);
+    }
+    if (segments.isEmpty) return '/';
+    return '/' + segments.reversed.join('/');
+  }
 }
 
 class FileStatImpl implements FileStat {

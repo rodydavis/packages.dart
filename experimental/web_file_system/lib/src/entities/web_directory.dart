@@ -3,6 +3,7 @@ import 'package:file/file.dart';
 import 'package:web_file_system/src/backend/idb_inode_service.dart';
 import '../web_file_system.dart';
 import 'web_file.dart';
+import 'web_link.dart';
 
 class WebDirectory extends FileSystemEntity implements Directory {
   final WebFileSystem _fs;
@@ -143,6 +144,26 @@ class WebDirectory extends FileSystemEntity implements Directory {
         if (recursive) {
           yield* dir.list(recursive: true, followLinks: followLinks);
         }
+      } else if (child.nodeType == 2) {
+        if (!followLinks) {
+          yield WebLink(_fs, childPath);
+        } else {
+          try {
+            final resolved =
+                await _fs.resolvepath(childPath, followLinks: true);
+            if (resolved.nodeType == 1) {
+              final dir = WebDirectory(_fs, childPath);
+              yield dir;
+              if (recursive) {
+                yield* dir.list(recursive: true, followLinks: true);
+              }
+            } else {
+              yield WebFile(_fs, childPath);
+            }
+          } catch (_) {
+            yield WebLink(_fs, childPath);
+          }
+        }
       } else {
         yield WebFile(_fs, childPath);
       }
@@ -202,7 +223,7 @@ class WebDirectory extends FileSystemEntity implements Directory {
   FileStat statSync() => throw UnsupportedError('Sync not supported');
 
   @override
-  Future<String> resolveSymbolicLinks() async => path;
+  Future<String> resolveSymbolicLinks() => _fs.resolveSymbolicLinks(path);
 
   @override
   String resolveSymbolicLinksSync() =>

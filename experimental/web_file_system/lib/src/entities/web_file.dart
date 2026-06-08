@@ -149,7 +149,7 @@ class WebFile extends FileSystemEntity implements File {
     bool flush = false,
   }) async {
     final stream = Stream.value(bytes);
-    final newBlobId = await _fs.opfs.writeBlob(stream);
+    final (newBlobId, _) = await _fs.opfs.writeBlob(stream);
 
     Inode inode;
     try {
@@ -157,8 +157,15 @@ class WebFile extends FileSystemEntity implements File {
       if (mode == FileMode.append) {
         throw UnsupportedError('Append not yet optimized');
       }
-    } catch (_) {
-      await create(recursive: true);
+    } on FileSystemException catch (_) {
+      final parentPath = _fs.path.dirname(path);
+      if (await _fs.type(parentPath) != FileSystemEntityType.directory) {
+        throw FileSystemException(
+          'Cannot open file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
+          path,
+        );
+      }
+      await create(recursive: false);
       inode = await _fs.resolvepath(path);
     }
 
@@ -220,16 +227,9 @@ class WebFile extends FileSystemEntity implements File {
 
     // Start background write but keep future to await in close()
     final writeFuture = _handleWrite(controller.stream, encoding, mode);
+    writeFuture.catchError((Object _) {});
 
-    final sink = _WebIOSink(
-      controller,
-      encoding,
-      onDone: () async {
-        await writeFuture;
-      },
-    );
-
-    return sink;
+    return _WebIOSink(controller, writeFuture, encoding);
   }
 
   Future<void> _handleWrite(
@@ -238,14 +238,22 @@ class WebFile extends FileSystemEntity implements File {
     FileMode mode,
   ) async {
     try {
-      final newId = await _fs.opfs.writeBlob(stream);
+      final parentPath = _fs.path.dirname(path);
+      if (await _fs.type(parentPath) != FileSystemEntityType.directory) {
+        throw FileSystemException(
+          'Cannot open file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
+          path,
+        );
+      }
+
+      final (newId, size) = await _fs.opfs.writeBlob(stream);
 
       Inode inode;
       try {
         inode = await _fs.resolvepath(path);
       } catch (_) {
         // Create if missing
-        await create(recursive: true);
+        await create(recursive: false);
         inode = await _fs.resolvepath(path);
       }
 
@@ -256,8 +264,7 @@ class WebFile extends FileSystemEntity implements File {
           name: inode.name,
           nodeType: 0,
           blobId: newId,
-          size:
-              0, // TODO: Size not returned by OPFS yet, so 0 for streamed content
+          size: size,
           modified: DateTime.now().millisecondsSinceEpoch,
         ),
       );
@@ -364,7 +371,7 @@ class WebFile extends FileSystemEntity implements File {
   File get absolute => WebFile(_fs, _fs.path.absolute(path));
 
   @override
-  Future<String> resolveSymbolicLinks() async => path;
+  Future<String> resolveSymbolicLinks() => _fs.resolveSymbolicLinks(path);
 
   @override
   String resolveSymbolicLinksSync() =>
@@ -381,10 +388,10 @@ class WebFile extends FileSystemEntity implements File {
 
 class _WebIOSink implements IOSink {
   final StreamController<List<int>> _controller;
-  final Future<void> Function()? onDone;
+  final Future<void> _writeFuture;
   Encoding _encoding;
 
-  _WebIOSink(this._controller, this._encoding, {this.onDone});
+  _WebIOSink(this._controller, this._writeFuture, this._encoding);
 
   @override
   Encoding get encoding => _encoding;
@@ -394,27 +401,35 @@ class _WebIOSink implements IOSink {
 
   @override
   void add(List<int> data) {
+    if (_controller.isClosed) return;
     _controller.add(data);
   }
 
   @override
   void addError(Object error, [StackTrace? stackTrace]) {
+    if (_controller.isClosed) return;
     _controller.addError(error, stackTrace);
   }
 
   @override
   Future addStream(Stream<List<int>> stream) {
-    return _controller.addStream(stream);
+    return Future.any([
+      _controller.addStream(stream),
+      _writeFuture,
+    ]);
   }
 
   @override
   Future close() async {
     await _controller.close();
-    if (onDone != null) await onDone!();
+    await _writeFuture;
   }
 
   @override
-  Future get done => _controller.done;
+  Future get done => Future.any([
+        _controller.done,
+        _writeFuture,
+      ]);
 
   @override
   Future flush() async {}

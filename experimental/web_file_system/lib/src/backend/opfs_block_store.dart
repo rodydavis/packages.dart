@@ -26,7 +26,7 @@ class OpfsBlockStore {
         .toDart;
   }
 
-  Future<String> writeBlob(Stream<List<int>> stream) async {
+  Future<(String, int)> writeBlob(Stream<List<int>> stream) async {
     await _ensureReady();
     final blockId = _uuid.v4();
 
@@ -38,10 +38,12 @@ class OpfsBlockStore {
         .toDart;
 
     final writable = await fileHandle.createWritable().toDart;
+    int totalBytes = 0;
 
     try {
       await for (final chunk in stream) {
         final uint8 = Uint8List.fromList(chunk);
+        totalBytes += uint8.length;
         await writable.write(uint8.toJS).toDart;
       }
       await writable.close().toDart;
@@ -53,7 +55,7 @@ class OpfsBlockStore {
       rethrow;
     }
 
-    return blockId;
+    return (blockId, totalBytes);
   }
 
   Stream<List<int>> readBlob(String blockId) async* {

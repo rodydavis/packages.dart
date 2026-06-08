@@ -35,7 +35,7 @@ class WebLink extends FileSystemEntity implements Link {
 
     // Write target path string to OPFS blob
     final stream = Stream.value(utf8.encode(target));
-    final blobId = await _fs.opfs.writeBlob(stream);
+    final (blobId, _) = await _fs.opfs.writeBlob(stream);
 
     final parentPath = _fs.path.dirname(path);
     final parentInode = await _fs.resolvepath(parentPath);
@@ -66,7 +66,7 @@ class WebLink extends FileSystemEntity implements Link {
 
     // Write new blob
     final stream = Stream.value(utf8.encode(target));
-    final blobId = await _fs.opfs.writeBlob(stream);
+    final (blobId, _) = await _fs.opfs.writeBlob(stream);
 
     await _fs.idb.updateInode(
       Inode(
@@ -184,17 +184,7 @@ class WebLink extends FileSystemEntity implements Link {
   Link get absolute => WebLink(_fs, _fs.path.absolute(path));
 
   @override
-  Future<String> resolveSymbolicLinks() async {
-    // If we are a link, return target? No, resolveSymbolicLinks follows all the way to canonical path.
-    // For now, simpler: resolve path logic.
-    final targetPath = await target();
-    // If target is relative, resolve against directory. This gets complex.
-    // MVP: Return target path raw? No, contract says "path with all symbolic links resolved".
-    // This requires full traversal logic.
-    // For MVP just return the path as we stored it if it's absolute, or join if relative.
-    if (_fs.path.isAbsolute(targetPath)) return targetPath;
-    return _fs.path.normalize(_fs.path.join(dirname, targetPath));
-  }
+  Future<String> resolveSymbolicLinks() => _fs.resolveSymbolicLinks(path);
 
   @override
   String resolveSymbolicLinksSync() =>

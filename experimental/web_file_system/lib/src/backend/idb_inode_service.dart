@@ -95,13 +95,16 @@ class IdbInodeService {
   static const String _storeName = 'inodes';
 
   web.IDBDatabase? _db;
-  final Completer<void> _initCompleter = Completer<void>();
+  Future<void>? _initFuture;
   static const String rootId = '00000000-0000-0000-0000-000000000000';
 
-  Future<void> _ensureReady() async {
-    if (_db != null) return;
-    if (_initCompleter.isCompleted) return _initCompleter.future;
+  Future<void> _ensureReady() {
+    if (_db != null) return Future.value();
+    return _initFuture ??= _init();
+  }
 
+  Future<void> _init() async {
+    final completer = Completer<void>();
     final request = web.window.indexedDB.open(_dbName, _version);
 
     request.onupgradeneeded = (web.IDBVersionChangeEvent event) {
@@ -119,20 +122,17 @@ class IdbInodeService {
       }
     }.toJS;
 
-    final completer = Completer<void>();
-
     request.onsuccess = (web.Event event) {
       _db = (event.target as web.IDBOpenDBRequest).result as web.IDBDatabase;
       _ensureRootExists().then((_) {
-        if (!_initCompleter.isCompleted) completer.complete();
+        completer.complete();
       }).catchError((e) {
-        if (!_initCompleter.isCompleted) completer.completeError(e);
+        completer.completeError(e);
       });
     }.toJS;
 
     request.onerror = (web.Event event) {
-      if (!_initCompleter.isCompleted)
-        completer.completeError(Exception('Failed to open IDB'));
+      completer.completeError(Exception('Failed to open IDB'));
     }.toJS;
 
     return completer.future;

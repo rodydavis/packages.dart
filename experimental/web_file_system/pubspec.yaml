@@ -6,7 +6,7 @@ homepage: https://github.com/fluttercommunity/flutter_whatsnew
 maintainer: Rody Davis (@rodydavis)
 
 environment:
-  sdk: ^3.5.0
+  sdk: ^3.10.0
   flutter: ^3.38.5
 
 dependencies:
@@ -14,7 +14,6 @@ dependencies:
   path: ^1.9.0
   web: ^1.1.1
   uuid: ^4.0.0
-  mime: ^1.0.0
 
 dev_dependencies:
   lints: ^6.0.0
