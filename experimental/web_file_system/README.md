@@ -28,13 +28,13 @@ graph TD
     end
 
     subgraph Metadata ["IndexedDB (IdbInodeService)"]
-        DB[(WebFileSystemDB)]
-        Inodes[Inode Table: parentId index]
+        DB["WebFileSystemDB"]
+        Inodes["Inode Table: parentId index"]
     end
 
     subgraph DataBlocks ["OPFS (OpfsBlockStore)"]
-        BlocksDir[/.blocks/ Directory]
-        RawData[[UUID Data Blobs]]
+        BlocksDir["/.blocks/ Directory"]
+        RawData["UUID Data Blobs"]
     end
 
     FS -->|Lookup / Resolve| Metadata
