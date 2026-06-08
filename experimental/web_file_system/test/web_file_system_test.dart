@@ -1,5 +1,6 @@
 @TestOn('browser')
 import 'dart:async';
+import 'dart:convert';
 import 'dart:typed_data';
 import 'dart:js_interop';
 import 'package:test/test.dart';
@@ -488,6 +489,493 @@ void main() {
       );
     });
   });
+
+  group('Sync API Mocking & Error Verification', () {
+    test('Synchronous APIs on main thread throw UnsupportedError', () {
+      final file = fs.file('/sync_main.txt');
+      expect(() => fs.typeSync('/sync_main.txt'), throwsA(isA<UnsupportedError>()));
+      expect(() => fs.statSync('/sync_main.txt'), throwsA(isA<UnsupportedError>()));
+      expect(() => fs.resolveSymbolicLinksSync('/sync_main.txt'), throwsA(isA<UnsupportedError>()));
+      expect(() => file.createSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => file.writeAsBytesSync([1]), throwsA(isA<UnsupportedError>()));
+      expect(() => file.writeAsStringSync('a'), throwsA(isA<UnsupportedError>()));
+      expect(() => file.readAsBytesSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => file.readAsStringSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => file.readAsLinesSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => file.existsSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => file.renameSync('/sync_main_renamed.txt'), throwsA(isA<UnsupportedError>()));
+      expect(() => file.deleteSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => file.statSync(), throwsA(isA<UnsupportedError>()));
+      
+      final dir = fs.directory('/sync_dir');
+      expect(() => dir.createSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => dir.createTempSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => dir.deleteSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => dir.existsSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => dir.listSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => dir.renameSync('/sync_dir_renamed'), throwsA(isA<UnsupportedError>()));
+      expect(() => dir.statSync(), throwsA(isA<UnsupportedError>()));
+
+      final link = fs.link('/sync_link');
+      expect(() => link.createSync('/target'), throwsA(isA<UnsupportedError>()));
+      expect(() => link.updateSync('/new_target'), throwsA(isA<UnsupportedError>()));
+      expect(() => link.targetSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => link.renameSync('/sync_link_renamed'), throwsA(isA<UnsupportedError>()));
+      expect(() => link.deleteSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => link.existsSync(), throwsA(isA<UnsupportedError>()));
+      expect(() => link.statSync(), throwsA(isA<UnsupportedError>()));
+    });
+
+    group('Mock Worker Environment', () {
+      setUp(() {
+        setupSyncMockJS();
+      });
+
+      tearDown(() {
+        clearSyncMockJS();
+      });
+
+      test('typeSync calls cmd 2 and returns correct types', () {
+        setMockSyncResponse(utf8.encode('file'));
+        expect(fs.typeSync('/test_file'), equals(FileSystemEntityType.file));
+        expect(getLastSyncCmd(), equals(2));
+
+        setMockSyncResponse(utf8.encode('directory'));
+        expect(fs.typeSync('/test_dir'), equals(FileSystemEntityType.directory));
+
+        setMockSyncResponse(utf8.encode('link'));
+        expect(fs.typeSync('/test_link'), equals(FileSystemEntityType.link));
+
+        setMockSyncResponse(utf8.encode('notFound'));
+        expect(fs.typeSync('/not_found'), equals(FileSystemEntityType.notFound));
+      });
+
+      test('file read and write sync APIs', () {
+        // existsSync
+        setMockSyncResponse(utf8.encode('file'));
+        final file = fs.file('/sync_worker.txt');
+        expect(file.existsSync(), isTrue);
+        expect(getLastSyncCmd(), equals(2));
+
+        // writeAsBytesSync
+        setMockSyncResponse(utf8.encode('directory')); // parent typeSync
+        setMockSyncResponse([]); // writeBytes
+        file.writeAsBytesSync([10, 20, 30]);
+        expect(getLastSyncCmd(), equals(4));
+        final payload = getLastSyncPayload();
+        expect(payload, isNotNull);
+        // Request format: [pathLen (4)] + [pathBytes] + [bytes]
+        // path is '/sync_worker.txt' (length 16)
+        expect(payload![0], equals(16));
+        expect(payload.sublist(4, 20), equals(utf8.encode('/sync_worker.txt')));
+        expect(payload.sublist(20), equals([10, 20, 30]));
+
+        // writeAsStringSync
+        setMockSyncResponse(utf8.encode('directory')); // parent typeSync
+        setMockSyncResponse([]); // writeBytes
+        file.writeAsStringSync('abc');
+        expect(getLastSyncCmd(), equals(4));
+
+        // readAsBytesSync
+        setMockSyncResponse(utf8.encode('file')); // typeSync(path)
+        setMockSyncResponse([12, 34, 56]); // readBytes
+        expect(file.readAsBytesSync(), equals([12, 34, 56]));
+        expect(getLastSyncCmd(), equals(3));
+
+        // readAsStringSync
+        setMockSyncResponse(utf8.encode('file')); // typeSync(path)
+        setMockSyncResponse(utf8.encode('hello sync')); // readBytes
+        expect(file.readAsStringSync(), equals('hello sync'));
+
+        // readAsLinesSync
+        setMockSyncResponse(utf8.encode('file')); // typeSync(path)
+        setMockSyncResponse(utf8.encode('line1\nline2\r\nline3')); // readBytes
+        expect(file.readAsLinesSync(), equals(['line1', 'line2', 'line3']));
+
+        // deleteSync
+        setMockSyncResponse(utf8.encode('file')); // typeSync(path)
+        setMockSyncResponse([]); // delete
+        file.deleteSync();
+        expect(getLastSyncCmd(), equals(6));
+
+        // statSync
+        final statJson = json.encode({
+          'type': 'file',
+          'size': 1500,
+          'modified': 1718100000000,
+        });
+        setMockSyncResponse(utf8.encode(statJson));
+        final stat = file.statSync();
+        expect(getLastSyncCmd(), equals(9));
+        expect(stat.type, equals(FileSystemEntityType.file));
+        expect(stat.size, equals(1500));
+        expect(stat.modified.millisecondsSinceEpoch, equals(1718100000000));
+      });
+
+      test('directory sync APIs', () {
+        final dir = fs.directory('/sync_dir');
+
+        // createSync
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        setMockSyncResponse(utf8.encode('directory')); // parent typeSync
+        setMockSyncResponse([]); // createDir
+        dir.createSync();
+        expect(getLastSyncCmd(), equals(5));
+
+        // deleteSync
+        setMockSyncResponse(utf8.encode('directory')); // typeSync(path) inside deleteSync
+        setMockSyncResponse(utf8.encode('directory')); // typeSync(path) inside listSync -> existsSync
+        setMockSyncResponse(utf8.encode('[]')); // listSync
+        setMockSyncResponse([]); // delete
+        dir.deleteSync();
+        expect(getLastSyncCmd(), equals(6));
+
+        // listSync
+        final listData = json.encode([
+          {'path': '/sync_dir/file.txt', 'type': 'file'},
+          {'path': '/sync_dir/sub', 'type': 'directory'},
+          {'path': '/sync_dir/link', 'type': 'link'},
+        ]);
+        setMockSyncResponse(utf8.encode('directory')); // listSync -> existsSync
+        setMockSyncResponse(utf8.encode(listData)); // listSync
+        final list = dir.listSync(followLinks: false);
+        expect(getLastSyncCmd(), equals(10));
+        expect(list.length, equals(3));
+        expect(list[0], isA<File>());
+        expect(list[0].path, equals('/sync_dir/file.txt'));
+        expect(list[1], isA<Directory>());
+        expect(list[2], isA<Link>());
+      });
+
+      test('link sync APIs', () {
+        final link = fs.link('/sync_link');
+
+        // createSync
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        setMockSyncResponse(utf8.encode('directory')); // parent typeSync
+        setMockSyncResponse([]); // createLink
+        link.createSync('/target_path');
+        expect(getLastSyncCmd(), equals(7));
+
+        // updateSync
+        setMockSyncResponse(utf8.encode('link')); // typeSync check
+        setMockSyncResponse([]); // updateLink
+        link.updateSync('/new_target');
+        expect(getLastSyncCmd(), equals(13));
+
+        // targetSync
+        setMockSyncResponse(utf8.encode('link')); // typeSync check
+        setMockSyncResponse(utf8.encode('/resolved_target')); // readLink
+        expect(link.targetSync(), equals('/resolved_target'));
+        expect(getLastSyncCmd(), equals(8));
+
+        // deleteSync
+        setMockSyncResponse(utf8.encode('link')); // typeSync check
+        setMockSyncResponse([]); // delete
+        link.deleteSync();
+        expect(getLastSyncCmd(), equals(6));
+      });
+
+      test('sync error paths and branch coverage', () {
+        // 1. SharedArrayBuffer unsupported
+        jsEval('window.SharedArrayBuffer = undefined;');
+        expect(() => fs.typeSync('/'), throwsStateError);
+        expect(() => fs.statSync('/'), throwsStateError);
+        jsEval('window.SharedArrayBuffer = function() {};'); // restore
+
+        // 2. typeSync catch block
+        jsEval('''
+          window.originalSendVFSSyncRequest = window.sendVFSSyncRequest;
+          window.sendVFSSyncRequest = function() { throw new Error("mock error"); };
+        ''');
+        expect(fs.typeSync('/'), equals(FileSystemEntityType.notFound));
+        expect(fs.statSync('/').type, equals(FileSystemEntityType.notFound));
+        jsEval('window.sendVFSSyncRequest = window.originalSendVFSSyncRequest;'); // restore
+
+        // 3. statSync type branches (directory, link, other/notFound)
+        // directory
+        setMockSyncResponse(utf8.encode(json.encode({'type': 'directory', 'size': 0, 'modified': 123})));
+        expect(fs.statSync('/dir').type, equals(FileSystemEntityType.directory));
+        // link
+        setMockSyncResponse(utf8.encode(json.encode({'type': 'link', 'size': 0, 'modified': 123})));
+        expect(fs.statSync('/link').type, equals(FileSystemEntityType.link));
+        // other
+        setMockSyncResponse(utf8.encode(json.encode({'type': 'unknown', 'size': 0, 'modified': 123})));
+        expect(fs.statSync('/unknown').type, equals(FileSystemEntityType.notFound));
+
+        // 4. WebDirectory createSync branches
+        final dir = fs.directory('/sync_dir_cov');
+        // Already exists
+        setMockSyncResponse(utf8.encode('directory')); // existsSync
+        dir.createSync(); // Should return early without exception
+        
+        // Parent notFound, recursive: true
+        setMockSyncResponse(utf8.encode('notFound')); // child existsSync
+        setMockSyncResponse(utf8.encode('notFound')); // parent typeSync
+        setMockSyncResponse(utf8.encode('notFound')); // parent existsSync
+        setMockSyncResponse(utf8.encode('directory')); // parent-parent typeSync
+        setMockSyncResponse([]); // parent createDir
+        setMockSyncResponse([]); // child createDir
+        dir.createSync(recursive: true);
+
+        // Parent notFound, recursive: false throws
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        setMockSyncResponse(utf8.encode('notFound')); // parent typeSync
+        expect(() => dir.createSync(recursive: false), throwsA(isA<FileSystemException>()));
+
+        // Parent is file throws
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        setMockSyncResponse(utf8.encode('file')); // parent typeSync
+        expect(() => dir.createSync(), throwsA(isA<FileSystemException>()));
+
+        // createTempSync when directory notFound throws
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        expect(() => dir.createTempSync(), throwsA(isA<FileSystemException>()));
+
+        // createTempSync successful path
+        setMockSyncResponse(utf8.encode('directory')); // existsSync
+        setMockSyncResponse(utf8.encode('notFound')); // temp child existsSync
+        setMockSyncResponse(utf8.encode('directory')); // temp parent typeSync
+        setMockSyncResponse([]); // temp createDir
+        final tempDir = dir.createTempSync('foo');
+        expect(tempDir.path, contains('foo'));
+
+        // deleteSync path notFound throws
+        setMockSyncResponse(utf8.encode('notFound')); // typeSync
+        expect(() => dir.deleteSync(), throwsA(isA<FileSystemException>()));
+
+        // deleteSync path is file throws
+        setMockSyncResponse(utf8.encode('file')); // typeSync
+        expect(() => dir.deleteSync(), throwsA(isA<FileSystemException>()));
+
+        // deleteSync not empty throws
+        setMockSyncResponse(utf8.encode('directory')); // typeSync
+        setMockSyncResponse(utf8.encode('directory')); // existsSync inside listSync
+        setMockSyncResponse(utf8.encode(json.encode([{'path': '/sub/a', 'type': 'file'}]))); // listSync
+        expect(() => dir.deleteSync(), throwsA(isA<FileSystemException>()));
+
+        // listSync path notFound throws
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        expect(() => dir.listSync(), throwsA(isA<FileSystemException>()));
+
+        // listSync recursive containing a directory
+        setMockSyncResponse(utf8.encode('directory')); // existsSync
+        setMockSyncResponse(utf8.encode(json.encode([{'path': '/sync_dir_cov/sub', 'type': 'directory'}]))); // listSync level 1
+        setMockSyncResponse(utf8.encode('directory')); // existsSync recursive
+        setMockSyncResponse(utf8.encode('[]')); // listSync level 2
+        final listRec = dir.listSync(recursive: true);
+        expect(listRec.length, equals(1));
+
+        // listSync following link target to directory
+        setMockSyncResponse(utf8.encode('directory')); // existsSync
+        setMockSyncResponse(utf8.encode(json.encode([{'path': '/sync_dir_cov/lnk', 'type': 'link'}]))); // listSync
+        setMockSyncResponse(utf8.encode('directory')); // typeSync for link target
+        final listLnkDir = dir.listSync(followLinks: true);
+        expect(listLnkDir.length, equals(1));
+        expect(listLnkDir[0], isA<Directory>());
+
+        // listSync following link target to file (non-directory)
+        setMockSyncResponse(utf8.encode('directory')); // existsSync
+        setMockSyncResponse(utf8.encode(json.encode([{'path': '/sync_dir_cov/lnk', 'type': 'link'}]))); // listSync
+        setMockSyncResponse(utf8.encode('file')); // typeSync for link target
+        final listLnkFile = dir.listSync(followLinks: true);
+        expect(listLnkFile.length, equals(1));
+        expect(listLnkFile[0], isA<File>());
+
+        // listSync following link target throws/notFound
+        setMockSyncResponse(utf8.encode('directory')); // existsSync
+        setMockSyncResponse(utf8.encode(json.encode([{'path': '/sync_dir_cov/lnk', 'type': 'link'}]))); // listSync
+        setMockSyncResponse(utf8.encode('notFound')); // typeSync for link target
+        final listLnkNotFound = dir.listSync(followLinks: true);
+        expect(listLnkNotFound.length, equals(1));
+        expect(listLnkNotFound[0], isA<Link>());
+
+        // listSync recursive following link target to directory
+        setMockSyncResponse(utf8.encode('directory')); // existsSync
+        setMockSyncResponse(utf8.encode(json.encode([{'path': '/sync_dir_cov/lnk', 'type': 'link'}]))); // listSync level 1
+        setMockSyncResponse(utf8.encode('directory')); // typeSync for link target
+        setMockSyncResponse(utf8.encode('directory')); // existsSync recursive
+        setMockSyncResponse(utf8.encode('[]')); // listSync level 2
+        final listRecLnkDir = dir.listSync(recursive: true, followLinks: true);
+        expect(listRecLnkDir.length, equals(1));
+        expect(listRecLnkDir[0], isA<Directory>());
+
+        // listSync following link target where typeSync throws (covered via SAB disabled mid-run)
+        jsEval('''
+          window.originalSendVFSSyncRequest = window.sendVFSSyncRequest;
+          window.sendVFSSyncRequest = function(cmd, req) {
+            if (cmd === 10) {
+              window.SharedArrayBuffer = undefined; // disable SAB
+              const listData = JSON.stringify([{'path': '/sync_dir_cov/lnk', 'type': 'link'}]);
+              const bytes = new TextEncoder().encode(listData);
+              return bytes;
+            }
+            return window.originalSendVFSSyncRequest(cmd, req);
+          };
+        ''');
+        setMockSyncResponse(utf8.encode('directory')); // existsSync
+        // listSync response is provided by custom sendVFSSyncRequest function
+        final listLnkThrow = dir.listSync(followLinks: true);
+        expect(listLnkThrow.length, equals(1));
+        expect(listLnkThrow[0], isA<Link>());
+        jsEval('''
+          window.sendVFSSyncRequest = window.originalSendVFSSyncRequest;
+          window.SharedArrayBuffer = function() {}; // restore SAB
+        ''');
+
+        // makeSyncCall SharedArrayBuffer unsupported
+        jsEval('window.SharedArrayBuffer = undefined;');
+        expect(() => dir.resolveSymbolicLinksSync(), throwsStateError);
+        jsEval('window.SharedArrayBuffer = function() {};'); // restore
+
+        // renameSync original path not found throws
+        setMockSyncResponse(utf8.encode('notFound')); // typeSync
+        expect(() => dir.renameSync('/new'), throwsA(isA<FileSystemException>()));
+
+        // renameSync new parent not directory throws
+        setMockSyncResponse(utf8.encode('directory')); // typeSync self
+        setMockSyncResponse(utf8.encode('file')); // typeSync parent
+        expect(() => dir.renameSync('/parent_file/new'), throwsA(isA<FileSystemException>()));
+
+        // renameSync successful
+        setMockSyncResponse(utf8.encode('directory')); // typeSync self
+        setMockSyncResponse(utf8.encode('directory')); // typeSync parent
+        setMockSyncResponse([]); // rename
+        final renamedDir = dir.renameSync('/new_parent/new_dir');
+        expect(renamedDir.path, equals('/new_parent/new_dir'));
+
+        // resolveSymbolicLinksSync
+        setMockSyncResponse(utf8.encode('/resolved/path'));
+        expect(dir.resolveSymbolicLinksSync(), equals('/resolved/path'));
+
+        // 5. WebFile sync branches
+        final file = fs.file('/sync_file_cov');
+        // createSync already exists, exclusive: true throws
+        setMockSyncResponse(utf8.encode('file')); // existsSync
+        expect(() => file.createSync(exclusive: true), throwsA(isA<FileSystemException>()));
+
+        // createSync already exists, exclusive: false returns early
+        setMockSyncResponse(utf8.encode('file')); // existsSync
+        file.createSync(exclusive: false); // returns early
+
+        // createSync parent notFound, recursive: false throws
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        setMockSyncResponse(utf8.encode('notFound')); // parent typeSync
+        expect(() => file.createSync(), throwsA(isA<FileSystemException>()));
+
+        // createSync parent notFound, recursive: true
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        setMockSyncResponse(utf8.encode('notFound')); // parent typeSync
+        setMockSyncResponse(utf8.encode('notFound')); // parent existsSync
+        setMockSyncResponse(utf8.encode('directory')); // parent-parent typeSync
+        setMockSyncResponse([]); // parent createDir
+        setMockSyncResponse(utf8.encode('directory')); // parent check for writeBytes
+        setMockSyncResponse([]); // writeBytes (create file)
+        file.createSync(recursive: true);
+
+        // createSync parent is file throws
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        setMockSyncResponse(utf8.encode('file')); // parent typeSync
+        expect(() => file.createSync(), throwsA(isA<FileSystemException>()));
+
+        // writeAsBytesSync FileMode.append throws UnsupportedError
+        expect(() => file.writeAsBytesSync([], mode: FileMode.append), throwsUnsupportedError);
+
+        // writeAsBytesSync parent not directory throws
+        setMockSyncResponse(utf8.encode('file')); // parent typeSync
+        expect(() => file.writeAsBytesSync([]), throwsA(isA<FileSystemException>()));
+
+        // readAsBytesSync path notFound throws
+        setMockSyncResponse(utf8.encode('notFound')); // typeSync
+        expect(() => file.readAsBytesSync(), throwsA(isA<FileSystemException>()));
+
+        // readAsBytesSync path is directory throws
+        setMockSyncResponse(utf8.encode('directory')); // typeSync
+        expect(() => file.readAsBytesSync(), throwsA(isA<FileSystemException>()));
+
+        // renameSync path notFound throws
+        setMockSyncResponse(utf8.encode('notFound')); // typeSync self
+        expect(() => file.renameSync('/new'), throwsA(isA<FileSystemException>()));
+
+        // renameSync parent not directory throws
+        setMockSyncResponse(utf8.encode('file')); // typeSync self
+        setMockSyncResponse(utf8.encode('file')); // typeSync parent
+        expect(() => file.renameSync('/parent_file/new'), throwsA(isA<FileSystemException>()));
+
+        // renameSync successful
+        setMockSyncResponse(utf8.encode('file')); // typeSync self
+        setMockSyncResponse(utf8.encode('directory')); // typeSync parent
+        setMockSyncResponse([]); // rename
+        final renamedFile = file.renameSync('/new_parent/new_file');
+        expect(renamedFile.path, equals('/new_parent/new_file'));
+
+        // deleteSync path notFound throws
+        setMockSyncResponse(utf8.encode('notFound')); // typeSync self
+        expect(() => file.deleteSync(), throwsA(isA<FileSystemException>()));
+
+        // 6. WebLink sync branches
+        final link = fs.link('/sync_link_cov');
+        // createSync already exists throws
+        setMockSyncResponse(utf8.encode('link')); // existsSync
+        expect(() => link.createSync('/target'), throwsA(isA<FileSystemException>()));
+
+        // createSync parent notFound, recursive: false throws
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        setMockSyncResponse(utf8.encode('notFound')); // parent typeSync
+        expect(() => link.createSync('/target'), throwsA(isA<FileSystemException>()));
+
+        // createSync parent notFound, recursive: true
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        setMockSyncResponse(utf8.encode('notFound')); // parent typeSync
+        setMockSyncResponse(utf8.encode('notFound')); // parent existsSync
+        setMockSyncResponse(utf8.encode('directory')); // parent-parent typeSync
+        setMockSyncResponse([]); // parent createDir
+        setMockSyncResponse([]); // createLink
+        link.createSync('/target', recursive: true);
+
+        // createSync parent is file throws
+        setMockSyncResponse(utf8.encode('notFound')); // existsSync
+        setMockSyncResponse(utf8.encode('file')); // parent typeSync
+        expect(() => link.createSync('/target'), throwsA(isA<FileSystemException>()));
+
+        // updateSync path notFound throws
+        setMockSyncResponse(utf8.encode('notFound')); // typeSync self
+        expect(() => link.updateSync('/new'), throwsA(isA<FileSystemException>()));
+
+        // updateSync path is not link throws
+        setMockSyncResponse(utf8.encode('file')); // typeSync self
+        expect(() => link.updateSync('/new'), throwsA(isA<FileSystemException>()));
+
+        // targetSync path notFound throws
+        setMockSyncResponse(utf8.encode('notFound')); // typeSync self
+        expect(() => link.targetSync(), throwsA(isA<FileSystemException>()));
+
+        // targetSync path is not link throws
+        setMockSyncResponse(utf8.encode('file')); // typeSync self
+        expect(() => link.targetSync(), throwsA(isA<FileSystemException>()));
+
+        // renameSync path notFound throws
+        setMockSyncResponse(utf8.encode('notFound')); // typeSync self
+        expect(() => link.renameSync('/new'), throwsA(isA<FileSystemException>()));
+
+        // renameSync parent not directory throws
+        setMockSyncResponse(utf8.encode('link')); // typeSync self
+        setMockSyncResponse(utf8.encode('file')); // typeSync parent
+        expect(() => link.renameSync('/parent_file/new'), throwsA(isA<FileSystemException>()));
+
+        // renameSync successful
+        setMockSyncResponse(utf8.encode('link')); // typeSync self
+        setMockSyncResponse(utf8.encode('directory')); // typeSync parent
+        setMockSyncResponse([]); // rename
+        final renamedLink = link.renameSync('/new_parent/new_link');
+        expect(renamedLink.path, equals('/new_parent/new_link'));
+
+        // deleteSync path notFound throws
+        setMockSyncResponse(utf8.encode('notFound')); // typeSync self
+        expect(() => link.deleteSync(), throwsA(isA<FileSystemException>()));
+      });
+    });
+  });
 }
 
 @JS('eval')
@@ -590,4 +1078,65 @@ void setMockIDBPutShouldFail(bool value) {
 }
 void setMockIDBIndexGetShouldFail(bool value) {
   jsEval('window.mockIDBIndexGetShouldFail = $value;');
+}
+
+void setupSyncMockJS() {
+  jsEval('''
+    window.originalImportScripts = window.importScripts;
+    window.importScripts = function() {};
+    window.originalSharedArrayBuffer = window.SharedArrayBuffer;
+    window.SharedArrayBuffer = function() {};
+    window.isVFSSyncWorkerInitialized = true;
+    window.initVFSSyncWorker = function() {};
+    
+    window.lastSyncCmd = null;
+    window.lastSyncPayload = null;
+    window.mockSyncResponseArray = [];
+    window.syncCmdsHistory = [];
+    
+    window.sendVFSSyncRequest = function(cmd, requestBytes) {
+      window.lastSyncCmd = cmd;
+      window.syncCmdsHistory.push(cmd);
+      window.lastSyncPayload = Array.from(requestBytes);
+      const resp = window.mockSyncResponseArray.shift() || new Uint8Array(0);
+      return resp;
+    };
+  ''');
+}
+
+void clearSyncMockJS() {
+  jsEval('''
+    window.importScripts = window.originalImportScripts;
+    window.SharedArrayBuffer = window.originalSharedArrayBuffer;
+    delete window.sendVFSSyncRequest;
+    delete window.lastSyncCmd;
+    delete window.lastSyncPayload;
+    delete window.mockSyncResponseArray;
+    delete window.syncCmdsHistory;
+    delete window.isVFSSyncWorkerInitialized;
+    delete window.initVFSSyncWorker;
+  ''');
+}
+
+List<int> getSyncCmdsHistory() {
+  final jsVal = jsEval('JSON.stringify(window.syncCmdsHistory || [])');
+  if (jsVal == null) return [];
+  return List<int>.from(json.decode((jsVal as JSString).toDart));
+}
+
+int? getLastSyncCmd() {
+  final jsVal = jsEval('window.lastSyncCmd');
+  if (jsVal == null) return null;
+  return (jsVal as JSNumber).toDartInt;
+}
+
+List<int>? getLastSyncPayload() {
+  final jsVal = jsEval('window.lastSyncPayload ? JSON.stringify(window.lastSyncPayload) : null');
+  if (jsVal == null) return null;
+  return List<int>.from(json.decode((jsVal as JSString).toDart));
+}
+
+void setMockSyncResponse(List<int> bytes) {
+  final jsonBytes = json.encode(bytes);
+  jsEval('window.mockSyncResponseArray.push(new Uint8Array($jsonBytes));');
 }

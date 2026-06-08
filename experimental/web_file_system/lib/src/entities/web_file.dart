@@ -52,8 +52,38 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  void createSync({bool recursive = false, bool exclusive = false}) =>
-      throw UnsupportedError('Sync not supported');
+  void createSync({bool recursive = false, bool exclusive = false}) {
+    if (existsSync()) {
+      if (exclusive) {
+        throw FileSystemException(
+          'File already exists',
+          path,
+          const OSError('EEXIST', 17),
+        );
+      }
+      return;
+    }
+
+    final parentPath = _fs.path.dirname(path);
+    final parentType = _fs.typeSync(parentPath);
+    if (parentType == FileSystemEntityType.notFound) {
+      if (recursive) {
+        _fs.directory(parentPath).createSync(recursive: true);
+      } else {
+        throw FileSystemException(
+          'Cannot create file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
+          path,
+        );
+      }
+    } else if (parentType != FileSystemEntityType.directory) {
+      throw FileSystemException(
+        'Cannot create file, path = \'$path\' (OS Error: Not a directory, errno = 20)',
+        path,
+      );
+    }
+
+    writeAsBytesSync([]);
+  }
 
   @override
   Future<File> copy(String newPath) async {
@@ -76,7 +106,11 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  File copySync(String newPath) => throw UnsupportedError('Sync not supported');
+  File copySync(String newPath) {
+    final bytes = readAsBytesSync();
+    _fs.file(newPath).writeAsBytesSync(bytes);
+    return WebFile(_fs, newPath);
+  }
 
   @override
   Future<int> length() async {
@@ -85,7 +119,7 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  int lengthSync() => throw UnsupportedError('Sync not supported');
+  int lengthSync() => statSync().size;
 
   @override
   Future<DateTime> lastModified() async {
@@ -94,7 +128,7 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  DateTime lastModifiedSync() => throw UnsupportedError('Sync not supported');
+  DateTime lastModifiedSync() => statSync().modified;
 
   @override
   Future<DateTime> lastAccessed() async {
@@ -102,7 +136,7 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  DateTime lastAccessedSync() => throw UnsupportedError('Sync not supported');
+  DateTime lastAccessedSync() => statSync().accessed;
 
   @override
   Future<dynamic> setLastAccessed(DateTime time) async {}
@@ -190,7 +224,27 @@ class WebFile extends FileSystemEntity implements File {
     FileMode mode = FileMode.write,
     bool flush = false,
   }) {
-    throw UnsupportedError('Sync not supported');
+    if (mode == FileMode.append) {
+      throw UnsupportedError('Append not yet optimized');
+    }
+    
+    final parentPath = _fs.path.dirname(path);
+    if (_fs.typeSync(parentPath) != FileSystemEntityType.directory) {
+      throw FileSystemException(
+        'Cannot open file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
+        path,
+      );
+    }
+
+    final pathBytes = utf8.encode(path);
+    final pathLen = pathBytes.length;
+    final request = Uint8List(4 + pathLen + bytes.length);
+    final bd = ByteData.sublistView(request);
+    bd.setUint32(0, pathLen, Endian.little);
+    request.setRange(4, 4 + pathLen, pathBytes);
+    request.setRange(4 + pathLen, request.length, bytes);
+
+    _fs.makeSyncCall(4, request);
   }
 
   @override
@@ -210,7 +264,7 @@ class WebFile extends FileSystemEntity implements File {
     Encoding encoding = utf8,
     bool flush = false,
   }) {
-    throw UnsupportedError('Sync not supported');
+    writeAsBytesSync(encoding.encode(contents), mode: mode, flush: flush);
   }
 
   @override
@@ -280,7 +334,22 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  Uint8List readAsBytesSync() => throw UnsupportedError('Sync not supported');
+  Uint8List readAsBytesSync() {
+    final type = _fs.typeSync(path);
+    if (type == FileSystemEntityType.notFound) {
+      throw FileSystemException(
+        'Cannot open file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
+        path,
+      );
+    }
+    if (type == FileSystemEntityType.directory) {
+      throw FileSystemException(
+        'Cannot open file, path = \'$path\' (OS Error: Is a directory, errno = 21)',
+        path,
+      );
+    }
+    return _fs.makeSyncCall(3, utf8.encode(path));
+  }
 
   @override
   Future<String> readAsString({Encoding encoding = utf8}) async {
@@ -289,18 +358,21 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  String readAsStringSync({Encoding encoding = utf8}) =>
-      throw UnsupportedError('Sync not supported');
+  String readAsStringSync({Encoding encoding = utf8}) {
+    return encoding.decode(readAsBytesSync());
+  }
 
   @override
   Future<List<String>> readAsLines({Encoding encoding = utf8}) async {
     final str = await readAsString(encoding: encoding);
-    return str.split('\n');
+    return const LineSplitter().convert(str);
   }
 
   @override
-  List<String> readAsLinesSync({Encoding encoding = utf8}) =>
-      throw UnsupportedError('Sync not supported');
+  List<String> readAsLinesSync({Encoding encoding = utf8}) {
+    final str = readAsStringSync(encoding: encoding);
+    return const LineSplitter().convert(str);
+  }
 
   @override
   Future<bool> exists() async {
@@ -313,7 +385,9 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  bool existsSync() => throw UnsupportedError('Sync not supported');
+  bool existsSync() {
+    return _fs.typeSync(path, followLinks: false) == FileSystemEntityType.file;
+  }
 
   @override
   Future<File> rename(String newPath) async {
@@ -337,8 +411,33 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  File renameSync(String newPath) =>
-      throw UnsupportedError('Sync not supported');
+  File renameSync(String newPath) {
+    final type = _fs.typeSync(path, followLinks: false);
+    if (type == FileSystemEntityType.notFound) {
+      throw FileSystemException(
+        'Cannot rename file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
+        path,
+      );
+    }
+    final newParentDir = _fs.path.dirname(newPath);
+    if (_fs.typeSync(newParentDir) != FileSystemEntityType.directory) {
+      throw FileSystemException(
+        'Cannot rename file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
+        path,
+      );
+    }
+
+    final pathBytes = utf8.encode(path);
+    final newPathBytes = utf8.encode(newPath);
+    final request = Uint8List(4 + pathBytes.length + newPathBytes.length);
+    final bd = ByteData.sublistView(request);
+    bd.setUint32(0, pathBytes.length, Endian.little);
+    request.setRange(4, 4 + pathBytes.length, pathBytes);
+    request.setRange(4 + pathBytes.length, request.length, newPathBytes);
+
+    _fs.makeSyncCall(12, request);
+    return WebFile(_fs, newPath);
+  }
 
   @override
   Future<FileSystemEntity> delete({bool recursive = false}) async {
@@ -348,14 +447,22 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  void deleteSync({bool recursive = false}) =>
-      throw UnsupportedError('Sync not supported');
+  void deleteSync({bool recursive = false}) {
+    final type = _fs.typeSync(path, followLinks: false);
+    if (type == FileSystemEntityType.notFound) {
+      throw FileSystemException(
+        'Cannot delete file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
+        path,
+      );
+    }
+    _fs.makeSyncCall(6, utf8.encode(path));
+  }
 
   @override
   Future<FileStat> stat() => _fs.stat(path);
 
   @override
-  FileStat statSync() => throw UnsupportedError('Sync not supported');
+  FileStat statSync() => _fs.statSync(path);
 
   @override
   Uri get uri => Uri.parse(path);
@@ -374,8 +481,7 @@ class WebFile extends FileSystemEntity implements File {
   Future<String> resolveSymbolicLinks() => _fs.resolveSymbolicLinks(path);
 
   @override
-  String resolveSymbolicLinksSync() =>
-      throw UnsupportedError('Sync not supported');
+  String resolveSymbolicLinksSync() => _fs.resolveSymbolicLinksSync(path);
 
   @override
   Stream<FileSystemEvent> watch({

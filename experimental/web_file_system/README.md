@@ -109,8 +109,63 @@ print(canonicalPath); // "/documents/report.txt"
 
 ---
 
-## Performance Notes: Inode vs Path-based Renames
-
-Most browser file systems index files by their full path strings (e.g., keying a database table by `/documents/photos/holiday.png`). Renaming the directory `/documents` to `/archive` requires iterating over every nested path and rewriting their keys, which is an $O(N)$ operation where $N$ is the number of recursive items.
-
 `web_file_system` implements an **inode index** model. Inodes reference parents by their database IDs rather than paths. Renaming a directory only updates the single directory node's `name` property. Its child files and directories remain untouched because they continue to reference the same unchanged parent inode ID. This makes directory renaming an **$O(1)$** operation.
+
+---
+
+## Synchronous API Support (Web Workers Only)
+
+Because JavaScript and Dart run on a single-threaded event loop, blocking the main browser thread is not permitted. Therefore, standard synchronous APIs (such as `readAsBytesSync`, `writeAsBytesSync`, `existsSync`, `createSync`, `deleteSync`, `listSync`, `renameSync`, and `statSync`) will throw an `UnsupportedError` if invoked on the main application thread.
+
+However, synchronous operations are **fully supported within Web Workers**. By delegating asynchronous work (IndexedDB metadata updates and Origin Private File System operations) to the main thread via a `SharedArrayBuffer` and blocking the Web Worker's execution loop using `Atomics.wait()`, you can safely use synchronous file system calls inside your workers.
+
+### Prerequisites & Security Headers
+
+To use the synchronous APIs, the browser requires cross-origin isolation. You must serve your web application with the following HTTP headers:
+
+```http
+Cross-Origin-Opener-Policy: same-origin
+Cross-Origin-Embedder-Policy: require-corp
+```
+
+If these headers are not present, `SharedArrayBuffer` is disabled by the browser, and synchronous operations will throw a `StateError`.
+
+### Setup Example
+
+#### 1. Main Application Thread
+
+Initialize the file system and register the worker proxy to listen to RPC requests from your worker:
+
+```dart
+import 'dart:html'; // or standard JS interop / package:web
+import 'package:web_file_system/web_file_system.dart';
+
+void main() {
+  final fs = WebFileSystem();
+  final worker = Worker('worker.js');
+  
+  // Register the proxy to handle synchronous RPC requests
+  WebFileSystem.registerWorkerProxy(worker, fs);
+}
+```
+
+#### 2. Web Worker Context (`worker.js` / Dart Worker)
+
+In your worker code, once initialized with the `SharedArrayBuffer`, you can access the file system synchronously:
+
+```dart
+import 'package:web_file_system/web_file_system.dart';
+
+void main() {
+  final fs = WebFileSystem();
+  
+  // These operations block synchronous execution inside the Web Worker
+  final file = fs.file('/data.bin');
+  file.createSync();
+  file.writeAsBytesSync([1, 2, 3, 4]);
+  
+  final bytes = file.readAsBytesSync();
+  print(bytes); // [1, 2, 3, 4]
+}
+```
+
