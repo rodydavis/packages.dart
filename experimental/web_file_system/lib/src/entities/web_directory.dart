@@ -1,11 +1,8 @@
 import 'dart:async';
-import 'dart:convert';
-import 'dart:typed_data';
 import 'package:file/file.dart';
-import 'package:web_file_system/src/backend/idb_inode_service.dart';
+import '../backend/idb_inode_service.dart';
 import '../web_file_system.dart';
 import 'web_file.dart';
-import 'web_link.dart';
 
 class WebDirectory extends FileSystemEntity implements Directory {
   final WebFileSystem _fs;
@@ -36,13 +33,19 @@ class WebDirectory extends FileSystemEntity implements Directory {
     // We assume parent must exist if not recursive.
     final parentInode = await _fs.resolvepath(parentPath); // throws if missing
 
-    await _fs.idb.createInode(Inode(
-      id: _fs.uuid.v4(),
-      parentId: parentInode.id,
-      name: name,
-      nodeType: 1, // Directory
-      modified: DateTime.now().millisecondsSinceEpoch,
-    ));
+    try {
+      await _fs.idb.createInode(
+        Inode(
+          id: _fs.uuid.v4(),
+          parentId: parentInode.id,
+          name: name,
+          nodeType: 1, // Directory
+          modified: DateTime.now().millisecondsSinceEpoch,
+        ),
+      );
+    } catch (_) {
+      if (!await exists()) rethrow;
+    }
 
     return this;
   }
@@ -53,37 +56,24 @@ class WebDirectory extends FileSystemEntity implements Directory {
 
     await _createRecursiveSafe(_fs.path.dirname(p));
     final parentVal = await _fs.resolvepath(_fs.path.dirname(p));
-    await _fs.idb.createInode(Inode(
-        id: _fs.uuid.v4(),
-        parentId: parentVal.id,
-        name: _fs.path.basename(p),
-        nodeType: 1,
-        modified: DateTime.now().millisecondsSinceEpoch));
+    try {
+      await _fs.idb.createInode(
+        Inode(
+          id: _fs.uuid.v4(),
+          parentId: parentVal.id,
+          name: _fs.path.basename(p),
+          nodeType: 1,
+          modified: DateTime.now().millisecondsSinceEpoch,
+        ),
+      );
+    } catch (_) {
+      if (await _fs.type(p) == FileSystemEntityType.notFound) rethrow;
+    }
   }
 
   @override
   void createSync({bool recursive = false}) {
-    if (existsSync()) return;
-
-    final parentPath = _fs.path.dirname(path);
-    final parentType = _fs.typeSync(parentPath);
-    if (parentType == FileSystemEntityType.notFound) {
-      if (recursive) {
-        _fs.directory(parentPath).createSync(recursive: true);
-      } else {
-        throw FileSystemException(
-          'Cannot create directory, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-          path,
-        );
-      }
-    } else if (parentType != FileSystemEntityType.directory) {
-      throw FileSystemException(
-        'Cannot create directory, path = \'$path\' (OS Error: Not a directory, errno = 20)',
-        path,
-      );
-    }
-
-    _fs.makeSyncCall(5, utf8.encode(path));
+    throw UnsupportedError('Sync create not supported');
   }
 
   @override
@@ -92,8 +82,15 @@ class WebDirectory extends FileSystemEntity implements Directory {
     final tempDir = _fs.path.join(path, name);
     // Ensure path exists
     if (!await exists()) {
-      throw FileSystemException(
-          'Directory does not exist', path, const OSError('ENOENT', 2));
+      if (path == '/tmp') {
+        await create();
+      } else {
+        throw FileSystemException(
+          'Directory does not exist',
+          path,
+          const OSError('ENOENT', 2),
+        );
+      }
     }
     final dir = WebDirectory(_fs, tempDir);
     await dir.create();
@@ -102,15 +99,7 @@ class WebDirectory extends FileSystemEntity implements Directory {
 
   @override
   Directory createTempSync([String? prefix]) {
-    if (!existsSync()) {
-      throw FileSystemException(
-          'Directory does not exist', path, const OSError('ENOENT', 2));
-    }
-    final name = (prefix ?? 'temp') + _fs.uuid.v4();
-    final tempDir = _fs.path.join(path, name);
-    final dir = WebDirectory(_fs, tempDir);
-    dir.createSync();
-    return dir;
+    throw UnsupportedError('Sync not supported');
   }
 
   @override
@@ -120,7 +109,10 @@ class WebDirectory extends FileSystemEntity implements Directory {
     final children = await _fs.idb.listChildren(inode.id);
     if (children.isNotEmpty && !recursive) {
       throw FileSystemException(
-          'Directory not empty', path, const OSError('ENOTEMPTY', 39));
+        'Directory not empty',
+        path,
+        const OSError('ENOTEMPTY', 39),
+      );
     }
 
     if (recursive) {
@@ -139,34 +131,8 @@ class WebDirectory extends FileSystemEntity implements Directory {
   }
 
   @override
-  void deleteSync({bool recursive = false}) {
-    final type = _fs.typeSync(path, followLinks: false);
-    if (type == FileSystemEntityType.notFound) {
-      throw FileSystemException(
-        'Cannot delete directory, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-        path,
-      );
-    }
-    if (type != FileSystemEntityType.directory) {
-      throw FileSystemException(
-        'Cannot delete directory, path = \'$path\' (OS Error: Not a directory, errno = 20)',
-        path,
-      );
-    }
-
-    if (!recursive) {
-      final children = listSync(recursive: false, followLinks: false);
-      if (children.isNotEmpty) {
-        throw FileSystemException(
-          'Directory not empty',
-          path,
-          const OSError('ENOTEMPTY', 39),
-        );
-      }
-    }
-
-    _fs.makeSyncCall(6, utf8.encode(path));
-  }
+  void deleteSync({bool recursive = false}) =>
+      throw UnsupportedError('Sync not supported');
 
   @override
   Future<bool> exists() async {
@@ -179,16 +145,19 @@ class WebDirectory extends FileSystemEntity implements Directory {
   }
 
   @override
-  bool existsSync() {
-    return _fs.typeSync(path, followLinks: false) == FileSystemEntityType.directory;
-  }
+  bool existsSync() => throw UnsupportedError('Sync not supported');
 
   @override
-  Stream<FileSystemEntity> list(
-      {bool recursive = false, bool followLinks = true}) async* {
+  Stream<FileSystemEntity> list({
+    bool recursive = false,
+    bool followLinks = true,
+  }) async* {
     if (!await exists()) {
       throw FileSystemException(
-          'Directory not found', path, const OSError('ENOENT', 2));
+        'Directory not found',
+        path,
+        const OSError('ENOENT', 2),
+      );
     }
 
     final inode = await _fs.resolvepath(path);
@@ -202,26 +171,6 @@ class WebDirectory extends FileSystemEntity implements Directory {
         if (recursive) {
           yield* dir.list(recursive: true, followLinks: followLinks);
         }
-      } else if (child.nodeType == 2) {
-        if (!followLinks) {
-          yield WebLink(_fs, childPath);
-        } else {
-          try {
-            final resolved =
-                await _fs.resolvepath(childPath, followLinks: true);
-            if (resolved.nodeType == 1) {
-              final dir = WebDirectory(_fs, childPath);
-              yield dir;
-              if (recursive) {
-                yield* dir.list(recursive: true, followLinks: true);
-              }
-            } else {
-              yield WebFile(_fs, childPath);
-            }
-          } catch (_) {
-            yield WebLink(_fs, childPath);
-          }
-        }
       } else {
         yield WebFile(_fs, childPath);
       }
@@ -229,54 +178,11 @@ class WebDirectory extends FileSystemEntity implements Directory {
   }
 
   @override
-  List<FileSystemEntity> listSync(
-      {bool recursive = false, bool followLinks = true}) {
-    if (!existsSync()) {
-      throw FileSystemException(
-          'Directory not found', path, const OSError('ENOENT', 2));
-    }
-
-    final respBytes = _fs.makeSyncCall(10, utf8.encode(path));
-    final listJson = json.decode(utf8.decode(respBytes)) as List<dynamic>;
-    
-    final List<FileSystemEntity> results = [];
-    for (final item in listJson) {
-      final itemMap = item as Map<String, dynamic>;
-      final childPath = itemMap['path'] as String;
-      final typeStr = itemMap['type'] as String;
-      
-      if (typeStr == 'directory') {
-        final dir = WebDirectory(_fs, childPath);
-        results.add(dir);
-        if (recursive) {
-          results.addAll(dir.listSync(recursive: true, followLinks: followLinks));
-        }
-      } else if (typeStr == 'link') {
-        if (!followLinks) {
-          results.add(WebLink(_fs, childPath));
-        } else {
-          try {
-            final resolvedType = _fs.typeSync(childPath, followLinks: true);
-            if (resolvedType == FileSystemEntityType.directory) {
-              final dir = WebDirectory(_fs, childPath);
-              results.add(dir);
-              if (recursive) {
-                results.addAll(dir.listSync(recursive: true, followLinks: true));
-              }
-            } else if (resolvedType == FileSystemEntityType.notFound) {
-              results.add(WebLink(_fs, childPath));
-            } else {
-              results.add(WebFile(_fs, childPath));
-            }
-          } catch (_) {
-            results.add(WebLink(_fs, childPath));
-          }
-        }
-      } else {
-        results.add(WebFile(_fs, childPath));
-      }
-    }
-    return results;
+  List<FileSystemEntity> listSync({
+    bool recursive = false,
+    bool followLinks = true,
+  }) {
+    throw UnsupportedError('Sync list not supported');
   }
 
   @override
@@ -288,46 +194,22 @@ class WebDirectory extends FileSystemEntity implements Directory {
     final newParentInode = await _fs.resolvepath(newParentDir);
 
     final updated = Inode(
-        id: inode.id,
-        parentId: newParentInode.id,
-        name: newName,
-        nodeType: inode.nodeType,
-        blobId: inode.blobId,
-        size: inode.size,
-        modified: DateTime.now().millisecondsSinceEpoch);
+      id: inode.id,
+      parentId: newParentInode.id,
+      name: newName,
+      nodeType: inode.nodeType,
+      blobId: inode.blobId,
+      size: inode.size,
+      modified: DateTime.now().millisecondsSinceEpoch,
+    );
 
     await _fs.idb.updateInode(updated);
     return WebDirectory(_fs, newPath);
   }
 
   @override
-  Directory renameSync(String newPath) {
-    final type = _fs.typeSync(path, followLinks: false);
-    if (type == FileSystemEntityType.notFound) {
-      throw FileSystemException(
-        'Cannot rename directory, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-        path,
-      );
-    }
-    final newParentDir = _fs.path.dirname(newPath);
-    if (_fs.typeSync(newParentDir) != FileSystemEntityType.directory) {
-      throw FileSystemException(
-        'Cannot rename directory, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-        path,
-      );
-    }
-
-    final pathBytes = utf8.encode(path);
-    final newPathBytes = utf8.encode(newPath);
-    final request = Uint8List(4 + pathBytes.length + newPathBytes.length);
-    final bd = ByteData.sublistView(request);
-    bd.setUint32(0, pathBytes.length, Endian.little);
-    request.setRange(4, 4 + pathBytes.length, pathBytes);
-    request.setRange(4 + pathBytes.length, request.length, newPathBytes);
-
-    _fs.makeSyncCall(12, request);
-    return WebDirectory(_fs, newPath);
-  }
+  Directory renameSync(String newPath) =>
+      throw UnsupportedError('Sync not supported');
 
   @override
   String get basename => _fs.path.basename(path);
@@ -348,17 +230,20 @@ class WebDirectory extends FileSystemEntity implements Directory {
   Future<FileStat> stat() => _fs.stat(path);
 
   @override
-  FileStat statSync() => _fs.statSync(path);
+  FileStat statSync() => throw UnsupportedError('Sync not supported');
 
   @override
-  Future<String> resolveSymbolicLinks() => _fs.resolveSymbolicLinks(path);
+  Future<String> resolveSymbolicLinks() async => path;
 
   @override
-  String resolveSymbolicLinksSync() => _fs.resolveSymbolicLinksSync(path);
+  String resolveSymbolicLinksSync() =>
+      throw UnsupportedError('Sync not supported');
 
   @override
-  Stream<FileSystemEvent> watch(
-      {int events = FileSystemEvent.all, bool recursive = false}) {
+  Stream<FileSystemEvent> watch({
+    int events = FileSystemEvent.all,
+    bool recursive = false,
+  }) {
     return const Stream.empty();
   }
 

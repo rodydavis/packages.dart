@@ -12,10 +12,7 @@ class OpfsBlockStore {
   Future<void> _ensureReady() async {
     if (_blocksDir != null) return;
 
-    final web.StorageManager? storage = web.window.navigator.storage;
-    if (storage == null) {
-      throw UnsupportedError('StorageManager not supported');
-    }
+    final web.StorageManager storage = web.window.navigator.storage;
 
     final root = await storage.getDirectory().toDart;
     _blocksDir = await root
@@ -26,24 +23,19 @@ class OpfsBlockStore {
         .toDart;
   }
 
-  Future<(String, int)> writeBlob(Stream<List<int>> stream) async {
+  Future<String> writeBlob(Stream<List<int>> stream) async {
     await _ensureReady();
     final blockId = _uuid.v4();
 
     final fileHandle = await _blocksDir!
-        .getFileHandle(
-          blockId,
-          web.FileSystemGetFileOptions(create: true),
-        )
+        .getFileHandle(blockId, web.FileSystemGetFileOptions(create: true))
         .toDart;
 
     final writable = await fileHandle.createWritable().toDart;
-    int totalBytes = 0;
 
     try {
       await for (final chunk in stream) {
         final uint8 = Uint8List.fromList(chunk);
-        totalBytes += uint8.length;
         await writable.write(uint8.toJS).toDart;
       }
       await writable.close().toDart;
@@ -52,20 +44,17 @@ class OpfsBlockStore {
         await writable.abort().toDart;
         await _blocksDir!.removeEntry(blockId).toDart;
       } catch (_) {}
+      print('OpfsBlockStore: writeBlob failed for $blockId: $e');
       rethrow;
     }
 
-    return (blockId, totalBytes);
+    return blockId;
   }
 
   Stream<List<int>> readBlob(String blockId) async* {
     await _ensureReady();
     try {
-      final fileHandle = await _blocksDir!
-          .getFileHandle(
-            blockId,
-          )
-          .toDart;
+      final fileHandle = await _blocksDir!.getFileHandle(blockId).toDart;
 
       final file = await fileHandle.getFile().toDart;
       final web.Blob blob = file;
@@ -80,6 +69,7 @@ class OpfsBlockStore {
         yield chunk.toDart;
       }
     } catch (e) {
+      print('OpfsBlockStore: readBlob failed for $blockId: $e');
       rethrow;
     }
   }
@@ -91,5 +81,12 @@ class OpfsBlockStore {
     } catch (e) {
       // Ignore if not found
     }
+  }
+
+  Future<web.Blob> getBlob(String blockId) async {
+    await _ensureReady();
+    final fileHandle = await _blocksDir!.getFileHandle(blockId).toDart;
+    final file = await fileHandle.getFile().toDart;
+    return file;
   }
 }

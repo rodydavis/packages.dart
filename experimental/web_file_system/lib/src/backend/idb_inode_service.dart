@@ -1,29 +1,9 @@
 import 'dart:async';
 import 'dart:js_interop';
+import 'dart:js_interop_unsafe';
 import 'package:web/web.dart' as web;
 
 extension type InodeJS._(JSObject _) implements JSObject {
-  external String get id;
-  external set id(String value);
-
-  external String get parentId;
-  external set parentId(String value);
-
-  external String get name;
-  external set name(String value);
-
-  external int get nodeType;
-  external set nodeType(int value);
-
-  external String? get blobId;
-  external set blobId(String? value);
-
-  external int get size;
-  external set size(int value);
-
-  external int get modified;
-  external set modified(int value);
-
   factory InodeJS({
     required String id,
     required String parentId,
@@ -32,16 +12,18 @@ extension type InodeJS._(JSObject _) implements JSObject {
     String? blobId,
     int size = 0,
     required int modified,
+    int storageType = 0,
   }) {
-    final obj = JSObject() as InodeJS;
-    obj.id = id;
-    obj.parentId = parentId;
-    obj.name = name;
-    obj.nodeType = nodeType;
-    obj.blobId = blobId;
-    obj.size = size;
-    obj.modified = modified;
-    return obj;
+    final obj = JSObject();
+    obj.setProperty('id'.toJS, id.toJS);
+    obj.setProperty('parentId'.toJS, parentId.toJS);
+    obj.setProperty('name'.toJS, name.toJS);
+    obj.setProperty('nodeType'.toJS, nodeType.toJS);
+    if (blobId != null) obj.setProperty('blobId'.toJS, blobId.toJS);
+    obj.setProperty('size'.toJS, size.toJS);
+    obj.setProperty('modified'.toJS, modified.toJS);
+    obj.setProperty('storageType'.toJS, storageType.toJS);
+    return obj as InodeJS;
   }
 }
 
@@ -53,6 +35,7 @@ class Inode {
   final String? blobId;
   final int size;
   final int modified;
+  final int storageType; // 0: OPFS, 1: IDB
 
   Inode({
     required this.id,
@@ -62,6 +45,7 @@ class Inode {
     this.blobId,
     this.size = 0,
     required this.modified,
+    this.storageType = 0,
   });
 
   InodeJS toJS() {
@@ -73,18 +57,30 @@ class Inode {
       blobId: blobId,
       size: size,
       modified: modified,
+      storageType: storageType,
     );
   }
 
   static Inode fromJS(InodeJS js) {
+    final obj = js as JSObject;
+    final id = obj.getProperty('id'.toJS);
+    final parentId = obj.getProperty('parentId'.toJS);
+    final name = obj.getProperty('name'.toJS);
+    final nodeType = obj.getProperty('nodeType'.toJS);
+    final blobId = obj.getProperty('blobId'.toJS);
+    final size = obj.getProperty('size'.toJS);
+    final modified = obj.getProperty('modified'.toJS);
+    final storageType = obj.getProperty('storageType'.toJS);
+
     return Inode(
-      id: js.id,
-      parentId: js.parentId,
-      name: js.name,
-      nodeType: js.nodeType,
-      blobId: js.blobId,
-      size: js.size,
-      modified: js.modified,
+      id: id != null && !id.isUndefinedOrNull ? (id as JSString).toDart : '',
+      parentId: parentId != null && !parentId.isUndefinedOrNull ? (parentId as JSString).toDart : '',
+      name: name != null && !name.isUndefinedOrNull ? (name as JSString).toDart : '',
+      nodeType: nodeType != null && !nodeType.isUndefinedOrNull ? (nodeType as JSNumber).toDartInt : 0,
+      blobId: blobId != null && !blobId.isUndefinedOrNull ? (blobId as JSString).toDart : null,
+      size: size != null && !size.isUndefinedOrNull ? (size as JSNumber).toDartInt : 0,
+      modified: modified != null && !modified.isUndefinedOrNull ? (modified as JSNumber).toDartInt : 0,
+      storageType: storageType != null && !storageType.isUndefinedOrNull ? (storageType as JSNumber).toDartInt : 0,
     );
   }
 }
@@ -95,16 +91,13 @@ class IdbInodeService {
   static const String _storeName = 'inodes';
 
   web.IDBDatabase? _db;
-  Future<void>? _initFuture;
+  final Completer<void> _initCompleter = Completer<void>();
   static const String rootId = '00000000-0000-0000-0000-000000000000';
 
-  Future<void> _ensureReady() {
-    if (_db != null) return Future.value();
-    return _initFuture ??= _init();
-  }
+  Future<void> _ensureReady() async {
+    if (_db != null) return;
+    if (_initCompleter.isCompleted) return _initCompleter.future;
 
-  Future<void> _init() async {
-    final completer = Completer<void>();
     final request = web.window.indexedDB.open(_dbName, _version);
 
     request.onupgradeneeded = (web.IDBVersionChangeEvent event) {
@@ -116,23 +109,35 @@ class IdbInodeService {
           web.IDBObjectStoreParameters(keyPath: 'id'.toJS),
         );
         store.createIndex(
-            'parentId', 'parentId'.toJS, web.IDBIndexParameters(unique: false));
-        store.createIndex('parent_name', ['parentId'.toJS, 'name'.toJS].toJS,
-            web.IDBIndexParameters(unique: true));
+          'parentId',
+          'parentId'.toJS,
+          web.IDBIndexParameters(unique: false),
+        );
+        store.createIndex(
+          'parent_name',
+          ['parentId'.toJS, 'name'.toJS].toJS,
+          web.IDBIndexParameters(unique: true),
+        );
       }
     }.toJS;
 
+    final completer = Completer<void>();
+
     request.onsuccess = (web.Event event) {
       _db = (event.target as web.IDBOpenDBRequest).result as web.IDBDatabase;
-      _ensureRootExists().then((_) {
-        completer.complete();
-      }).catchError((e) {
-        completer.completeError(e);
-      });
+      _ensureRootExists()
+          .then((_) {
+            if (!_initCompleter.isCompleted) completer.complete();
+          })
+          .catchError((e) {
+            if (!_initCompleter.isCompleted) completer.completeError(e);
+          });
     }.toJS;
 
     request.onerror = (web.Event event) {
-      completer.completeError(Exception('Failed to open IDB'));
+      if (!_initCompleter.isCompleted) {
+        completer.completeError(Exception('Failed to open IDB'));
+      }
     }.toJS;
 
     return completer.future;
@@ -142,20 +147,24 @@ class IdbInodeService {
     try {
       await getInode(rootId);
     } catch (_) {
-      await createInode(Inode(
-        id: rootId,
-        parentId: 'null',
-        name: '',
-        nodeType: 1,
-        modified: DateTime.now().millisecondsSinceEpoch,
-      ));
+      await createInode(
+        Inode(
+          id: rootId,
+          parentId: 'null',
+          name: '',
+          nodeType: 1,
+          modified: DateTime.now().millisecondsSinceEpoch,
+        ),
+      );
     }
   }
 
   Future<void> createInode(Inode inode) async {
     if (_db == null) await _ensureReady();
     final transaction = _db!.transaction(
-        _storeName.toJS, 'readwrite'.toJS as web.IDBTransactionMode);
+      _storeName.toJS,
+      'readwrite',
+    );
     final store = transaction.objectStore(_storeName);
     final request = store.put(inode.toJS());
     await _requestToFuture(request);
@@ -168,7 +177,9 @@ class IdbInodeService {
   Future<void> deleteInode(String id) async {
     await _ensureReady();
     final transaction = _db!.transaction(
-        _storeName.toJS, 'readwrite'.toJS as web.IDBTransactionMode);
+      _storeName.toJS,
+      'readwrite',
+    );
     final store = transaction.objectStore(_storeName);
     final request = store.delete(id.toJS);
     await _requestToFuture(request);
@@ -178,7 +189,9 @@ class IdbInodeService {
     if (_db == null) await _ensureReady();
 
     final transaction = _db!.transaction(
-        _storeName.toJS, 'readonly'.toJS as web.IDBTransactionMode);
+      _storeName.toJS,
+      'readonly',
+    );
     final store = transaction.objectStore(_storeName);
     final request = store.get(id.toJS);
     final result = await _requestToFuture(request);
@@ -190,7 +203,9 @@ class IdbInodeService {
   Future<Inode?> getChild(String parentId, String name) async {
     await _ensureReady();
     final transaction = _db!.transaction(
-        _storeName.toJS, 'readonly'.toJS as web.IDBTransactionMode);
+      _storeName.toJS,
+      'readonly',
+    );
     final store = transaction.objectStore(_storeName);
     final index = store.index('parent_name');
     final key = JSArray();
@@ -211,7 +226,9 @@ class IdbInodeService {
   Future<List<Inode>> listChildren(String parentId) async {
     await _ensureReady();
     final transaction = _db!.transaction(
-        _storeName.toJS, 'readonly'.toJS as web.IDBTransactionMode);
+      _storeName.toJS,
+      'readonly',
+    );
     final store = transaction.objectStore(_storeName);
     final index = store.index('parentId');
     final request = index.getAll(parentId.toJS);

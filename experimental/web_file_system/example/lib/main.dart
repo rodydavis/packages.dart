@@ -153,18 +153,23 @@ class _FileSystemDemoState extends State<FileSystemDemo> {
             spacing: 8,
             children: [
               ElevatedButton(
-                  onPressed: _createFile, child: const Text('New File')),
+                onPressed: _createFile,
+                child: const Text('New File'),
+              ),
               ElevatedButton(
-                  onPressed: _createDir, child: const Text('New Directory')),
+                onPressed: _createDir,
+                child: const Text('New Directory'),
+              ),
               if (_currentPath != '/')
                 ElevatedButton(
-                    onPressed: () {
-                      setState(() {
-                        _currentPath = _fs.path.dirname(_currentPath);
-                      });
-                      _refreshFiles();
-                    },
-                    child: const Text('Go Up')),
+                  onPressed: () {
+                    setState(() {
+                      _currentPath = _fs.path.dirname(_currentPath);
+                    });
+                    _refreshFiles();
+                  },
+                  child: const Text('Go Up'),
+                ),
             ],
           ),
           const Divider(),
@@ -181,13 +186,14 @@ class _FileSystemDemoState extends State<FileSystemDemo> {
                   ),
                   title: Text(entity.basename),
                   subtitle: FutureBuilder<int>(
-                      future: _getSize(entity),
-                      builder: (context, snapshot) {
-                        if (snapshot.hasData) {
-                          return Text(_formatBytes(snapshot.data!));
-                        }
-                        return const Text('Loading...');
-                      }),
+                    future: _getSize(entity),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData) {
+                        return Text(_formatBytes(snapshot.data!));
+                      }
+                      return const Text('Loading...');
+                    },
+                  ),
                   trailing: IconButton(
                     icon: const Icon(Icons.delete, color: Colors.red),
                     onPressed: () => _delete(entity),
@@ -201,17 +207,20 @@ class _FileSystemDemoState extends State<FileSystemDemo> {
                     } else if (entity is File) {
                       entity.readAsString().then((content) {
                         showDialog(
-                            context: context,
-                            builder: (context) => AlertDialog(
-                                  title: Text(entity.basename),
-                                  content: SingleChildScrollView(
-                                      child: Text(content)),
-                                  actions: [
-                                    TextButton(
-                                        onPressed: () => Navigator.pop(context),
-                                        child: const Text('Close'))
-                                  ],
-                                ));
+                          context: context,
+                          builder: (context) => AlertDialog(
+                            title: Text(entity.basename),
+                            content: SingleChildScrollView(
+                              child: Text(content),
+                            ),
+                            actions: [
+                              TextButton(
+                                onPressed: () => Navigator.pop(context),
+                                child: const Text('Close'),
+                              ),
+                            ],
+                          ),
+                        );
                       });
                     }
                   },
@@ -229,11 +238,13 @@ class _FileSystemDemoState extends State<FileSystemDemo> {
                 itemCount: _logs.length,
                 itemBuilder: (context, index) => Padding(
                   padding: const EdgeInsets.all(4.0),
-                  child: Text(_logs[_logs.length - 1 - index],
-                      style: const TextStyle(
-                        fontSize: 12,
-                        fontFamily: 'monospace',
-                      )),
+                  child: Text(
+                    _logs[_logs.length - 1 - index],
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontFamily: 'monospace',
+                    ),
+                  ),
                 ),
               ),
             ),

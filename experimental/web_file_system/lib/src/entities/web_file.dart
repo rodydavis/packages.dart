@@ -2,7 +2,7 @@ import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
 import 'package:file/file.dart';
-import 'package:web_file_system/src/backend/idb_inode_service.dart';
+import '../backend/idb_inode_service.dart';
 import '../web_file_system.dart';
 
 class WebFile extends FileSystemEntity implements File {
@@ -52,65 +52,28 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  void createSync({bool recursive = false, bool exclusive = false}) {
-    if (existsSync()) {
-      if (exclusive) {
-        throw FileSystemException(
-          'File already exists',
-          path,
-          const OSError('EEXIST', 17),
-        );
-      }
-      return;
-    }
-
-    final parentPath = _fs.path.dirname(path);
-    final parentType = _fs.typeSync(parentPath);
-    if (parentType == FileSystemEntityType.notFound) {
-      if (recursive) {
-        _fs.directory(parentPath).createSync(recursive: true);
-      } else {
-        throw FileSystemException(
-          'Cannot create file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-          path,
-        );
-      }
-    } else if (parentType != FileSystemEntityType.directory) {
-      throw FileSystemException(
-        'Cannot create file, path = \'$path\' (OS Error: Not a directory, errno = 20)',
-        path,
-      );
-    }
-
-    writeAsBytesSync([]);
-  }
+  void createSync({bool recursive = false, bool exclusive = false}) =>
+      throw UnsupportedError('Sync not supported');
 
   @override
   Future<File> copy(String newPath) async {
-    final inode = await _fs.resolvepath(path);
-    final newParent = await _fs.resolvepath(_fs.path.dirname(newPath));
+    // Deep copy to ensure independence and correct storage type
 
-    await _fs.idb.createInode(
-      Inode(
-        id: _fs.uuid.v4(),
-        parentId: newParent.id,
-        name: _fs.path.basename(newPath),
-        nodeType: 0,
-        blobId: inode.blobId,
-        size: inode.size,
-        modified: DateTime.now().millisecondsSinceEpoch,
-      ),
-    );
+    final newFile = WebFile(_fs, newPath);
+    // Use writeAsBytes to handle creation and storage logic
+    // We need to consume the stream to a list for now as writeAsBytes takes List<int>
+    // Or we could use a stream API if available, but writeAsBytes expects List<int>.
+    // Given these are images/slides, memory is likely okay.
+    // To be safer with memory, we should really stream it, but writeAsBytes takes List<int>.
+    // Let's use readAsBytes() helper.
+    final bytes = await readAsBytes();
+    await newFile.writeAsBytes(bytes);
 
-    return WebFile(_fs, newPath);
+    return newFile;
   }
 
   @override
-  File copySync(String newPath) {
-    final bytes = readAsBytesSync();
-    _fs.file(newPath).writeAsBytesSync(bytes);
-    return WebFile(_fs, newPath);
-  }
+  File copySync(String newPath) => throw UnsupportedError('Sync not supported');
 
   @override
   Future<int> length() async {
@@ -119,7 +82,7 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  int lengthSync() => statSync().size;
+  int lengthSync() => throw UnsupportedError('Sync not supported');
 
   @override
   Future<DateTime> lastModified() async {
@@ -128,7 +91,7 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  DateTime lastModifiedSync() => statSync().modified;
+  DateTime lastModifiedSync() => throw UnsupportedError('Sync not supported');
 
   @override
   Future<DateTime> lastAccessed() async {
@@ -136,7 +99,7 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  DateTime lastAccessedSync() => statSync().accessed;
+  DateTime lastAccessedSync() => throw UnsupportedError('Sync not supported');
 
   @override
   Future<dynamic> setLastAccessed(DateTime time) async {}
@@ -183,7 +146,24 @@ class WebFile extends FileSystemEntity implements File {
     bool flush = false,
   }) async {
     final stream = Stream.value(bytes);
-    final (newBlobId, _) = await _fs.opfs.writeBlob(stream);
+    String newBlobId;
+    int usedStorageType = 0; // 0 = OPFS, 1 = IDB
+
+    try {
+      // Try OPFS first
+      newBlobId = await _fs.opfs.writeBlob(stream);
+    } catch (e) {
+      // Fallback to IDB on ANY error (TypeError, NotFoundError, etc)
+      try {
+        newBlobId = await _fs.idbStore.writeBlob(Stream.value(bytes));
+        usedStorageType = 1;
+      } catch (e2) {
+        throw FileSystemException(
+          'Write failed on both OPFS ($e) and IDB: $e2',
+          path,
+        );
+      }
+    }
 
     Inode inode;
     try {
@@ -191,15 +171,8 @@ class WebFile extends FileSystemEntity implements File {
       if (mode == FileMode.append) {
         throw UnsupportedError('Append not yet optimized');
       }
-    } on FileSystemException catch (_) {
-      final parentPath = _fs.path.dirname(path);
-      if (await _fs.type(parentPath) != FileSystemEntityType.directory) {
-        throw FileSystemException(
-          'Cannot open file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-          path,
-        );
-      }
-      await create(recursive: false);
+    } catch (_) {
+      await create(recursive: true);
       inode = await _fs.resolvepath(path);
     }
 
@@ -212,6 +185,7 @@ class WebFile extends FileSystemEntity implements File {
         blobId: newBlobId,
         size: bytes.length,
         modified: DateTime.now().millisecondsSinceEpoch,
+        storageType: usedStorageType,
       ),
     );
 
@@ -224,27 +198,7 @@ class WebFile extends FileSystemEntity implements File {
     FileMode mode = FileMode.write,
     bool flush = false,
   }) {
-    if (mode == FileMode.append) {
-      throw UnsupportedError('Append not yet optimized');
-    }
-    
-    final parentPath = _fs.path.dirname(path);
-    if (_fs.typeSync(parentPath) != FileSystemEntityType.directory) {
-      throw FileSystemException(
-        'Cannot open file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-        path,
-      );
-    }
-
-    final pathBytes = utf8.encode(path);
-    final pathLen = pathBytes.length;
-    final request = Uint8List(4 + pathLen + bytes.length);
-    final bd = ByteData.sublistView(request);
-    bd.setUint32(0, pathLen, Endian.little);
-    request.setRange(4, 4 + pathLen, pathBytes);
-    request.setRange(4 + pathLen, request.length, bytes);
-
-    _fs.makeSyncCall(4, request);
+    throw UnsupportedError('Sync not supported');
   }
 
   @override
@@ -264,7 +218,7 @@ class WebFile extends FileSystemEntity implements File {
     Encoding encoding = utf8,
     bool flush = false,
   }) {
-    writeAsBytesSync(encoding.encode(contents), mode: mode, flush: flush);
+    throw UnsupportedError('Sync not supported');
   }
 
   @override
@@ -272,7 +226,37 @@ class WebFile extends FileSystemEntity implements File {
     final inode = await _fs.resolvepath(path);
     if (inode.blobId == null) return;
 
-    yield* _fs.opfs.readBlob(inode.blobId!);
+    if (inode.storageType == 1) {
+      try {
+        yield* _fs.idbStore.readBlob(inode.blobId!);
+      } catch (e) {
+        // Fallback to OPFS if IDB fails (maybe metadata is wrong)
+        print(
+          'Using fallback to OPFS for reading ${inode.name} (blob: ${inode.blobId}). Error: $e',
+        );
+        try {
+          yield* _fs.opfs.readBlob(inode.blobId!);
+        } catch (e2) {
+          print('OPFS fallback ALSO failed for ${inode.name}: $e2');
+          rethrow;
+        }
+      }
+    } else {
+      try {
+        yield* _fs.opfs.readBlob(inode.blobId!);
+      } catch (e) {
+        // Fallback to IDB if OPFS fails
+        print(
+          'Using fallback to IDB for reading ${inode.name} (blob: ${inode.blobId}). Error: $e',
+        );
+        try {
+          yield* _fs.idbStore.readBlob(inode.blobId!);
+        } catch (e2) {
+          print('IDB fallback ALSO failed for ${inode.name}: $e2');
+          rethrow;
+        }
+      }
+    }
   }
 
   @override
@@ -281,9 +265,16 @@ class WebFile extends FileSystemEntity implements File {
 
     // Start background write but keep future to await in close()
     final writeFuture = _handleWrite(controller.stream, encoding, mode);
-    writeFuture.catchError((Object _) {});
 
-    return _WebIOSink(controller, writeFuture, encoding);
+    final sink = _WebIOSink(
+      controller,
+      encoding,
+      onDone: () async {
+        await writeFuture;
+      },
+    );
+
+    return sink;
   }
 
   Future<void> _handleWrite(
@@ -292,22 +283,23 @@ class WebFile extends FileSystemEntity implements File {
     FileMode mode,
   ) async {
     try {
-      final parentPath = _fs.path.dirname(path);
-      if (await _fs.type(parentPath) != FileSystemEntityType.directory) {
-        throw FileSystemException(
-          'Cannot open file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-          path,
-        );
-      }
+      String newId;
+      int usedStorageType = 0; // 0 = OPFS, 1 = IDB
 
-      final (newId, size) = await _fs.opfs.writeBlob(stream);
+      try {
+        newId = await _fs.opfs.writeBlob(stream);
+      } catch (e) {
+        // Fallback to IDB on ANY error
+        newId = await _fs.idbStore.writeBlob(stream);
+        usedStorageType = 1;
+      }
 
       Inode inode;
       try {
         inode = await _fs.resolvepath(path);
       } catch (_) {
         // Create if missing
-        await create(recursive: false);
+        await create(recursive: true);
         inode = await _fs.resolvepath(path);
       }
 
@@ -318,8 +310,10 @@ class WebFile extends FileSystemEntity implements File {
           name: inode.name,
           nodeType: 0,
           blobId: newId,
-          size: size,
+          size:
+              0, // TODO: Size not returned by OPFS yet, so 0 for streamed content
           modified: DateTime.now().millisecondsSinceEpoch,
+          storageType: usedStorageType,
         ),
       );
     } catch (e) {
@@ -334,22 +328,7 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  Uint8List readAsBytesSync() {
-    final type = _fs.typeSync(path);
-    if (type == FileSystemEntityType.notFound) {
-      throw FileSystemException(
-        'Cannot open file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-        path,
-      );
-    }
-    if (type == FileSystemEntityType.directory) {
-      throw FileSystemException(
-        'Cannot open file, path = \'$path\' (OS Error: Is a directory, errno = 21)',
-        path,
-      );
-    }
-    return _fs.makeSyncCall(3, utf8.encode(path));
-  }
+  Uint8List readAsBytesSync() => throw UnsupportedError('Sync not supported');
 
   @override
   Future<String> readAsString({Encoding encoding = utf8}) async {
@@ -358,21 +337,18 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  String readAsStringSync({Encoding encoding = utf8}) {
-    return encoding.decode(readAsBytesSync());
-  }
+  String readAsStringSync({Encoding encoding = utf8}) =>
+      throw UnsupportedError('Sync not supported');
 
   @override
   Future<List<String>> readAsLines({Encoding encoding = utf8}) async {
     final str = await readAsString(encoding: encoding);
-    return const LineSplitter().convert(str);
+    return str.split('\n');
   }
 
   @override
-  List<String> readAsLinesSync({Encoding encoding = utf8}) {
-    final str = readAsStringSync(encoding: encoding);
-    return const LineSplitter().convert(str);
-  }
+  List<String> readAsLinesSync({Encoding encoding = utf8}) =>
+      throw UnsupportedError('Sync not supported');
 
   @override
   Future<bool> exists() async {
@@ -385,9 +361,7 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  bool existsSync() {
-    return _fs.typeSync(path, followLinks: false) == FileSystemEntityType.file;
-  }
+  bool existsSync() => throw UnsupportedError('Sync not supported');
 
   @override
   Future<File> rename(String newPath) async {
@@ -411,58 +385,32 @@ class WebFile extends FileSystemEntity implements File {
   }
 
   @override
-  File renameSync(String newPath) {
-    final type = _fs.typeSync(path, followLinks: false);
-    if (type == FileSystemEntityType.notFound) {
-      throw FileSystemException(
-        'Cannot rename file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-        path,
-      );
-    }
-    final newParentDir = _fs.path.dirname(newPath);
-    if (_fs.typeSync(newParentDir) != FileSystemEntityType.directory) {
-      throw FileSystemException(
-        'Cannot rename file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-        path,
-      );
-    }
-
-    final pathBytes = utf8.encode(path);
-    final newPathBytes = utf8.encode(newPath);
-    final request = Uint8List(4 + pathBytes.length + newPathBytes.length);
-    final bd = ByteData.sublistView(request);
-    bd.setUint32(0, pathBytes.length, Endian.little);
-    request.setRange(4, 4 + pathBytes.length, pathBytes);
-    request.setRange(4 + pathBytes.length, request.length, newPathBytes);
-
-    _fs.makeSyncCall(12, request);
-    return WebFile(_fs, newPath);
-  }
+  File renameSync(String newPath) =>
+      throw UnsupportedError('Sync not supported');
 
   @override
   Future<FileSystemEntity> delete({bool recursive = false}) async {
     final inode = await _fs.resolvepath(path);
+    if (inode.blobId != null) {
+      if (inode.storageType == 1) {
+        await _fs.idbStore.deleteBlob(inode.blobId!);
+      } else {
+        await _fs.opfs.deleteBlob(inode.blobId!);
+      }
+    }
     await _fs.idb.deleteInode(inode.id);
     return this;
   }
 
   @override
-  void deleteSync({bool recursive = false}) {
-    final type = _fs.typeSync(path, followLinks: false);
-    if (type == FileSystemEntityType.notFound) {
-      throw FileSystemException(
-        'Cannot delete file, path = \'$path\' (OS Error: No such file or directory, errno = 2)',
-        path,
-      );
-    }
-    _fs.makeSyncCall(6, utf8.encode(path));
-  }
+  void deleteSync({bool recursive = false}) =>
+      throw UnsupportedError('Sync not supported');
 
   @override
   Future<FileStat> stat() => _fs.stat(path);
 
   @override
-  FileStat statSync() => _fs.statSync(path);
+  FileStat statSync() => throw UnsupportedError('Sync not supported');
 
   @override
   Uri get uri => Uri.parse(path);
@@ -478,10 +426,11 @@ class WebFile extends FileSystemEntity implements File {
   File get absolute => WebFile(_fs, _fs.path.absolute(path));
 
   @override
-  Future<String> resolveSymbolicLinks() => _fs.resolveSymbolicLinks(path);
+  Future<String> resolveSymbolicLinks() async => path;
 
   @override
-  String resolveSymbolicLinksSync() => _fs.resolveSymbolicLinksSync(path);
+  String resolveSymbolicLinksSync() =>
+      throw UnsupportedError('Sync not supported');
 
   @override
   Stream<FileSystemEvent> watch({
@@ -494,10 +443,10 @@ class WebFile extends FileSystemEntity implements File {
 
 class _WebIOSink implements IOSink {
   final StreamController<List<int>> _controller;
-  final Future<void> _writeFuture;
+  final Future<void> Function()? onDone;
   Encoding _encoding;
 
-  _WebIOSink(this._controller, this._writeFuture, this._encoding);
+  _WebIOSink(this._controller, this._encoding, {this.onDone});
 
   @override
   Encoding get encoding => _encoding;
@@ -507,35 +456,27 @@ class _WebIOSink implements IOSink {
 
   @override
   void add(List<int> data) {
-    if (_controller.isClosed) return;
     _controller.add(data);
   }
 
   @override
   void addError(Object error, [StackTrace? stackTrace]) {
-    if (_controller.isClosed) return;
     _controller.addError(error, stackTrace);
   }
 
   @override
   Future addStream(Stream<List<int>> stream) {
-    return Future.any([
-      _controller.addStream(stream),
-      _writeFuture,
-    ]);
+    return _controller.addStream(stream);
   }
 
   @override
   Future close() async {
     await _controller.close();
-    await _writeFuture;
+    if (onDone != null) await onDone!();
   }
 
   @override
-  Future get done => Future.any([
-        _controller.done,
-        _writeFuture,
-      ]);
+  Future get done => _controller.done;
 
   @override
   Future flush() async {}

@@ -1,13 +1,14 @@
 import 'dart:async';
 import 'dart:convert';
-import 'dart:typed_data';
 import 'dart:js_interop';
 import 'package:file/file.dart';
+import 'package:web/web.dart' as web;
 import 'package:path/path.dart' as p;
 import 'package:uuid/uuid.dart';
-import 'package:web_file_system/src/backend/idb_inode_service.dart';
-import 'package:web_file_system/src/backend/opfs_block_store.dart';
-import 'package:web_file_system/src/backend/sync_rpc_helper.dart';
+
+import 'backend/idb_inode_service.dart';
+import 'backend/opfs_block_store.dart';
+import 'backend/idb_block_store.dart';
 import 'entities/web_directory.dart';
 import 'entities/web_file.dart';
 import 'entities/web_link.dart';
@@ -15,11 +16,13 @@ import 'entities/web_link.dart';
 class WebFileSystem extends FileSystem {
   final IdbInodeService _idb = IdbInodeService();
   final OpfsBlockStore _opfs = OpfsBlockStore();
+  final IdbBlockStore _idbStore = IdbBlockStore();
   final Uuid _uuid = Uuid();
 
   // Public matchers for internal use
   IdbInodeService get idb => _idb;
   OpfsBlockStore get opfs => _opfs;
+  IdbBlockStore get idbStore => _idbStore;
   Uuid get uuid => _uuid;
 
   WebFileSystem();
@@ -63,43 +66,9 @@ class WebFileSystem extends FileSystem {
     }
   }
 
-  static void registerWorkerProxy(dynamic worker, WebFileSystem fs) {
-    SyncRpcHelper.registerWorkerProxy(worker as JSAny, fs as JSAny);
-  }
-
-  Uint8List makeSyncCall(int cmd, Uint8List request) {
-    if (!SyncRpcHelper.isWorker) {
-      throw UnsupportedError('Synchronous operations are only supported inside Web Workers.');
-    }
-    if (!SyncRpcHelper.isSharedArrayBufferSupported) {
-      throw StateError('SharedArrayBuffer is not supported. Ensure your site is cross-origin isolated with COOP/COEP headers.');
-    }
-    return SyncRpcHelper.sendSyncRequest(cmd, request);
-  }
-
   @override
   FileSystemEntityType typeSync(String path, {bool followLinks = true}) {
-    if (!SyncRpcHelper.isWorker) {
-      throw UnsupportedError('Synchronous operations are only supported inside Web Workers.');
-    }
-    if (!SyncRpcHelper.isSharedArrayBufferSupported) {
-      throw StateError('SharedArrayBuffer is not supported. Ensure your site is cross-origin isolated with COOP/COEP headers.');
-    }
-    try {
-      final pathBytes = utf8.encode(path);
-      final payload = Uint8List(pathBytes.length + 1);
-      payload[0] = followLinks ? 1 : 0;
-      payload.setRange(1, payload.length, pathBytes);
-      
-      final respBytes = makeSyncCall(2, payload);
-      final typeStr = utf8.decode(respBytes);
-      if (typeStr == 'file') return FileSystemEntityType.file;
-      if (typeStr == 'directory') return FileSystemEntityType.directory;
-      if (typeStr == 'link') return FileSystemEntityType.link;
-      return FileSystemEntityType.notFound;
-    } catch (_) {
-      return FileSystemEntityType.notFound;
-    }
+    throw UnsupportedError('Sync type not supported');
   }
 
   // Internal Resolution Logic
@@ -194,6 +163,7 @@ class WebFileSystem extends FileSystem {
     return currentInode;
   }
 
+  @override
   String getPath(dynamic path) {
     if (path is String) return path;
     if (path is FileSystemEntity) return path.path;
@@ -213,34 +183,7 @@ class WebFileSystem extends FileSystem {
 
   @override
   FileStat statSync(String path) {
-    if (!SyncRpcHelper.isWorker) {
-      throw UnsupportedError('Synchronous operations are only supported inside Web Workers.');
-    }
-    if (!SyncRpcHelper.isSharedArrayBufferSupported) {
-      throw StateError('SharedArrayBuffer is not supported. Ensure your site is cross-origin isolated with COOP/COEP headers.');
-    }
-    try {
-      final respBytes = makeSyncCall(9, utf8.encode(path));
-      final statMap = json.decode(utf8.decode(respBytes)) as Map<String, dynamic>;
-      final typeStr = statMap['type'] as String;
-      final size = statMap['size'] as int;
-      final modified = statMap['modified'] as int;
-      
-      FileSystemEntityType type;
-      if (typeStr == 'file') {
-        type = FileSystemEntityType.file;
-      } else if (typeStr == 'directory') {
-        type = FileSystemEntityType.directory;
-      } else if (typeStr == 'link') {
-        type = FileSystemEntityType.link;
-      } else {
-        type = FileSystemEntityType.notFound;
-      }
-      
-      return FileStatImpl(modified, size, type);
-    } catch (_) {
-      return FileStatImpl(0, 0, FileSystemEntityType.notFound);
-    }
+    throw UnsupportedError('Sync stat not supported');
   }
 
   FileSystemEntityType _getType(int nodeType) {
@@ -252,15 +195,15 @@ class WebFileSystem extends FileSystem {
 
   @override
   bool isFileSync(String path) =>
-      typeSync(path) == FileSystemEntityType.file;
+      throw UnsupportedError('Sync isFile not supported');
 
   @override
   bool isDirectorySync(String path) =>
-      typeSync(path) == FileSystemEntityType.directory;
+      throw UnsupportedError('Sync isDirectory not supported');
 
   @override
   bool isLinkSync(String path) =>
-      typeSync(path, followLinks: false) == FileSystemEntityType.link;
+      throw UnsupportedError('Sync isLink not supported');
 
   @override
   Future<bool> isFile(String path) async =>
@@ -274,6 +217,7 @@ class WebFileSystem extends FileSystem {
   Future<bool> isLink(String path) async =>
       (await type(path, followLinks: false)) == FileSystemEntityType.link;
 
+  @override
   bool get isWatchSupported => false;
 
   @override
@@ -281,8 +225,9 @@ class WebFileSystem extends FileSystem {
     final s1 = await stat(path1);
     final s2 = await stat(path2);
     if (s1.type == FileSystemEntityType.notFound ||
-        s2.type == FileSystemEntityType.notFound)
+        s2.type == FileSystemEntityType.notFound) {
       return false;
+    }
 
     final i1 = await resolvepath(path1);
     final i2 = await resolvepath(path2);
@@ -290,31 +235,20 @@ class WebFileSystem extends FileSystem {
   }
 
   @override
-  bool identicalSync(String path1, String path2) {
-    try {
-      final r1 = resolveSymbolicLinksSync(path1);
-      final r2 = resolveSymbolicLinksSync(path2);
-      return r1 == r2;
-    } catch (_) {
-      return false;
-    }
-  }
+  @override
+  bool identicalSync(String path1, String path2) =>
+      throw UnsupportedError('Sync not supported');
 
-  Future<String> resolveSymbolicLinks(String pathStr) async {
-    final inode = await resolvepath(pathStr, followLinks: true);
-    final List<String> segments = [];
-    Inode current = inode;
-    while (current.id != IdbInodeService.rootId) {
-      segments.add(current.name);
-      current = await _idb.getInode(current.parentId);
-    }
-    if (segments.isEmpty) return '/';
-    return '/' + segments.reversed.join('/');
-  }
+  Future<web.Blob> getAsBlob(String path) async {
+    final inode = await resolvepath(path);
+    if (inode.nodeType != 0) throw FileSystemException('Not a file', path);
+    if (inode.blobId == null) return web.Blob(<JSAny>[].toJS);
 
-  String resolveSymbolicLinksSync(String pathStr) {
-    final respBytes = makeSyncCall(11, utf8.encode(pathStr));
-    return utf8.decode(respBytes);
+    if (inode.storageType == 1) {
+      return _idbStore.getBlob(inode.blobId!);
+    } else {
+      return _opfs.getBlob(inode.blobId!);
+    }
   }
 }
 
