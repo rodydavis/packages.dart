@@ -12,7 +12,7 @@ environment:
 executables:
   ngflutter:
 dependencies:
-  analyzer: ^0.32.4
+  analyzer: ^0.41.0
   ansicolor: ^1.0.2
   reflected_mustache: ^1.0.11
   logging: ^0.11.3+2

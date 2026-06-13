@@ -7,7 +7,7 @@ environment:
 
 dependencies:
   build_cli_annotations: ^1.0.0
-  analyzer: ^0.39.0
+  analyzer: ^0.41.0
   path: ^1.7.0
   console: ^3.1.0
   mustache_template: ^1.0.0+1
