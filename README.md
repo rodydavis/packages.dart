@@ -8,18 +8,23 @@ A collection of Flutter packages maintained by @rodydavis.
 | :--- | :--- | :--- |
 | [app_review](./packages/app_review) | Request and Write Reviews and Open Store Listing for Android and iOS/MacOS in Flutter. | [![Pub](https://img.shields.io/pub/v/app_review.svg?style=popout)](https://pub.dartlang.org/packages/app_review) |
 | [breakpoint](./packages/breakpoint) | A Flutter plugin to calculate the material design breakpoints. | [![Pub](https://img.shields.io/pub/v/breakpoint.svg?style=popout)](https://pub.dartlang.org/packages/breakpoint) |
+| [doc_site](https://github.com/rodydavis/open_xml/tree/main/doc_site) | A documentation site built with Jaspr | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
+| [docs](https://github.com/rodydavis/signals.dart/tree/main/docs) | A documentation site built with Jaspr | [![Pub](https://img.shields.io/pub/v/docs.svg?style=popout)](https://pub.dartlang.org/packages/docs) |
 | [flutter_sms](./packages/flutter_sms) | A Flutter plugin to send SMS and MMS on iOS and Android. | [![Pub](https://img.shields.io/pub/v/flutter_sms.svg?style=popout)](https://pub.dartlang.org/packages/flutter_sms) |
 | [flutter_vibrate](./packages/flutter_vibrate) | A Haptic Feedback and Vibration plugin. | [![Pub](https://img.shields.io/pub/v/flutter_vibrate.svg?style=popout)](https://pub.dartlang.org/packages/flutter_vibrate) |
 | [flutter_whatsnew](./packages/flutter_whatsnew) | A new Flutter package to show updates to users. | [![Pub](https://img.shields.io/pub/v/flutter_whatsnew.svg?style=popout)](https://pub.dartlang.org/packages/flutter_whatsnew) |
 | [open_xml](https://github.com/rodydavis/open_xml) | Open XML (OOXML) formatted documents. | [![Pub](https://img.shields.io/pub/v/open_xml.svg?style=popout)](https://pub.dartlang.org/packages/open_xml) |
 | [preact_signals](https://github.com/rodydavis/signals.dart/tree/main/packages/preact_signals) | Dart port of Preact.js Signals | [![Pub](https://img.shields.io/pub/v/preact_signals.svg?style=popout)](https://pub.dartlang.org/packages/preact_signals) |
+| [scripts](https://github.com/rodydavis/signals.dart/tree/main/scripts) | Standalone Dart scripts for documentation and skills generation | [![Pub](https://img.shields.io/pub/v/scripts.svg?style=popout)](https://pub.dartlang.org/packages/scripts) |
 | [signals](https://github.com/rodydavis/signals.dart/tree/main/packages/signals) | Reactivity made simple. Do more by doing less. Supports Flutter and any Dart project including HTML/JS, CLI, Shelf Server, VM and more. | [![Pub](https://img.shields.io/pub/v/signals.svg?style=popout)](https://pub.dartlang.org/packages/signals) |
 | [signals_core](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_core) | The signals library exposes four core functions which are the building blocks to model any business logic you can think of. | [![Pub](https://img.shields.io/pub/v/signals_core.svg?style=popout)](https://pub.dartlang.org/packages/signals_core) |
 | [signals_devtools_extension](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_devtools_extension) | Signals DevTools extension. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [signals_flutter](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_flutter) | The signals library exposes four core functions which are the building blocks to model any business logic you can think of. | [![Pub](https://img.shields.io/pub/v/signals_flutter.svg?style=popout)](https://pub.dartlang.org/packages/signals_flutter) |
 | [signals_hooks](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_hooks) | flutter_hooks bindings for signals | [![Pub](https://img.shields.io/pub/v/signals_hooks.svg?style=popout)](https://pub.dartlang.org/packages/signals_hooks) |
 | [signals_lint](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_lint) | linter and developer tool for signals | [![Pub](https://img.shields.io/pub/v/signals_lint.svg?style=popout)](https://pub.dartlang.org/packages/signals_lint) |
+| [test_fixtures](https://github.com/rodydavis/signals.dart/tree/main/packages/signals_lint/test_fixtures) |  | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [undo](./packages/undo) | A Undo/Redo Library for Flutter | [![Pub](https://img.shields.io/pub/v/undo.svg?style=popout)](https://pub.dartlang.org/packages/undo) |
+| [web_file_system](https://github.com/rodydavis/open_xml/tree/main/third_party/web_file_system) | A high-performance, asynchronous file system for the web using IDB and OPFS. | [![Pub](https://img.shields.io/pub/v/web_file_system.svg?style=popout)](https://pub.dartlang.org/packages/web_file_system) |
 
 ## Experimental
 
@@ -29,7 +34,7 @@ A collection of Flutter packages maintained by @rodydavis.
 | [http_get_cache](./experimental/http_get_cache) | HTTP Compliant cache for Flutter | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [pocketbase_auth](./experimental/pocketbase_auth) | Pocketbase auth client with built in UI screens and token refresh | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
 | [pocketbase_sync](./experimental/pocketbase_sync) | A Flutter package for offline-first syncing with PocketBase. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
-| [web_file_system](./experimental/web_file_system) | A high-performance, asynchronous file system for the web using IDB and OPFS. | ![Unpublished](https://img.shields.io/badge/pub-unpublished-inactive) |
+| [web_file_system](./experimental/web_file_system) | A high-performance, asynchronous file system for the web using IDB and OPFS. | [![Pub](https://img.shields.io/pub/v/web_file_system.svg?style=popout)](https://pub.dartlang.org/packages/web_file_system) |
 
 ## Deprecated
 
