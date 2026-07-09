@@ -20,10 +20,14 @@ rootProject.allprojects {
 }
 
 apply plugin: 'com.android.library'
+apply plugin: 'dev.flutter.flutter-gradle-plugin'
+apply plugin: 'dev.flutter.flutter-gradle-plugin'
+apply plugin: 'dev.flutter.flutter-gradle-plugin'
+apply plugin: 'dev.flutter.flutter-gradle-plugin'
 
 android {
     namespace "flutter.plugins.vibrate"
-    compileSdkVersion 30
+    compileSdkVersion flutter.compileSdkVersion
 
     defaultConfig {
         minSdkVersion 16
