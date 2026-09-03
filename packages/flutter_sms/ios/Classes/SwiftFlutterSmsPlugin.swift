@@ -2,9 +2,8 @@ import Flutter
 import UIKit
 import MessageUI
 
-public class SwiftFlutterSmsPlugin: NSObject, FlutterPlugin, SmsHostApi, UINavigationControllerDelegate, MFMessageComposeViewControllerDelegate {
-    var result: ((Result<String, Error>) -> Void)?
-    var _arguments = [String: Any]()
+public class SwiftFlutterSmsPlugin: NSObject, FlutterPlugin, SmsHostApi, MFMessageComposeViewControllerDelegate {
+  private var result: ((Result<String, Error>) -> Void)?
 
   public static func register(with registrar: FlutterPluginRegistrar) {
     let instance = SwiftFlutterSmsPlugin()
@@ -19,19 +18,46 @@ public class SwiftFlutterSmsPlugin: NSObject, FlutterPlugin, SmsHostApi, UINavig
           details: "Cannot send SMS and MMS on a Simulator. Test on a real device."
         )))
     #else
-      if (MFMessageComposeViewController.canSendText()) {
+      DispatchQueue.main.async { [weak self] in
+        guard let self = self else {
+          completion(.failure(PigeonError(
+            code: "plugin_unavailable",
+            message: "The SMS plugin is unavailable.",
+            details: nil
+          )))
+          return
+        }
+        guard self.result == nil else {
+          completion(.failure(PigeonError(
+            code: "composer_busy",
+            message: "An SMS composer is already open.",
+            details: nil
+          )))
+          return
+        }
+        guard MFMessageComposeViewController.canSendText() else {
+          completion(.failure(PigeonError(
+            code: "device_not_capable",
+            message: "The current device is not capable of sending text messages.",
+            details: "A device may be unable to send messages if it does not support messaging or if it is not currently configured to send messages."
+          )))
+          return
+        }
+        guard let presenter = Self.activeViewController() else {
+          completion(.failure(PigeonError(
+            code: "view_controller_unavailable",
+            message: "Unable to present the SMS composer.",
+            details: nil
+          )))
+          return
+        }
+
         self.result = completion
         let controller = MFMessageComposeViewController()
         controller.body = message
         controller.recipients = recipients
         controller.messageComposeDelegate = self
-        UIApplication.shared.keyWindow?.rootViewController?.present(controller, animated: true, completion: nil)
-      } else {
-        completion(.failure(PigeonError(
-            code: "device_not_capable",
-            message: "The current device is not capable of sending text messages.",
-            details: "A device may be unable to send messages if it does not support messaging or if it is not currently configured to send messages. This only applies to the ability to send text messages via iMessage, SMS, and MMS."
-          )))
+        presenter.present(controller, animated: true)
       }
     #endif
   }
@@ -54,9 +80,38 @@ public class SwiftFlutterSmsPlugin: NSObject, FlutterPlugin, SmsHostApi, UINavig
         MessageComposeResult.cancelled: "cancelled",
         MessageComposeResult.failed: "failed",
     ]
-    if let callback = self.result {
-        callback(.success(map[result] ?? "unknown"))
+    let callback = self.result
+    self.result = nil
+    controller.dismiss(animated: true) {
+      callback?(.success(map[result] ?? "unknown"))
     }
-    UIApplication.shared.keyWindow?.rootViewController?.dismiss(animated: true, completion: nil)
+  }
+
+  private static func activeViewController() -> UIViewController? {
+    let rootViewController: UIViewController?
+    if #available(iOS 13.0, *) {
+      rootViewController = UIApplication.shared.connectedScenes
+        .compactMap { $0 as? UIWindowScene }
+        .first { $0.activationState == .foregroundActive }?
+        .windows
+        .first { $0.isKeyWindow }?
+        .rootViewController
+    } else {
+      rootViewController = UIApplication.shared.keyWindow?.rootViewController
+    }
+    return topViewController(from: rootViewController)
+  }
+
+  private static func topViewController(from controller: UIViewController?) -> UIViewController? {
+    if let navigationController = controller as? UINavigationController {
+      return topViewController(from: navigationController.visibleViewController)
+    }
+    if let tabBarController = controller as? UITabBarController {
+      return topViewController(from: tabBarController.selectedViewController)
+    }
+    if let presentedViewController = controller?.presentedViewController {
+      return topViewController(from: presentedViewController)
+    }
+    return controller
   }
 }

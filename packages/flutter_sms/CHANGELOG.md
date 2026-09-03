@@ -1,3 +1,8 @@
+# NEXT
+
+- Support AGP 9 built-in Kotlin without applying the legacy Kotlin Android plugin.
+- Present the iOS message composer from the active foreground view controller.
+
 # 3.0.1
 
 - Fix iOS build error: https://github.com/rodydavis/packages.dart/pull/11
