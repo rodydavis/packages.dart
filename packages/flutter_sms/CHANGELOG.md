@@ -2,7 +2,9 @@
 
 - Support AGP 9 built-in Kotlin while retaining Kotlin Android compatibility for
   older consumers.
+- Declare Android package visibility for SMS composer intents.
 - Present the iOS message composer from the active foreground view controller.
+- Report an error if iOS cannot present the message composer.
 
 # 3.0.1
 

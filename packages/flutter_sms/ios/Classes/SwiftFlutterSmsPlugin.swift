@@ -57,7 +57,18 @@ public class SwiftFlutterSmsPlugin: NSObject, FlutterPlugin, SmsHostApi, MFMessa
         controller.body = message
         controller.recipients = recipients
         controller.messageComposeDelegate = self
-        presenter.present(controller, animated: true)
+        presenter.present(controller, animated: true) { [weak self, weak controller] in
+          guard controller?.presentingViewController != nil else {
+            let callback = self?.result
+            self?.result = nil
+            callback?(.failure(PigeonError(
+              code: "view_controller_unavailable",
+              message: "Unable to present the SMS composer.",
+              details: nil
+            )))
+            return
+          }
+        }
       }
     #endif
   }
