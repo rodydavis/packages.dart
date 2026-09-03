@@ -1,19 +1,6 @@
 group 'com.example.flutter_sms'
 version '1.0-SNAPSHOT'
 
-buildscript {
-    ext.kotlin_version = '1.9.0'
-    repositories {
-        google()
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath 'com.android.tools.build:gradle:7.4.2'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-    }
-}
-
 rootProject.allprojects {
     repositories {
         google()
@@ -22,31 +9,39 @@ rootProject.allprojects {
 }
 
 apply plugin: 'com.android.library'
-apply plugin: 'kotlin-android'
+
+def agpMajorVersion = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION
+        .tokenize('.')[0]
+        .toInteger()
+def builtInKotlinEnabled = (project.findProperty('android.builtInKotlin')
+        ?: (agpMajorVersion >= 9))
+        .toString()
+        .toBoolean()
+
+// AGP 9 compiles Kotlin sources itself. Older consumers still receive KGP
+// from their root build and need it applied to this plugin project.
+if (!builtInKotlinEnabled) {
+    pluginManager.apply('org.jetbrains.kotlin.android')
+}
 
 android {
     namespace "com.example.flutter_sms"
-    compileSdkVersion 34
+    compileSdkVersion 36
 
-    sourceSets {
-        main.java.srcDirs += 'src/main/kotlin'
-    }
     defaultConfig {
         minSdkVersion 16
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    lintOptions {
+    lint {
         disable 'InvalidPackage'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
         targetCompatibility JavaVersion.VERSION_17
     }
-    kotlinOptions {
-        jvmTarget = '17'
+    if (!builtInKotlinEnabled) {
+        kotlinOptions {
+            jvmTarget = '17'
+        }
     }
-}
-
-dependencies {
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
