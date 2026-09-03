@@ -1,6 +1,7 @@
 # NEXT
 
-- Support AGP 9 built-in Kotlin without applying the legacy Kotlin Android plugin.
+- Support AGP 9 built-in Kotlin while retaining Kotlin Android compatibility for
+  older consumers.
 - Present the iOS message composer from the active foreground view controller.
 
 # 3.0.1
