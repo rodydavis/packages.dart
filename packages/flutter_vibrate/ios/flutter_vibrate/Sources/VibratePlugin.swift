@@ -2,7 +2,7 @@ import Flutter
 import UIKit
 import AudioToolbox
 
-public class SwiftVibratePlugin: NSObject, FlutterPlugin, VibrateApi {
+public class VibratePlugin: NSObject, FlutterPlugin, VibrateApi {
   private var isDevice: Bool {
     #if targetEnvironment(simulator)
     return false
@@ -13,7 +13,7 @@ public class SwiftVibratePlugin: NSObject, FlutterPlugin, VibrateApi {
 
   public static func register(with registrar: FlutterPluginRegistrar) {
     let messenger : FlutterBinaryMessenger = registrar.messenger()
-    let api : VibrateApi & NSObjectProtocol = SwiftVibratePlugin()
+    let api : VibrateApi & NSObjectProtocol = VibratePlugin()
     VibrateApiSetup.setUp(binaryMessenger: messenger, api: api)
   }
 
