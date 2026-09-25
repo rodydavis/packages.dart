@@ -17,18 +17,26 @@ on:
           - pana
           - semver
           - release-prep
+          - issue
       package:
         description: 'Target package (e.g. packages/undo or "all")'
         required: false
         default: 'all'
+      issue:
+        description: 'Optional Gitea Issue Number to resolve'
+        required: false
+        default: ''
 
 permissions:
   contents: write
+  issues: write
   pull-requests: write
 
 jobs:
   maintenance-factory:
     runs-on: [self-hosted, macos]
+    env:
+      GITEA_TOKEN: ${{ secrets.GITEA_TOKEN || secrets.GITHUB_TOKEN }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
@@ -46,31 +54,21 @@ jobs:
 
       - name: Run Antigravity AI Factory
         run: |
-          chmod +x scripts/factory_runner.sh scripts/telemetry.sh .agents/telemetry/emit_otel.sh
-          ./scripts/factory_runner.sh "${{ inputs.task || 'sweep' }}" "${{ inputs.package || 'all' }}" "30m"
-
-      - name: Generate DuckDB Telemetry Report
-        run: |
-          ./scripts/telemetry.sh markdown-report > telemetry_report.md
-          cat telemetry_report.md
-
-      - name: Commit and Push Changes
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            TASK_NAME="${{ inputs.task || 'sweep' }}"
-            TIMESTAMP=$(date +%Y%m%d-%H%M)
-            BRANCH_NAME="ai-factory/${TASK_NAME}-${TIMESTAMP}"
-
-            echo "Detected factory changes. Creating branch $BRANCH_NAME..."
-            git config --global user.name "Antigravity AI Factory"
-            git config --global user.email "ai-factory@rodydavis.dev"
-
-            git checkout -b "$BRANCH_NAME"
-            git add -A
-            git commit -m "chore(ai-factory): automated ${TASK_NAME} maintenance sweep [skip ci]"
-            git push origin "$BRANCH_NAME"
-
-            echo "Branch $BRANCH_NAME successfully pushed to remote for review."
+          chmod +x scripts/factory_runner.sh scripts/telemetry.sh scripts/gitea_api.sh .agents/telemetry/emit_otel.sh
+          
+          TASK="${{ inputs.task || 'sweep' }}"
+          PACKAGE="${{ inputs.package || 'all' }}"
+          ISSUE="${{ inputs.issue || '' }}"
+          
+          if [ -n "$ISSUE" ]; then
+            ./scripts/factory_runner.sh "$TASK" "$PACKAGE" "30m" --issue "$ISSUE"
           else
-            echo "Factory sweep completed with no modifications required."
+            ./scripts/factory_runner.sh "$TASK" "$PACKAGE" "30m"
+          fi
+
+      - name: Publish Telemetry Summary
+        if: always()
+        run: |
+          if [ -f scripts/telemetry.sh ]; then
+            ./scripts/telemetry.sh markdown-report
           fi
