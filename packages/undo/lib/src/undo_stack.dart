@@ -61,7 +61,9 @@ class ChangeStack {
   }
 
   /// Clear Undo History
-  @deprecated
+  @Deprecated(
+    'Use clearHistory() instead. Will be removed in next major release.',
+  )
   void clear() => clearHistory();
 
   /// Clear Undo History
