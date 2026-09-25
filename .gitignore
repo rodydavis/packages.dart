@@ -53,3 +53,7 @@ yarn-error.log*
 /build/
 *.flutter-plugins
 *.flutter-plugins-dependencies
+
+# --- Telemetry & Observability ---
+.agents/telemetry/*.duckdb*
+.agents/telemetry/*.parquet

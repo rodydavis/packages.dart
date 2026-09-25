@@ -41,12 +41,18 @@ jobs:
           echo "Running on host macOS runner: $(uname -a)"
           echo "User: $(whoami)"
           which agy || echo "/Users/rodydavis/.local/bin/agy"
+          which duckdb || echo "/opt/homebrew/bin/duckdb"
           which dart || echo "Checking Dart SDK"
 
       - name: Run Antigravity AI Factory
         run: |
-          chmod +x scripts/factory_runner.sh
+          chmod +x scripts/factory_runner.sh scripts/telemetry.sh .agents/telemetry/emit_otel.sh
           ./scripts/factory_runner.sh "${{ inputs.task || 'sweep' }}" "${{ inputs.package || 'all' }}" "30m"
+
+      - name: Generate DuckDB Telemetry Report
+        run: |
+          ./scripts/telemetry.sh markdown-report > telemetry_report.md
+          cat telemetry_report.md
 
       - name: Commit and Push Changes
         run: |
