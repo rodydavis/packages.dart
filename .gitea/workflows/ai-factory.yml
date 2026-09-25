@@ -1,0 +1,70 @@
+name: AI Software Factory
+
+on:
+  schedule:
+    # Run nightly maintenance sweep at 03:00 UTC
+    - cron: '0 3 * * *'
+  workflow_dispatch:
+    inputs:
+      task:
+        description: 'Factory task to execute'
+        required: true
+        default: 'sweep'
+        type: choice
+        options:
+          - sweep
+          - dependencies
+          - pana
+          - semver
+          - release-prep
+      package:
+        description: 'Target package (e.g. packages/undo or "all")'
+        required: false
+        default: 'all'
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  maintenance-factory:
+    runs-on: [self-hosted, macos]
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          submodules: true
+          fetch-depth: 0
+
+      - name: Setup Environment
+        run: |
+          echo "Running on host macOS runner: $(uname -a)"
+          echo "User: $(whoami)"
+          which agy || echo "/Users/rodydavis/.local/bin/agy"
+          which dart || echo "Checking Dart SDK"
+
+      - name: Run Antigravity AI Factory
+        run: |
+          chmod +x scripts/factory_runner.sh
+          ./scripts/factory_runner.sh "${{ inputs.task || 'sweep' }}" "${{ inputs.package || 'all' }}" "30m"
+
+      - name: Commit and Push Changes
+        run: |
+          if [ -n "$(git status --porcelain)" ]; then
+            TASK_NAME="${{ inputs.task || 'sweep' }}"
+            TIMESTAMP=$(date +%Y%m%d-%H%M)
+            BRANCH_NAME="ai-factory/${TASK_NAME}-${TIMESTAMP}"
+
+            echo "Detected factory changes. Creating branch $BRANCH_NAME..."
+            git config --global user.name "Antigravity AI Factory"
+            git config --global user.email "ai-factory@rodydavis.dev"
+
+            git checkout -b "$BRANCH_NAME"
+            git add -A
+            git commit -m "chore(ai-factory): automated ${TASK_NAME} maintenance sweep [skip ci]"
+            git push origin "$BRANCH_NAME"
+
+            echo "Branch $BRANCH_NAME successfully pushed to remote for review."
+          else
+            echo "Factory sweep completed with no modifications required."
+          fi

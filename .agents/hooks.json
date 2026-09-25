@@ -1,0 +1,25 @@
+{
+  "dart-auto-formatter": {
+    "PostToolUse": [
+      {
+        "matcher": "write_to_file|replace_file_content",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "./.agents/hooks/post_format.sh",
+            "timeout": 15
+          }
+        ]
+      }
+    ]
+  },
+  "dart-quality-gate": {
+    "Stop": [
+      {
+        "type": "command",
+        "command": "./.agents/hooks/stop_guard.sh",
+        "timeout": 30
+      }
+    ]
+  }
+}
