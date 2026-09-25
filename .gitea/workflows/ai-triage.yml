@@ -1,0 +1,37 @@
+name: AI Issue Triage
+
+on:
+  issues:
+    types: [opened]
+  workflow_dispatch:
+    inputs:
+      issue:
+        description: 'Gitea Issue Number to triage'
+        required: true
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  triage:
+    runs-on: [self-hosted, macos]
+    env:
+      GITEA_TOKEN: ${{ secrets.GITEA_TOKEN || secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          submodules: true
+
+      - name: Setup Environment
+        run: |
+          echo "Running on host macOS runner: $(uname -a)"
+          which agy || echo "/Users/rodydavis/.local/bin/agy"
+
+      - name: Triage Issue via Antigravity CLI
+        run: |
+          chmod +x scripts/factory_runner.sh scripts/gitea_api.sh scripts/telemetry.sh .agents/telemetry/emit_otel.sh
+          ISSUE_NUM="${{ github.event.issue.number || inputs.issue }}"
+          echo "Triaging Issue #$ISSUE_NUM..."
+          ./scripts/factory_runner.sh triage "$ISSUE_NUM" "10m"

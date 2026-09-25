@@ -4,7 +4,7 @@ set -eo pipefail
 # ==============================================================================
 # Dart & Flutter Software AI Factory Runner
 # Executes Antigravity CLI (agy) headlessly with full Issue <-> PR traceability,
-# DuckDB analytics, and OpenTelemetry observability.
+# automated Issue Triage, DuckDB analytics, and OpenTelemetry observability.
 # ==============================================================================
 
 # Ensure critical bin directories are in PATH
@@ -57,18 +57,41 @@ echo "Branch:   $GIT_BRANCH ($GIT_COMMIT)"
 echo "Date:     $(date -u)"
 echo "=========================================================="
 
-# 1. Issue Management: Fetch or Create Tracking Issue
-if [ "$TASK" = "issue" ] && [ -n "$PACKAGE" ] && [[ "$PACKAGE" =~ ^[0-9]+$ ]]; then
+# 1. Issue Management & Prompt Construction
+if [ "$TASK" = "triage" ]; then
+  if [ -n "$PACKAGE" ] && [[ "$PACKAGE" =~ ^[0-9]+$ ]]; then
+    ISSUE_NUM="$PACKAGE"
+  fi
+  
+  if [ -n "$ISSUE_NUM" ] && [ -x "$SCRIPT_DIR/gitea_api.sh" ]; then
+    echo "Triaging Gitea Issue #$ISSUE_NUM..."
+    ISSUE_JSON=$("$SCRIPT_DIR/gitea_api.sh" get-issue "$ISSUE_NUM" 2>/dev/null || echo "{}")
+    ISSUE_TITLE=$(echo "$ISSUE_JSON" | python3 -c 'import sys, json; print(json.load(sys.stdin).get("title", ""))' 2>/dev/null || echo "")
+    ISSUE_BODY=$(echo "$ISSUE_JSON" | python3 -c 'import sys, json; print(json.load(sys.stdin).get("body", ""))' 2>/dev/null || echo "")
+
+    PROMPT="Run the dart-issue-triager skill to triage Issue #$ISSUE_NUM: '$ISSUE_TITLE'.
+Issue Description:
+$ISSUE_BODY
+
+Instructions:
+1. Identify affected package(s) under packages/*.
+2. Analyze stack traces, build errors, or requested enhancements.
+3. Formulate an action plan for reproduction and fixing without breaking changes.
+4. Post your technical triage assessment comment directly to the issue using:
+   ./scripts/gitea_api.sh comment-issue $ISSUE_NUM '<your markdown assessment>'"
+  else
+    PROMPT="Run the dart-issue-triager skill to inspect open issues in this repository using ./scripts/gitea_api.sh list-issues and triage any untriaged issues."
+  fi
+
+elif [ "$TASK" = "issue" ] && [ -n "$PACKAGE" ] && [[ "$PACKAGE" =~ ^[0-9]+$ ]]; then
   ISSUE_NUM="$PACKAGE"
-fi
+  if [ -x "$SCRIPT_DIR/gitea_api.sh" ]; then
+    echo "Fetching Issue #$ISSUE_NUM details from Gitea..."
+    ISSUE_JSON=$("$SCRIPT_DIR/gitea_api.sh" get-issue "$ISSUE_NUM" 2>/dev/null || echo "{}")
+    ISSUE_TITLE=$(echo "$ISSUE_JSON" | python3 -c 'import sys, json; print(json.load(sys.stdin).get("title", ""))' 2>/dev/null || echo "")
+    ISSUE_BODY=$(echo "$ISSUE_JSON" | python3 -c 'import sys, json; print(json.load(sys.stdin).get("body", ""))' 2>/dev/null || echo "")
 
-if [ -n "$ISSUE_NUM" ] && [ -x "$SCRIPT_DIR/gitea_api.sh" ]; then
-  echo "Fetching Issue #$ISSUE_NUM details from Gitea..."
-  ISSUE_JSON=$("$SCRIPT_DIR/gitea_api.sh" get-issue "$ISSUE_NUM" 2>/dev/null || echo "{}")
-  ISSUE_TITLE=$(echo "$ISSUE_JSON" | python3 -c 'import sys, json; print(json.load(sys.stdin).get("title", ""))' 2>/dev/null || echo "")
-  ISSUE_BODY=$(echo "$ISSUE_JSON" | python3 -c 'import sys, json; print(json.load(sys.stdin).get("body", ""))' 2>/dev/null || echo "")
-
-  PROMPT="Resolve Gitea Issue #$ISSUE_NUM: '$ISSUE_TITLE'.
+    PROMPT="Resolve Gitea Issue #$ISSUE_NUM: '$ISSUE_TITLE'.
 Issue Description:
 $ISSUE_BODY
 
@@ -79,10 +102,11 @@ Instructions:
 4. Enforce zero breaking changes: never remove public API symbols, use @Deprecated delegates if refactoring.
 5. Ensure 'dart test' passes and 'dart analyze --fatal-infos' returns zero issues."
 
-  # Post progress update comment
-  "$SCRIPT_DIR/gitea_api.sh" comment-issue "$ISSUE_NUM" "🚀 Antigravity AI Factory has started work on this issue (Trace ID: \`$FACTORY_TRACE_ID\`)." >/dev/null 2>&1 || true
+    # Post progress update comment
+    "$SCRIPT_DIR/gitea_api.sh" comment-issue "$ISSUE_NUM" "🚀 Antigravity AI Factory has started work on this issue (Trace ID: \`$FACTORY_TRACE_ID\`)." >/dev/null 2>&1 || true
+  fi
 
-elif [ -z "$ISSUE_NUM" ] && [ -x "$SCRIPT_DIR/gitea_api.sh" ]; then
+elif [ -z "$ISSUE_NUM" ] && [ "$TASK" != "triage" ] && [ -x "$SCRIPT_DIR/gitea_api.sh" ]; then
   echo "Creating automated Gitea tracking issue for task '$TASK'..."
   ISSUE_TITLE="[AI Factory] $TASK maintenance for $PACKAGE"
   ISSUE_DESC="Automated maintenance work order initiated by Antigravity AI Factory.
@@ -101,7 +125,7 @@ Tracking progress..."
   fi
 fi
 
-# 2. Build Prompt if not resolving existing issue
+# 2. Build Default Prompt if not already built
 if [ -z "$PROMPT" ]; then
   case "$TASK" in
     dependencies|deps)
