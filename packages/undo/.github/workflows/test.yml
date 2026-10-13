@@ -9,10 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Setup Flutter
-        uses: subosito/flutter-action@v1
+      - name: Set up Flutter
+        uses: https://git.rodydavis.dev/rodydavis/shared-actions/setup-flutter@main
         with:
-          channel: "dev"
+          version: 4ebf37fe7df0a130ba5bee17315b98f905c10b34
+          git_token: ${{ secrets.GIT_TOKEN }}
 
       - name: Install
         run: flutter pub get
