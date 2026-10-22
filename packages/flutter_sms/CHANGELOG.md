@@ -1,3 +1,7 @@
+# 3.1.0
+
+- Add Swift Package Manager support on iOS (CocoaPods remains supported).
+
 # 3.0.1
 
 - Fix iOS build error: https://github.com/rodydavis/packages.dart/pull/11
