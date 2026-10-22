@@ -4,7 +4,7 @@ import 'package:pigeon/pigeon.dart';
   dartOut: 'lib/src/messages.g.dart',
   kotlinOut: 'android/src/main/kotlin/com/example/flutter_sms/Messages.g.kt',
   kotlinOptions: KotlinOptions(package: 'com.example.flutter_sms'),
-  swiftOut: 'ios/Classes/Messages.g.swift',
+  swiftOut: 'ios/flutter_sms/Sources/flutter_sms/Messages.g.swift',
 ))
 @HostApi()
 abstract class SmsHostApi {
