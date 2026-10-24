@@ -14,32 +14,35 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v4
         with:
+          token: ${{ secrets.GIT_TOKEN }}
           submodules: true
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Update submodules
         run: |
           git submodule update --remote --recursive
 
-      - name: Check for changes
-        id: diff
+      - name: Commit and Push Submodule Updates
         run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "changes=true" >> $GITHUB_OUTPUT
-          else
-            echo "changes=false" >> $GITHUB_OUTPUT
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "No submodule changes detected."
+            exit 0
           fi
 
-      - name: Create Pull Request
-        if: steps.diff.outputs.changes == 'true'
-        uses: peter-evans/create-pull-request@v8
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          commit-message: "chore: update submodules"
-          title: "chore: update submodules"
-          body: "Automated update of submodules to their latest commits."
-          branch: update-submodules
-          base: main
-          delete-branch: true
+          git config user.name "Gitea Actions"
+          git config user.email "actions@git.rodydavis.dev"
+
+          git config --local --unset-all "http.https://git.rodydavis.dev/.extraheader" || true
+          git config --global --unset-all "http.https://git.rodydavis.dev/.extraheader" || true
+
+          TOKEN="${{ secrets.GIT_TOKEN }}"
+          [ -z "$TOKEN" ] && TOKEN="${{ secrets.GITHUB_TOKEN }}"
+          git remote set-url origin "https://rodydavis:${TOKEN}@git.rodydavis.dev/${{ github.repository }}.git"
+
+          git add -u
+          git commit -m "chore: update submodules"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
