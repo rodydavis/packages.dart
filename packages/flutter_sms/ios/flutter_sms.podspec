@@ -13,8 +13,7 @@ A new flutter plugin project.
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Rody Davis' => 'rody.davis.jr@gmail.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
-  s.public_header_files = 'Classes/**/*.h'
+  s.source_files = 'flutter_sms/Sources/flutter_sms/**/*.swift'
   s.dependency 'Flutter'
   s.platform = :ios, '8.0'
 
